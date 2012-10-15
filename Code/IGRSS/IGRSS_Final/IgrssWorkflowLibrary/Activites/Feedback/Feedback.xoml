@@ -1,0 +1,15 @@
+﻿<SequenceActivity x:Class="IGRSS.Workflows.Feedback" x:Name="Feedback" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<CodeActivity x:Name="AlertUser" ExecuteCode="AlertUser_ExecuteCode" />
+	<ListenActivity x:Name="ListenResponse">
+		<EventDrivenActivity x:Name="ListenApprove">
+			<HandleExternalEventActivity x:Name="Approve" EventName="Approve" InterfaceType="{x:Type IGRSS.Workflows.Activites.Feedback.Events.IFeedbackService}" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="ListenReject">
+			<HandleExternalEventActivity x:Name="Reject" EventName="Reject" InterfaceType="{x:Type IGRSS.Workflows.Activites.Feedback.Events.IFeedbackService}" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="ListenTimeout">
+			<DelayActivity TimeoutDuration="00:00:05" x:Name="Timeout" />
+			<CodeActivity x:Name="TimeoutActivity" ExecuteCode="TimeoutActivity_ExecuteCode" />
+		</EventDrivenActivity>
+	</ListenActivity>
+</SequenceActivity>

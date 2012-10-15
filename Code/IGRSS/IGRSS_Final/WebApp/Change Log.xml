@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Changes>
+	<BugFix>
+		<Fix Id="10">BugId="10">Fixed with some change...</Fix>
+	</BugFix>
+	<Functionality Name="New Functionality"
+				   Url="www.google.com">
+		This is a new Functionality
+	</Functionality>
+</Changes>

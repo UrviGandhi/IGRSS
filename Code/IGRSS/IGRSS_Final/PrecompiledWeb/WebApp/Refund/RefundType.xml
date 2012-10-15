@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RefundType>
+
+	<item Key="Used"
+			   >
+		<Description>Concealed Type</Description>
+	</item>
+	<item Key="NotUsed"
+			 >
+		<Description>Open Type</Description>
+	</item>
+
+
+</RefundType>

@@ -1,0 +1,25 @@
+﻿<StateMachineWorkflowActivity x:Class="IgrssWorkflowLibrary.ValuationProcess" InitialStateName="ValuationRequest" x:Name="ValuationProcess" DynamicUpdateCondition="{x:Null}" CompletedStateName="ValuationComplete" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateActivity x:Name="ValuationProcessInitialState">
+		<EventDrivenActivity x:Name="PhysicalVerificationRequired">
+			<HandleExternalEventActivity x:Name="handlePhysicalVerificationRequired" EventName="PhysicalVerificationRequired" InterfaceType="{x:Type IGRSS.Workflows.Events.IValuationEvents}" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="NoPhysicalVerificationRequired">
+			<HandleExternalEventActivity x:Name="HandleNoPhysicalVerificationRequired" EventName="NoPhysicalVerificationRequired" InterfaceType="{x:Type IGRSS.Workflows.Events.IValuationEvents}" />
+			<SetStateActivity x:Name="setStateActivity2" TargetStateName="ValuateProperty" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="ValuationRequest">
+		<EventDrivenActivity x:Name="RequestValuation">
+			<HandleExternalEventActivity x:Name="HandleValuationRequest" EventName="RequestValuation" InterfaceType="{x:Type IGRSS.Workflows.Events.IValuationEvents}" />
+			<CodeActivity x:Name="AlertValuation" ExecuteCode="AlertValuation_ExecuteCode" />
+			<SetStateActivity x:Name="setStateActivity1" TargetStateName="ValuationProcessInitialState" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="ValuateProperty">
+		<EventDrivenActivity x:Name="SaveValuationReport">
+			<HandleExternalEventActivity x:Name="HandleSaveCaluationReport" EventName="SaveValuationReport" InterfaceType="{x:Type IGRSS.Workflows.Events.IValuationEvents}" />
+			<SetStateActivity x:Name="setStateActivity3" TargetStateName="ValuationComplete" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="ValuationComplete" />
+</StateMachineWorkflowActivity>

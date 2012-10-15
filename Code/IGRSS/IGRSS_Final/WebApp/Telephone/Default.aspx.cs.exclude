@@ -1,0 +1,45 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+public partial class Telephone_Default : IgrssPage
+{
+	DataTable dt = new DataTable();
+	protected void Page_Load(object sender, EventArgs e)
+	{
+
+	}
+	protected void Button1_Click(object sender, EventArgs e)
+	{
+		string s=null;
+		foreach (ListItem lr in ListBox1.Items)
+		{
+			if(lr.Selected)
+			 s+=lr.Text+",";
+		}
+		Label1.Text = s.Remove(0, s.Length);
+
+		dt.Columns.Add("asss", typeof(string));
+		DataRow dr = dt.NewRow();
+		dr["asss"] = s;
+		dt.Rows.Add(dr);
+		GridView1.DataSource = dt;
+		GridView1.DataBind();
+		string drRR = StringRemove("pRADEEP");
+	}
+	string StringRemove(string str, int Count)
+	{
+		for (int i = 0; i < Count; i++)
+			str = str.Remove(0, 1);
+
+		return str;
+	}
+	
+}

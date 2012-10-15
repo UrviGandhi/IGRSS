@@ -1,0 +1,111 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using IGRSS.BusinessLogicLayer;
+
+public partial class Inspection_AnualSchedule : IgrssPage
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+    protected void btnAddScheduleDetails_Command(object sender, CommandEventArgs e)
+    {
+        string Mode = "";
+                string inspectionOffices = "";
+
+        if (null == ViewState["ScheduleDetails"])
+        {
+            ViewState["ScheduleDetails"] = new Inspection().GetYearlyInspectionDetailsById(Guid.Empty);
+        }
+        if (null == ViewState["OfficeDetails"])
+        {
+            ViewState["OfficeDetails"] = new Inspection().GetOfficesByScheduleId(Guid.Empty);
+        }
+
+        // Get the coltrols
+        DataTable dtScheduleDetails = (DataTable)ViewState["ScheduleDetails"];
+        DataTable dtOfficeDetails = (DataTable)ViewState["OfficeDetails"];
+        //GridView grdScheduleDetails = ((GridView)FvYearlySchedule.FindControl("grdScheduleDetails" + Mode));
+        //DropDownList ddlInspectionMonth = ((DropDownList)FvYearlySchedule.FindControl("ddlInspectionMonth" + Mode));
+        //ListBox lstInspectingOffice = ((ListBox)FvYearlySchedule.FindControl("lstInspectingOffice" + Mode));
+        //TextBox txtDetailRemarks = ((TextBox)FvYearlySchedule.FindControl("txtDetailRemarks" + Mode));
+
+        // Create the DataRow to insert
+        DataRow drScheduleDetail = null;
+
+        switch (e.CommandName)
+        {
+            case "Add":
+                drScheduleDetail = dtScheduleDetails.NewRow();
+                drScheduleDetail["ScheduleId"] = Guid.NewGuid();
+                drScheduleDetail["DetailScheduleId"] = Guid.NewGuid();
+                drScheduleDetail["Month"] = Convert.ToDecimal(ddlInspectionMonth.SelectedValue);
+                drScheduleDetail["Remarks"] = txtDetailRemarks.Text;
+
+                foreach (ListItem Item in lstInspectingOffice.Items)
+                {
+                    if (Item.Selected)
+                        inspectionOffices += Item.Text + ", ";
+                }
+                if (inspectionOffices.Length > 2)
+                {
+                    inspectionOffices = inspectionOffices.Substring(0, inspectionOffices.Length - 2);
+                }
+                drScheduleDetail["OfficeName"] = inspectionOffices;
+
+                dtScheduleDetails.Rows.Add(drScheduleDetail);
+                break;
+            case "Update":
+                drScheduleDetail = dtScheduleDetails.Rows.Find(grdScheduleDetails.SelectedDataKey);
+                drScheduleDetail["Month"] = Convert.ToDecimal(ddlInspectionMonth.SelectedValue);
+                drScheduleDetail["Remarks"] = txtDetailRemarks.Text;
+
+                foreach (ListItem Item in lstInspectingOffice.Items)
+                {
+                    if (Item.Selected)
+                        inspectionOffices += Item.Text + ", ";
+                }
+                if (inspectionOffices.Length > 2)
+                {
+                    inspectionOffices = inspectionOffices.Substring(0, inspectionOffices.Length - 2);
+                }
+                drScheduleDetail["OfficeName"] = inspectionOffices;
+
+                btnAddScheduleDetails.Text = "Add";
+                btnAddScheduleDetails.CommandName = "Add";
+                break;
+        }
+
+        // Bind the DataGrid
+        grdScheduleDetails.DataSource = dtScheduleDetails;
+        grdScheduleDetails.DataBind();
+    }
+    protected void grdScheduleDetails_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        DataTable dtScheduleDetails = (DataTable)ViewState["ScheduleDetails"];
+        DataTable dtOfficeDetails = (DataTable)ViewState["OfficeDetails"];
+        //GridView grdScheduleDetails = ((GridView)FvYearlySchedule.FindControl("grdScheduleDetails" + Mode));
+        //DropDownList ddlInspectionMonth = ((DropDownList)FvYearlySchedule.FindControl("ddlInspectionMonth" + Mode));
+        //ListBox lstInspectingOffice = ((ListBox)FvYearlySchedule.FindControl("lstInspectingOffice" + Mode));
+        //TextBox txtDetailRemarks = ((TextBox)FvYearlySchedule.FindControl("txtDetailRemarks" + Mode));
+
+        DataRow drScheduleDetail = dtScheduleDetails.Rows.Find(grdScheduleDetails.SelectedDataKey);
+        if (null != drScheduleDetail)
+        {
+            ddlInspectionMonth.SelectedValue = Convert.ToString(drScheduleDetail["Month"]);
+
+            txtDetailRemarks.Text = Convert.ToString(drScheduleDetail["Remarks"]);
+            lstInspectingOffice.SelectedItem.Text = Convert.ToString(drScheduleDetail["OfficeName"]);
+        }
+        btnAddScheduleDetails.Text = "Update";
+        btnAddScheduleDetails.CommandName = "Update";
+    }
+}

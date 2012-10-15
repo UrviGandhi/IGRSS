@@ -1,0 +1,442 @@
+<%@ Page Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true"
+	CodeFile="Employee.aspx.cs" Inherits="Employee_Employee" Title="Untitled Page" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="Server">
+	<table width="100%">
+		<tr>
+			<td colspan="6">
+				<asp:Label ID="lblEmployeeHeaderIns" runat="server" meta:resourcekey="lblEmployeeHeaderIns"
+					SkinID="SubHeading" Text="Employee Details"></asp:Label>
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblEmployeeNoIns" runat="server" meta:resourcekey="lblEmployeeNoIns"
+					Text="Employee Number"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtEmployeeNoIns" runat="server" meta:resourcekey="txtEmployeeNoIns"
+					Text='<%# Bind("EmployeeNo") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblFirstNameIns" runat="server" meta:resourcekey="lblFirstNameIns"
+					Text="First Name"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtFirstNameIns" runat="server" meta:resourcekey="txtFirstNameIns"
+					Text='<%# Bind("FirstName") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblMiddleNameIns" runat="server" meta:resourcekey="lblMiddleNameIns"
+					Text="Middle Name"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtMiddleNameIns" runat="server" meta:resourcekey="txtMiddleNameIns"
+					Text='<%# Bind("MiddleName") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblLastNameIns" runat="server" meta:resourcekey="lblLastNameIns" Text="Last Name"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtLastNameIns" runat="server" meta:resourcekey="txtLastNameIns"
+					Text='<%# Bind("LastName") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblPostalAddressIns" runat="server" meta:resourcekey="lblPostalAddressIns"
+					Text="Postal Address"></asp:Label>
+			</td>
+			<td colspan="4" style="width: 25%">
+				<asp:TextBox ID="txtPostalAddressIns" runat="server" meta:resourcekey="txtPostalAddressIns"
+					Text='<%# Bind("PostalAddress") %>' TextMode="multiline"></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblPermanentAddressIns" runat="server" meta:resourcekey="lblPermanentAddressIns"
+					Text="Permanent Address"></asp:Label>
+			</td>
+			<td colspan="4" style="width: 25%">
+				<asp:TextBox ID="txtPermanentAddressIns" runat="server" meta:resourcekey="txtPermanentAddressIns"
+					Text='<%# Bind("PermanentAddress") %>' TextMode="multiline"></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblDateOfBirthIns" runat="server" meta:resourcekey="lblDateOfBirthIns"
+					Text="Date Of Birth"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtDateOfBirthIns" runat="server" meta:resourcekey="txtDateOfBirthIns"
+					Text='<%# Bind("DateOfBirth") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblFatherNameIns" runat="server" meta:resourcekey="lblFatherNameIns"
+					Text="Father Name"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtFatherNameIns" runat="server" meta:resourcekey="txtFatherNameIns"
+					Text='<%# Bind("FatherName") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblHeightIns" runat="server" meta:resourcekey="lblHeightIns" Text="Height"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtHeightIns" runat="server" meta:resourcekey="txtHeightIns" Text='<%# Bind("Height") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblVisibleMarksIns" runat="server" meta:resourcekey="lblVisibleMarksIns"
+					Text="Visible Marks"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtVisibleMarksIns" runat="server" meta:resourcekey="txtVisibleMarksIns"
+					Text='<%# Bind("VisibleMarks") %>' TextMode="multiline"></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblOfficeIDIns" runat="server" meta:resourcekey="lblOfficeIDIns" Text="Office"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:DropDownList ID="ddlOfficeIDIns" runat="server" meta:resourcekey="ddlOfficeIDIns"
+					Value='<%# Bind("OfficeID") %>'>
+				</asp:DropDownList>
+			</td>
+			<td class="validationColumn">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblDepartmentIDIns" runat="server" meta:resourcekey="lblDepartmentIDIns"
+					Text="Department"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:DropDownList ID="ddlDepartmentIDIns" runat="server" meta:resourcekey="ddlDepartmentIDIns"
+					Text='<%# Bind("DepartmentID") %>'>
+				</asp:DropDownList>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblDesignationIDIns" runat="server" meta:resourcekey="lblDesignationIDIns"
+					Text="Designation"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:DropDownList ID="ddlDesignationIDIns" runat="server" meta:resourcekey="ddlDesignationIDIns"
+					Text='<%# Bind("DesignationID") %>'>
+				</asp:DropDownList>
+			</td>
+			<td class="validationColumn">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblSalaryIns" runat="server" meta:resourcekey="lblSalaryIns" Text="Salary"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtSalaryIns" runat="server" meta:resourcekey="txtSalaryIns" Text='<%# Bind("Salary") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblAllowancesIns" runat="server" meta:resourcekey="lblAllowancesIns"
+					Text="Allowances"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtAllowancesIns" runat="server" meta:resourcekey="txtAllowancesIns"
+					Text='<%# Bind("Allowances") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+			<td class="labelColumn">
+			</td>
+			<td class="textColumn">
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblStartDateIns" runat="server" meta:resourcekey="lblStartDateIns"
+					Text="Working in the Post from"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtStartDateIns" runat="server" meta:resourcekey="txtStartDateIns"
+					Text='<%# Bind("StartDate") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblEndDateIns" runat="server" meta:resourcekey="lblEndDateIns" Text="To"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtEndDateIns" runat="server" meta:resourcekey="txtEndDateIns" Text='<%# Bind("EndDate") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6">
+				<asp:Label ID="lblQualificationIns" runat="server" meta:resourcekey="lblQualificationIns"
+					SkinID="SubHeading" Text="Qualification Details"></asp:Label>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6">
+				<asp:ListBox ID="lstQualificationIns" runat="server" Rows="10" SelectionMode="Multiple" Width ="100%" meta:resourcekey="lblQualificationIns"/>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" colspan="6">
+				<asp:Button ID="EmployeeIns" runat="server" CausesValidation="True" CommandName="Insert"
+					Text="Save" />
+				<asp:Button ID="EmployeeCancelIns" runat="server" CausesValidation="False" CommandName="Cancel"
+					Text="Cancel" />
+			</td>
+		</tr>
+	</table>
+	<table width="100%">
+		<tr>
+			<td colspan="6">
+				<asp:Label ID="lblEmployeeHeaderUpd" runat="server" meta:resourcekey="lblEmployeeHeaderUpd"
+					SkinID="SubHeading" Text="Employee Details"></asp:Label>
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblEmployeeNoUpd" runat="server" meta:resourcekey="lblEmployeeNoUpd"
+					Text="Employee Number"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtEmployeeNoUpd" runat="server" meta:resourcekey="txtEmployeeNoUpd"
+					Text='<%# Bind("EmployeeNo") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblFirstNameUpd" runat="server" meta:resourcekey="lblFirstNameUpd"
+					Text="First Name"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtFirstNameUpd" runat="server" meta:resourcekey="txtFirstNameUpd"
+					Text='<%# Bind("FirstName") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblMiddleNameUpd" runat="server" meta:resourcekey="lblMiddleNameUpd"
+					Text="Middle Name"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtMiddleNameUpd" runat="server" meta:resourcekey="txtMiddleNameUpd"
+					Text='<%# Bind("MiddleName") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblLastNameUpd" runat="server" meta:resourcekey="lblLastNameUpd" Text="Last Name"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtLastNameUpd" runat="server" meta:resourcekey="txtLastNameUpd"
+					Text='<%# Bind("LastName") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblPostalAddressUpd" runat="server" meta:resourcekey="lblPostalAddressUpd"
+					Text="Postal Address"></asp:Label>
+			</td>
+			<td colspan="4" style="width: 25%">
+				<asp:TextBox ID="txtPostalAddressUpd" runat="server" meta:resourcekey="txtPostalAddressUpd"
+					Text='<%# Bind("PostalAddress") %>' TextMode="multiline"></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblPermanentAddressUpd" runat="server" meta:resourcekey="lblPermanentAddressUpd"
+					Text="Permanent Address"></asp:Label>
+			</td>
+			<td colspan="4" style="width: 25%">
+				<asp:TextBox ID="txtPermanentAddressUpd" runat="server" meta:resourcekey="txtPermanentAddressUpd"
+					Text='<%# Bind("PermanentAddress") %>' TextMode="multiline"></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblDateOfBirthUpd" runat="server" meta:resourcekey="lblDateOfBirthUpd"
+					Text="Date Of Birth"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtDateOfBirthUpd" runat="server" meta:resourcekey="txtDateOfBirthUpd"
+					Text='<%# Bind("DateOfBirth") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblFatherNameUpd" runat="server" meta:resourcekey="lblFatherNameUpd"
+					Text="Father Name"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtFatherNameUpd" runat="server" meta:resourcekey="txtFatherNameUpd"
+					Text='<%# Bind("FatherName") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblHeightUpd" runat="server" meta:resourcekey="lblHeightUpd" Text="Height"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtHeightUpd" runat="server" meta:resourcekey="txtHeightUpd" Text='<%# Bind("Height") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblVisibleMarksUpd" runat="server" meta:resourcekey="lblVisibleMarksUpd"
+					Text="Visible Marks"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtVisibleMarksUpd" runat="server" meta:resourcekey="txtVisibleMarksUpd"
+					Text='<%# Bind("VisibleMarks") %>' TextMode="multiline"></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblOfficeIDUpd" runat="server" meta:resourcekey="lblOfficeIDUpd" Text="Office"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:DropDownList ID="ddlOfficeIDUpd" runat="server" meta:resourcekey="ddlOfficeIDUpd"
+					Value='<%# Bind("OfficeID") %>'>
+				</asp:DropDownList>
+			</td>
+			<td class="validationColumn">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblDepartmentIDUpd" runat="server" meta:resourcekey="lblDepartmentIDUpd"
+					Text="Department"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:DropDownList ID="ddlDepartmentIDUpd" runat="server" meta:resourcekey="ddlDepartmentIDUpd"
+					Text='<%# Bind("DepartmentID") %>'>
+				</asp:DropDownList>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblDesignationIDUpd" runat="server" meta:resourcekey="lblDesignationIDUpd"
+					Text="Designation"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:DropDownList ID="ddlDesignationIDUpd" runat="server" meta:resourcekey="ddlDesignationIDUpd"
+					Text='<%# Bind("DesignationID") %>'>
+				</asp:DropDownList>
+			</td>
+			<td class="validationColumn">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblSalaryUpd" runat="server" meta:resourcekey="lblSalaryUpd" Text="Salary"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtSalaryUpd" runat="server" meta:resourcekey="txtSalaryUpd" Text='<%# Bind("Salary") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblAllowancesUpd" runat="server" meta:resourcekey="lblAllowancesUpd"
+					Text="Allowances"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtAllowancesUpd" runat="server" meta:resourcekey="txtAllowancesUpd"
+					Text='<%# Bind("Allowances") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+			<td class="labelColumn">
+			</td>
+			<td class="textColumn">
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblStartDateUpd" runat="server" meta:resourcekey="lblStartDateUpd"
+					Text="Working in the Post from"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtStartDateUpd" runat="server" meta:resourcekey="txtStartDateUpd"
+					Text='<%# Bind("StartDate") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblEndDateUpd" runat="server" meta:resourcekey="lblEndDateUpd" Text="To"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtEndDateUpd" runat="server" meta:resourcekey="txtEndDateUpd" Text='<%# Bind("EndDate") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6">
+				<asp:Label ID="lblQualificationUpd" runat="server" meta:resourcekey="lblQualificationUpd"
+					SkinID="SubHeading" Text="Qualification Details"></asp:Label>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6">
+				<asp:ListBox ID="lstQualificationUpd" runat="server" meta:resourcekey="lblQualificationUpd"
+					Rows="10" SelectionMode="Multiple" Width="100%"></asp:ListBox>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" colspan="6">
+				<asp:Button ID="EmployeeUpd" runat="server" CausesValidation="True" CommandName="Update"
+					Text="Update" />
+				<asp:Button ID="EmployeeCancelUpd" runat="server" CausesValidation="False" CommandName="Cancel"
+					Text="Cancel" />
+			</td>
+		</tr>
+	</table>
+</asp:Content>

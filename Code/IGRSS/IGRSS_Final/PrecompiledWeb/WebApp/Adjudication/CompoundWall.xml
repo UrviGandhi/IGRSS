@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CompoundWallType>
+	
+		<item Key="HalfType"
+			   Value="b9f0f0ac-8373-493f-beea-4ac932906ab8">
+			<Description>Half Type</Description>
+		</item>
+		<item Key="Surrounded"
+			   value="0048d51c-e6eb-485a-9e1e-12730e2cf82b">
+			<Description>Surrounded Type</Description>
+		</item>
+
+</CompoundWallType>

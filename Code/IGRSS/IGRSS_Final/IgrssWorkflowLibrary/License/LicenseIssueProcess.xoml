@@ -1,0 +1,69 @@
+﻿<StateMachineWorkflowActivity x:Class="IGRSS.Workflows.License.LicenseIssueProcess" InitialStateName="InitilizeLicenseApplication" x:Name="LicenseIssueProcess" CompletedStateName="Completed" DynamicUpdateCondition="{x:Null}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateActivity x:Name="InitilizeLicenseApplication">
+		<StateInitializationActivity x:Name="InitilizeProcess">
+			<CodeActivity x:Name="InitilizeFlow" ExecuteCode="InitilizeFlow_ExecuteCode" />
+		</StateInitializationActivity>
+		<EventDrivenActivity x:Name="ApplicationSaved">
+			<HandleExternalEventActivity x:Name="OnApplicationSaved" EventName="ApplicationSaved" InterfaceType="{x:Type IGRSS.Workflows.License.Events.ILicenseApplicationEvents}" />
+			<SetStateActivity x:Name="SetVerification" TargetStateName="Verification" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="Verification">
+		<EventDrivenActivity x:Name="ApplicationUpdated">
+			<HandleExternalEventActivity x:Name="OnApplicationUpdated" EventName="ApplicationUpdated" InterfaceType="{x:Type IGRSS.Workflows.License.Events.ILicenseApplicationEvents}" />
+			<SetStateActivity x:Name="SetUpdated" TargetStateName="Verification" />
+		</EventDrivenActivity>
+		<StateInitializationActivity x:Name="InitilizeVerification">
+			<IfElseActivity x:Name="VerivicationStatus">
+				<IfElseBranchActivity x:Name="VerificationComplete">
+					<IfElseBranchActivity.Condition>
+						<CodeCondition Condition="IsVerificationComplete" />
+					</IfElseBranchActivity.Condition>
+					<SetStateActivity x:Name="SetApproval" TargetStateName="Approval" />
+				</IfElseBranchActivity>
+				<IfElseBranchActivity x:Name="VerificationPending">
+					<CodeActivity x:Name="VerificationAlert" ExecuteCode="VerificationAlert_ExecuteCode" />
+				</IfElseBranchActivity>
+			</IfElseActivity>
+		</StateInitializationActivity>
+		<EventDrivenActivity x:Name="VerificationValid">
+			<HandleExternalEventActivity x:Name="OnVerificationValid" EventName="Approve" InterfaceType="{x:Type IGRSS.Workflows.Activites.Feedback.Events.IFeedbackService}" />
+			<SetStateActivity x:Name="SetValid" TargetStateName="Verification" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="VerificationInvalid">
+			<HandleExternalEventActivity x:Name="OnVerificationInvalid" EventName="Reject" InterfaceType="{x:Type IGRSS.Workflows.Activites.Feedback.Events.IFeedbackService}" />
+			<SetStateActivity x:Name="SetInvalid" TargetStateName="InitilizeLicenseApplication" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="Approval">
+		<EventDrivenActivity x:Name="Approved">
+			<HandleExternalEventActivity x:Name="OnApproved" EventName="Approve" InterfaceType="{x:Type IGRSS.Workflows.Activites.Feedback.Events.IFeedbackService}" />
+			<SetStateActivity x:Name="SetApproved" TargetStateName="Approval" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="Rejected">
+			<HandleExternalEventActivity x:Name="OnRejected" EventName="Reject" InterfaceType="{x:Type IGRSS.Workflows.Activites.Feedback.Events.IFeedbackService}" />
+			<SetStateActivity x:Name="SetRejected" TargetStateName="Completed" />
+		</EventDrivenActivity>
+		<StateInitializationActivity x:Name="InitilizeApproval">
+			<IfElseActivity x:Name="ApprovalStatus">
+				<IfElseBranchActivity x:Name="ApprovalComplete">
+					<IfElseBranchActivity.Condition>
+						<CodeCondition Condition="IsApprovalComplete" />
+					</IfElseBranchActivity.Condition>
+					<SetStateActivity x:Name="SetIssueLicense" TargetStateName="IssueLicense" />
+				</IfElseBranchActivity>
+				<IfElseBranchActivity x:Name="ApprovalPending">
+					<CodeActivity x:Name="ApprovalAlert" ExecuteCode="ApprovalAlert_ExecuteCode" />
+				</IfElseBranchActivity>
+			</IfElseActivity>
+		</StateInitializationActivity>
+	</StateActivity>
+	<StateActivity x:Name="IssueLicense">
+		<EventDrivenActivity x:Name="LicenseIssued">
+			<HandleExternalEventActivity x:Name="OnLicenseIssued" EventName="LicenseIssued" InterfaceType="{x:Type IGRSS.Workflows.License.Events.ILicenseApplicationEvents}" />
+			<SetStateActivity x:Name="SetComplete" TargetStateName="Completed" />
+		</EventDrivenActivity>
+		<StateInitializationActivity x:Name="InitilizeLicenseIssue" />
+	</StateActivity>
+	<StateActivity x:Name="Completed" />
+</StateMachineWorkflowActivity>

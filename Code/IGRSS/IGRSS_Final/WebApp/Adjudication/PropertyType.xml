@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<PropertyType>
+	
+		<item Key="Industrial" Value="I"
+			  >
+			<Description>Industrial Type</Description>
+		</item>
+		<item Key="Commercial" Value="C"
+			  >
+			<Description>Commercial Type</Description>
+		</item>
+		<item Key="Residencial" Value="R"
+			  >
+			<Description>Residencial Type</Description>
+		</item>
+	<item Key="Agriculture" Value="A"
+			  >
+		<Description>Agriculture Type</Description>
+	</item>
+	<item Key="NonAgriculture" Value="NA"
+			  >
+		<Description>Non Agriculture Type</Description>
+	</item>
+	<item Key="Gamtal" Value="G">
+		<Description>Gamtal Type</Description>
+	</item>
+	<item Key="Quri / Lease" Value="Q">
+		<Description>Quri / Lease</Description>
+	</item>
+	<item Key="Mortgage" Value="M">
+		<Description>Mortgage</Description>
+	</item>
+	<item Key="Lease Deed" Value="L">
+		<Description>Lease Deed</Description>
+	</item>
+
+</PropertyType>
+

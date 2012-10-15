@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<PartyType>
+
+   <item Key="Buyer"
+		  Value="B"
+			  >
+		<Description>Buyer Type</Description>
+	</item>
+	<item Key="Seller"
+		  Value="S"
+			  >
+		<Description>Seller Type</Description>
+	</item>
+	<item Key="Conformer"
+		  Value="C"
+			  >
+		<Description>Conformer Type</Description>
+	</item>
+
+	<item Key="Informer"
+		  Value="I"
+			  >
+		<Description>Informer Type</Description>
+	</item>
+
+</PartyType>

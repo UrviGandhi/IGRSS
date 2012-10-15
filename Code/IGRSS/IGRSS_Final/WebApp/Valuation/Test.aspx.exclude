@@ -1,0 +1,76 @@
+<%@ Page Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true" CodeFile="Test.aspx.cs" Inherits="Test_Test" Title="Untitled Page" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="Main" Runat="Server">
+
+	<asp:FormView ID="FormView1" runat="server" Width="100%" DefaultMode="Insert" DataSourceID="odsTest" >
+		<InsertItemTemplate>
+			<table width="100%">
+				<tr>
+					<td colspan="6">
+						<asp:Label ID="lblFileDetailsHeaderIns" runat="server" meta:resourcekey="lblFileDetailsHeaderIns"
+							SkinID="SubHeading" Text="Application Details"></asp:Label>
+					</td>
+				</tr>
+				<tr>
+					<td class="labelColumn">
+						<asp:Label ID="lblReceiptNumberIns" runat="server" meta:resourcekey="lblReceiptNumberIns"
+							Text="Name"></asp:Label>
+					</td>
+					<td class="textColumn">
+						<asp:TextBox ID="txtNameIns" runat="server" meta:resourcekey="txtReceiptNumberIns"
+							Text='<%# Bind("Name") %>'></asp:TextBox>
+					</td>
+					<td class="validationColumn">
+					</td>
+					<td class="labelColumn">
+						<asp:Label ID="lblAdjudicationTotalFeesIns" runat="server" meta:resourcekey="lblAdjudicationTotalFeesIns"
+							Text="Address"></asp:Label>
+					</td>
+					<td class="textColumn" style="width: 25%">
+						<asp:TextBox ID="txtAddressIns" runat="server" meta:resourcekey="txtAdjudicationTotalFeesIns"
+							Text='<%# Bind("Address") %>'></asp:TextBox>
+					</td>
+					<td class="validationColumn">
+					</td>
+				</tr>
+				<tr>
+					<td class="labelColumn">
+						<asp:Label ID="Label1" runat="server" meta:resourcekey="lblReceiptNumberIns" Text="Marks"></asp:Label>
+					</td>
+					<td class="textColumn">
+						<asp:TextBox ID="txtMarksIns" runat="server" meta:resourcekey="txtReceiptNumberIns"
+							Text='<%# Bind("Marks") %>'></asp:TextBox>
+					</td>
+					<td class="validationColumn">
+					</td>
+					<td class="labelColumn">
+						&nbsp;</td>
+					<td class="textColumn" style="width: 25%">
+						&nbsp;</td>
+					<td class="validationColumn">
+					</td>
+				</tr>
+				<tr>
+					<td class="labelColumn">
+					</td>
+					<td class="textColumn">
+					</td>
+					<td class="validationColumn">
+					</td>
+					<td class="labelColumn">
+						<asp:Button ID="Button1" runat="server" CommandName="Insert" Text="Insert"  /></td>
+					<td class="textColumn" style="width: 25%">
+					</td>
+					<td class="validationColumn">
+					</td>
+				</tr>
+			</table>
+		</InsertItemTemplate>
+	</asp:FormView>
+	<br />
+	<asp:ObjectDataSource ID="odsTest" runat="server"
+		InsertMethod="NewStudentRecords" OldValuesParameterFormatString="original_{0}" SelectMethod="GetStudentData"
+		TypeName="IGRSS.BusinessLogicLayer.Test" DataObjectTypeName="IGRSS.BusinessLogicLayer.TestGetSet" OnObjectCreating="odsTest_ObjectCreating1" >
+	</asp:ObjectDataSource>	
+	
+</asp:Content>
+

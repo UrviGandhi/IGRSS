@@ -1,0 +1,189 @@
+﻿/* 0 BASIC TAGS */
+
+table {
+	font-size: 1em;
+	border-width: 0;
+}
+
+
+h1, h2, h3, h4 {
+	margin: 0;
+	font-family: tahoma, arial, helvetica, sans-serif;
+}
+
+p {
+	line-height: 1.4em;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #bababa;
+	height: 1px;
+}
+
+a {
+	text-decoration: none;
+	color: #d32525;
+}
+
+a:visited {
+	color: #980000;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: Blue;
+}
+
+a:active {
+	color: #980000;
+}
+
+body {
+	background-color: #ffffff;
+	background-image: url(Images/header.png);
+	background-repeat: repeat-x;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 0.7em;
+	color: #666666;
+}
+
+img {
+	border-width: 0;
+}
+
+.header {
+	background-repeat: repeat-x;
+	position: relative;
+	width: 760px;
+	height: 81px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.footer {
+	background-image: url(Images/footer.png);
+	background-repeat: repeat-x;
+	position: relative;
+	width: 100%;
+	height: 75px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-size: 10px;
+}
+
+.content {
+	position: relative;
+	max-width: 760px;
+	width: 760px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1 {
+	left: 37px;
+	top: 12px;
+	text-transform: uppercase;
+	font-size: 18px;
+	color: Black;
+}
+
+h2 {
+	left: 37px;
+	top: 60px;
+	color: Black;
+	font-size: 12px;
+}
+
+h3 {
+	margin-top: 1.0em;
+	margin-bottom: 1.12em;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+h4 {
+	margin-top: 1.0em;
+	margin-bottom: 1.12em;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+.menua {
+	position: absolute;
+	right: 37px;
+	top: 17px;
+	text-transform: uppercase;
+	font-size: 10px;
+}
+
+.nav {
+	position: absolute;
+	right: 37px;
+	top: 60px;
+	text-transform: uppercase;
+	font-size: 10px;
+}
+
+.menua a:visited, .nav a:visited {
+	color: #d32525;
+}
+
+.logo {
+	left: 0px; 
+	width: 3%; 
+	top: 0px; 
+	height: 28px;
+	vertical-align: top;
+}
+.validation {
+	height: 49px; 
+	text-align: left;
+}
+
+.gridItems {
+	text-align: left;
+}
+
+.toolbar
+{
+	font-size: 13px;
+	font-family: Verdana;
+	padding: 6px;
+	filter: 
+	progid: DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#ffffff,endColorStr=lightblue);
+}
+
+.labelColumn
+{
+	text-align:left;
+	width:23%;
+}
+
+.textColumn
+{
+	text-align:left;
+	width:25%;
+}
+
+.validationColumn
+{
+	text-align:left;
+	width:2%;
+}
+.grdTextField
+{
+	text-align:left;
+}
+.grdDateField
+{
+	text-align:center;
+}
+.grdMoneyField
+{
+	text-align:right;
+}

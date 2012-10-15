@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="IGRSS_REPORT">
+      <DataSourceReference>IGRSS_REPORT</DataSourceReference>
+      <rd:DataSourceID>6475e09f-245d-47df-8ea7-83d7605bf309</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <ReportParameters>
+    <ReportParameter Name="RefundApplicationId">
+      <DataType>String</DataType>
+      <Prompt>RefundApplicationId</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox13">
+        <Top>2.75in</Top>
+        <rd:DefaultName>textbox13</rd:DefaultName>
+        <ZIndex>12</ZIndex>
+        <Width>3in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>1in</Height>
+        <Value>Signature or Thumb impression of the above person.(To be taken by th Audit Office)</Value>
+      </Textbox>
+      <Textbox Name="textbox12">
+        <Left>2.5in</Left>
+        <Top>2.25in</Top>
+        <rd:DefaultName>textbox12</rd:DefaultName>
+        <ZIndex>11</ZIndex>
+        <Width>2.25in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.375in</Height>
+        <Value />
+      </Textbox>
+      <Textbox Name="textbox11">
+        <Top>2.25in</Top>
+        <rd:DefaultName>textbox11</rd:DefaultName>
+        <ZIndex>10</ZIndex>
+        <Width>2.5in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.375in</Height>
+        <Value>Name and Signature of the member to whom this is to be paid.</Value>
+      </Textbox>
+      <Textbox Name="textbox10">
+        <Left>6.75in</Left>
+        <Top>2in</Top>
+        <rd:DefaultName>textbox10</rd:DefaultName>
+        <ZIndex>9</ZIndex>
+        <Width>1.625in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value />
+      </Textbox>
+      <Textbox Name="textbox9">
+        <Left>5.875in</Left>
+        <Top>2in</Top>
+        <rd:DefaultName>textbox9</rd:DefaultName>
+        <ZIndex>8</ZIndex>
+        <Width>1in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Designation:</Value>
+      </Textbox>
+      <Textbox Name="textbox8">
+        <Left>6.625in</Left>
+        <Top>1.625in</Top>
+        <rd:DefaultName>textbox8</rd:DefaultName>
+        <ZIndex>7</ZIndex>
+        <Width>1.75in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value />
+      </Textbox>
+      <Textbox Name="textbox7">
+        <Left>16.875in</Left>
+        <Top>1.625in</Top>
+        <ZIndex>6</ZIndex>
+        <Width>0.75in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Signature:</Value>
+      </Textbox>
+      <Textbox Name="textbox6">
+        <Left>5.875in</Left>
+        <Top>1.625in</Top>
+        <rd:DefaultName>textbox6</rd:DefaultName>
+        <ZIndex>5</ZIndex>
+        <Width>0.875in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Signature:</Value>
+      </Textbox>
+      <Textbox Name="textbox5">
+        <Top>1.375in</Top>
+        <rd:DefaultName>textbox5</rd:DefaultName>
+        <ZIndex>4</ZIndex>
+        <Width>1.5in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Place:Ahmedabad</Value>
+      </Textbox>
+      <Textbox Name="textbox4">
+        <Top>0.875in</Top>
+        <rd:DefaultName>textbox4</rd:DefaultName>
+        <ZIndex>3</ZIndex>
+        <Width>8.375in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>from the District Treasury,Ahmedabad towards payment of                                of my bill dated regarding refund of stamps.</Value>
+      </Textbox>
+      <Textbox Name="textbox3">
+        <Left>3.375in</Left>
+        <Top>0.625in</Top>
+        <rd:DefaultName>textbox3</rd:DefaultName>
+        <ZIndex>2</ZIndex>
+        <Width>6.625in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>(Rupees                                                                                    only)by cash/cheque No.</Value>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <Left>2.375in</Left>
+        <Top>0.625in</Top>
+        <rd:DefaultName>textbox2</rd:DefaultName>
+        <ZIndex>1</ZIndex>
+        <Width>1in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value />
+      </Textbox>
+      <Textbox Name="textbox1">
+        <Top>0.625in</Top>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Width>2.5in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Received with thanks the sum of Rs.</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>4.125in</Height>
+  </Body>
+  <rd:ReportID>406c7e6a-281f-40b6-905b-80b02462ee64</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="IGRSS_REPORT">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>select * from RefundApplication where RefundApplicationId=@RefundApplicationId and Status='AP'</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@RefundApplicationId">
+            <Value>=Parameters!RefundApplicationId.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>IGRSS_REPORT</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="RefundApplicationId">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>RefundApplicationId</DataField>
+        </Field>
+        <Field Name="OfficeId">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>OfficeId</DataField>
+        </Field>
+        <Field Name="RegistrationNo">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>RegistrationNo</DataField>
+        </Field>
+        <Field Name="RefundPrefix">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>RefundPrefix</DataField>
+        </Field>
+        <Field Name="RefundSlNo">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>RefundSlNo</DataField>
+        </Field>
+        <Field Name="RefundYear">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>RefundYear</DataField>
+        </Field>
+        <Field Name="TypeOfRefund">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TypeOfRefund</DataField>
+        </Field>
+        <Field Name="ApplicationDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>ApplicationDate</DataField>
+        </Field>
+        <Field Name="VendorLicenseId">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>VendorLicenseId</DataField>
+        </Field>
+        <Field Name="PurchasedDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>PurchasedDate</DataField>
+        </Field>
+        <Field Name="TotalValueOfStamps">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TotalValueOfStamps</DataField>
+        </Field>
+        <Field Name="ReasonForNotUsing">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ReasonForNotUsing</DataField>
+        </Field>
+        <Field Name="ApplicantName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ApplicantName</DataField>
+        </Field>
+        <Field Name="ApplicantAddress">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ApplicantAddress</DataField>
+        </Field>
+        <Field Name="City">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>City</DataField>
+        </Field>
+        <Field Name="District">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>District</DataField>
+        </Field>
+        <Field Name="PinCode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PinCode</DataField>
+        </Field>
+        <Field Name="PhoneNo">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PhoneNo</DataField>
+        </Field>
+        <Field Name="Remarks">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Remarks</DataField>
+        </Field>
+        <Field Name="Status">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Status</DataField>
+        </Field>
+        <Field Name="PenaltyAmount">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>PenaltyAmount</DataField>
+        </Field>
+        <Field Name="RefundAmount">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>RefundAmount</DataField>
+        </Field>
+        <Field Name="RefundOrderId">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>RefundOrderId</DataField>
+        </Field>
+        <Field Name="DateOfOrder">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>DateOfOrder</DataField>
+        </Field>
+        <Field Name="Info">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Info</DataField>
+        </Field>
+        <Field Name="CreatedBy">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CreatedBy</DataField>
+        </Field>
+        <Field Name="CreatedAt">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>CreatedAt</DataField>
+        </Field>
+        <Field Name="ModifiedBy">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ModifiedBy</DataField>
+        </Field>
+        <Field Name="ModifiedAt">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>ModifiedAt</DataField>
+        </Field>
+        <Field Name="IsDeleted">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>IsDeleted</DataField>
+        </Field>
+        <Field Name="DeletedBy">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>DeletedBy</DataField>
+        </Field>
+        <Field Name="DeletedAt">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>DeletedAt</DataField>
+        </Field>
+        <Field Name="WfInstanceId">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>WfInstanceId</DataField>
+        </Field>
+        <Field Name="SelfApplication">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>SelfApplication</DataField>
+        </Field>
+        <Field Name="ActualStampValue">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>ActualStampValue</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>34.5in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

@@ -1,0 +1,73 @@
+﻿<StateMachineWorkflowActivity x:Class="IGRSS.Workflows.Adjudication.AdjudicationProcess" InitialStateName="InitilizeAdjudication" x:Name="AdjudicationProcess" DynamicUpdateCondition="{x:Null}" CompletedStateName="{x:Null}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateActivity x:Name="InitilizeAdjudication">
+		<StateInitializationActivity x:Name="InitilizeProcess">
+			<CodeActivity x:Name="InitilizeFlow" ExecuteCode="InitilizeFlow_ExecuteCode" Description="Initilizes the Process flow for the Workflow based on the initiating office" />
+			<SetStateActivity x:Name="SetAdjudicationInitilized" TargetStateName="Verification" />
+		</StateInitializationActivity>
+	</StateActivity>
+	<StateActivity x:Name="Verification">
+		<StateInitializationActivity x:Name="InitilizeVerification">
+			<IfElseActivity x:Name="VerificationStatus">
+				<IfElseBranchActivity x:Name="VerificationComplete">
+					<IfElseBranchActivity.Condition>
+						<CodeCondition Condition="IsVerificationComplete" />
+					</IfElseBranchActivity.Condition>
+					<SetStateActivity x:Name="SetVerified" TargetStateName="ValuationRequest" />
+				</IfElseBranchActivity>
+				<IfElseBranchActivity x:Name="VerificationPending">
+					<CodeActivity x:Name="VerificationAlert" ExecuteCode="VerificationAlert_ExecuteCode" />
+				</IfElseBranchActivity>
+			</IfElseActivity>
+		</StateInitializationActivity>
+		<EventDrivenActivity x:Name="ApplicationUpdated">
+			<HandleExternalEventActivity Invoked="OnApplicationUpdated_Invoked" x:Name="OnApplicationUpdated" EventName="AdjudicationApplicationUpdated" InterfaceType="{x:Type IGRSS.Workflows.Adjudication.Services.IAdjudicationService}" />
+			<SetStateActivity x:Name="SetApplicationUpdated" TargetStateName="Verification" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="VerificationValid">
+			<HandleExternalEventActivity Invoked="OnVerificationValid_Invoked" x:Name="OnVerificationValid" EventName="AdjudicationValid" InterfaceType="{x:Type IGRSS.Workflows.Adjudication.Services.IAdjudicationService}" />
+			<SetStateActivity x:Name="SetVerificationValid" TargetStateName="Verification" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="VerificationInvalid">
+			<HandleExternalEventActivity Invoked="OnVerificationInvalid_Invoked" x:Name="OnVerificationInvalid" EventName="AdjudicationInvalid" InterfaceType="{x:Type IGRSS.Workflows.Adjudication.Services.IAdjudicationService}" />
+			<SetStateActivity x:Name="SetVerificationInvalid" TargetStateName="DataEntryPending" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="DataEntryPending">
+		<EventDrivenActivity x:Name="ApplicationSaved">
+			<HandleExternalEventActivity Invoked="OnApplicationSaved_Invoked" x:Name="OnAdjudicationApplicationSaved" EventName="AdjudicationApplicationSaved" InterfaceType="{x:Type IGRSS.Workflows.Adjudication.Services.IAdjudicationService}" />
+			<SetStateActivity x:Name="SetApplicationSaved" TargetStateName="Verification" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="ValuationRequest">
+		<StateInitializationActivity x:Name="InitilizeValuationRequest">
+			<CodeActivity x:Name="SendValuationRequest" ExecuteCode="SendValuationRequest_ExecuteCode" />
+		</StateInitializationActivity>
+		<EventDrivenActivity x:Name="PhysicalVerificationRequired">
+			<HandleExternalEventActivity x:Name="handleExternalEventActivity1" EventName="PhysicalVerificationRequired" InterfaceType="{x:Type IGRSS.Workflows.Adjudication.Services.IAdjudicationService}" />
+			<SetStateActivity x:Name="SetPhysicalVerificationRequired" TargetStateName="PhysicalVerification" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="NoPhysicalVerificationRequired">
+			<HandleExternalEventActivity x:Name="handleExternalEventActivity2" EventName="NoPhysicalVerificationRequired" InterfaceType="{x:Type IGRSS.Workflows.Adjudication.Services.IAdjudicationService}" />
+			<SetStateActivity x:Name="SetNoPhysicalVerificationRequired" TargetStateName="ValuateProperty" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="PhysicalVerification">
+		<EventDrivenActivity x:Name="SubmitVerificationReport">
+			<HandleExternalEventActivity x:Name="handleExternalEventActivity3" EventName="SubmitVerificationReport" InterfaceType="{x:Type IGRSS.Workflows.Adjudication.Services.IAdjudicationService}" />
+			<SetStateActivity x:Name="SetSubmitVerificationReport" TargetStateName="ValuationRequest" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="ValuateProperty">
+		<EventDrivenActivity x:Name="IssueValuationReport">
+			<HandleExternalEventActivity x:Name="handleExternalEventActivity4" EventName="IssueValuationReport" InterfaceType="{x:Type IGRSS.Workflows.Adjudication.Services.IAdjudicationService}" />
+			<SetStateActivity x:Name="SetIssueValuationReport" TargetStateName="ValuationComplete" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="Complete" />
+	<StateActivity x:Name="ValuationComplete">
+		<EventDrivenActivity x:Name="IssueStampCertificate">
+			<HandleExternalEventActivity x:Name="handleExternalEventActivity5" EventName="IssueValuationReport" InterfaceType="{x:Type IGRSS.Workflows.Adjudication.Services.IAdjudicationService}" />
+			<SetStateActivity x:Name="SetIssueStampCertificate" TargetStateName="Complete" />
+		</EventDrivenActivity>
+	</StateActivity>
+</StateMachineWorkflowActivity>

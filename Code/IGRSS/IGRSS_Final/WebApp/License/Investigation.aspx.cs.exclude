@@ -1,0 +1,59 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using IGRSS.BusinessLogicLayer;
+using IGRSS.DataAccessLayer.ConfigTableAdapters;
+using IGRSS.BusinessObjects;
+public partial class License_Investigation : IgrssPage
+{
+    IgrssGlobalConfigTableAdapter ConfigAdapter = new IgrssGlobalConfigTableAdapter();
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        
+           
+            //XmlInvestigation.Data = (string)ConfigAdapter.GetConfigByModule("LIC", "INSTYPE");
+            //XmlInvestigation.DataBind();
+        
+    }
+    protected void btnFileNo_Click(object sender, EventArgs e)
+    {
+        mvInspectionDetails.SetActiveView(mvInspectionDetails.Views[1]);
+        FvVendorOffence.ChangeMode(FormViewMode.ReadOnly);
+        
+    }
+    protected void btnAddNew_Click(object sender, EventArgs e)
+    {
+        mvInspectionDetails.SetActiveView(mvInspectionDetails.Views[2]);
+        FormView1.ChangeMode(FormViewMode.Insert);
+    }
+    protected void btnInsertIns_Click(object sender, EventArgs e)
+    {
+        mvInspectionDetails.SetActiveView(mvInspectionDetails.Views[1]);
+        FvVendorOffence.ChangeMode(FormViewMode.ReadOnly);
+        
+    }
+    protected void FormView1_ItemInserting(object sender, FormViewInsertEventArgs e)
+    {
+        Global.SetFormViewParameters(e.Values, VendorOffence.GetInvestigationRow());
+        e.Values.Add("OffenceId", (Guid)FvVendorOffence.SelectedValue);
+        
+    }
+    protected void odsInvestigation_Inserting(object sender, ObjectDataSourceMethodEventArgs e)
+    {
+    }
+    protected void ObjectDataSource1_Inserting(object sender, ObjectDataSourceMethodEventArgs e)
+    {
+         FormViewParameter Parameters = new FormViewParameter();
+        Parameters.Values = (DataRow)e.InputParameters["Values"];
+        e.InputParameters["Parameter"] = Parameters;
+        e.InputParameters.Remove("Values");
+    }
+    
+}

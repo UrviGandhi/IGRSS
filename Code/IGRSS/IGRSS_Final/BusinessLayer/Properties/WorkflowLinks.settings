@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="IGRSS.Properties" GeneratedClassName="WorkflowLinks">
+  <Profiles />
+  <Settings>
+    <Setting Name="LicenseVerification" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/License/LicenseApplication.aspx?Mode=Verify</Value>
+    </Setting>
+    <Setting Name="LicenseApproval" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/License/LicenseApproval.aspx?Mode=Approve</Value>
+    </Setting>
+    <Setting Name="RefundVerification" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/Refund/RefundApplication.aspx?Mode=Verify</Value>
+    </Setting>
+    <Setting Name="RefundApproval" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/Refund/RefundApplication.aspx?Mode=Approve</Value>
+    </Setting>
+    <Setting Name="AppealVerification" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/Appeal/AppealApplication.aspx?Mode=Verify</Value>
+    </Setting>
+    <Setting Name="AppealApproval" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/Appeal/AppealApplication.aspx?Mode=Approve</Value>
+    </Setting>
+    <Setting Name="AdjudicationVerification" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/Adjudication/AdjApplication.aspx?Mode=Verify</Value>
+    </Setting>
+    <Setting Name="ComplainVerify" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/Complain/Complaint.aspx?Mode=Verify</Value>
+    </Setting>
+    <Setting Name="ComplainInvestigationResult" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/Complain/InvestigationResult.aspx?Mode=InvestigationResult</Value>
+    </Setting>
+    <Setting Name="AssignComplainInvestigator" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/Complain/AssignInvestigationOfficer.aspx?</Value>
+    </Setting>
+    <Setting Name="FileStatus" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/FileManagement/FileStatus.aspx?</Value>
+    </Setting>
+    <Setting Name="FrankingMachineVerification" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/License/FrankingMachine.aspx?Mode=Verify</Value>
+    </Setting>
+    <Setting Name="FrankingMachineApproval" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/License/FrankingApproval.aspx?Mode=Approve</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,1101 @@
+<%@ Page Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true"
+    CodeFile="PVRemarks.aspx.cs" Inherits="Adjudication_PVRemarks" Title="Untitled Page" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="Server">
+    <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
+        <asp:View ID="viewPVRequest" runat="server">
+            <asp:GridView ID="gvPVRequests" runat="server" AutoGenerateColumns="False" DataKeyNames="AdjudicationId"
+                DataSourceID="odsPVRequests" OnSelectedIndexChanged="gvPVRequests_SelectedIndexChanged">
+                <Columns>
+                    <asp:BoundField DataField="AdjudicationId" HeaderText="AdjudicationId" ReadOnly="True"
+                        SortExpression="AdjudicationId" Visible="False" />
+                    <asp:BoundField DataField="ValuationFormId" HeaderText="ValuationFormId" SortExpression="ValuationFormId"
+                        Visible="False" />
+                    <asp:BoundField DataField="ApplicationDate" HeaderText="ApplicationDate" SortExpression="ApplicationDate" />
+                    <asp:BoundField DataField="ReceiptNumber" HeaderText="ReceiptNumber" SortExpression="ReceiptNumber" />
+                    <asp:CommandField ShowSelectButton="True" />
+                </Columns>
+            </asp:GridView>
+            <asp:ObjectDataSource ID="odsPVRequests" runat="server" OldValuesParameterFormatString="original_{0}"
+                SelectMethod="GetPVRequests" TypeName="IGRSS.BusinessLogicLayer.AdjudicationRequest"
+                DataObjectTypeName="System.Guid" DeleteMethod="DeleteFeeMaster" InsertMethod="IssueCertificate"
+                UpdateMethod="UpdatePhysicalVerification">
+                <InsertParameters>
+                    <asp:Parameter Name="AdjudicationId" Type="Object" />
+                    <asp:Parameter Name="CertificateNumber" Type="String" />
+                    <asp:Parameter Name="CertificateIssuedOn" Type="DateTime" />
+                    <asp:Parameter Name="CertificateDescription" Type="String" />
+                </InsertParameters>
+            </asp:ObjectDataSource>
+        </asp:View>
+        <asp:View ID="View1" runat="server">
+            <asp:FormView ID="fvFileManagement" runat="server" OnItemInserting="fvFileManagement_ItemInserting"
+                DefaultMode="Insert" DataSourceID="OdsFileManagementUserCotrol" AllowPaging="True">
+                <InsertItemTemplate>
+                    <table width="100%">
+                        <tr>
+                            <td align="left" style="width: 20%">
+                                <asp:Label ID="lblSubject" runat="server" Text="Subject"></asp:Label>
+                            </td>
+                            <td style="width: 80%">
+                                <asp:TextBox ID="txtSubject" runat="server" Text='<%# Bind("Subject") %>'></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 15%;" align="left">
+                                <asp:Label ID="lblBody" runat="server" Text="Body"></asp:Label>
+                            </td>
+                            <td style="height: 100px">
+                                <asp:TextBox ID="txtBody" runat="server" Height="100px" Text='<%# Bind("Body") %>'
+                                    TextMode="MultiLine"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                &nbsp;</td>
+                            <td align="right">
+</td>
+                            <td align="left">
+                                &nbsp;</td>
+                        </tr>
+                    </table>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <table width="100%">
+                        <tr>
+                            <td>
+                                <asp:Label ID="lblRemarkSubject" runat="server" Text="Subject:"></asp:Label></td>
+                            <td>
+                                <asp:TextBox ID="txtRemarkSubject" runat="server" Text='<%# Bind("Subject") %>'></asp:TextBox></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 10%">
+                                <asp:Label ID="lblRemarkBody" runat="server" Text="Body:"></asp:Label></td>
+                            <td>
+                                <asp:TextBox ID="txtRemarkBody" runat="server" Height="100px" Text='<%# Bind("Body") %>'
+                                    TextMode="MultiLine"></asp:TextBox></td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                    </table>
+                </ItemTemplate>
+                <EditItemTemplate>
+                    <table width="100%">
+                        <tr>
+                            <td style="width: 10%">
+                                <asp:Label ID="lblSubject" runat="server" Text="Subject"></asp:Label>
+                            </td>
+                            <td style="width: 100%">
+                                <asp:TextBox ID="txtSubject" runat="server" Text='<%# Bind("Subject") %>' ReadOnly="True"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 53px">
+                                <asp:Label ID="lblBody" runat="server" Text="Body"></asp:Label>
+                            </td>
+                            <td style="height: 100px">
+                                <asp:TextBox ID="txtBody" runat="server" Height="100px" Text='<%# Bind("Body") %>'
+                                    TextMode="MultiLine" ReadOnly="True"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                &nbsp;</td>
+                            <td align="right">
+                                &nbsp;<asp:Button ID="btnRemarkupd" runat="server" CommandName="Insert" Text="Add"
+                                    Visible="False" CausesValidation="False" /></td>
+                            <td align="left">
+                                &nbsp;</td>
+                        </tr>
+                    </table>
+                </EditItemTemplate>
+                <EmptyDataTemplate>
+                    <br />
+                    <asp:Label ID="lblEmpty" runat="server" ForeColor="Red" Text="No Record Found."></asp:Label>
+                </EmptyDataTemplate>
+            </asp:FormView>
+            <asp:ObjectDataSource ID="OdsFileManagementUserCotrol" runat="server" OnInserting="OdsFileManagementUserCotrol_Inserting"
+                TypeName="IGRSS.BusinessLogicLayer.FileManagement" SelectMethod="GetFileRemarksByFileId"
+                InsertMethod="InsertFileRemarks" OldValuesParameterFormatString="original_{0}">
+                <InsertParameters>
+                    <asp:Parameter Name="FileId" Type="Object" />
+                    <asp:Parameter Name="Subject" Type="String" />
+                    <asp:Parameter Name="Body" Type="String" />
+                </InsertParameters>
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="fldAdjId" Name="FileId" PropertyName="Value" Type="Object" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
+        </asp:View>
+    </asp:MultiView>
+    <asp:HiddenField ID="fldAdjId" runat="server" />
+    <%--    <asp:XmlDataSource ID="xdsElectricalElectrification" runat="server" DataFile="~/Adjudication/ElectrificationType.xml">
+    </asp:XmlDataSource>
+    <asp:XmlDataSource ID="xdsCompoundWall" runat="server" DataFile="~/Adjudication/CompoundWall.xml">
+    </asp:XmlDataSource>
+    <asp:ObjectDataSource ID="odsGetOffices" runat="server" OldValuesParameterFormatString="original_{0}"
+        SelectMethod="GetOffices" TypeName="IGRSS.BusinessLogicLayer.Administration.ManageOffices">
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="odsGetFees" runat="server" InsertMethod="AddAdjudicationRequest"
+        OldValuesParameterFormatString="original_{0}" SelectMethod="GetFees" TypeName="IGRSS.BusinessLogicLayer.AdjudicationRequest">
+        <InsertParameters>
+            <asp:Parameter Name="FilePrefix" Type="String" />
+            <asp:Parameter Name="FileSlNo" Type="Int32" />
+            <asp:Parameter Name="FileYear" Type="Decimal" />
+            <asp:Parameter Name="RegistrationId" Type="Object" />
+            <asp:Parameter Name="OfficeId" Type="Object" />
+            <asp:Parameter Name="ApplicationDate" Type="DateTime" />
+            <asp:Parameter Name="ReceiptNumber" Type="String" />
+            <asp:Parameter Name="AdjudicationTotalFees" Type="Decimal" />
+            <asp:Parameter Name="Village_CityName" Type="String" />
+            <asp:Parameter Name="TPSchemeNo" Type="String" />
+            <asp:Parameter Name="TPSchemeName" Type="String" />
+            <asp:Parameter Name="FinalPlotNo" Type="String" />
+            <asp:Parameter Name="CitySurveyNo" Type="String" />
+            <asp:Parameter Name="RevenueSurveyNo" Type="String" />
+            <asp:Parameter Name="Ward_SubWardNo" Type="String" />
+            <asp:Parameter Name="NameOfOwner" Type="String" />
+            <asp:Parameter Name="AddressOfOwner" Type="String" />
+            <asp:Parameter Name="NameOfClaimingParty" Type="String" />
+            <asp:Parameter Name="AddressOfClaimingParty" Type="String" />
+            <asp:Parameter Name="AreaOfPlot" Type="Decimal" />
+            <asp:Parameter Name="AreaOfConstruction" Type="Decimal" />
+            <asp:Parameter Name="YearOfConstruction" Type="Int32" />
+            <asp:Parameter Name="NoOfFloors" Type="Int16" />
+            <asp:Parameter Name="TypeOfProperty" Type="String" />
+            <asp:Parameter Name="DescOfProperty" Type="String" />
+            <asp:Parameter Name="ShopsOnGroundFloor" Type="Boolean" />
+            <asp:Parameter Name="IsPropertyInCommercial" Type="Boolean" />
+            <asp:Parameter Name="TypeOfElectricfication" Type="Object" />
+            <asp:Parameter Name="CompoundWallType" Type="Object" />
+            <asp:Parameter Name="IsLightsOnCompoundWall" Type="Boolean" />
+            <asp:Parameter Name="WaterStorageFacility" Type="Boolean" />
+            <asp:Parameter Name="DrainageSystem" Type="Boolean" />
+            <asp:Parameter Name="NoOfLifts" Type="Int16" />
+            <asp:Parameter Name="AreaOfEachLift" Type="Decimal" />
+            <asp:Parameter Name="InternalRoad" Type="Boolean" />
+            <asp:Parameter Name="ValuatedBefore" Type="Boolean" />
+            <asp:Parameter Name="HeightOfCeiling" Type="Decimal" />
+            <asp:Parameter Name="TypeOfTiles" Type="Object" />
+            <asp:Parameter Name="WallFurnishing" Type="String" />
+            <asp:Parameter Name="NoOfBathrooms" Type="Int16" />
+            <asp:Parameter Name="BathroomTilesHeight" Type="Int32" />
+            <asp:Parameter Name="NoOfToilets" Type="Int16" />
+            <asp:Parameter Name="ToiletTilesHeight" Type="Int32" />
+            <asp:Parameter Name="Parking" Type="Boolean" />
+            <asp:Parameter Name="FeeDetails" Type="Object" />
+            <asp:Parameter Name="DocDetails" Type="Object" />
+        </InsertParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="odsGetDocument" runat="server" InsertMethod="AddAdjudicationRequest"
+        OldValuesParameterFormatString="original_{0}" SelectMethod="GetDocumentMaster"
+        TypeName="IGRSS.BusinessLogicLayer.AdjudicationRequest">
+        <InsertParameters>
+            <asp:Parameter Name="FilePrefix" Type="String" />
+            <asp:Parameter Name="FileSlNo" Type="Int32" />
+            <asp:Parameter Name="FileYear" Type="Decimal" />
+            <asp:Parameter Name="RegistrationId" Type="Object" />
+            <asp:Parameter Name="OfficeId" Type="Object" />
+            <asp:Parameter Name="ApplicationDate" Type="DateTime" />
+            <asp:Parameter Name="ReceiptNumber" Type="String" />
+            <asp:Parameter Name="AdjudicationTotalFees" Type="Decimal" />
+            <asp:Parameter Name="Village_CityName" Type="String" />
+            <asp:Parameter Name="TPSchemeNo" Type="String" />
+            <asp:Parameter Name="TPSchemeName" Type="String" />
+            <asp:Parameter Name="FinalPlotNo" Type="String" />
+            <asp:Parameter Name="CitySurveyNo" Type="String" />
+            <asp:Parameter Name="RevenueSurveyNo" Type="String" />
+            <asp:Parameter Name="Ward_SubWardNo" Type="String" />
+            <asp:Parameter Name="NameOfOwner" Type="String" />
+            <asp:Parameter Name="AddressOfOwner" Type="String" />
+            <asp:Parameter Name="NameOfClaimingParty" Type="String" />
+            <asp:Parameter Name="AddressOfClaimingParty" Type="String" />
+            <asp:Parameter Name="AreaOfPlot" Type="Decimal" />
+            <asp:Parameter Name="AreaOfConstruction" Type="Decimal" />
+            <asp:Parameter Name="YearOfConstruction" Type="Int32" />
+            <asp:Parameter Name="NoOfFloors" Type="Int16" />
+            <asp:Parameter Name="TypeOfProperty" Type="String" />
+            <asp:Parameter Name="DescOfProperty" Type="String" />
+            <asp:Parameter Name="ShopsOnGroundFloor" Type="Boolean" />
+            <asp:Parameter Name="IsPropertyInCommercial" Type="Boolean" />
+            <asp:Parameter Name="TypeOfElectricfication" Type="Object" />
+            <asp:Parameter Name="CompoundWallType" Type="Object" />
+            <asp:Parameter Name="IsLightsOnCompoundWall" Type="Boolean" />
+            <asp:Parameter Name="WaterStorageFacility" Type="Boolean" />
+            <asp:Parameter Name="DrainageSystem" Type="Boolean" />
+            <asp:Parameter Name="NoOfLifts" Type="Int16" />
+            <asp:Parameter Name="AreaOfEachLift" Type="Decimal" />
+            <asp:Parameter Name="InternalRoad" Type="Boolean" />
+            <asp:Parameter Name="ValuatedBefore" Type="Boolean" />
+            <asp:Parameter Name="HeightOfCeiling" Type="Decimal" />
+            <asp:Parameter Name="TypeOfTiles" Type="Object" />
+            <asp:Parameter Name="WallFurnishing" Type="String" />
+            <asp:Parameter Name="NoOfBathrooms" Type="Int16" />
+            <asp:Parameter Name="BathroomTilesHeight" Type="Int32" />
+            <asp:Parameter Name="NoOfToilets" Type="Int16" />
+            <asp:Parameter Name="ToiletTilesHeight" Type="Int32" />
+            <asp:Parameter Name="Parking" Type="Boolean" />
+            <asp:Parameter Name="FeeDetails" Type="Object" />
+            <asp:Parameter Name="DocDetails" Type="Object" />
+        </InsertParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="odsAdjReqDtl" runat="server" DataObjectTypeName="System.Guid"
+        DeleteMethod="DeleteFeeMaster" OldValuesParameterFormatString="original_{0}"
+        SelectMethod="GetAdJRequestByFileNo" TypeName="IGRSS.BusinessLogicLayer.AdjudicationRequest">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="txtFileNo" Name="FileSlNo" PropertyName="Text" Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="odsGetDocumentByValuationId" runat="server" InsertMethod="AddAdjudicationRequest"
+        SelectMethod="GetDocumentByValuationFormId" TypeName="IGRSS.BusinessLogicLayer.AdjudicationRequest"
+        UpdateMethod="UpdateAdjudicationDocument">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="gdAdjReuDtl" Name="ValuationFormId" PropertyName="SelectedValue"
+                Type="Object" />
+        </SelectParameters>
+        <InsertParameters>
+            <asp:Parameter Name="FilePrefix" Type="String" />
+            <asp:Parameter Name="FileSlNo" Type="Int32" />
+            <asp:Parameter Name="FileYear" Type="Decimal" />
+            <asp:Parameter Name="RegistrationId" Type="Object" />
+            <asp:Parameter Name="OfficeId" Type="Object" />
+            <asp:Parameter Name="ApplicationDate" Type="DateTime" />
+            <asp:Parameter Name="ReceiptNumber" Type="String" />
+            <asp:Parameter Name="AdjudicationTotalFees" Type="Decimal" />
+            <asp:Parameter Name="Village_CityName" Type="String" />
+            <asp:Parameter Name="TPSchemeNo" Type="String" />
+            <asp:Parameter Name="TPSchemeName" Type="String" />
+            <asp:Parameter Name="FinalPlotNo" Type="String" />
+            <asp:Parameter Name="CitySurveyNo" Type="String" />
+            <asp:Parameter Name="RevenueSurveyNo" Type="String" />
+            <asp:Parameter Name="Ward_SubWardNo" Type="String" />
+            <asp:Parameter Name="NameOfOwner" Type="String" />
+            <asp:Parameter Name="AddressOfOwner" Type="String" />
+            <asp:Parameter Name="NameOfClaimingParty" Type="String" />
+            <asp:Parameter Name="AddressOfClaimingParty" Type="String" />
+            <asp:Parameter Name="AreaOfPlot" Type="Decimal" />
+            <asp:Parameter Name="AreaOfConstruction" Type="Decimal" />
+            <asp:Parameter Name="YearOfConstruction" Type="Int32" />
+            <asp:Parameter Name="NoOfFloors" Type="Int16" />
+            <asp:Parameter Name="TypeOfProperty" Type="String" />
+            <asp:Parameter Name="DescOfProperty" Type="String" />
+            <asp:Parameter Name="ShopsOnGroundFloor" Type="Boolean" />
+            <asp:Parameter Name="IsPropertyInCommercial" Type="Boolean" />
+            <asp:Parameter Name="TypeOfElectricfication" Type="Object" />
+            <asp:Parameter Name="CompoundWallType" Type="Object" />
+            <asp:Parameter Name="IsLightsOnCompoundWall" Type="Boolean" />
+            <asp:Parameter Name="WaterStorageFacility" Type="Boolean" />
+            <asp:Parameter Name="DrainageSystem" Type="Boolean" />
+            <asp:Parameter Name="NoOfLifts" Type="Int16" />
+            <asp:Parameter Name="AreaOfEachLift" Type="Decimal" />
+            <asp:Parameter Name="InternalRoad" Type="Boolean" />
+            <asp:Parameter Name="ValuatedBefore" Type="Boolean" />
+            <asp:Parameter Name="HeightOfCeiling" Type="Decimal" />
+            <asp:Parameter Name="TypeOfTiles" Type="Object" />
+            <asp:Parameter Name="WallFurnishing" Type="String" />
+            <asp:Parameter Name="NoOfBathrooms" Type="Int16" />
+            <asp:Parameter Name="BathroomTilesHeight" Type="Int32" />
+            <asp:Parameter Name="NoOfToilets" Type="Int16" />
+            <asp:Parameter Name="ToiletTilesHeight" Type="Int32" />
+            <asp:Parameter Name="Parking" Type="Boolean" />
+            <asp:Parameter Name="FeeDetails" Type="Object" />
+            <asp:Parameter Name="DocDetails" Type="Object" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="Submitted" Type="Boolean" />
+            <asp:Parameter Name="NotApplicable" Type="Boolean" />
+            <asp:Parameter Name="DocumentNumbe" Type="String" />
+            <asp:Parameter Name="ValuationFormId" Type="Object" />
+        </UpdateParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="odsGetFeesByAdjId" runat="server" InsertMethod="AddAdjudicationRequest"
+        SelectMethod="GetAdjFeesDetailByAdjId" TypeName="IGRSS.BusinessLogicLayer.AdjudicationRequest"
+        UpdateMethod="UpdateAdjudicationFees">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="gdAdjReuDtl" Name="ValuationFormId" PropertyName="SelectedValue"
+                Type="Object" />
+        </SelectParameters>
+        <InsertParameters>
+            <asp:Parameter Name="FilePrefix" Type="String" />
+            <asp:Parameter Name="FileSlNo" Type="Int32" />
+            <asp:Parameter Name="FileYear" Type="Decimal" />
+            <asp:Parameter Name="RegistrationId" Type="Object" />
+            <asp:Parameter Name="OfficeId" Type="Object" />
+            <asp:Parameter Name="ApplicationDate" Type="DateTime" />
+            <asp:Parameter Name="ReceiptNumber" Type="String" />
+            <asp:Parameter Name="AdjudicationTotalFees" Type="Decimal" />
+            <asp:Parameter Name="Village_CityName" Type="String" />
+            <asp:Parameter Name="TPSchemeNo" Type="String" />
+            <asp:Parameter Name="TPSchemeName" Type="String" />
+            <asp:Parameter Name="FinalPlotNo" Type="String" />
+            <asp:Parameter Name="CitySurveyNo" Type="String" />
+            <asp:Parameter Name="RevenueSurveyNo" Type="String" />
+            <asp:Parameter Name="Ward_SubWardNo" Type="String" />
+            <asp:Parameter Name="NameOfOwner" Type="String" />
+            <asp:Parameter Name="AddressOfOwner" Type="String" />
+            <asp:Parameter Name="NameOfClaimingParty" Type="String" />
+            <asp:Parameter Name="AddressOfClaimingParty" Type="String" />
+            <asp:Parameter Name="AreaOfPlot" Type="Decimal" />
+            <asp:Parameter Name="AreaOfConstruction" Type="Decimal" />
+            <asp:Parameter Name="YearOfConstruction" Type="Int32" />
+            <asp:Parameter Name="NoOfFloors" Type="Int16" />
+            <asp:Parameter Name="TypeOfProperty" Type="String" />
+            <asp:Parameter Name="DescOfProperty" Type="String" />
+            <asp:Parameter Name="ShopsOnGroundFloor" Type="Boolean" />
+            <asp:Parameter Name="IsPropertyInCommercial" Type="Boolean" />
+            <asp:Parameter Name="TypeOfElectricfication" Type="Object" />
+            <asp:Parameter Name="CompoundWallType" Type="Object" />
+            <asp:Parameter Name="IsLightsOnCompoundWall" Type="Boolean" />
+            <asp:Parameter Name="WaterStorageFacility" Type="Boolean" />
+            <asp:Parameter Name="DrainageSystem" Type="Boolean" />
+            <asp:Parameter Name="NoOfLifts" Type="Int16" />
+            <asp:Parameter Name="AreaOfEachLift" Type="Decimal" />
+            <asp:Parameter Name="InternalRoad" Type="Boolean" />
+            <asp:Parameter Name="ValuatedBefore" Type="Boolean" />
+            <asp:Parameter Name="HeightOfCeiling" Type="Decimal" />
+            <asp:Parameter Name="TypeOfTiles" Type="Object" />
+            <asp:Parameter Name="WallFurnishing" Type="String" />
+            <asp:Parameter Name="NoOfBathrooms" Type="Int16" />
+            <asp:Parameter Name="BathroomTilesHeight" Type="Int32" />
+            <asp:Parameter Name="NoOfToilets" Type="Int16" />
+            <asp:Parameter Name="ToiletTilesHeight" Type="Int32" />
+            <asp:Parameter Name="Parking" Type="Boolean" />
+            <asp:Parameter Name="FeeDetails" Type="Object" />
+            <asp:Parameter Name="DocDetails" Type="Object" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="FeeId" Type="Object" />
+            <asp:Parameter Name="Amount" Type="Decimal" />
+            <asp:Parameter Name="AdjudicationId" Type="Object" />
+        </UpdateParameters>
+    </asp:ObjectDataSource>
+    <asp:XmlDataSource ID="xdsPropertyType" runat="server"></asp:XmlDataSource>
+    <asp:ObjectDataSource ID="odsAdjudicationRequest" runat="server" InsertMethod="AddAdjudicationDetails"
+        SelectMethod="GetAdjudicationRequestById" TypeName="IGRSS.BusinessLogicLayer.AdjudicationRequest"
+        UpdateMethod="UpdateAdjudicationDetailsById">
+        <InsertParameters>
+            <asp:Parameter Name="Parameter" Type="Object" />
+            <asp:Parameter Name="Id" Type="Object" />
+            <asp:Parameter Name="AdjId" Type="Object" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="Parameter" Type="Object" />
+            <asp:Parameter Name="Id" Type="Object" />
+            <asp:Parameter Name="AdjId" Type="Object" />
+        </UpdateParameters>
+        <SelectParameters>
+            <asp:ControlParameter ControlID="fldAdjId" Name="AdjudicationId" PropertyName="Value"
+                Type="Object" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="odsDistirctMaster" runat="server" OldValuesParameterFormatString="original_{0}"
+        SelectMethod="GetDistirctMasterDetails" TypeName="IGRSS.BusinessLogicLayer.Jantri">
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="odsTalukaMaster" runat="server" OldValuesParameterFormatString="original_{0}"
+        SelectMethod="GetTalukaMasterDetails" TypeName="IGRSS.BusinessLogicLayer.Jantri">
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="odsVillageMaster" runat="server" OldValuesParameterFormatString="original_{0}"
+        SelectMethod="GetVillageMasterDetails" TypeName="IGRSS.BusinessLogicLayer.Jantri">
+    </asp:ObjectDataSource>
+--%>
+    <%--<asp:View ID="viewPVDetails" runat="server">
+            <asp:FormView ID="fvValuationForm" runat="server" DataKeyNames="ValuationFormId"
+                DataSourceID="ObjectDataSource2" DefaultMode="Edit" meta:resourcekey="fvValuationForm">
+                <EditItemTemplate>
+                    <table style="text-align: left" width="100%">
+                        <tr>
+                            <td colspan="6">
+                                <asp:Label ID="lblPropertyDetailsHeadingUpd" runat="server" meta:resourcekey="lblPropertyDetailsHeadingUpd"
+                                    SkinID="SubHeading" Text="Property Details"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumn">
+                                <asp:Label ID="lblDistirctCodeUpd" runat="server" meta:resourcekey="lblDistirctCodeUpd"
+                                    Text="Distirct Code"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:DropDownList ID="ddlDistirctCodeUpd" runat="server" DataSourceID="odsDistirctMaster"
+                                    DataTextField="distname" DataValueField="distcd" meta:resourcekey="ddlDistirctCodeUpd"
+                                    SelectedValue='<%# Bind("DistrictCode") %>'>
+                                </asp:DropDownList>
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                            <td class="labelColumn">
+                                <asp:Label ID="lblTalukaCodeUpd" runat="server" meta:resourcekey="lblTalukaCodeUpd"
+                                    Text="Taluka Code"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:DropDownList ID="ddlTalukaCodeUpd" runat="server" DataSourceID="odsTalukaMaster"
+                                    DataTextField="talukaname" DataValueField="talcd" meta:resourcekey="ddlTalukaCodeUpd"
+                                    SelectedValue='<%# Bind("TalukaCode") %>'>
+                                </asp:DropDownList>
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumn">
+                                <asp:Label ID="lblVillageCodeUpd" runat="server" meta:resourcekey="lblVillageCodeUpd"
+                                    Text="village Code"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:DropDownList ID="ddlVillageCodeUpd" runat="server" DataSourceID="odsVillageMaster"
+                                    DataTextField="villname" DataValueField="villcd" meta:resourcekey="ddlVillageCodeUpd"
+                                    SelectedValue='<%# Bind("VillageCode") %>'>
+                                </asp:DropDownList>
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                            <td class="labelColumn">
+                            </td>
+                            <td class="textColumn">
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumn" style="width: 111px">
+                                <asp:Label ID="lblDistNameUpd" runat="server" meta:resourcekey="lblDistNameUpd" Text="Village/City Name"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:TextBox ID="txtDistNameUpd" runat="server" meta:resourcekey="txtDistNameUpd"
+                                    Text='<%# Bind("Village_CityName") %>'></asp:TextBox>
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                            <td class="labelColumn">
+                                <asp:Label ID="lblTpSchemeNoUpd" runat="server" meta:resourcekey="lblTpSchemeNoUpd"
+                                    Text="T.P Scheme No"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:TextBox ID="txtTpSchemeNoUpd" runat="server" MaxLength="20" meta:resourcekey="txtTpSchemeNoUpd"
+                                    Text='<%# Bind("TPSchemeNo") %>'></asp:TextBox>
+                            </td>
+                            <td class="validationColumn" style="width: 2%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumn" style="width: 111px">
+                                <asp:Label ID="lblTpSchemeNameUpd" runat="server" meta:resourcekey="lblTpSchemeNameUpd"
+                                    Text="T.P Scheme Name"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:TextBox ID="txtTpSchemeNameUpd" runat="server" meta:resourcekey="txtTpSchemeNameUpd"
+                                    Text='<%# Bind("TPSchemeName") %>'></asp:TextBox>
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                            <td class="labelColumn">
+                                <asp:Label ID="lblFinalPlotNoUpd" runat="server" meta:resourcekey="lblFinalPlotNoUpd"
+                                    Text="Final Plot No"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:TextBox ID="txtFinalPlotNoUpd" runat="server" MaxLength="20" meta:resourcekey="txtFinalPlotNoUpd"
+                                    Text='<%# Bind("FinalPlotNo") %>'></asp:TextBox>
+                            </td>
+                            <td class="validationColumn" style="width: 2%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumn" style="width: 111px">
+                                <asp:Label ID="lblCitySurveyNoUpd" runat="server" meta:resourcekey="lblCitySurveyNoUpd"
+                                    Text="City Survey No"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:TextBox ID="txtCitySurveyNoUpd" runat="server" MaxLength="20" meta:resourcekey="txtCitySurveyNoUpd"
+                                    Text='<%# Bind("CitySurveyNo") %>'></asp:TextBox>
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                            <td class="labelColumn">
+                                &nbsp;<asp:Label ID="lblRevenueSurveyNoUpd" runat="server" meta:resourcekey="lblRevenueSurveyNoUpd"
+                                    Text="Revenue Survey No"></asp:Label></td>
+                            <td class="textColumn">
+                                <asp:TextBox ID="txtRevenueSurveyNoUpd" runat="server" MaxLength="20" meta:resourcekey="txtRevenueSurveyNoUpd"
+                                    Text='<%# Bind("RevenueSurveyNo") %>'></asp:TextBox>
+                            </td>
+                            <td class="validationColumn" style="width: 2%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumn" style="width: 111px">
+                                <asp:Label ID="lblWard_SubWardNoUpd" runat="server" meta:resourcekey="lblWard_SubWardNoUpd"
+                                    Text="Ward/SubWard No"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:TextBox ID="txtWard_SubWardNoUpd" runat="server" MaxLength="20" meta:resourcekey="txtWard_SubWardNoUpd"
+                                    Text='<%# Bind("Ward_SubWardNo") %>'></asp:TextBox>
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <asp:Label ID="lblPartyDetailsUpd" runat="server" meta:resourcekey="lblPartyDetailsUpd"
+                                    SkinID="SubHeading" Text="Party Details"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumn" style="width: 111px">
+                                <asp:Label ID="lblNameOfOwnerUpd" runat="server" meta:resourcekey="lblNameOfOwnerUpd"
+                                    Text="Name Of Owner"></asp:Label>
+                            </td>
+                            <td colspan="4" style="width: 25%">
+                                <asp:TextBox ID="txtNameOfOwnerUpd" runat="server" meta:resourcekey="txtNameOfOwnerUpd"
+                                    Text='<%# Bind("NameOfOwner") %>'></asp:TextBox>
+                            </td>
+                            <td class="validationColumn" style="width: 2%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumn" style="width: 111px">
+                                <asp:Label ID="lblAddressOfOwnerUpd" runat="server" meta:resourcekey="lblAddressOfOwnerUpd"
+                                    Text="AddressOfOwner"></asp:Label>
+                            </td>
+                            <td colspan="3" style="width: 25%">
+                                <asp:TextBox ID="txtAddressOfOwnerUpd" runat="server" meta:resourcekey="txtAddressOfOwnerUpd"
+                                    Text='<%# Bind("AddressOfOwner") %>' TextMode="MultiLine"></asp:TextBox>
+                            </td>
+                            <td class="validationColumn" style="width: 2%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumn" style="width: 111px">
+                                <asp:Label ID="lblNameOfClaimingPartyUpd" runat="server" meta:resourcekey="lblNameOfClaimingPartyUpd"
+                                    Text="Claiming Party Name"></asp:Label>
+                            </td>
+                            <td colspan="4" style="width: 25%">
+                                <asp:TextBox ID="txtNameOfClaimingPartyUpd" runat="server" meta:resourcekey="txtNameOfClaimingPartyUpd"
+                                    Text='<%# Bind("NameOfClaimingParty") %>'></asp:TextBox>
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumn" style="width: 111px">
+                                <asp:Label ID="lblAddressOfClaimingPartyUpd" runat="server" meta:resourcekey="lblAddressOfClaimingPartyUpd"
+                                    Text="Address Of Claiming Party"></asp:Label>
+                            </td>
+                            <td colspan="3" style="width: 25%">
+                                <asp:TextBox ID="txtAddressOfClaimingPartyUpd" runat="server" meta:resourcekey="txtAddressOfClaimingPartyUpd"
+                                    Text='<%# Bind("AddressOfClaimingParty") %>' TextMode="MultiLine"></asp:TextBox>
+                            </td>
+                            <td class="labelColumn">
+                                <asp:Label ID="lblAddressOfClaimingPartyNoteUpd" runat="server" meta:resourcekey="lblAddressOfClaimingPartyNoteUpd"
+                                    Text="Full Address with City and State"></asp:Label>
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <asp:Label ID="lblPropertyDescriptionHeaderUpd" runat="server" meta:resourcekey="lblPropertyDescriptionHeaderUpd"
+                                    SkinID="SubHeading" Text="Property Description Header"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumn" style="width: 111px">
+                                <asp:Label ID="lblAreaOfPlotUpd" runat="server" meta:resourcekey="lblAreaOfPlotUpd"
+                                    Text="Area(Sq mts)"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:TextBox ID="txtAreaOfPlotUpd" runat="server" meta:resourcekey="txtAreaOfPlotUpd"
+                                    Text='<%# Bind("AreaOfPlot") %>'></asp:TextBox>
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                            <td class="labelColumn">
+                                <asp:Label ID="lblAreaOfConstructionUpd" runat="server" meta:resourcekey="lblAreaOfConstructionUpd"
+                                    Text="Plinth Area((Sq mts)& No of Floors"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:TextBox ID="txtAreaOfConstructionUpd" runat="server" MaxLength="10" meta:resourcekey="txtAreaOfConstructionUpd"
+                                    Text='<%# Bind("AreaOfConstruction") %>' Width="45%"></asp:TextBox>
+                                <asp:TextBox ID="txtNoOfFloorsUpd" runat="server" MaxLength="3" meta:resourcekey="txtNoOfFloorsUpd"
+                                    Text='<%# Bind("NoOfFloors") %>' Width="45%"></asp:TextBox></td>
+                            <td class="validationColumn" style="width: 2%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumn" style="width: 111px">
+                                <asp:Label ID="lblYearOfConstructionUpd" runat="server" meta:resourcekey="lblYearOfConstructionUpd"
+                                    Text="Year of Construction"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:TextBox ID="txtYearOfConstructionUpd" runat="server" MaxLength="4" meta:resourcekey="txtYearOfConstructionUpd"
+                                    Text='<%# Bind("YearOfConstruction") %>'></asp:TextBox>
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                            <td class="validationColumn">
+                                <asp:Label ID="lblTypeOfPropertyUpd" runat="server" meta:resourcekey="lblTypeOfPropertyUpd"
+                                    Text="Type Of Property"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:DropDownList ID="ddlTypeOfPropertyUpd" runat="server" AutoPostBack="true" DataSourceID="xdsPropertyType"
+                                    DataTextField="Key" DataValueField="Value" meta:resourcekey="ddlTypeOfPropertyUpd"
+                                    OnDataBound="ddlTypeOfPropertyUpd_DataBound" OnSelectedIndexChanged="ddlTypeOfPropertyUpd_SelectedIndexChanged"
+                                    SelectedValue='<%# Bind("TypeOfProperty") %>'>
+                                </asp:DropDownList>
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <asp:MultiView ID="mvPropertyDetailsUpd" runat="server">
+                                    <asp:View ID="viewPropertyDetailsUpd" runat="server">
+                                        <table width="100%">
+                                            <tr>
+                                                <td colspan="6">
+                                                    <asp:Label ID="lblResidentialDetailsHeaderUpd" runat="server" meta:resourcekey="lblResidentialDetailsHeaderUpd"
+                                                        SkinID="SubHeading" Text="Residential Details"></asp:Label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labelColumn">
+                                                    <asp:Label ID="lblHeightOfCeilingUpd" runat="server" meta:resourcekey="lblHeightOfCeilingUpd"
+                                                        Text="Ceiling Height(In CM)"></asp:Label>
+                                                </td>
+                                                <td class="textColumn">
+                                                    <asp:TextBox ID="txtHeightOfCeilingUpd" runat="server" meta:resourcekey="txtHeightOfCeilingUpd"
+                                                        Text='<%# Bind("HeightOfCeiling") %>'></asp:TextBox>
+                                                </td>
+                                                <td class="validationColumn">
+                                                </td>
+                                                <td class="labelColumn">
+                                                    <asp:Label ID="lblTypeOfTilesUpd" runat="server" meta:resourcekey="lblTypeOfTilesUpd"
+                                                        Text="Tiles Type"></asp:Label>
+                                                </td>
+                                                <td class="textColumn">
+                                                    <asp:DropDownList ID="ddlTypeOfTilesUpd" runat="server" meta:resourcekey="ddlTypeOfTilesUpd"
+                                                        SelectedValue='<%# Bind("TypeOfTiles") %>'>
+                                                        <asp:ListItem meta:resourcekey="ListItemResource21" Text="Mosaic" Value="2cd90b7c-de3e-488e-be52-cb0f7f335812"></asp:ListItem>
+                                                        <asp:ListItem meta:resourcekey="ListItemResource22" Text="Marble" Value="dbd44bd2-28b4-4cdf-83b6-e434c2912985"></asp:ListItem>
+                                                        <asp:ListItem meta:resourcekey="ListItemResource23" Text="Red Oxide" Value="4f1ac771-b5e4-424d-85bf-6a6931d93559"></asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </td>
+                                                <td class="validationColumn">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labelColumn">
+                                                    <asp:Label ID="lblWallFurnishingUpd" runat="server" meta:resourcekey="lblWallFurnishingUpd"
+                                                        Text="WallFurnishing"></asp:Label>
+                                                </td>
+                                                <td class="textColumn">
+                                                    <asp:TextBox ID="txtWallFurnishingUpd" runat="server" meta:resourcekey="txtWallFurnishingUpd"
+                                                        Text='<%# Bind("WallFurnishing") %>'></asp:TextBox>
+                                                </td>
+                                                <td class="validationColumn">
+                                                </td>
+                                                <td class="labelColumn">
+                                                    <asp:Label ID="lblNoOfBathroomsUpd" runat="server" meta:resourcekey="lblNoOfBathroomsUpd"
+                                                        Text="No Of Bathrooms"></asp:Label></td>
+                                                <td class="textColumn">
+                                                    <asp:TextBox ID="txtNoOfBathroomsUpd" runat="server" meta:resourcekey="txtNoOfBathroomsUpd"
+                                                        Text='<%# Bind("NoOfBathrooms") %>'></asp:TextBox></td>
+                                                <td class="validationColumn">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labelColumn">
+                                                    <asp:Label ID="lblNoOfToiletsUpd" runat="server" meta:resourcekey="lblNoOfToiletsUpd"
+                                                        Text="NoOfToilets"></asp:Label>
+                                                </td>
+                                                <td class="textColumn">
+                                                    <asp:TextBox ID="txtNoOfToiletsUpd" runat="server" meta:resourcekey="txtNoOfToiletsUpd"
+                                                        Text='<%# Bind("NoOfToilets") %>'></asp:TextBox>
+                                                </td>
+                                                <td class="validationColumn">
+                                                </td>
+                                                <td class="labelColumn">
+                                                    <asp:Label ID="lblToiletTilesHeightUpd" runat="server" meta:resourcekey="lblToiletTilesHeightUpd"
+                                                        Text="Tiles Height((In CM))"></asp:Label>
+                                                </td>
+                                                <td class="textColumn">
+                                                    <asp:TextBox ID="txtToiletTilesHeightUpd" runat="server" meta:resourcekey="txtToiletTilesHeightUpd"
+                                                        Text='<%# Bind("ToiletTilesHeight") %>'></asp:TextBox>
+                                                </td>
+                                                <td class="validationColumn">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labelColumn">
+                                                    <asp:Label ID="lblBathroomTilesHeightUpd" runat="server" meta:resourcekey="lblBathroomTilesHeightUpd"
+                                                        Text="Tiles Height((In CM))"></asp:Label>
+                                                </td>
+                                                <td class="textColumn">
+                                                    <asp:TextBox ID="txtBathroomTilesHeightUpd" runat="server" meta:resourcekey="txtBathroomTilesHeightUpd"
+                                                        Text='<%# Bind("BathroomTilesHeight") %>'></asp:TextBox>
+                                                </td>
+                                                <td class="validationColumn">
+                                                </td>
+                                                <td class="labelColumn">
+                                                    <asp:Label ID="lblParkingUpd" runat="server" meta:resourcekey="lblParkingUpd" Text="Parking"></asp:Label>
+                                                </td>
+                                                <td class="textColumn">
+                                                    <asp:CheckBox ID="txtParkingUpd" runat="server" Checked='<%# Bind("Parking") %>'
+                                                        meta:resourcekey="txtParkingUpd" />
+                                                </td>
+                                                <td class="validationColumn">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </asp:View>
+                                    <asp:View ID="viewCommercialUpd" runat="server">
+                                        <table width="100%">
+                                            <tr>
+                                                <td colspan="6">
+                                                    <asp:Label ID="lblDescOfPropertyHeadingUpd" runat="server" meta:resourcekey="lblDescOfPropertyHeadingUpd"
+                                                        SkinID="SubHeading" Text="Commercial Details"></asp:Label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labelColumn">
+                                                    <asp:Label ID="lblDescOfPropertyUpd" runat="server" meta:resourcekey="lblDescOfPropertyUpd"
+                                                        Text="Desc Of Property"></asp:Label>
+                                                </td>
+                                                <td colspan="4">
+                                                    <asp:TextBox ID="txtDescOfPropertyUpd" runat="server" meta:resourcekey="txtDescOfPropertyUpd"
+                                                        Text='<%# Bind("DescOfProperty") %>' TextMode="MultiLine"></asp:TextBox>
+                                                </td>
+                                                <td class="validationColumn">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" style="width: 50%;">
+                                                    <asp:CheckBox ID="chkShopsOnGroundFloorUpd" runat="server" Checked='<%# Bind("ShopsOnGroundFloor") %>'
+                                                        meta:resourcekey="chkShopsOnGroundFloorUpd" Text="Is Shops On Ground/First Floor?" />
+                                                </td>
+                                                <td class="validationColumn">
+                                                </td>
+                                                <td colspan="2" style="width: 50%;">
+                                                    <asp:CheckBox ID="chkIsPropertyInCommercialUpd" runat="server" Checked='<%# Bind("IsPropertyInCommercial") %>'
+                                                        meta:resourcekey="chkIsPropertyInCommercialUpd" Text="Is Property in Commercially Developed Area?" />
+                                                </td>
+                                                <td class="validationColumn">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </asp:View>
+                                    <asp:View ID="viewIndustrialUpd" runat="server">
+                                        <table width="100%">
+                                            <tr>
+                                                <td colspan="6">
+                                                    <asp:Label ID="lblIndustrialHeaderUpd" runat="server" meta:resourcekey="lblIndustrialHeaderUpd"
+                                                        SkinID="SubHeading" Text="Industrial Details"></asp:Label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labelColumn">
+                                                    <asp:Label ID="lblHeightOfIndCeilingUpd" runat="server" meta:resourcekey="lblHeightOfIndCeilingUpd"
+                                                        Text="Height till bottom of Ceiling((In CM))"></asp:Label>
+                                                </td>
+                                                <td class="textColumn">
+                                                    <asp:TextBox ID="txtHeightOfIndCeilingUpd" runat="server" MaxLength="3" meta:resourcekey="txtHeightOfIndCeilingUpd"
+                                                        Text='<%# Bind("HeightOfCeiling") %>'></asp:TextBox>
+                                                </td>
+                                                <td class="validationColumn">
+                                                    <asp:RangeValidator ID="rngHeightOfIndCeilingIns" runat="server" ControlToValidate="txtHeightOfIndCeilingUpd"
+                                                        ErrorMessage="Height Of ceiling value should be less than 2" MaximumValue="1.99"
+                                                        MinimumValue="0">*</asp:RangeValidator>
+                                                </td>
+                                                <td class="labelColumn">
+                                                </td>
+                                                <td class="textColumn">
+                                                </td>
+                                                <td class="validationColumn">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </asp:View>
+                                </asp:MultiView>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <asp:Label ID="lblOtherInfoUpd" runat="server" meta:resourcekey="lblFileDetailsHeaderIns"
+                                    SkinID="SubHeading" Text="Other Details"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumn" style="width: 111px">
+                                <asp:Label ID="lblTypeOfElectricficationUpd" runat="server" meta:resourcekey="lblTypeOfElectricficationUpd"
+                                    Text="Electricfication Type"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:DropDownList ID="ddlTypeOfElectricficationUpd" runat="server" DataSourceID="xdsElectricalElectrification"
+                                    DataTextField="Key" DataValueField="Value" meta:resourcekey="ddlTypeOfElectricficationUpd"
+                                    SelectedValue='<%# Bind("TypeOfElectricfication") %>'>
+                                </asp:DropDownList>
+                            </td>
+                            <td class="validationColumn" colspan="4">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumn" style="width: 111px">
+                                <asp:Label ID="lblCompoundWallTypeUpd" runat="server" meta:resourcekey="lblCompoundWallTypeUpd"
+                                    Text="Compound Wall Type"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:DropDownList ID="ddlCompoundWallTypeUpd" runat="server" DataSourceID="xdsCompoundWall"
+                                    DataTextField="Key" DataValueField="Value" meta:resourcekey="ddlCompoundWallTypeUpd"
+                                    SelectedValue='<%# Bind("CompoundWallType") %>'>
+                                </asp:DropDownList>
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                            <td colspan="2">
+                                <asp:CheckBox ID="chkIsLightsOnCompoundWallUpd" runat="server" Checked='<%# Bind("IsLightsOnCompoundWall") %>'
+                                    meta:resourcekey="chkIsLightsOnCompoundWallUpd" Text="Is Lights On Compound Wall?" />
+                            </td>
+                            <td class="validationColumn" style="width: 2%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <asp:CheckBox ID="chkWaterStorageFacilityUpd" runat="server" Checked='<%# Bind("WaterStorageFacility") %>'
+                                    meta:resourcekey="chkWaterStorageFacilityUpd" Text="Water Storage Facility (Y/N)" />
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                            <td colspan="2">
+                                <asp:CheckBox ID="chkDrainageSystemUpd" runat="server" Checked='<%# Bind("DrainageSystem") %>'
+                                    meta:resourcekey="chkDrainageSystemUpd" Text="Is Drainage Facility Available?" />
+                            </td>
+                            <td class="validationColumn" style="width: 2%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumn" style="width: 111px">
+                                <asp:Label ID="lblNoOfLiftsUpd" runat="server" meta:resourcekey="lblNoOfLiftsUpd"
+                                    Text="No Of Lifts"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:TextBox ID="txtNoOfLiftsUpd" runat="server" MaxLength="2" meta:resourcekey="txtNoOfLiftsUpd"
+                                    Text='<%# Bind("NoOfLifts") %>'></asp:TextBox>
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                            <td class="validationColumn">
+                                <asp:Label ID="lblAreaOfEachLiftUpd" runat="server" meta:resourcekey="lblAreaOfEachLiftUpd"
+                                    Text="Area Of each Lift(Sqr mtr)"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:TextBox ID="txtAreaOfEachLiftUpd" runat="server" MaxLength="3" meta:resourcekey="txtAreaOfEachLiftUpd"
+                                    Text='<%# Bind("AreaOfEachLift") %>'></asp:TextBox>
+                            </td>
+                            <td class="validationColumn" style="width: 2%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <asp:CheckBox ID="chkInternalRoadUpd" runat="server" Checked='<%# Bind("InternalRoad") %>'
+                                    meta:resourcekey="chkInternalRoadUpd" Text="Internal Road Present (Y/N)" />
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                            <td colspan="2">
+                                <asp:CheckBox ID="chkValuatedBeforeUpd" runat="server" Checked='<%# Bind("ValuatedBefore") %>'
+                                    meta:resourcekey="chkValuatedBeforeUpd" Text="Has been Valuated before?" />
+                            </td>
+                            <td class="validationColumn" style="width: 2%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" style="height: 18px">
+                                <asp:Label ID="lblFeeDetailsHeaderUpd" runat="server" meta:resourcekey="lblFeeDetailsHeaderUpd"
+                                    SkinID="SubHeading" Text="Fee Details"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="labelColumn" style="width: 111px; height: 26px;">
+                                <asp:Label ID="lblFeeTypeUpd" runat="server" meta:resourcekey="lblFeeTypeUpd" Style="width: 100%"
+                                    Text="Fee Name"></asp:Label>
+                            </td>
+                            <td align="left" class="textColumn" style="width: 10%; height: 26px;">
+                                <asp:DropDownList ID="ddlFeeTypeUpd" runat="server" DataSourceID="odsGetFees" DataTextField="Name"
+                                    DataValueField="FeeId" meta:resourcekey="ddlFeeTypeUpd">
+                                </asp:DropDownList>
+                            </td>
+                            <td class="validationColumn" style="height: 26px">
+                            </td>
+                            <td align="left" style="width: 10%; height: 26px;">
+                                <asp:Label ID="lblFeeAmountUpd" runat="server" meta:resourcekey="lblFeeAmountUpd"
+                                    Text="Amount"></asp:Label>
+                            </td>
+                            <td align="left" class="textColumn" style="width: 10%; height: 26px;">
+                                <asp:TextBox ID="txtFeeAmountUpd" runat="server" meta:resourcekey="txtFeeAmountUpd"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <asp:GridView ID="gvFeeStampDetailsUpd" runat="server" AutoGenerateColumns="false"
+                                    DataKeyNames="AdjudicationId,FeeId" meta:resourcekey="gvFeeStampDetails">
+                                    <EmptyDataTemplate>
+                                        No Data Available!!!
+                                    </EmptyDataTemplate>
+                                    <Columns>
+                                        <asp:TemplateField HeaderText="Fee Id" SortExpression="FeeId" Visible="False">
+                                            <EditItemTemplate>
+                                                &nbsp;<asp:Label ID="lbleFeeId" runat="server"></asp:Label>
+                                            </EditItemTemplate>
+                                            <ItemTemplate>
+                                                <asp:Label ID="lblFeeId" runat="server" Text='<%# Bind("FeeId") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Name" SortExpression="Name">
+                                            <EditItemTemplate>
+                                                &nbsp;<asp:Label ID="lbleFeeName" runat="server" Text='<%# Bind("FeeName") %>'></asp:Label>
+                                            </EditItemTemplate>
+                                            <ItemTemplate>
+                                                <asp:Label ID="lblFeeName" runat="server" Text='<%# Bind("FeeName") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Amount" SortExpression="Amount">
+                                            <EditItemTemplate>
+                                                <asp:Label ID="lbleFeeAmount" runat="server" Text='<%# Bind("Amount") %>'></asp:Label>
+                                            </EditItemTemplate>
+                                            <ItemTemplate>
+                                                <asp:Label ID="lblFeeAmount" runat="server" Text='<%# Bind("Amount") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="ID" SortExpression="AdjudicationId" Visible="false">
+                                            <EditItemTemplate>
+                                                &nbsp;<asp:Label ID="lbleAdjID" runat="server" Text='<%# Bind("AdjudicationId") %>'></asp:Label>
+                                            </EditItemTemplate>
+                                            <ItemTemplate>
+                                                <asp:Label ID="lblAdjID" runat="server" Text='<%# Bind("AdjudicationId") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:CommandField SelectText="Update" ShowSelectButton="True" />
+                                        <asp:CommandField ShowDeleteButton="True" />
+                                    </Columns>
+                                </asp:GridView>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <asp:Label ID="lblDocumentDetailsHeaderUpd" runat="server" meta:resourcekey="lblDocumentDetailsHeaderUpd"
+                                    SkinID="SubHeading" Text="Document Details"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumn">
+                                <asp:Label ID="lblDocumentTypeUpd" runat="server" meta:resourcekey="lblDocumentTypeIns"
+                                    Text="Document Type"></asp:Label>
+                            </td>
+                            <td class="textColumn" style="width: 25%">
+                                <asp:DropDownList ID="ddlDocumentTypeUpd" runat="server" DataSourceID="odsGetDocument"
+                                    DataTextField="Name" DataValueField="DocumentTypeId" meta:resourcekey="ddlDocumentTypeIns">
+                                </asp:DropDownList>
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                            <td class="validationColumn" style="width: 23%">
+                                <asp:Label ID="lvlDocumentNumberUpd" runat="server" meta:resourcekey="lvlDocumentNumberIns"
+                                    Text="Document Number"></asp:Label>
+                            </td>
+                            <td class="textColumn">
+                                <asp:TextBox ID="txtDocumentNumberUpd" runat="server" MaxLength="30" meta:resourcekey="txtDocumentNumberIns"></asp:TextBox>
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="validationColumn">
+                                <asp:Label ID="lblDocRemarksUpd" runat="server" meta:resourcekey="lblDocRemarksIns"
+                                    Text="Doc Remarks" Width="153px"></asp:Label>
+                            </td>
+                            <td colspan="6" style="width: 25%">
+                                <asp:TextBox ID="txtDocRemarksUpd" runat="server" meta:resourcekey="txtDocRemarksIns"
+                                    TextMode="MultiLine"></asp:TextBox>
+                            </td>
+                            <td class="validationColumn">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <asp:CheckBox ID="chkSubmittedUpd" runat="server" meta:resourcekey="chkSubmittedIns"
+                                    Text="Has Submitted?" Width="151px" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <asp:GridView ID="gvDocumentUpd" runat="server" AutoGenerateColumns="false" DataKeyNames="ValuationFormId,DocumentTypeId"
+                                    meta:resourcekey="gvDocumentsInsResource1">
+                                    <Columns>
+                                        <asp:TemplateField HeaderText="Document Id" SortExpression="DocumentTypeId" Visible="False">
+                                            <EditItemTemplate>
+                                                <asp:Label ID="lbleDocumentId" runat="server"></asp:Label>
+                                            </EditItemTemplate>
+                                            <ItemTemplate>
+                                                <asp:Label ID="DocumentId" runat="server" Text='<%# Bind("DocumentTypeId") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Document Name" SortExpression="Name">
+                                            <EditItemTemplate>
+                                                <asp:Label ID="lbleDocumentName" runat="server"></asp:Label>
+                                            </EditItemTemplate>
+                                            <ItemTemplate>
+                                                <asp:Label ID="lblDocumentName" runat="server" Text='<%# Bind("DocName") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="ID" SortExpression="ValuationFormId" Visible="false">
+                                            <EditItemTemplate>
+                                                <asp:Label ID="lbleValId" runat="server"></asp:Label>
+                                            </EditItemTemplate>
+                                            <ItemTemplate>
+                                                <asp:Label ID="lblValId" runat="server" Text='<%# Bind("ValuationFormId") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Document No" SortExpression="DocumentNo">
+                                            <EditItemTemplate>
+                                                <asp:Label ID="lbleDocumentNo" runat="server"></asp:Label>
+                                            </EditItemTemplate>
+                                            <ItemTemplate>
+                                                <asp:Label ID="lblDocumentNo" runat="server" Text='<%# Bind("DocumentNumber") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Remarks" SortExpression="Remarks">
+                                            <EditItemTemplate>
+                                                <asp:Label ID="lbleRemarks" runat="server"></asp:Label>
+                                            </EditItemTemplate>
+                                            <ItemTemplate>
+                                                <asp:Label ID="lblRemarks" runat="server" Text='<%# Bind("Remarks") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:CheckBoxField DataField="Submitted" HeaderText="Submitted" SortExpression="Submitted" />
+                                        <asp:CommandField SelectText="Update" ShowSelectButton="True" />
+                                        <asp:CommandField ShowDeleteButton="true" />
+                                    </Columns>
+                                </asp:GridView>
+                            </td>
+                        </tr>
+                        <asp:HiddenField ID="fldValId" runat="server" Value='<%# Bind("ValuationFormId") %>' />
+                    </table>
+                </EditItemTemplate>
+                
+            </asp:FormView>
+            <asp:ObjectDataSource ID="ObjectDataSource2" runat="server"
+                SelectMethod="GetValuationFormByAdjudicationId" TypeName="IGRSS.BusinessLogicLayer.AdjudicationRequest" OldValuesParameterFormatString="original_{0}" DataObjectTypeName="System.Guid" DeleteMethod="DeleteFeeMaster" InsertMethod="IssueCertificate" UpdateMethod="UpdatePhysicalVerification">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="fldAdjId" Name="AdjudicationId" PropertyName="Value"
+                        Type="Object" />
+                </SelectParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="AdjudicationId" Type="Object" />
+                    <asp:Parameter Name="CertificateNumber" Type="String" />
+                    <asp:Parameter Name="CertificateIssuedOn" Type="DateTime" />
+                    <asp:Parameter Name="CertificateDescription" Type="String" />
+                </InsertParameters>
+            </asp:ObjectDataSource>
+        </asp:View>--%>
+</asp:Content>

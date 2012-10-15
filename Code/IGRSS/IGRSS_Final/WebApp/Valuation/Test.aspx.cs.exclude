@@ -1,0 +1,35 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using IGRSS.DataAccessLayer.TestTableAdapters;
+//using IGRSS.Workflows.License;
+using Utilities.WorkflowServices;
+
+public partial class Test_Test : IgrssPage
+{
+	protected void Page_Load(object sender, EventArgs e)
+	{
+		//Utilities.WorkflowServices.WorkflowMediator wm = new Utilities.WorkflowServices.WorkflowMediator();
+		//wm.RunWorkflow(typeof(LicenseIssueProcess));
+		
+	}
+	protected void odsTest_ObjectCreating(object sender, ObjectDataSourceEventArgs e)
+	{
+		//DataRow drow= DataTable.
+
+	}
+	protected void odsTest_ObjectCreating1(object sender, ObjectDataSourceEventArgs e)
+	{
+		IGRSS.BusinessLogicLayer.TestGetSet myType = new IGRSS.BusinessLogicLayer.TestGetSet("XXX", "SomeValue", 11);
+		e.ObjectInstance = myType;
+
+	}
+	
+}

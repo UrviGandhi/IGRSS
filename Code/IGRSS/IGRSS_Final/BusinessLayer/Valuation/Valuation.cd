@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="IGRSS.BusinessLogicLayer.Valuation.ValuationRequestBLL">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>Valuation\ValuationRequestBLL.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAKAAAAAAAAAAACAAAAAAAAAAABAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IGRSS.BusinessLogicLayer.Valuation.ValuationAlertsBLL">
+    <Position X="4.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Valuation\ValuationAlertsBLL.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAIAAAIAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

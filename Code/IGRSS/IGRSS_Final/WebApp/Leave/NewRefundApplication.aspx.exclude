@@ -1,0 +1,919 @@
+<%@ Page Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true"
+	CodeFile="NewRefundApplication.aspx.cs" Inherits="NewRefundApplication" Title="Untitled Page" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="Server">
+	<asp:MultiView ID="mvRefund" runat="server" ActiveViewIndex="0" >
+		<asp:View ID="RefundApplicationView" runat="server">
+			<asp:FormView ID="FVRefundApplication" runat="server" DataKeyNames="RefundApplicationId"
+				DataSourceID="odsRefundDetails" DefaultMode="Insert" OnItemInserting="FVRefundApplication_ItemInserting"
+				OnPageIndexChanging="FVRefundApplication_PageIndexChanging" OnItemInserted="FVRefundApplication_ItemInserted"
+				OnItemUpdated="FVRefundApplication_ItemUpdated" >
+				<InsertItemTemplate>
+					<table width="100%">
+						<tr>
+							<td align="left" colspan="6">
+								<asp:Label ID="LblRefundHeading" runat="server" SkinID="Heading" Text="Refund Application"></asp:Label></td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 15px; width: 156px;">
+								<asp:Label ID="LblOfficeId" runat="server" Text="Office Name" Width="98px"></asp:Label></td>
+							<td align="left" style="height: 15px; width: 163px;">
+								<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="OdsOfficeMaster"
+									DataTextField="OfficeName" DataValueField="OfficeId" SelectedValue='<%# Bind("OfficeId") %>'
+									Width="157px">
+								</asp:DropDownList></td>
+							<td style="height: 15px">
+							</td>
+							<td align="left" style="width: 101px; height: 15px">
+								<asp:Label ID="LblRegistrationNo" runat="server" Text="Registration No"></asp:Label></td>
+							<td align="left" style="width: 62px; height: 15px">
+								<asp:TextBox ID="TxtRegistrationNo" runat="server" Text='<%# Bind("RegistrationNo")%>'></asp:TextBox></td>
+							<td align="left" style="width: 12px; height: 15px">
+								<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TxtRegistrationNo"
+									ErrorMessage="*" Font-Bold="True" Width="1px"></asp:RequiredFieldValidator>
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 26px; width: 156px;">
+								<asp:Label ID="LblRefundPrefix" runat="server" Text="Refund File No"></asp:Label></td>
+							<td align="left" style="height: 7px; width: 163px;">
+								<asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("RefundPrefix")%>' Width="19%"></asp:TextBox>&nbsp;/
+								<asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("RefundSlNo")%>' Width="19%"></asp:TextBox>
+								/
+								<asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("RefundYear")%>' Width="19%"></asp:TextBox></td>
+							<td style="height: 26px;">
+							</td>
+							<td align="left" style="width: 101px; height: 26px;">
+								<asp:Label ID="LblTypeOfRefund" runat="server" Text="Type Of Refund"></asp:Label></td>
+							<td align="left" style="width: 62px; height: 26px;">
+								<asp:TextBox ID="TxtTypeOfRefund" runat="server" Text='<%# Bind("TypeOfRefund")%>'></asp:TextBox></td>
+							<td style="width: 12px; height: 26px;">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="width: 156px; height: 37px;">
+								<asp:Label ID="LblApplicationDate" runat="server" Text="Application Date" Width="118px"></asp:Label></td>
+							<td align="left" style="width: 163px; height: 37px;">
+								<asp:TextBox ID="TxtApplicationDate" runat="server" Text='<%# Bind("ApplicationDate")%>'></asp:TextBox></td>
+							<td style="height: 37px;">
+							</td>
+							<td align="left" style="width: 101px; height: 37px;">
+								<asp:Label ID="LblVendorLicenseId" runat="server" Text="Vendor License No" Width="130px"></asp:Label></td>
+							<td align="left" style="width: 62px; height: 37px;">
+								<asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="odsLicenseMaster"
+									DataTextField="LicenseNo" DataValueField="LicenseApplicationId" SelectedValue='<%# Bind("VendorLicenseId") %>'
+									Width="161px">
+								</asp:DropDownList><asp:ObjectDataSource ID="odsLicenseMaster" runat="server" DataObjectTypeName="System.Guid"
+									DeleteMethod="DeleteLicenseDetails" InsertMethod="IssueLicense" OldValuesParameterFormatString="original_{0}"
+									SelectMethod="GetLicenses" TypeName="IGRSS.BusinessLogicLayer.LicenseMasterBLL"
+									UpdateMethod="UpdateLicenseDetails">
+									<UpdateParameters>
+										<asp:Parameter Name="LicenseApplicationId" Type="Object" />
+										<asp:Parameter Name="LicenseNo" Type="String" />
+										<asp:Parameter Name="IssuedDate" Type="DateTime" />
+										<asp:Parameter Name="EffectiveDate" Type="DateTime" />
+										<asp:Parameter Name="ExpiryDate" Type="DateTime" />
+										<asp:Parameter Name="IsCancelled" Type="Boolean" />
+									</UpdateParameters>
+									<InsertParameters>
+										<asp:Parameter Name="LicenseApplicationId" Type="Object" />
+										<asp:Parameter Name="LicenseNo" Type="String" />
+										<asp:Parameter Name="IssuedDate" Type="DateTime" />
+										<asp:Parameter Name="EffectiveDate" Type="DateTime" />
+										<asp:Parameter Name="ExpiryDate" Type="DateTime" />
+										<asp:Parameter Name="Status" Type="String" />
+									</InsertParameters>
+								</asp:ObjectDataSource>
+							</td>
+							<td style="width: 12px; height: 37px;">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="width: 156px">
+								<asp:Label ID="LblPurchasedDate" runat="server" Text="Purchased Date" Width="106px"></asp:Label></td>
+							<td align="left" style="width: 163px">
+								<asp:TextBox ID="TxtPurchasedDate" runat="server" Text='<%# Bind("PurchasedDate")%>'></asp:TextBox></td>
+							<td align="left">
+							</td>
+							<td align="left" style="width: 101px">
+								<asp:Label ID="LblTotalValueOfStamps" runat="server" Text="Total Value Of Stamps"
+									Width="144px"></asp:Label></td>
+							<td align="left" style="width: 62px">
+								<asp:TextBox ID="TxtTotalValueOfStamps" runat="server" Text='<%# Bind("TotalValueOfStamps")%>'></asp:TextBox></td>
+							<td style="width: 12px">
+								<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TxtTotalValueOfStamps"
+									ErrorMessage="*" Font-Bold="True"></asp:RequiredFieldValidator></td>
+						</tr>
+						<tr>
+							<td align="left" style="width: 156px; height: 41px;">
+								<asp:Label ID="LblReasonForNotUsing" runat="server" Text="Reason For Not Using" Width="152px"></asp:Label></td>
+							<td align="left" colspan="3" style="height: 41px">
+								<asp:TextBox ID="TxtReasonForNotUsing" runat="server" Text='<%# Bind("ReasonForNotUsing")%>'
+									TextMode="MultiLine" Width="313px"></asp:TextBox></td>
+							<td align="left" style="width: 62px; height: 41px;">
+							</td>
+							<td style="width: 12px; height: 41px;">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" colspan="6">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" colspan="6" style="height: 15px">
+								<asp:Label ID="LblPersonalDetails" runat="server" SkinID="Heading" Text="Personal Details"></asp:Label></td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 15px; width: 156px;">
+								<asp:Label ID="LblApplicantName" runat="server" Text="Applicant Name" Width="124px"></asp:Label></td>
+							<td align="left" style="height: 15px; width: 163px;">
+								<asp:TextBox ID="TxtApplicantName" runat="server" Text='<%# Bind("ApplicantName")%>'></asp:TextBox></td>
+							<td align="left" style="height: 15px">
+							</td>
+							<td align="left" style="width: 101px; height: 15px">
+								<asp:Label ID="LblApplicantAddress" runat="server" Text="Applicant Address" Width="128px"></asp:Label></td>
+							<td align="left" style="width: 62px; height: 15px">
+								<asp:TextBox ID="TxtApplicantAddress" runat="server" TextMode="MultiLine" Text='<%# Bind("ApplicantAddress")%>'
+									Height="17px" Width="149px"></asp:TextBox></td>
+							<td align="left" style="width: 12px; height: 15px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 15px; width: 156px;">
+								<asp:Label ID="LblCity" runat="server" Text="City"></asp:Label></td>
+							<td align="left" style="height: 15px; width: 163px;">
+								<asp:TextBox ID="TxtCity" runat="server" Text='<%# Bind("City")%>'></asp:TextBox></td>
+							<td align="left" style="height: 15px">
+							</td>
+							<td align="left" style="width: 101px; height: 15px">
+								<asp:Label ID="LblDistrict" runat="server" Text="District"></asp:Label></td>
+							<td align="left" style="width: 62px; height: 15px">
+								<asp:TextBox ID="TxtDistrict" runat="server" Text='<%# Bind("District")%>'></asp:TextBox></td>
+							<td align="left" style="width: 12px; height: 15px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 15px; width: 156px;">
+								<asp:Label ID="LblPinCode" runat="server" Text="Pin Code"></asp:Label></td>
+							<td align="left" style="height: 15px; width: 163px;">
+								<asp:TextBox ID="TxtPinCode" runat="server" Text='<%# Bind("PinCode")%>'></asp:TextBox></td>
+							<td align="left" style="height: 15px">
+							</td>
+							<td align="left" style="width: 101px; height: 15px">
+								<asp:Label ID="LblPhoneNo" runat="server" Text="Phone No"></asp:Label></td>
+							<td align="left" style="width: 62px; height: 15px">
+								<asp:TextBox ID="TxtPhoneNo" runat="server" Text='<%# Bind("PhoneNo")%>'></asp:TextBox></td>
+							<td align="left" style="width: 12px; height: 15px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="width: 156px; height: 15px">
+								<asp:Label ID="LblRemarks" runat="server" Text="Remarks"></asp:Label></td>
+							<td align="left" style="height: 15px" colspan="3">
+								<asp:TextBox ID="TxtRemarks" runat="server" Text='<%# Bind("Remarks")%>' TextMode="MultiLine"
+									Width="313px"></asp:TextBox></td>
+							<td align="left" style="width: 62px; height: 15px">
+							</td>
+							<td align="left" style="width: 12px; height: 15px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 26px; width: 156px;">
+							</td>
+							<td align="left" style="height: 26px; width: 163px;">
+							</td>
+							<td align="left" style="height: 26px">
+							</td>
+							<td align="left" style="width: 101px; height: 26px">
+							</td>
+							<td align="left" style="height: 26px">
+								<asp:Button ID="Button1" runat="server" CommandName="Insert" Text="Insert"/>
+								<asp:Button ID="Button2" runat="server" CommandName="Cancel" Text="Cancel" /></td>
+							<td align="left" style="width: 12px; height: 26px">
+							</td>
+						</tr>
+					</table>
+				</InsertItemTemplate>
+				<EditItemTemplate>
+					<table width="100%">
+						<tr>
+							<td align="left" colspan="6">
+								<asp:Label ID="LblRefundHeading" runat="server" SkinID="Heading" Text="Refund Application"></asp:Label></td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 15px">
+								<asp:Label ID="LblOfficeId" runat="server" Text="Office Id" Width="98px"></asp:Label></td>
+							<td align="left" style="height: 15px">
+								<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="OdsOfficeMaster"
+									DataTextField="OfficeName" DataValueField="OfficeId" SelectedValue='<%# Bind("OfficeId") %>'
+									Width="157px">
+								</asp:DropDownList></td>
+							<td style="width: 22px; height: 15px">
+							</td>
+							<td align="left" style="width: 100px; height: 15px">
+								<asp:Label ID="LblRegistrationNo" runat="server" Text="Registration No"></asp:Label></td>
+							<td align="left" style="width: 51px; height: 15px">
+								<asp:TextBox ID="TxtRegistrationNo" runat="server" Text='<%# Bind("RegistrationNo")%>'></asp:TextBox></td>
+							<td style="width: 21px; height: 15px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 7px">
+								<asp:Label ID="LblRefundPrefix" runat="server" Text="Refund File No"></asp:Label></td>
+							<td align="left" style="height: 7px">
+								<asp:TextBox ID="TxtRefundPrefix" runat="server" Text='<%# Bind("RefundPrefix")%>'
+									Width="19%"></asp:TextBox>&nbsp;/
+								<asp:TextBox ID="TxtRefundSlNo" runat="server" Text='<%# Bind("RefundSlNo")%>' Width="19%"></asp:TextBox>
+								/
+								<asp:TextBox ID="TxtRefundYear" runat="server" Text='<%# Bind("RefundYear")%>' Width="19%"></asp:TextBox></td>
+							<td>
+							</td>
+							<td align="left" style="width: 100px">
+								<asp:Label ID="LblTypeOfRefund" runat="server" Text="Type Of Refund"></asp:Label></td>
+							<td align="left" style="width: 51px">
+								<asp:TextBox ID="TxtTypeOfRefund" runat="server" Text='<%# Bind("TypeOfRefund")%>'></asp:TextBox></td>
+							<td style="width: 21px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left">
+								<asp:Label ID="LblApplicationDate" runat="server" Text="Application Date" Width="118px"></asp:Label></td>
+							<td align="left">
+								<asp:TextBox ID="TxtApplicationDate" runat="server" Text='<%# Bind("ApplicationDate")%>'></asp:TextBox></td>
+							<td style="width: 22px">
+							</td>
+							<td align="left" style="width: 100px">
+								<asp:Label ID="LblVendorLicenseId" runat="server" Text="Vendor License Id" Width="130px"></asp:Label></td>
+							<td align="left" style="width: 51px">
+								<asp:TextBox ID="TxtVendorLicenseId" runat="server" Text='<%# Bind("VendorLicenseId")%>'></asp:TextBox></td>
+							<td style="width: 21px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left">
+								<asp:Label ID="LblPurchasedDate" runat="server" Text="Purchased Date" Width="106px"></asp:Label></td>
+							<td align="left">
+								<asp:TextBox ID="TxtPurchasedDate" runat="server" Text='<%# Bind("PurchasedDate")%>'></asp:TextBox></td>
+							<td align="left" style="width: 22px">
+							</td>
+							<td align="left" style="width: 100px">
+								<asp:Label ID="LblTotalValueOfStamps" runat="server" Text="Total Value Of Stamps"
+									Width="144px"></asp:Label></td>
+							<td align="left" style="width: 51px">
+								<asp:TextBox ID="TxtTotalValueOfStamps" runat="server" Text='<%# Bind("TotalValueOfStamps")%>'></asp:TextBox></td>
+							<td style="width: 21px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left">
+								<asp:Label ID="LblReasonForNotUsing" runat="server" Text="Reason For Not Using" Width="152px"></asp:Label></td>
+							<td align="left">
+								<asp:TextBox ID="TxtReasonForNotUsing" runat="server" Text='<%# Bind("ReasonForNotUsing")%>'></asp:TextBox></td>
+							<td align="left" style="width: 22px">
+							</td>
+							<td align="left" style="width: 100px">
+							</td>
+							<td align="left" style="width: 51px">
+							</td>
+							<td style="width: 21px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" colspan="6" style="height: 15px">
+								<asp:Label ID="LblPersonalDetails" runat="server" SkinID="Heading" Text="Personal Details"></asp:Label></td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 15px">
+								<asp:Label ID="LblApplicantName" runat="server" Text="Applicant Name" Width="124px"></asp:Label></td>
+							<td align="left" style="height: 15px">
+								<asp:TextBox ID="TxtApplicantName" runat="server" Text='<%# Bind("ApplicantName")%>'></asp:TextBox></td>
+							<td align="left" style="width: 22px; height: 15px">
+							</td>
+							<td align="left" style="width: 100px; height: 15px">
+								<asp:Label ID="LblApplicantAddress" runat="server" Text="Applicant Address" Width="128px"></asp:Label></td>
+							<td align="left" style="width: 51px; height: 15px">
+								<asp:TextBox ID="TxtApplicantAddress" runat="server" Text='<%# Bind("ApplicantAddress")%>'></asp:TextBox></td>
+							<td align="left" style="width: 21px; height: 15px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 15px">
+								<asp:Label ID="LblCity" runat="server" Text="City"></asp:Label></td>
+							<td align="left" style="height: 15px">
+								<asp:TextBox ID="TxtCity" runat="server" Text='<%# Bind("City")%>'></asp:TextBox></td>
+							<td align="left" style="width: 22px; height: 15px">
+							</td>
+							<td align="left" style="width: 100px; height: 15px">
+								<asp:Label ID="LblDistrict" runat="server" Text="District"></asp:Label></td>
+							<td align="left" style="width: 51px; height: 15px">
+								<asp:TextBox ID="TxtDistrict" runat="server" Text='<%# Bind("District")%>'></asp:TextBox></td>
+							<td align="left" style="width: 21px; height: 15px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 15px">
+								<asp:Label ID="LblPinCode" runat="server" Text="Pin Code"></asp:Label></td>
+							<td align="left" style="height: 15px">
+								<asp:TextBox ID="TxtPinCode" runat="server" Text='<%# Bind("PinCode")%>'></asp:TextBox></td>
+							<td align="left" style="width: 22px; height: 15px">
+							</td>
+							<td align="left" style="width: 100px; height: 15px">
+								<asp:Label ID="LblPhoneNo" runat="server" Text="Phone No"></asp:Label></td>
+							<td align="left" style="width: 51px; height: 15px">
+								<asp:TextBox ID="TxtPhoneNo" runat="server" Text='<%# Bind("PhoneNo")%>'></asp:TextBox></td>
+							<td align="left" style="width: 21px; height: 15px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 15px">
+								<asp:Label ID="LblRemarks" runat="server" Text="Remarks"></asp:Label></td>
+							<td align="left" style="height: 15px">
+								<asp:TextBox ID="TxtRemarks" runat="server" Text='<%# Bind("Remarks")%>'></asp:TextBox></td>
+							<td align="left" style="width: 22px; height: 15px">
+							</td>
+							<td align="left" style="width: 100px; height: 15px">
+							</td>
+							<td align="left" style="width: 51px; height: 15px">
+							</td>
+							<td align="left" style="width: 21px; height: 15px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 15px">
+							</td>
+							<td align="left" style="height: 15px">
+							</td>
+							<td align="left" style="width: 22px; height: 15px">
+							</td>
+							<td align="right" style="width: 100px; height: 15px">
+							</td>
+							<td align="left">
+								<asp:Button ID="BtnUpdate" runat="server" CommandName="Update" Text="Update" />
+							</td>
+							<td align="left" style="width: 21px; height: 15px">
+							</td>
+						</tr>
+					</table>
+					<br />
+					<asp:GridView ID="GridView2" runat="server" Width="712px" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="RefundApplicationId,RevenueStampId" DataSourceID="odsRefundStampDetails" ForeColor="#333333" GridLines="None">
+						<FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+						<Columns>
+							<asp:BoundField DataField="RefundApplicationId" HeaderText="RefundApplicationId"
+								ReadOnly="True" SortExpression="RefundApplicationId" />
+							<asp:BoundField DataField="RevenueStampId" HeaderText="RevenueStampId" ReadOnly="True"
+								SortExpression="RevenueStampId" />
+							<asp:BoundField DataField="ReturnedQty" HeaderText="ReturnedQty" SortExpression="ReturnedQty" />
+							<asp:BoundField DataField="StampNumber" HeaderText="StampNumber" SortExpression="StampNumber" />
+						</Columns>
+						<RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+						<EditRowStyle BackColor="#999999" />
+						<SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+						<PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+						<HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+						<AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+					</asp:GridView>
+					<asp:ObjectDataSource ID="odsRefundStampDetails" runat="server" OldValuesParameterFormatString="original_{0}"
+						SelectMethod="SelectRefundStampDetailsByRefundId" TypeName="IGRSS.BusinessLogicLayer.RefundApplication">
+						<SelectParameters>
+							<asp:ControlParameter ControlID="FVRefundApplication" Name="RefundApplicationId"
+								PropertyName="SelectedValue" Type="Object" />
+						</SelectParameters>
+					</asp:ObjectDataSource>
+					<asp:GridView ID="gvEActsApplicable" runat="server" AutoGenerateColumns="False" CellPadding="4"
+						DataKeyNames="ActId" DataSourceID="odsRefundActsApplicable" ForeColor="#333333"
+						GridLines="None" Width="710px" >
+						<Columns>
+							<asp:BoundField DataField="ActId" HeaderText="ActId" ReadOnly="True" SortExpression="ActId" Visible="False" />
+							<asp:BoundField DataField="DescriptionOfAct" HeaderText="DescriptionOfAct" SortExpression="DescriptionOfAct" />
+							<asp:BoundField DataField="NameOfAct" HeaderText="NameOfAct" SortExpression="NameOfAct" />
+							<asp:CheckBoxField DataField="IsActive" HeaderText="IsActive" SortExpression="IsActive" />
+							<asp:BoundField DataField="CreatedBy" HeaderText="CreatedBy" SortExpression="CreatedBy" Visible="False" />
+							<asp:BoundField DataField="CreatedAt" HeaderText="CreatedAt" SortExpression="CreatedAt" Visible="False" />
+							<asp:CommandField ShowEditButton="True" />
+						</Columns>
+						<FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+						<RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+						<EditRowStyle BackColor="#999999" />
+						<SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+						<PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+						<HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+						<AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+					</asp:GridView>
+				</EditItemTemplate>
+				<ItemTemplate>
+					<table width="100%">
+						<tr >
+							<td align="left" style="width: 131px" >
+								<asp:Label ID="Label1" runat="server" Text="Refund order Id" Width="155px"></asp:Label></td>
+							<td align="left" style="width: 100px; height: 18px">
+								<asp:TextBox ID="txtRefundOrderId" runat="server"></asp:TextBox></td>
+								<td>
+								</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="width: 131px; height: 26px;">
+								<asp:Label ID="Label2" runat="server" Text="Refund Order Date" Width="197px"></asp:Label></td>
+							<td align="left" style="width: 100px; height: 26px;">
+								<asp:TextBox ID="txtRefundDate" runat="server"></asp:TextBox></td>
+								
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>
+					<table width="100%">
+						<tr>
+							<td align="left" colspan="6">
+								<asp:Label ID="LblRefundHeading" runat="server" SkinID="Heading" Text="Refund Application"></asp:Label></td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 15px">
+								<asp:Label ID="LblOfficeId" runat="server" Text="Office Id" Width="98px"></asp:Label></td>
+							<td align="left" style="height: 15px">
+								<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="OdsOfficeMaster"
+									DataTextField="OfficeName" DataValueField="OfficeId" SelectedValue='<%# Bind("OfficeId") %>'
+									Width="157px">
+								</asp:DropDownList></td>
+							<td style="width: 22px; height: 15px">
+							</td>
+							<td align="left" style="width: 100px; height: 15px">
+								<asp:Label ID="LblRegistrationNo" runat="server" Text="Registration No"></asp:Label></td>
+							<td align="left" style="width: 51px; height: 15px">
+								<asp:TextBox ID="TxtRegistrationNo" runat="server" Text='<%# Bind("RegistrationNo")%>' ReadOnly="True"></asp:TextBox></td>
+							<td style="width: 21px; height: 15px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 7px">
+								<asp:Label ID="LblRefundPrefix" runat="server" Text="Refund File No"></asp:Label></td>
+							<td align="left" style="height: 7px">
+								<asp:TextBox ID="TxtRefundPrefix" runat="server" Text='<%# Bind("RefundPrefix")%>'
+									Width="19%" ReadOnly="True"></asp:TextBox>
+								/
+								<asp:TextBox ID="TxtRefundSlNo" runat="server" Text='<%# Bind("RefundSlNo")%>' Width="19%" ReadOnly="True"></asp:TextBox>
+								/
+								<asp:TextBox ID="TxtRefundYear" runat="server" Text='<%# Bind("RefundYear")%>' Width="19%" ReadOnly="True"></asp:TextBox></td>
+							<td>
+							</td>
+							<td align="left" style="width: 100px">
+								<asp:Label ID="LblTypeOfRefund" runat="server" Text="Type Of Refund"></asp:Label></td>
+							<td align="left" style="width: 51px">
+								<asp:TextBox ID="TxtTypeOfRefund" runat="server" Text='<%# Bind("TypeOfRefund")%>' ReadOnly="True"></asp:TextBox></td>
+							<td style="width: 21px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left">
+								<asp:Label ID="LblApplicationDate" runat="server" Text="Application Date" Width="118px"></asp:Label></td>
+							<td align="left">
+								<asp:TextBox ID="TxtApplicationDate" runat="server" Text='<%# Bind("ApplicationDate")%>' ReadOnly="True"></asp:TextBox></td>
+							<td style="width: 22px">
+							</td>
+							<td align="left" style="width: 100px">
+								<asp:Label ID="LblVendorLicenseId" runat="server" Text="Vendor License Id" Width="130px"></asp:Label></td>
+							<td align="left" style="width: 51px">
+								<asp:TextBox ID="TxtVendorLicenseId" runat="server" Text='<%# Bind("VendorLicenseId")%>' ReadOnly="True"></asp:TextBox></td>
+							<td style="width: 21px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left">
+								<asp:Label ID="LblPurchasedDate" runat="server" Text="Purchased Date" Width="106px"></asp:Label></td>
+							<td align="left">
+								<asp:TextBox ID="TxtPurchasedDate" runat="server" Text='<%# Bind("PurchasedDate")%>' ReadOnly="True"></asp:TextBox></td>
+							<td align="left" style="width: 22px">
+							</td>
+							<td align="left" style="width: 100px">
+								<asp:Label ID="LblTotalValueOfStamps" runat="server" Text="Total Value Of Stamps"
+									Width="144px"></asp:Label></td>
+							<td align="left" style="width: 51px">
+								<asp:TextBox ID="TxtTotalValueOfStamps" runat="server" Text='<%# Bind("TotalValueOfStamps")%>' ReadOnly="True"></asp:TextBox></td>
+							<td style="width: 21px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left">
+								<asp:Label ID="LblReasonForNotUsing" runat="server" Text="Reason For Not Using" Width="152px"></asp:Label></td>
+							<td align="left">
+								<asp:TextBox ID="TxtReasonForNotUsing" runat="server" Text='<%# Bind("ReasonForNotUsing")%>' ReadOnly="True"></asp:TextBox></td>
+							<td align="left" style="width: 22px">
+							</td>
+							<td align="left" style="width: 100px">
+							</td>
+							<td align="left" style="width: 51px">
+							</td>
+							<td style="width: 21px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" colspan="6" style="height: 15px">
+								<asp:Label ID="LblPersonalDetails" runat="server" SkinID="Heading" Text="Personal Details"></asp:Label></td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 15px">
+								<asp:Label ID="LblApplicantName" runat="server" Text="Applicant Name" Width="124px"></asp:Label></td>
+							<td align="left" style="height: 15px">
+								<asp:TextBox ID="TxtApplicantName" runat="server" Text='<%# Bind("ApplicantName")%>' ReadOnly="True"></asp:TextBox></td>
+							<td align="left" style="width: 22px; height: 15px">
+							</td>
+							<td align="left" style="width: 100px; height: 15px">
+								<asp:Label ID="LblApplicantAddress" runat="server" Text="Applicant Address" Width="128px"></asp:Label></td>
+							<td align="left" style="width: 51px; height: 15px">
+								<asp:TextBox ID="TxtApplicantAddress" runat="server" Text='<%# Bind("ApplicantAddress")%>' ReadOnly="True"></asp:TextBox></td>
+							<td align="left" style="width: 21px; height: 15px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 15px">
+								<asp:Label ID="LblCity" runat="server" Text="City"></asp:Label></td>
+							<td align="left" style="height: 15px">
+								<asp:TextBox ID="TxtCity" runat="server" Text='<%# Bind("City")%>' ReadOnly="True"></asp:TextBox></td>
+							<td align="left" style="width: 22px; height: 15px">
+							</td>
+							<td align="left" style="width: 100px; height: 15px">
+								<asp:Label ID="LblDistrict" runat="server" Text="District"></asp:Label></td>
+							<td align="left" style="width: 51px; height: 15px">
+								<asp:TextBox ID="TxtDistrict" runat="server" Text='<%# Bind("District")%>' ReadOnly="True"></asp:TextBox></td>
+							<td align="left" style="width: 21px; height: 15px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 15px">
+								<asp:Label ID="LblPinCode" runat="server" Text="Pin Code"></asp:Label></td>
+							<td align="left" style="height: 15px">
+								<asp:TextBox ID="TxtPinCode" runat="server" Text='<%# Bind("PinCode")%>' ReadOnly="True"></asp:TextBox></td>
+							<td align="left" style="width: 22px; height: 15px">
+							</td>
+							<td align="left" style="width: 100px; height: 15px">
+								<asp:Label ID="LblPhoneNo" runat="server" Text="Phone No"></asp:Label></td>
+							<td align="left" style="width: 51px; height: 15px">
+								<asp:TextBox ID="TxtPhoneNo" runat="server" Text='<%# Bind("PhoneNo")%>' ReadOnly="True"></asp:TextBox></td>
+							<td align="left" style="width: 21px; height: 15px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 15px">
+								<asp:Label ID="LblRemarks" runat="server" Text="Remarks"></asp:Label></td>
+							<td align="left" style="height: 15px">
+								<asp:TextBox ID="TxtRemarks" runat="server" Text='<%# Bind("Remarks")%>' ReadOnly="True"></asp:TextBox></td>
+							<td align="left" style="width: 22px; height: 15px">
+							</td>
+							<td align="left" style="width: 100px; height: 15px">
+							</td>
+							<td align="left" style="width: 51px; height: 15px">
+							</td>
+							<td align="left" style="width: 21px; height: 15px">
+							</td>
+						</tr>
+						<tr>
+							<td align="left" colspan="6" style="height: 15px">
+								<br />
+								<asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" CellPadding="4"
+									DataKeyNames="RefundApplicationId,RevenueStampId" DataSourceID="odsStampDetails"
+									ForeColor="#333333" GridLines="None" Width="706px">
+									<FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+									<Columns>
+										<asp:BoundField DataField="RefundApplicationId" HeaderText="RefundApplicationId"
+											ReadOnly="True" SortExpression="RefundApplicationId" />
+										<asp:BoundField DataField="RevenueStampId" HeaderText="RevenueStampId" ReadOnly="True"
+											SortExpression="RevenueStampId" />
+										<asp:BoundField DataField="ReturnedQty" HeaderText="ReturnedQty" SortExpression="ReturnedQty" />
+										<asp:BoundField DataField="StampNumber" HeaderText="StampNumber" SortExpression="StampNumber" />
+									</Columns>
+									<RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+									<EditRowStyle BackColor="#999999" />
+									<SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+									<PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+									<HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+									<AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+								</asp:GridView>
+								<asp:ObjectDataSource ID="odsStampDetails" runat="server" OldValuesParameterFormatString="original_{0}"
+									SelectMethod="SelectRefundStampDetailsByRefundId" TypeName="IGRSS.BusinessLogicLayer.RefundApplication">
+									<SelectParameters>
+										<asp:ControlParameter ControlID="FVRefundApplication" Name="RefundApplicationId"
+											PropertyName="SelectedValue" Type="Object" />
+									</SelectParameters>
+								</asp:ObjectDataSource>
+								
+							</td>
+						</tr>
+						<tr>
+							<td align="left" colspan="6" style="height: 15px">
+								<asp:GridView ID="GridView4" runat="server" CellPadding="4" DataSourceID="odsRefundActsApplicable"
+									ForeColor="#333333" GridLines="None" Width="712px" AutoGenerateColumns="False" DataKeyNames="ActId">
+									<FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+									<RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+									<EditRowStyle BackColor="#999999" />
+									<SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+									<PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+									<HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+									<AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+									<Columns>
+										<asp:BoundField DataField="ActId" HeaderText="ActId" ReadOnly="True" SortExpression="ActId"
+											Visible="False" />
+										<asp:BoundField DataField="DescriptionOfAct" HeaderText="DescriptionOfAct" SortExpression="DescriptionOfAct" />
+										<asp:BoundField DataField="NameOfAct" HeaderText="NameOfAct" SortExpression="NameOfAct" />
+										<asp:CheckBoxField DataField="IsActive" HeaderText="IsActive" SortExpression="IsActive" />
+										<asp:BoundField DataField="CreatedBy" HeaderText="CreatedBy" SortExpression="CreatedBy"
+											Visible="False" />
+										<asp:BoundField DataField="CreatedAt" HeaderText="CreatedAt" SortExpression="CreatedAt"
+											Visible="False" />
+									</Columns>
+								</asp:GridView>
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="height: 15px">
+							</td>
+							<td align="left" style="height: 15px">
+							</td>
+							<td align="left" style="width: 22px; height: 15px">
+							</td>
+							<td align="right" style="width: 100px; height: 15px">
+								<asp:Button ID="EditOnApproving" runat="server" OnClick="EditOnApproving_Click" Text="Edit" /></td>
+							<td align="left">
+								<asp:Button ID="btnApprove" runat="server" Text="Approve" OnClick="btnApprove_Click" />
+							</td>
+							<td align="left" style="width: 21px; height: 15px">
+							</td>
+						</tr>
+					</table>
+				</ItemTemplate>
+			</asp:FormView>
+			<table width="100%">
+				<tr>
+					<td align="left" colspan="4">
+						<asp:Label ID="lblAddStampDetails" runat="server" SkinID="Heading" Text="Add Stamp Details"></asp:Label></td>
+				</tr>
+				<tr>
+					<td align="left" style="height: 18px">
+						<asp:Label ID="lblStampType" runat="server" Text="Stamp Type" Width="114px"></asp:Label></td>
+					<td align="center" style="height: 18px">
+						<asp:Label ID="lblStampQuantity" runat="server" Text="Quantity" Width="166px"></asp:Label></td>
+					<td align="center" style="height: 18px">
+						<asp:Label ID="lblStampsSerielNo" runat="server" Text=" Stamps Seriel No" Width="277px"></asp:Label></td>
+					<td align="left" style="height: 18px">
+					</td>
+				</tr>
+				<tr>
+					<td align="left" style="height: 23px">
+						<asp:DropDownList ID="dlRevenueStampId" runat="server" DataSourceID="odsRevenueStampMaster"
+							DataTextField="Name" DataValueField="RevenueStampId" Height="20px" Width="131px">
+						</asp:DropDownList></td>
+					<td align="left" style="height: 23px">
+						<asp:TextBox ID="TxtReturnedQty" runat="server" Height="18px" Width="175px"></asp:TextBox></td>
+					<td align="left" style="height: 23px">
+						<asp:TextBox ID="txtStampsNumbers" runat="server" TextMode="MultiLine" Height="21px"
+							Width="271px"></asp:TextBox></td>
+					<td align="left" style="height: 23px">
+						<asp:Button ID="btnAddStamp" runat="server" OnClick="btnAddStamp_Click" Text="Add" />
+						<asp:Button ID="btnUpdateStamp" runat="server" OnClick="btnUpdateStamp_Click" Text="Update"
+							Visible="False" />
+					</td>
+				</tr>
+			</table>
+			<asp:GridView ID="gvRefundStampDetails" runat="server" AutoGenerateColumns="False"
+				CellPadding="4" DataKeyNames="StampType" ForeColor="#333333" GridLines="None"
+				OnRowDeleting="gvRefundStampDetails_RowDeleting" OnRowEditing="gvRefundStampDetails_RowEditing"
+				OnSelectedIndexChanged="gvRefundStampDetails_SelectedIndexChanged" Width="748px">
+				<FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+				<RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+				<EditRowStyle BackColor="#999999" />
+				<SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+				<PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+				<HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+				<AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+				<Columns>
+					<asp:BoundField DataField="StampType" HeaderText="Type Id" Visible="False" />
+					<asp:TemplateField HeaderText="Name Of Stamp" ShowHeader="False">
+						<ItemTemplate>
+							<asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Select"
+								Text='<%# Bind("StampName") %>'></asp:LinkButton>
+						</ItemTemplate>
+					</asp:TemplateField>
+					<asp:BoundField DataField="Qty" HeaderText="Quantity" />
+					<asp:BoundField DataField="Nos" HeaderText="Numbers" />
+					<asp:CommandField ShowDeleteButton="True" />
+				</Columns>
+			</asp:GridView>
+			<table width="100%">
+				<tr>
+					<td align="left" colspan="4" style="height: 9px">
+						<asp:Label ID="lblAppliedActs" runat="server" SkinID="Heading" Text="Applied Act Details"></asp:Label></td>
+				</tr>
+				<tr>
+					<td align="left" style="width: 29px; height: 9px;">
+						<asp:Label ID="lblActApplicable" runat="server" Text="Act Applicable" Width="105px"></asp:Label></td>
+					<td align="left" style="width: 52px; height: 9px;">
+						<asp:CheckBoxList ID="chkLstBx" runat="server" DataSourceID="odsActMaster" DataTextField="NameOfAct"
+							DataValueField="ActId" Height="26px" Width="144px">
+						</asp:CheckBoxList>
+					</td>
+					<td align="left" style="width: 49px; height: 9px;">
+						<asp:Label ID="lblAppliedActsRemarks" runat="server" Text="Remarks"></asp:Label></td>
+					<td align="left" style="width: 100px; height: 9px;">
+						<asp:TextBox ID="TxtActRemarks" runat="server" TextMode="MultiLine" Width="417px"></asp:TextBox></td>
+				</tr>
+				<tr>
+					<td align="left" style="width: 29px; height: 9px">
+					</td>
+					<td align="left" style="width: 52px; height: 9px">
+					</td>
+					<td align="left" style="width: 49px; height: 9px">
+					</td>
+					<td align="left" style="width: 100px; height: 9px">
+						<asp:ObjectDataSource ID="odsRefundActsApplicable" runat="server" InsertMethod="InsertNewActMaster"
+							OldValuesParameterFormatString="original_{0}" SelectMethod="GetActMasterDetails"
+							TypeName="IGRSS.BusinessLogicLayer.RefundActMaster" UpdateMethod="UpdateActMaster">
+							<UpdateParameters>
+								<asp:Parameter Name="ActId" Type="Object" />
+								<asp:Parameter Name="DescriptionOfAct" Type="String" />
+								<asp:Parameter Name="NameOfAct" Type="String" />
+							</UpdateParameters>
+							<InsertParameters>
+								<asp:Parameter Name="DescriptionOfAct" Type="String" />
+								<asp:Parameter Name="NameOfAct" Type="String" />
+								<asp:Parameter Name="IsActive" Type="Boolean" />
+							</InsertParameters>
+						</asp:ObjectDataSource>
+					</td>
+				</tr>
+			</table>
+			
+			<asp:ObjectDataSource ID="odsRevenueStampMaster" runat="server" InsertMethod="NewRevenueStampMaster"
+				OldValuesParameterFormatString="original_{0}" SelectMethod="GetrevenueStampMasterDetails"
+				TypeName="IGRSS.BusinessLogicLayer.RevenueStampMaster" UpdateMethod="UpdateRevenueStampMaster">
+				<UpdateParameters>
+					<asp:Parameter Name="Name" Type="String" />
+					<asp:Parameter Name="Description" Type="String" />
+					<asp:Parameter Name="Amount" Type="Decimal" />
+					<asp:Parameter Name="RevenueStampId" Type="Object" />
+				</UpdateParameters>
+				<InsertParameters>
+					<asp:Parameter Name="Name" Type="String" />
+					<asp:Parameter Name="Description" Type="String" />
+					<asp:Parameter Name="Amount" Type="Decimal" />
+				</InsertParameters>
+			</asp:ObjectDataSource>
+			<asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Show All" />
+			<asp:ObjectDataSource ID="odsRefundDetails" runat="server" InsertMethod="NewRefundApplication"
+				SelectMethod="GetAllRefundApplicationsById" TypeName="IGRSS.BusinessLogicLayer.RefundApplication"
+				UpdateMethod="UpdateRefundApplication">
+				<UpdateParameters>
+					<asp:Parameter Name="RefundApplicationId" Type="Object" />
+					<asp:Parameter Name="OfficeId" Type="Object" />
+					<asp:Parameter Name="RegistrationNo" Type="Object" />
+					<asp:Parameter Name="RefundPrefix" Type="String" />
+					<asp:Parameter Name="RefundSlNo" Type="Decimal" />
+					<asp:Parameter Name="RefundYear" Type="Decimal" />
+					<asp:Parameter Name="TypeOfRefund" Type="String" />
+					<asp:Parameter Name="ApplicationDate" Type="DateTime" />
+					<asp:Parameter Name="VendorLicenseId" Type="Object" />
+					<asp:Parameter Name="PURCHASEDDATE" Type="DateTime" />
+					<asp:Parameter Name="TotalValueOfStamps" Type="String" />
+					<asp:Parameter Name="ReasonForNotUsing" Type="String" />
+					<asp:Parameter Name="ApplicantName" Type="String" />
+					<asp:Parameter Name="ApplicantAddress" Type="String" />
+					<asp:Parameter Name="City" Type="String" />
+					<asp:Parameter Name="District" Type="String" />
+					<asp:Parameter Name="PinCode" Type="String" />
+					<asp:Parameter Name="PhoneNo" Type="String" />
+					<asp:Parameter Name="Remarks" Type="String" />
+				</UpdateParameters>
+				<InsertParameters>
+					<asp:Parameter Name="OfficeId" Type="Object" />
+					<asp:Parameter Name="RegistrationNo" Type="Object" />
+					<asp:Parameter Name="RefundPrefix" Type="String" />
+					<asp:Parameter Name="RefundSlNo" Type="Decimal" />
+					<asp:Parameter Name="RefundYear" Type="Decimal" />
+					<asp:Parameter Name="TypeOfRefund" Type="String" />
+					<asp:Parameter Name="ApplicationDate" Type="DateTime" />
+					<asp:Parameter Name="VendorLicenseId" Type="Object" />
+					<asp:Parameter Name="PURCHASEDDATE" Type="DateTime" />
+					<asp:Parameter Name="TotalValueOfStamps" Type="String" />
+					<asp:Parameter Name="ReasonForNotUsing" Type="String" />
+					<asp:Parameter Name="ApplicantName" Type="String" />
+					<asp:Parameter Name="ApplicantAddress" Type="String" />
+					<asp:Parameter Name="City" Type="String" />
+					<asp:Parameter Name="District" Type="String" />
+					<asp:Parameter Name="PinCode" Type="String" />
+					<asp:Parameter Name="PhoneNo" Type="String" />
+					<asp:Parameter Name="Remarks" Type="String" />
+					<asp:Parameter Name="StampDetails" Type="Object" />
+				</InsertParameters>
+				<SelectParameters>
+					<asp:Parameter Name="RefundApplicationId" Type="Object" />
+				</SelectParameters>
+			</asp:ObjectDataSource>
+			<asp:ObjectDataSource ID="odsActMaster" runat="server" InsertMethod="InsertNewActMaster"
+				SelectMethod="GetActMasterDetails" TypeName="IGRSS.BusinessLogicLayer.RefundActMaster"
+				UpdateMethod="UpdateActMaster" OldValuesParameterFormatString="original_{0}">
+				<UpdateParameters>
+					<asp:Parameter Name="ActId" Type="Object" />
+					<asp:Parameter Name="DescriptionOfAct" Type="String" />
+					<asp:Parameter Name="NameOfAct" Type="String" />
+				</UpdateParameters>
+				<InsertParameters>
+					<asp:Parameter Name="DescriptionOfAct" Type="String" />
+					<asp:Parameter Name="NameOfAct" Type="String" />
+					<asp:Parameter Name="IsActive" Type="Boolean" />
+				</InsertParameters>
+			</asp:ObjectDataSource>
+			<br />
+		</asp:View>
+		<asp:View ID="RefundApprovalView" runat="server">
+			<asp:GridView ID="GvRefundAlerts" runat="server" AllowPaging="True" AllowSorting="True"
+				AutoGenerateColumns="False" CellPadding="4" DataKeyNames="RefundApplicationId"
+				DataSourceID="OdsRefund" ForeColor="#333333" GridLines="None" Width="746px" OnSelectedIndexChanged="GvRefundAlerts_SelectedIndexChanged"
+				OnRowCommand="GvRefundAlerts_RowCommand">
+				<FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+				<Columns>
+					<asp:BoundField DataField="RefundApplicationId" HeaderText="RefundApplicationId"
+						ReadOnly="True" SortExpression="RefundApplicationId" Visible="False" />
+					<asp:BoundField DataField="ApplicantName" HeaderText="ApplicantName" SortExpression="ApplicantName" />
+					<asp:BoundField DataField="TypeOfRefund" HeaderText="TypeOfRefund" SortExpression="TypeOfRefund" />
+					<asp:BoundField DataField="TotalValueOfStamps" HeaderText="TotalValueOfStamps" SortExpression="TotalValueOfStamps" />
+					<asp:BoundField DataField="RefundAmount" HeaderText="RefundAmount" SortExpression="RefundAmount" />
+					<asp:BoundField DataField="ApplicationDate" HeaderText="ApplicationDate" SortExpression="ApplicationDate" />
+					<asp:CommandField ShowSelectButton="True" />
+					<asp:ButtonField ButtonType="Button" Text="Issue" CommandName="Issue" />
+				</Columns>
+				<RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+				<EditRowStyle BackColor="#999999" />
+				<SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+				<PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+				<HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+				<AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+			</asp:GridView>
+			<asp:ObjectDataSource ID="OdsRefund" runat="server" InsertMethod="NewRefundApplication"
+				SelectMethod="GetAllRefundApplications" TypeName="IGRSS.BusinessLogicLayer.RefundApplication"
+				UpdateMethod="UpdateRefundApplication" OldValuesParameterFormatString="original_{0}">
+				<InsertParameters>
+					<asp:Parameter Name="OfficeId" Type="Object" />
+					<asp:Parameter Name="RegistrationNo" Type="Object" />
+					<asp:Parameter Name="RefundPrefix" Type="String" />
+					<asp:Parameter Name="RefundSlNo" Type="Decimal" />
+					<asp:Parameter Name="RefundYear" Type="Decimal" />
+					<asp:Parameter Name="TypeOfRefund" Type="String" />
+					<asp:Parameter Name="ApplicationDate" Type="DateTime" />
+					<asp:Parameter Name="VendorLicenseId" Type="Object" />
+					<asp:Parameter Name="PURCHASEDDATE" Type="DateTime" />
+					<asp:Parameter Name="TotalValueOfStamps" Type="String" />
+					<asp:Parameter Name="ReasonForNotUsing" Type="String" />
+					<asp:Parameter Name="ApplicantName" Type="String" />
+					<asp:Parameter Name="ApplicantAddress" Type="String" />
+					<asp:Parameter Name="City" Type="String" />
+					<asp:Parameter Name="District" Type="String" />
+					<asp:Parameter Name="PinCode" Type="String" />
+					<asp:Parameter Name="PhoneNo" Type="String" />
+					<asp:Parameter Name="Remarks" Type="String" />
+					<asp:Parameter Name="StampDetails" Type="Object" />
+				</InsertParameters>
+				<UpdateParameters>
+					<asp:Parameter Name="RefundApplicationId" Type="Object" />
+					<asp:Parameter Name="OfficeId" Type="Object" />
+					<asp:Parameter Name="RegistrationNo" Type="Object" />
+					<asp:Parameter Name="RefundPrefix" Type="String" />
+					<asp:Parameter Name="RefundSlNo" Type="Decimal" />
+					<asp:Parameter Name="RefundYear" Type="Decimal" />
+					<asp:Parameter Name="TypeOfRefund" Type="String" />
+					<asp:Parameter Name="ApplicationDate" Type="DateTime" />
+					<asp:Parameter Name="VendorLicenseId" Type="Object" />
+					<asp:Parameter Name="PURCHASEDDATE" Type="DateTime" />
+					<asp:Parameter Name="TotalValueOfStamps" Type="String" />
+					<asp:Parameter Name="ReasonForNotUsing" Type="String" />
+					<asp:Parameter Name="ApplicantName" Type="String" />
+					<asp:Parameter Name="ApplicantAddress" Type="String" />
+					<asp:Parameter Name="City" Type="String" />
+					<asp:Parameter Name="District" Type="String" />
+					<asp:Parameter Name="PinCode" Type="String" />
+					<asp:Parameter Name="PhoneNo" Type="String" />
+					<asp:Parameter Name="Remarks" Type="String" />
+				</UpdateParameters>
+			</asp:ObjectDataSource>
+		</asp:View>
+	</asp:MultiView><br />
+	&nbsp;<asp:ObjectDataSource ID="OdsLicenseMaster" runat="server"></asp:ObjectDataSource>
+	<asp:ObjectDataSource ID="OdsOfficeMaster" runat="server" SelectMethod="GetOffices"
+		TypeName="IGRSS.BusinessLogicLayer.OfficeManagement" DataObjectTypeName="System.Guid" DeleteMethod="DeActivateOffice" InsertMethod="AddNewOfficeType" OldValuesParameterFormatString="original_{0}">
+		<InsertParameters>
+			<asp:Parameter Name="OfficeTypeName" Type="String" />
+			<asp:Parameter Name="Description" Type="String" />
+		</InsertParameters>
+	</asp:ObjectDataSource>
+</asp:Content>

@@ -1,0 +1,600 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BoundFieldResource1.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.HeaderText" xml:space="preserve">
+    <value>Service No</value>
+  </data>
+  <data name="BoundFieldResource2.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource2.HeaderText" xml:space="preserve">
+    <value>Service Date</value>
+  </data>
+  <data name="BoundFieldResource3.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource3.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource3.HeaderText" xml:space="preserve">
+    <value>Vendor Name</value>
+  </data>
+  <data name="btnBackToGridResource1.Text" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="btnBackToGridResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnSearchServiceNo.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="btnSearchServiceNo.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnServiceCancelUpdResource1.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnServiceCancelUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnServiceInsertInsResource1.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnServiceInsertInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnServiceUpdateUpdResource1.Text" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="btnServiceUpdateUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnTelephoneCancelInsResource1.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnTelephoneCancelInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.CancelText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CommandFieldResource1.DeleteText" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="CommandFieldResource1.EditText" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="CommandFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.InsertText" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="CommandFieldResource1.NewText" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="CommandFieldResource1.SelectText" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="CommandFieldResource1.UpdateText" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="ddlEmpNameInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlEmpNameUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlVendorNameInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlVendorNameUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FvReadOnlyResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FvReadOnlyResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FvReadOnlyResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FvReadOnlyResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FvReadOnlyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvServiceResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvServiceResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvServiceResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvServiceResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServiceNoResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServiceNoResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServiceNoResource1.ToolTip" xml:space="preserve">
+    <value>Select a Record to Edit or View</value>
+  </data>
+  <data name="lblCreatedAtResource1.Text" xml:space="preserve">
+    <value>Created At</value>
+  </data>
+  <data name="lblCreatedAtResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCreatedByResource1.Text" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="lblCreatedByResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEmpNameIns.Text" xml:space="preserve">
+    <value>Employee Name</value>
+  </data>
+  <data name="lblEmpNameIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEmpNameItm.Text" xml:space="preserve">
+    <value>Employee Name</value>
+  </data>
+  <data name="lblEmpNameItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEmpNameUpd.Text" xml:space="preserve">
+    <value>Employee Name</value>
+  </data>
+  <data name="lblEmpNameUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblInstumentRepairedIns.Text" xml:space="preserve">
+    <value>Instrument Repaired</value>
+  </data>
+  <data name="lblInstumentRepairedIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblItmtumentRepairedItm.Text" xml:space="preserve">
+    <value>Instruments Repaired</value>
+  </data>
+  <data name="lblItmtumentRepairedItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblModifiedAtResource1.Text" xml:space="preserve">
+    <value>Modified At</value>
+  </data>
+  <data name="lblModifiedAtResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblModifiedByResource1.Text" xml:space="preserve">
+    <value>Modified By</value>
+  </data>
+  <data name="lblModifiedByResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOtherDetails.Text" xml:space="preserve">
+    <value>Other Details</value>
+  </data>
+  <data name="lblOtherDetails.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRemarksIns.Text" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="lblRemarksIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRemarksItm.Text" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="lblRemarksItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRemarksUpd.Text" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="lblRemarksUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblServiceDateIns.Text" xml:space="preserve">
+    <value>Service Date</value>
+  </data>
+  <data name="lblServiceDateIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblServiceDateItm.Text" xml:space="preserve">
+    <value>Service Date</value>
+  </data>
+  <data name="lblServiceDateItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblServiceDateUpd.Text" xml:space="preserve">
+    <value>Service Date</value>
+  </data>
+  <data name="lblServiceDateUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblServiceDetailsHeaderIns.Text" xml:space="preserve">
+    <value>Service Details</value>
+  </data>
+  <data name="lblServiceDetailsHeaderIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblServiceDetailsHeaderItm.Text" xml:space="preserve">
+    <value>Service Details</value>
+  </data>
+  <data name="lblServiceDetailsHeaderItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblServiceDetailsHeaderUpd.Text" xml:space="preserve">
+    <value>Service Details</value>
+  </data>
+  <data name="lblServiceDetailsHeaderUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblServiceNo.Text" xml:space="preserve">
+    <value>Enter Service No</value>
+  </data>
+  <data name="lblServiceNo.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblServiceNoIns.Text" xml:space="preserve">
+    <value>Service No</value>
+  </data>
+  <data name="lblServiceNoIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblServiceNoItm.Text" xml:space="preserve">
+    <value>Service No</value>
+  </data>
+  <data name="lblServiceNoItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblServiceNoUpd.Text" xml:space="preserve">
+    <value>Service No</value>
+  </data>
+  <data name="lblServiceNoUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="lblStatus.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUpdtumentRepairedUpd.Text" xml:space="preserve">
+    <value>Updtrument Repaired</value>
+  </data>
+  <data name="lblUpdtumentRepairedUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVendorNameIns.Text" xml:space="preserve">
+    <value>Vendor Name</value>
+  </data>
+  <data name="lblVendorNameIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVendorNameItm.Text" xml:space="preserve">
+    <value>Vendor Name</value>
+  </data>
+  <data name="lblVendorNameItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVendorNameUpd.Text" xml:space="preserve">
+    <value>Vendor Name</value>
+  </data>
+  <data name="lblVendorNameUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Service Details</value>
+  </data>
+  <data name="pcServiceDate.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RegExptxtRemarksInsResource1.ErrorMessage" xml:space="preserve">
+    <value>Remarks Should be some Text</value>
+  </data>
+  <data name="RegExptxtRemarksInsResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RegExptxtRemarksInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RegExptxtRemarksUpdResource1.ErrorMessage" xml:space="preserve">
+    <value>Remarks Should be some Text</value>
+  </data>
+  <data name="RegExptxtRemarksUpdResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RegExptxtRemarksUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RegexptxtServiceNoInsResource1.ErrorMessage" xml:space="preserve">
+    <value>Please Enter Valid ServiceNo</value>
+  </data>
+  <data name="RegexptxtServiceNoInsResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RegexptxtServiceNoInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RegexptxtServiceNoUpdResource1.ErrorMessage" xml:space="preserve">
+    <value>Not a valid Service No</value>
+  </data>
+  <data name="RegexptxtServiceNoUpdResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RegexptxtServiceNoUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReqfldServiceDateInsResource1.ErrorMessage" xml:space="preserve">
+    <value>Service Date is Must</value>
+  </data>
+  <data name="ReqfldServiceDateInsResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="ReqfldServiceDateInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReqFldtxtRemarksInsResource1.ErrorMessage" xml:space="preserve">
+    <value>Please Enter Remarks</value>
+  </data>
+  <data name="ReqFldtxtRemarksInsResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="ReqFldtxtRemarksInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource1.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredFieldValidator1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RvfServiceNoInsResource1.ErrorMessage" xml:space="preserve">
+    <value>Please Enter ServiceNo</value>
+  </data>
+  <data name="RvfServiceNoInsResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RvfServiceNoInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RvfServiceNoItmResource1.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RvfServiceNoItmResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RvfServiceNoItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RvfServiceNoItmResource2.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RvfServiceNoItmResource2.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RvfServiceNoItmResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RvfServiceNoUpdResource1.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RvfServiceNoUpdResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RvfServiceNoUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCreatedAtResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCreatedByResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEmpNameItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtInstumentRepairedIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtItmtumentRepairedItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtModifiedAtResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtModifiedByResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRemarksIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRemarksItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRemarksUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtServiceDateIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtServiceDateItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtServiceDateUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtServiceNo.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtServiceNo.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtServiceNoIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtServiceNoItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtServiceNoUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStatusResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUpdtumentRepairedUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtVendorNameItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>

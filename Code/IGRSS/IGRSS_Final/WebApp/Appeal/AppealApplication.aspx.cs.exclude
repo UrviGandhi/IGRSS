@@ -1,0 +1,141 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using IGRSS.BusinessLogicLayer;
+using IGRSS.BusinessObjects;
+public partial class Appeal_AppealApplication : IgrssPage
+{
+	DataTable dtAct = new DataTable();
+	public void InitAct()
+	{
+		dtAct = (DataTable) ViewState["dtAct"];
+		if (dtAct == null)
+		{
+			dtAct = new DataTable();
+			dtAct.Columns.Add("ActId", typeof(Guid));
+			dtAct.Columns.Add("Checked", typeof(bool));
+		}
+	}
+	AppealApplication objAppeal = new AppealApplication();
+	protected void Page_Load(object sender, EventArgs e)
+	{
+
+	}
+	protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+	{
+		mvAppealType.SetActiveView(mvAppealType.Views[3]);
+		fvReadOnly.ChangeMode(FormViewMode.ReadOnly);
+		if((bool)Session["Click"] == true)
+		FormView1.ChangeMode(FormViewMode.Edit);
+		else
+		FormView1.ChangeMode(FormViewMode.ReadOnly);
+	}
+	protected void FormView1_PageIndexChanging(object sender, FormViewPageEventArgs e)
+	{
+
+	}
+	protected void FormView1_ItemCommand(object sender, FormViewCommandEventArgs e)
+	{
+		if (e.CommandName == "ApproveAppealApplication")
+		{
+			Guid licID = new Guid(GridView1.SelectedDataKey.Value.ToString());
+			objAppeal.ApproveAppealApplication(licID);
+		}
+		if (e.CommandName == "RejectAppealApplication")
+		{
+			Guid licID = new Guid(GridView1.SelectedDataKey.Value.ToString());
+			objAppeal.RejectAppealApplication(licID);
+		}
+	}
+	protected void btnNewRegistration_Click(object sender, EventArgs e)
+	{
+		mvAppealType.SetActiveView(mvAppealType.Views[1]);
+		FormView1.ChangeMode(FormViewMode.Insert);
+	}
+	protected void FormView1_ItemInserting(object sender, FormViewInsertEventArgs e)
+	{
+		dtAct = (DataTable) ViewState["dtAct"];
+		Global.SetFormViewParameters(e.Values, AppealApplication.GetRow());
+		InitAct();
+		foreach (ListItem li in ((ListBox) FormView1.FindControl("liAppealAct")).Items)
+		{
+			if(li.Selected)
+			dtAct.Rows.Add(li.Value,li.Selected);
+		}
+		e.Values.Add("dtAct", dtAct);  	
+	}
+	protected void odsAppealApplication_Inserting(object sender, ObjectDataSourceMethodEventArgs e)
+	{
+		FormViewParameter Parameters = new FormViewParameter();
+		Parameters.Values = (DataRow) e.InputParameters["Values"];
+		e.InputParameters["Parameter"] = Parameters;
+		e.InputParameters.Remove("Values");
+	}
+	protected void odsAppealApplication_Updating(object sender, ObjectDataSourceMethodEventArgs e)
+	{
+		FormViewParameter Parameters = new FormViewParameter();
+		Parameters.Values = (DataRow) e.InputParameters["Values"];
+		e.InputParameters["Parameter"] = Parameters;
+		e.InputParameters.Remove("Values");
+	}
+	protected void FormView1_ItemUpdating(object sender, FormViewUpdateEventArgs e)
+	{
+		dtAct = (DataTable) ViewState["dtAct"];
+		Global.SetFormViewParameters(e.NewValues, AppealApplication.GetRow());
+		InitAct();
+		foreach (ListItem li in ((ListBox) FormView1.FindControl("liActUpd")).Items)
+		{
+			if (li.Selected)
+				dtAct.Rows.Add(li.Value, li.Selected);
+		}
+		e.NewValues.Add("dtAct", dtAct);  	
+	}
+	protected void lnltest_Click(object sender, EventArgs e)
+	{
+		mvAppealType.SetActiveView(mvAppealType.Views[2]);
+		FormView1.ChangeMode(FormViewMode.Insert);
+	}
+	protected void LinkButton1_Click(object sender, EventArgs e)
+	{
+		Session["Click"] = true;
+		mvAppealType.SetActiveView(mvAppealType.Views[1]);
+	
+	}
+	protected void LinkButton2_Click(object sender, EventArgs e)
+	{
+		Session["Click"] = false;
+		mvAppealType.SetActiveView(mvAppealType.Views[1]);
+		
+	}
+	protected void btnSearch_Click(object sender, EventArgs e)
+	{
+		if (txtAppealNo.Text == "" && txtAppliCantName.Text != "")
+		{
+			GridView1.DataSource=objAppeal.GetAppealApplicationByApplicantName(txtAppliCantName.Text);
+			GridView1.DataBind();
+		}
+		else if (txtAppliCantName.Text == "" && txtAppealNo.Text != "")
+		{
+			GridView1.DataSource = objAppeal.GetAppealApplicationByAppealNo(Convert.ToDecimal(txtAppealNo.Text));
+			GridView1.DataBind();
+		}
+		else
+		{
+			GridView1.DataSource=objAppeal.GetAllAppealApplication();
+			GridView1.DataBind();
+		}
+		txtAppliCantName.Text = "";
+		txtAppealNo.Text = "";
+	}
+	protected void FormView1_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+	{
+		mvAppealType.SetActiveView(mvAppealType.Views[1]);
+	}
+}

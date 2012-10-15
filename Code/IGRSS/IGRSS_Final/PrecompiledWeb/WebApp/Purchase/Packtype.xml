@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<PurchasePackType>
+
+	<item Key="Small" Value="S">
+		<Description>Small</Description>
+	</item>
+	<item Key="Big" Value="B" >
+		<Description>Big</Description>
+	</item>
+</PurchasePackType>
+
+
+
+

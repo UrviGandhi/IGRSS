@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="IGRSS_REPORT">
+      <rd:DataSourceID>e9035b9c-c81b-4964-9c6e-ab84150ab7fb</rd:DataSourceID>
+      <DataSourceReference>IGRSS_REPORT</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="FileId">
+      <DataType>String</DataType>
+      <Prompt>FileId</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>1in</RightMargin>
+  <LeftMargin>1in</LeftMargin>
+  <BottomMargin>1in</BottomMargin>
+  <rd:ReportID>51012ce3-cce7-4fdd-a5be-f423f433a095</rd:ReportID>
+  <DataSets>
+    <DataSet Name="IGRSS_REPORT">
+      <Fields>
+        <Field Name="FileId">
+          <DataField>FileId</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="FileSerialNo">
+          <DataField>FileSerialNo</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="FileDepartment">
+          <DataField>FileDepartment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FileNo">
+          <DataField>FileNo</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="FileYear">
+          <DataField>FileYear</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OfficeId">
+          <DataField>OfficeId</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CreatedAt">
+          <DataField>CreatedAt</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="IsOpen">
+          <DataField>IsOpen</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="IsFordwarded">
+          <DataField>IsFordwarded</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>IGRSS_REPORT</DataSourceName>
+        <CommandText>SELECT     FileManagementMaster.FileId, FileManagementMaster.FileSerialNo, FileManagementMaster.FileDepartment, FileManagementMaster.FileNo, 
+                      FileManagementMaster.FileYear, FileManagementMaster.OfficeId, FileManagementMaster.CreatedBy, FileManagementMaster.CreatedAt, 
+                      FileManagementMaster.IsOpen, FileManagementMaster.IsFordwarded, Applicant_Details.Name
+FROM         Applicant_Details INNER JOIN
+                      FileManagementMaster ON Applicant_Details.fileid = FileManagementMaster.FileId
+WHERE     (FileManagementMaster.FileId = @FileId)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@FileId">
+            <Value>=Parameters!FileId.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Width>5.875in</Width>
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox3">
+        <rd:DefaultName>textbox3</rd:DefaultName>
+        <Top>0.125in</Top>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>3.5in</Left>
+        <Height>0.25in</Height>
+        <Value>="Date : " &amp; Now()</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Width>3.5in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>20pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextDecoration>Underline</TextDecoration>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.36in</Height>
+        <Value>File Acknowledgement</Value>
+      </Textbox>
+      <List Name="List1">
+        <Sorting>
+          <SortBy>
+            <SortExpression>=Fields!FileDepartment.Value</SortExpression>
+            <Direction>Ascending</Direction>
+          </SortBy>
+        </Sorting>
+        <DataSetName>IGRSS_REPORT</DataSetName>
+        <ReportItems>
+          <Textbox Name="textbox2">
+            <rd:DefaultName>textbox2</rd:DefaultName>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>1.875in</Height>
+            <Value>="The application submitted by " &amp; Fields!Name.Value &amp; " has been accepted and will be processed shortly Please note the File No: " &amp; Fields!FileDepartment.Value &amp; "/" &amp; Fields!FileSerialNo.Value &amp; "/" &amp; Fields!FileYear.Value &amp; " use this number for any future correspondence." &amp;  Chr(13) &amp; Chr(10)  &amp;  Chr(13) &amp; Chr(10)  &amp;  Chr(13) &amp; Chr(10)  &amp;  Chr(13) &amp; Chr(10) &amp;  Chr(13) &amp; Chr(10) &amp; "File Accepted By : " &amp; Fields!CreatedBy.Value &amp; " on " &amp; Fields!CreatedAt.Value</Value>
+          </Textbox>
+        </ReportItems>
+        <Top>0.36in</Top>
+        <Style>
+          <Color>SlateGray</Color>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>14pt</FontSize>
+        </Style>
+        <Grouping Name="list1_FileDepartment">
+          <GroupExpressions>
+            <GroupExpression>=Fields!FileDepartment.Value</GroupExpression>
+          </GroupExpressions>
+          <PageBreakAtEnd>true</PageBreakAtEnd>
+        </Grouping>
+      </List>
+    </ReportItems>
+    <Height>2.28in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

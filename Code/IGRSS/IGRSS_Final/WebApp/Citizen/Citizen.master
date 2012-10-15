@@ -1,0 +1,74 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Citizen.master.cs" Inherits="Citizen_Citizen" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title>Untitled Page</title>
+</head>
+<body>
+	<form id="form1" runat="server">
+		<table width="100%">
+			<tr>
+				<td style="height: 12px">
+					<div id="header">
+						<table cellspacing="0" class="header" width="100%">
+							<tr>
+								<td align="left" colspan="2" style="width: 470px;">
+									<asp:Label ID="Label1" runat="server" ForeColor="White" Height="16px" Text="WELCOME"
+										Width="63px"></asp:Label>
+									<asp:LoginName ID="LoginName" runat="server" ForeColor="White" Height="16px" />
+								</td>
+								<td style="text-align: right; width: 125px;">
+									<asp:LoginStatus ID="userLoginStatus" runat="server" Height="23px" LogoutAction="RedirectToLoginPage" />
+								</td>
+							</tr>
+							<tr align="left">
+								<td class="logo" rowspan="2">
+									<asp:Image ID="imgLogo" runat="server" SkinID="AppLogo" />
+								</td>
+								<td colspan="2" valign="top">
+									<h1>
+										Inspector General of Registration &amp; Superintendent of Stamps</h1>
+									<h2>
+										Bussiness Wing #7. Revenue Department Government of Gujrat</h2>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" style="display: block; overflow: auto; height: 41px;" valign="bottom">
+									<asp:XmlDataSource ID="MenuSource" runat="server" DataFile="~/Citizen/XMLFile.xml"
+										XPath="IgrssSite/Module/*"></asp:XmlDataSource>
+									&nbsp;</td>
+							</tr>
+						</table>
+					</div>
+					</td>
+			</tr>
+			<tr class="content">
+				<td>
+					<div id="cphContent" class="content">
+						&nbsp;
+						<asp:Menu ID="IgrssMainMenu" runat="server" DataSourceID="MenuSource" Style="z-index: 100;
+							left: 57px; position: absolute; top: -29px">
+							<DynamicItemTemplate>
+								<%# Eval("Text") %>
+							</DynamicItemTemplate>
+							<DataBindings>
+								<asp:MenuItemBinding DataMember="Module" TextField="Name" ValueField="Code" />
+								<asp:MenuItemBinding DataMember="View" NavigateUrlField="Url" TextField="Name" ValueField="Name" />
+							</DataBindings>
+							<StaticItemTemplate>
+								<%# Eval("Text") %>
+							</StaticItemTemplate>
+						</asp:Menu>
+						<asp:ContentPlaceHolder ID="Main" runat="server">
+						</asp:ContentPlaceHolder>
+					</div>
+				</td>
+			</tr>
+			<tr class="footer">
+				<td>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

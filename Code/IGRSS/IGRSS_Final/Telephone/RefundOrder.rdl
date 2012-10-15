@@ -1,0 +1,938 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="IGRSS_REPORT">
+      <DataSourceReference>IGRSS_REPORT</DataSourceReference>
+      <rd:DataSourceID>8b5589f2-b8e6-4ea7-b38e-dc8d4335df5e</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <ReportParameters>
+    <ReportParameter Name="RefundApplicationId">
+      <DataType>String</DataType>
+      <Prompt>RefundApplicationId</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Table Name="table1">
+        <Footer>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox43">
+                      <rd:DefaultName>textbox43</rd:DefaultName>
+                      <ZIndex>5</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox44">
+                      <rd:DefaultName>textbox44</rd:DefaultName>
+                      <ZIndex>4</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox45">
+                      <rd:DefaultName>textbox45</rd:DefaultName>
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.45833in</Height>
+            </TableRow>
+          </TableRows>
+        </Footer>
+        <Top>6.75in</Top>
+        <ZIndex>36</ZIndex>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox40">
+                      <rd:DefaultName>textbox40</rd:DefaultName>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!StampName.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox41">
+                      <rd:DefaultName>textbox41</rd:DefaultName>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!StampNumber.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox42">
+                      <rd:DefaultName>textbox42</rd:DefaultName>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ReturnedQty.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.45833in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Style>
+          <TextAlign>Left</TextAlign>
+        </Style>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox37">
+                      <rd:DefaultName>textbox37</rd:DefaultName>
+                      <ZIndex>8</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Arial Black</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Stamp Name</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox38">
+                      <rd:DefaultName>textbox38</rd:DefaultName>
+                      <ZIndex>7</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Arial Black</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Stamp Number</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox39">
+                      <rd:DefaultName>textbox39</rd:DefaultName>
+                      <ZIndex>6</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Arial Black</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Returned Qty</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.45833in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>1.875in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>6.54167in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+      <Textbox Name="textbox36">
+        <Top>6.375in</Top>
+        <rd:DefaultName>textbox36</rd:DefaultName>
+        <ZIndex>35</ZIndex>
+        <Width>1.5in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontFamily>Arial Black</FontFamily>
+          <FontSize>12pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Stamp Details</Value>
+      </Textbox>
+      <Textbox Name="textbox35">
+        <CanShrink>true</CanShrink>
+        <Top>2.25in</Top>
+        <rd:DefaultName>textbox35</rd:DefaultName>
+        <ZIndex>34</ZIndex>
+        <Width>1.75in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontFamily>Arial Black</FontFamily>
+          <FontSize>12pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Order Details</Value>
+      </Textbox>
+      <Textbox Name="textbox17">
+        <Left>1.625in</Left>
+        <CanShrink>true</CanShrink>
+        <Top>5.25in</Top>
+        <rd:DefaultName>textbox17</rd:DefaultName>
+        <ZIndex>33</ZIndex>
+        <Width>1.875in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Fields!RefundAmount.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox34">
+        <Left>5.5in</Left>
+        <Top>1.75in</Top>
+        <rd:DefaultName>textbox34</rd:DefaultName>
+        <ZIndex>32</ZIndex>
+        <Width>1.75in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Fields!PhoneNo.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox33">
+        <Left>3.625in</Left>
+        <Top>1.75in</Top>
+        <rd:DefaultName>textbox33</rd:DefaultName>
+        <ZIndex>31</ZIndex>
+        <Width>1.625in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Phone No</Value>
+      </Textbox>
+      <Textbox Name="textbox32">
+        <Left>1.625in</Left>
+        <Top>1.75in</Top>
+        <rd:DefaultName>textbox32</rd:DefaultName>
+        <ZIndex>30</ZIndex>
+        <Width>1.75in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Fields!PinCode.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox31">
+        <Left>0.125in</Left>
+        <Top>1.75in</Top>
+        <rd:DefaultName>textbox31</rd:DefaultName>
+        <ZIndex>29</ZIndex>
+        <Width>0.75in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Pin Code</Value>
+      </Textbox>
+      <Textbox Name="textbox30">
+        <Left>5.5in</Left>
+        <Top>1.375in</Top>
+        <rd:DefaultName>textbox30</rd:DefaultName>
+        <ZIndex>28</ZIndex>
+        <Width>1.75in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Fields!District.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox29">
+        <Left>3.625in</Left>
+        <Top>1.375in</Top>
+        <rd:DefaultName>textbox29</rd:DefaultName>
+        <ZIndex>27</ZIndex>
+        <Width>1.625in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>District</Value>
+      </Textbox>
+      <Textbox Name="textbox28">
+        <Left>1.625in</Left>
+        <Top>1.375in</Top>
+        <rd:DefaultName>textbox28</rd:DefaultName>
+        <ZIndex>26</ZIndex>
+        <Width>1.75in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Fields!City.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox27">
+        <Left>0.125in</Left>
+        <Top>1.375in</Top>
+        <rd:DefaultName>textbox27</rd:DefaultName>
+        <ZIndex>25</ZIndex>
+        <Width>0.5in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>City</Value>
+      </Textbox>
+      <Textbox Name="textbox26">
+        <Left>5.5in</Left>
+        <Top>1in</Top>
+        <rd:DefaultName>textbox26</rd:DefaultName>
+        <ZIndex>24</ZIndex>
+        <Width>3in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Fields!ApplicantAddress.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox25">
+        <Left>3.625in</Left>
+        <Top>1in</Top>
+        <rd:DefaultName>textbox25</rd:DefaultName>
+        <ZIndex>23</ZIndex>
+        <Width>1.625in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Address</Value>
+      </Textbox>
+      <Textbox Name="textbox24">
+        <Left>1.625in</Left>
+        <Top>1in</Top>
+        <rd:DefaultName>textbox24</rd:DefaultName>
+        <ZIndex>22</ZIndex>
+        <Width>1.75in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Fields!ApplicantName.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox23">
+        <Left>0.125in</Left>
+        <Top>1in</Top>
+        <rd:DefaultName>textbox23</rd:DefaultName>
+        <ZIndex>21</ZIndex>
+        <Width>0.5in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Name</Value>
+      </Textbox>
+      <Textbox Name="textbox22">
+        <Top>0.625in</Top>
+        <rd:DefaultName>textbox22</rd:DefaultName>
+        <ZIndex>20</ZIndex>
+        <Width>2.125in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontFamily>Arial Black</FontFamily>
+          <FontSize>12pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Applicant Details</Value>
+      </Textbox>
+      <Textbox Name="textbox21">
+        <Left>1.625in</Left>
+        <CanShrink>true</CanShrink>
+        <Top>6in</Top>
+        <rd:DefaultName>textbox21</rd:DefaultName>
+        <ZIndex>19</ZIndex>
+        <Width>1.75in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Fields!ModifiedBy.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox20">
+        <Top>6in</Top>
+        <rd:DefaultName>textbox20</rd:DefaultName>
+        <ZIndex>18</ZIndex>
+        <Width>1.5in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Order By</Value>
+      </Textbox>
+      <Textbox Name="textbox19">
+        <Left>1.625in</Left>
+        <CanShrink>true</CanShrink>
+        <Top>5.625in</Top>
+        <rd:DefaultName>textbox19</rd:DefaultName>
+        <ZIndex>17</ZIndex>
+        <Width>1.75in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Fields!DateOfOrder.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox18">
+        <Top>5.625in</Top>
+        <rd:DefaultName>textbox18</rd:DefaultName>
+        <ZIndex>16</ZIndex>
+        <Width>1.5in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Order Date</Value>
+      </Textbox>
+      <Textbox Name="textbox16">
+        <Top>5.25in</Top>
+        <rd:DefaultName>textbox16</rd:DefaultName>
+        <ZIndex>15</ZIndex>
+        <Width>1.5in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Refund Amount</Value>
+      </Textbox>
+      <Textbox Name="textbox15">
+        <Left>5.5in</Left>
+        <CanShrink>true</CanShrink>
+        <Top>3.875in</Top>
+        <rd:DefaultName>textbox15</rd:DefaultName>
+        <ZIndex>14</ZIndex>
+        <Width>1.75in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Fields!PenaltyAmount.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox14">
+        <Left>3.625in</Left>
+        <Top>3.875in</Top>
+        <rd:DefaultName>textbox14</rd:DefaultName>
+        <ZIndex>13</ZIndex>
+        <Width>1.375in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Penalty Amount</Value>
+      </Textbox>
+      <Textbox Name="textbox13">
+        <Left>1.625in</Left>
+        <CanShrink>true</CanShrink>
+        <Top>4.25in</Top>
+        <rd:DefaultName>textbox13</rd:DefaultName>
+        <ZIndex>12</ZIndex>
+        <Width>6.25in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.875in</Height>
+        <Value>=Fields!ReasonForNotUsing.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox12">
+        <Top>4.25in</Top>
+        <rd:DefaultName>textbox12</rd:DefaultName>
+        <ZIndex>11</ZIndex>
+        <Width>1.5in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Reason For Not Using</Value>
+      </Textbox>
+      <Textbox Name="textbox11">
+        <Left>1.625in</Left>
+        <CanShrink>true</CanShrink>
+        <Top>3.875in</Top>
+        <rd:DefaultName>textbox11</rd:DefaultName>
+        <ZIndex>10</ZIndex>
+        <Width>1.75in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Fields!TotalValueOfStamps.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox10">
+        <Top>3.875in</Top>
+        <rd:DefaultName>textbox10</rd:DefaultName>
+        <ZIndex>9</ZIndex>
+        <Width>1.375in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Total Stamp Value</Value>
+      </Textbox>
+      <Textbox Name="textbox9">
+        <Left>5.5in</Left>
+        <CanShrink>true</CanShrink>
+        <Top>3.5in</Top>
+        <rd:DefaultName>textbox9</rd:DefaultName>
+        <ZIndex>8</ZIndex>
+        <Width>1.75in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Fields!PurchasedDate.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox8">
+        <Left>3.625in</Left>
+        <Top>3.5in</Top>
+        <rd:DefaultName>textbox8</rd:DefaultName>
+        <ZIndex>7</ZIndex>
+        <Width>1.375in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Purchased Date</Value>
+      </Textbox>
+      <Textbox Name="textbox5">
+        <Left>1.625in</Left>
+        <CanShrink>true</CanShrink>
+        <Top>3.5in</Top>
+        <rd:DefaultName>textbox5</rd:DefaultName>
+        <ZIndex>6</ZIndex>
+        <Width>1.75in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Fields!TypeOfRefund.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox4">
+        <Top>3.5in</Top>
+        <rd:DefaultName>textbox4</rd:DefaultName>
+        <ZIndex>5</ZIndex>
+        <Width>1.375in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Refund Type</Value>
+      </Textbox>
+      <Textbox Name="textbox7">
+        <Top>3in</Top>
+        <rd:DefaultName>textbox7</rd:DefaultName>
+        <ZIndex>4</ZIndex>
+        <Width>1.375in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Office Name</Value>
+      </Textbox>
+      <Textbox Name="textbox6">
+        <Left>1.625in</Left>
+        <CanShrink>true</CanShrink>
+        <Top>3in</Top>
+        <rd:DefaultName>textbox6</rd:DefaultName>
+        <ZIndex>3</ZIndex>
+        <Width>1.75in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Fields!OfficeName.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox3">
+        <Left>1.625in</Left>
+        <CanShrink>true</CanShrink>
+        <Top>2.625in</Top>
+        <rd:DefaultName>textbox3</rd:DefaultName>
+        <ZIndex>2</ZIndex>
+        <Width>1.75in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Fields!ApplicationNo.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <Top>2.625in</Top>
+        <rd:DefaultName>textbox2</rd:DefaultName>
+        <ZIndex>1</ZIndex>
+        <Width>1.375in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Application Number</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <Top>0.125in</Top>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Width>2.75in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontFamily>Arial Black</FontFamily>
+          <FontWeight>700</FontWeight>
+          <FontSize>14pt</FontSize>
+          <Color>SteelBlue</Color>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.375in</Height>
+        <Value>Refund Order</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>8.125in</Height>
+  </Body>
+  <rd:ReportID>24421745-3cb8-4174-92cb-c3334efc72f8</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="IGRSS_REPORT">
+      <Query>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>GenerateRefundOrder</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@RefundApplicationId">
+            <Value>=Parameters!RefundApplicationId.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>IGRSS_REPORT</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="OfficeName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>OfficeName</DataField>
+        </Field>
+        <Field Name="ApplicationNo">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ApplicationNo</DataField>
+        </Field>
+        <Field Name="TypeOfRefund">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TypeOfRefund</DataField>
+        </Field>
+        <Field Name="PurchasedDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>PurchasedDate</DataField>
+        </Field>
+        <Field Name="TotalValueOfStamps">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TotalValueOfStamps</DataField>
+        </Field>
+        <Field Name="ReasonForNotUsing">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ReasonForNotUsing</DataField>
+        </Field>
+        <Field Name="ApplicantName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ApplicantName</DataField>
+        </Field>
+        <Field Name="ApplicantAddress">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ApplicantAddress</DataField>
+        </Field>
+        <Field Name="City">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>City</DataField>
+        </Field>
+        <Field Name="District">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>District</DataField>
+        </Field>
+        <Field Name="PinCode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PinCode</DataField>
+        </Field>
+        <Field Name="PhoneNo">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PhoneNo</DataField>
+        </Field>
+        <Field Name="PenaltyAmount">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>PenaltyAmount</DataField>
+        </Field>
+        <Field Name="RefundAmount">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>RefundAmount</DataField>
+        </Field>
+        <Field Name="DateOfOrder">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>DateOfOrder</DataField>
+        </Field>
+        <Field Name="ModifiedBy">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ModifiedBy</DataField>
+        </Field>
+        <Field Name="ReturnedQty">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ReturnedQty</DataField>
+        </Field>
+        <Field Name="StampNumber">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>StampNumber</DataField>
+        </Field>
+        <Field Name="RevenueStampId">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>RevenueStampId</DataField>
+        </Field>
+        <Field Name="StampName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>StampName</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>10.41667in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

@@ -1,0 +1,139 @@
+﻿<StateMachineWorkflowDesigner xmlns:ns0="clr-namespace:System.Drawing;Assembly=System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Name="ComplainProcess" Location="30, 30" Size="763, 575" AutoSize="False" AutoSizeMargin="16, 24" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateMachineWorkflowDesigner.DesignerConnectors>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="ComplainOpen" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="SetComplainAccepted" SourceStateName="ComplainFiled" SourceConnectionEdge="Right" TargetActivity="ComplainOpen" SourceActivity="ComplainFiled" EventHandlerName="InitializeComplain">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="194" Y="110" />
+				<ns0:Point X="335" Y="110" />
+				<ns0:Point X="335" Y="156" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="ComplainClosed" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="SetExternalComplain" SourceStateName="ComplainFiled" SourceConnectionEdge="Right" TargetActivity="ComplainClosed" SourceActivity="ComplainFiled" EventHandlerName="InitializeComplain">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="194" Y="110" />
+				<ns0:Point X="683" Y="110" />
+				<ns0:Point X="683" Y="495" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="ComplainClosed" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="SetNoInvestigationRequired" SourceStateName="ComplainOpen" SourceConnectionEdge="Right" TargetActivity="ComplainClosed" SourceActivity="ComplainOpen" EventHandlerName="NoInvestigationRequired">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="417" Y="197" />
+				<ns0:Point X="683" Y="197" />
+				<ns0:Point X="683" Y="495" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="InvestigationProcess" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="SetComplainOpen" SourceStateName="ComplainOpen" SourceConnectionEdge="Right" TargetActivity="InvestigationProcess" SourceActivity="ComplainOpen" EventHandlerName="InvestigationRequired">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="403" Y="221" />
+				<ns0:Point X="511" Y="221" />
+				<ns0:Point X="511" Y="251" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="InvestigationProcess" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="SetAddInvestigationDetails" SourceStateName="InvestigationProcess" SourceConnectionEdge="Right" TargetActivity="InvestigationProcess" SourceActivity="InvestigationProcess" EventHandlerName="AddInvestigationDetails">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="591" Y="292" />
+				<ns0:Point X="607" Y="292" />
+				<ns0:Point X="607" Y="243" />
+				<ns0:Point X="511" Y="243" />
+				<ns0:Point X="511" Y="251" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="InvestigationComplete" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="SetInvestigationDone" SourceStateName="InvestigationProcess" SourceConnectionEdge="Left" TargetActivity="InvestigationComplete" SourceActivity="InvestigationProcess" EventHandlerName="InvestigationDone">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="432" Y="316" />
+				<ns0:Point X="391" Y="316" />
+				<ns0:Point X="391" Y="358" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="InvestigationProcess" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="SetReAssignInvestigation" SourceStateName="InvestigationComplete" SourceConnectionEdge="Right" TargetActivity="InvestigationProcess" SourceActivity="InvestigationComplete" EventHandlerName="ReAssignInvestigation">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="467" Y="399" />
+				<ns0:Point X="607" Y="399" />
+				<ns0:Point X="607" Y="243" />
+				<ns0:Point X="511" Y="243" />
+				<ns0:Point X="511" Y="251" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="ComplainClosed" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="SetFileClosed" SourceStateName="InvestigationComplete" SourceConnectionEdge="Right" TargetActivity="ComplainClosed" SourceActivity="InvestigationComplete" EventHandlerName="FileClosed">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="409" Y="423" />
+				<ns0:Point X="683" Y="423" />
+				<ns0:Point X="683" Y="495" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+	</StateMachineWorkflowDesigner.DesignerConnectors>
+	<StateMachineWorkflowDesigner.Designers>
+		<StateDesigner Name="ComplainFiled" Location="61, 69" Size="160, 80" AutoSize="False" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<StateInitializationDesigner Size="301, 506" Name="InitializeComplain" Location="209, 148">
+					<StateInitializationDesigner.Designers>
+						<CodeDesigner Size="90, 40" Name="InitilizeInstance" Location="314, 220" />
+						<IfElseDesigner Size="281, 254" Name="CheckComplainType" Location="219, 290">
+							<IfElseDesigner.Designers>
+								<IfElseBranchDesigner Size="110, 152" Name="ExternalComplain" Location="238, 362">
+									<IfElseBranchDesigner.Designers>
+										<CodeDesigner Size="90, 40" Name="AlertUser" Location="248, 439" />
+									</IfElseBranchDesigner.Designers>
+								</IfElseBranchDesigner>
+								<IfElseBranchDesigner Size="110, 152" Name="InternalComplain" Location="371, 362">
+									<IfElseBranchDesigner.Designers>
+										<SetStateDesigner Size="90, 50" Name="SetExternalComplain" Location="381, 434" />
+									</IfElseBranchDesigner.Designers>
+								</IfElseBranchDesigner>
+							</IfElseDesigner.Designers>
+						</IfElseDesigner>
+						<SetStateDesigner Size="90, 50" Name="SetComplainAccepted" Location="314, 574" />
+					</StateInitializationDesigner.Designers>
+				</StateInitializationDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="ComplainOpen" Location="249, 156" Size="172, 80" AutoSize="False" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 222" Name="NoInvestigationRequired" Location="257, 187">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="OnNoInvestigationRequired" Location="267, 259" />
+						<SetStateDesigner Size="90, 50" Name="SetNoInvestigationRequired" Location="267, 329" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="110, 222" Name="InvestigationRequired" Location="257, 211">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="OnInvestigationRequired" Location="267, 283" />
+						<SetStateDesigner Size="90, 50" Name="SetComplainOpen" Location="267, 353" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="InvestigationProcess" Location="428, 251" Size="167, 80" AutoSize="False" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 222" Name="AddInvestigationDetails" Location="436, 282">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="OnAddInvestigationDetails" Location="446, 354" />
+						<SetStateDesigner Size="90, 50" Name="SetAddInvestigationDetails" Location="446, 424" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="110, 222" Name="InvestigationDone" Location="436, 306">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="OnInvestigationDone" Location="446, 378" />
+						<SetStateDesigner Size="90, 50" Name="SetInvestigationDone" Location="446, 448" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="InvestigationComplete" Location="311, 358" Size="160, 80" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 222" Name="ReAssignInvestigation" Location="319, 389">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="OnReAssignInvestigation" Location="329, 461" />
+						<SetStateDesigner Size="90, 50" Name="SetReAssignInvestigation" Location="329, 531" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="110, 222" Name="FileClosed" Location="319, 413">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="OnFileClosed" Location="329, 485" />
+						<SetStateDesigner Size="90, 50" Name="SetFileClosed" Location="329, 555" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="ComplainClosed" Location="603, 495" Size="160, 80" AutoSizeMargin="16, 24" />
+	</StateMachineWorkflowDesigner.Designers>
+</StateMachineWorkflowDesigner>

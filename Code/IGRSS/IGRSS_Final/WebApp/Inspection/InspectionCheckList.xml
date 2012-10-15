@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DocumentElement>
+	<Page>
+	
+	<Items ItemId="c3c20e83-2453-422e-936e-20e2694e7cf1"
+		   SlNo="1"
+		   Type="2">
+		DC Name And Date Of Appointment
+	</Items>
+	
+	<Items ItemId="bc7a06e6-7834-4f89-9273-3c40aa4459ae"
+		   SlNo="2"
+		   Type="1">
+		Inspector Office Name And Date Of AppointMent
+	</Items>
+	<Items ItemId="dbd73c40-f21d-4105-8aab-4fe3b14ffe78"
+		   SlNo="3"
+		   Type="2">
+		Date and Time of Inspection
+	</Items>
+	
+	<Items ItemId="916bd62d-b462-4277-981d-56650fa07c4a"
+		   SlNo="4"
+		   Type="1">
+		Salary Slip Prepared or Not
+	</Items>
+	<Items ItemId="4e18f959-4dab-40cf-94ab-67df5b93d43f"
+
+		   SlNo="5"
+		   Type="2">
+		Receipt Obtained Or Not
+	</Items>
+	
+	</Page>
+	<Page>
+	<Items ItemId="f01e96e5-a283-4e1a-b73e-833931611ad4"
+		   SlNo="6"
+		   Type="3">
+		Conveninece Expended Based Upon Grade (Y/N)
+	</Items>
+	<Items ItemId="1cafcf8d-6b1a-427e-ae1e-9429032db7db"
+		   SlNo="7"
+		   Type="2">
+		Month end Tally Balance Y/N
+	</Items>
+	<Items ItemId="1a3f0818-bcff-488a-8b8b-aec8d1cd2f72"
+		   SlNo="8"
+		   Type="3">
+		Income and Expense entries By head
+	</Items>
+	<Items ItemId="04e1bf27-ed14-4d10-8e51-c520e00bf62c"
+		   SlNo="9"
+		   Type="2">
+		No Of contractual Employee 
+	</Items>
+	<Items ItemId="ecd8b1c7-f97b-4472-9a0c-f6afb76cf4e0"
+		   SlNo="10"
+		   Type="1">
+		Salary Shut(Y/N)
+	</Items>
+
+	</Page>
+	<Page>
+	<Items ItemId="cb56db83-2d78-40f9-9400-cdbe02a84801"
+		   SlNo="11"
+		   Type="2">
+		Inspection No-11(Y/N)
+	</Items>
+
+	<Items ItemId="cb56db83-2d78-40f9-9400-cdbe02a84802"
+		   SlNo="12"
+		   Type="2">
+		Inspection No-12(Y/N)
+	</Items>
+	<Items ItemId="cb56db83-2d78-40f9-9400-cdbe02a84803"
+		   SlNo="13"
+		   Type="2">
+		Inspection No-13(Y/N)
+	</Items>
+
+	<Items ItemId="cb56db83-2d78-40f9-9400-cdbe02a84804"
+		   SlNo="14"
+		   Type="2">
+		Inspection No-14(Y/N)
+	</Items>
+
+	<Items ItemId="cb56db83-2d78-40f9-9400-cdbe02a84805"
+		   SlNo="15"
+		   Type="2">
+		Inspection No-12(Y/N)
+	</Items>
+
+
+	<Items ItemId="cb56db83-2d78-40f9-9400-cdbe02a84806"
+		   SlNo="16"
+		   Type="2">
+		Inspection No-12(Y/N)
+	
+	</Items>
+
+
+
+	<Items ItemId="cb56db83-2d78-40f9-9400-cdbe02a84807"
+		   SlNo="17"
+		   Type="2">
+		Inspection No-12(Y/N)
+	</Items>
+
+
+
+	<Items ItemId="cb56db83-2d78-40f9-9400-cdbe02a84808"
+		   SlNo="18"
+		   Type="2">
+		Inspection No-12(Y/N)
+	</Items>
+
+
+
+	<Items ItemId="cb56db83-2d78-40f9-9400-cdbe02a84809"
+		   SlNo="19"
+		   Type="2">
+		Inspection No-12(Y/N)
+	</Items>
+
+
+	<Items ItemId="94286166-965d-45c5-94f3-7d00429908ba"
+		   SlNo="20"
+		   Type="2">
+		Inspection No-12(Y/N)
+	</Items>
+		</Page>
+	<Page>
+
+	<Items ItemId="94286166-965d-45c5-94f3-7d00429908bc"
+		   SlNo="21"
+		   Type="2">
+		Inspection No-12(Y/N)
+	</Items>
+
+	<Items ItemId="94286166-965d-45c5-94f3-7d00429908bd"
+		   SlNo="22"
+		   Type="2">
+		Inspection No-12(Y/N)
+	</Items>
+
+	<Items ItemId="94286166-965d-45c5-94f3-7d00429908be"
+		   SlNo="23"
+		   Type="2">
+		Inspection No-12(Y/N)
+	</Items>
+
+
+	<Items ItemId="94286166-965d-45c5-94f3-7d00429908bf"
+		   SlNo="24"
+		   Type="2">
+		Inspection No-12(Y/N)
+	</Items>
+
+
+	</Page>
+	
+</DocumentElement>

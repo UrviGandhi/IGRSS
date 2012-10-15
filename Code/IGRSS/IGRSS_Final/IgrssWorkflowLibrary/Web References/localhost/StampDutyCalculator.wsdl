@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://Igrss.org/Services/StampDutyCalculator/" xmlns:s1="http://IGRSS.org/ConstructionTypes" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://Igrss.org/Services/StampDutyCalculator/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://Igrss.org/Services/StampDutyCalculator/">
+      <s:import namespace="http://IGRSS.org/ConstructionTypes" />
+      <s:element name="CalculateStampDuty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DistCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TalukaCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VillageID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SurveyNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AreaOfLand" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="PlinthAreaOfConstruction" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="PriceOfLand" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="CompoundWall" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Derange" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="CompoundLight" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="InternalRoad" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="LifeInYears" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="SupervisionFees" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="ConnectionFees" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="ArchitectFees" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="ElectrificationExpenses" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="LiftExpenses" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="TypeOfConstruction" type="s1:ConstructionTypes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateStampDutyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateStampDutyResult" type="tns:ValuationReport" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ValuationReport">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DistCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TalukaCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VillageID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SurveyNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Depreciation" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="NetPrice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PriceOfLand" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="SpecialDeduction" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValuationOfProperty" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="StampDuty" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="DevelopmentExpenses" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="OtherExpense" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="AreaOfLand" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlinthAreaOfConstruction" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TypeOfConstruction" type="s1:ConstructionTypes" />
+          <s:element minOccurs="1" maxOccurs="1" name="SorExpenses" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="EstimatedPrice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompoundWall" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Derange" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="InternalRoad" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompoundLight" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="SupervisionFees" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ConnectionFees" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ArchitectFees" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ElectrificationExpenses" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="LiftExpenses" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="LifeInYears" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ConstructionExpense" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApproxPrice" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://IGRSS.org/ConstructionTypes">
+      <s:simpleType name="ConstructionTypes">
+        <s:restriction base="s:string">
+          <s:enumeration value="Residential" />
+          <s:enumeration value="Commercial" />
+          <s:enumeration value="Industrial" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CalculateStampDutySoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateStampDuty" />
+  </wsdl:message>
+  <wsdl:message name="CalculateStampDutySoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateStampDutyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="StampDutyCalculatorSoap">
+    <wsdl:operation name="CalculateStampDuty">
+      <wsdl:input message="tns:CalculateStampDutySoapIn" />
+      <wsdl:output message="tns:CalculateStampDutySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StampDutyCalculatorSoap" type="tns:StampDutyCalculatorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculateStampDuty">
+      <soap:operation soapAction="http://Igrss.org/Services/StampDutyCalculator/CalculateStampDuty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StampDutyCalculatorSoap12" type="tns:StampDutyCalculatorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculateStampDuty">
+      <soap12:operation soapAction="http://Igrss.org/Services/StampDutyCalculator/CalculateStampDuty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StampDutyCalculator">
+    <wsdl:port name="StampDutyCalculatorSoap" binding="tns:StampDutyCalculatorSoap">
+      <soap:address location="http://localhost:3279/IgrssWebservices/StampDutyCalculator.asmx" />
+    </wsdl:port>
+    <wsdl:port name="StampDutyCalculatorSoap12" binding="tns:StampDutyCalculatorSoap12">
+      <soap12:address location="http://localhost:3279/IgrssWebservices/StampDutyCalculator.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

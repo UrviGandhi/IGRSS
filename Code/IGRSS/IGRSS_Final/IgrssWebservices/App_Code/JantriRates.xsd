@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="JantriRates" targetNamespace="http://tempuri.org/JantriRates.xsd" xmlns:mstns="http://tempuri.org/JantriRates.xsd" xmlns="http://tempuri.org/JantriRates.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="IGRSS_FINALConnectionString" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="IGRSS_FINALConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.IGRSS_FINALConnectionString.ConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="JantriRatesTableAdapter" GeneratorDataComponentClassName="JantriRatesTableAdapter" Name="JantriRates" UserDataComponentName="JantriRatesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IGRSS_FINALConnectionString (Web.config)" DbObjectName="IGRSS_FINAL.dbo.Jantri" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="False" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="False" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="True">
+                    <CommandText>SELECT     distcd, talcd, villcd, TpNo, TPSchemeName, CitySurveyNo, RevenueSurveyNo, surveynumber1, surveynumberext1, surveynumber2, 
+                      surveynumberext2, rate, rate_Comm, rate_ind, SheetNo, village, REMDESC, RemDESC1, RemDESC2, RemDESC3, RemDESC4, rate_plot, APrate, 
+                      ANPrate, NA_Res_Rate, NA_Comm_Rate, NA_Ind_Rate, NA_Prate, NA_NPrate
+FROM         Jantri</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="distcd" DataSetColumn="distcd" />
+              <Mapping SourceColumn="talcd" DataSetColumn="talcd" />
+              <Mapping SourceColumn="villcd" DataSetColumn="villcd" />
+              <Mapping SourceColumn="TpNo" DataSetColumn="TpNo" />
+              <Mapping SourceColumn="TPSchemeName" DataSetColumn="TPSchemeName" />
+              <Mapping SourceColumn="CitySurveyNo" DataSetColumn="CitySurveyNo" />
+              <Mapping SourceColumn="RevenueSurveyNo" DataSetColumn="RevenueSurveyNo" />
+              <Mapping SourceColumn="surveynumber1" DataSetColumn="surveynumber1" />
+              <Mapping SourceColumn="surveynumberext1" DataSetColumn="surveynumberext1" />
+              <Mapping SourceColumn="surveynumber2" DataSetColumn="surveynumber2" />
+              <Mapping SourceColumn="surveynumberext2" DataSetColumn="surveynumberext2" />
+              <Mapping SourceColumn="rate" DataSetColumn="rate" />
+              <Mapping SourceColumn="rate_Comm" DataSetColumn="rate_Comm" />
+              <Mapping SourceColumn="rate_ind" DataSetColumn="rate_ind" />
+              <Mapping SourceColumn="SheetNo" DataSetColumn="SheetNo" />
+              <Mapping SourceColumn="village" DataSetColumn="village" />
+              <Mapping SourceColumn="REMDESC" DataSetColumn="REMDESC" />
+              <Mapping SourceColumn="RemDESC1" DataSetColumn="RemDESC1" />
+              <Mapping SourceColumn="RemDESC2" DataSetColumn="RemDESC2" />
+              <Mapping SourceColumn="RemDESC3" DataSetColumn="RemDESC3" />
+              <Mapping SourceColumn="RemDESC4" DataSetColumn="RemDESC4" />
+              <Mapping SourceColumn="rate_plot" DataSetColumn="rate_plot" />
+              <Mapping SourceColumn="APrate" DataSetColumn="APrate" />
+              <Mapping SourceColumn="ANPrate" DataSetColumn="ANPrate" />
+              <Mapping SourceColumn="NA_Res_Rate" DataSetColumn="NA_Res_Rate" />
+              <Mapping SourceColumn="NA_Comm_Rate" DataSetColumn="NA_Comm_Rate" />
+              <Mapping SourceColumn="NA_Ind_Rate" DataSetColumn="NA_Ind_Rate" />
+              <Mapping SourceColumn="NA_Prate" DataSetColumn="NA_Prate" />
+              <Mapping SourceColumn="NA_NPrate" DataSetColumn="NA_NPrate" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="IGRSS_FINALConnectionString (Web.config)" DbObjectName="IGRSS_FINAL.dbo.GetLandRatesByTpNo" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="True" GeneratorGetMethodName="GetLandRatesByTpNo" GetMethodModifier="Public" GetMethodName="GetLandRatesByTpNo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetLandRatesByTpNo" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="False">
+                    <CommandText>dbo.GetLandRatesByTpNo</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@distcd" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@talcd" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@villcd" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SchemeNo" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="JantriRates" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="JantriRates" msprop:Generator_DataSetName="JantriRates">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="JantriRates" msprop:Generator_UserTableName="JantriRates" msprop:Generator_RowDeletedName="JantriRatesRowDeleted" msprop:Generator_TableClassName="JantriRatesDataTable" msprop:Generator_RowChangedName="JantriRatesRowChanged" msprop:Generator_RowClassName="JantriRatesRow" msprop:Generator_RowChangingName="JantriRatesRowChanging" msprop:Generator_RowEvArgName="JantriRatesRowChangeEvent" msprop:Generator_RowEvHandlerName="JantriRatesRowChangeEventHandler" msprop:Generator_TablePropName="_JantriRates" msprop:Generator_TableVarName="tableJantriRates" msprop:Generator_RowDeletingName="JantriRatesRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="distcd" msprop:Generator_UserColumnName="distcd" msprop:Generator_ColumnPropNameInRow="distcd" msprop:Generator_ColumnVarNameInTable="columndistcd" msprop:Generator_ColumnPropNameInTable="distcdColumn" type="xs:int" />
+              <xs:element name="talcd" msprop:Generator_UserColumnName="talcd" msprop:Generator_ColumnPropNameInRow="talcd" msprop:Generator_ColumnVarNameInTable="columntalcd" msprop:Generator_ColumnPropNameInTable="talcdColumn" type="xs:int" />
+              <xs:element name="villcd" msprop:Generator_UserColumnName="villcd" msprop:Generator_ColumnPropNameInRow="villcd" msprop:Generator_ColumnVarNameInTable="columnvillcd" msprop:Generator_ColumnPropNameInTable="villcdColumn" type="xs:int" />
+              <xs:element name="TpNo" msprop:Generator_UserColumnName="TpNo" msprop:Generator_ColumnPropNameInRow="TpNo" msprop:Generator_ColumnVarNameInTable="columnTpNo" msprop:Generator_ColumnPropNameInTable="TpNoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TPSchemeName" msprop:Generator_UserColumnName="TPSchemeName" msprop:Generator_ColumnPropNameInRow="TPSchemeName" msprop:Generator_ColumnVarNameInTable="columnTPSchemeName" msprop:Generator_ColumnPropNameInTable="TPSchemeNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CitySurveyNo" msprop:Generator_UserColumnName="CitySurveyNo" msprop:Generator_ColumnPropNameInRow="CitySurveyNo" msprop:Generator_ColumnVarNameInTable="columnCitySurveyNo" msprop:Generator_ColumnPropNameInTable="CitySurveyNoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RevenueSurveyNo" msprop:Generator_UserColumnName="RevenueSurveyNo" msprop:Generator_ColumnPropNameInRow="RevenueSurveyNo" msprop:Generator_ColumnVarNameInTable="columnRevenueSurveyNo" msprop:Generator_ColumnPropNameInTable="RevenueSurveyNoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="surveynumber1" msprop:Generator_UserColumnName="surveynumber1" msprop:Generator_ColumnPropNameInRow="surveynumber1" msprop:Generator_ColumnVarNameInTable="columnsurveynumber1" msprop:Generator_ColumnPropNameInTable="surveynumber1Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="surveynumberext1" msprop:Generator_UserColumnName="surveynumberext1" msprop:Generator_ColumnPropNameInRow="surveynumberext1" msprop:Generator_ColumnVarNameInTable="columnsurveynumberext1" msprop:Generator_ColumnPropNameInTable="surveynumberext1Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="surveynumber2" msprop:Generator_UserColumnName="surveynumber2" msprop:Generator_ColumnPropNameInRow="surveynumber2" msprop:Generator_ColumnVarNameInTable="columnsurveynumber2" msprop:Generator_ColumnPropNameInTable="surveynumber2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="surveynumberext2" msprop:Generator_UserColumnName="surveynumberext2" msprop:Generator_ColumnPropNameInRow="surveynumberext2" msprop:Generator_ColumnVarNameInTable="columnsurveynumberext2" msprop:Generator_ColumnPropNameInTable="surveynumberext2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="rate" msprop:Generator_UserColumnName="rate" msprop:Generator_ColumnPropNameInRow="rate" msprop:Generator_ColumnVarNameInTable="columnrate" msprop:Generator_ColumnPropNameInTable="rateColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="rate_Comm" msprop:Generator_UserColumnName="rate_Comm" msprop:Generator_ColumnPropNameInRow="rate_Comm" msprop:Generator_ColumnVarNameInTable="columnrate_Comm" msprop:Generator_ColumnPropNameInTable="rate_CommColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="rate_ind" msprop:Generator_UserColumnName="rate_ind" msprop:Generator_ColumnPropNameInRow="rate_ind" msprop:Generator_ColumnVarNameInTable="columnrate_ind" msprop:Generator_ColumnPropNameInTable="rate_indColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="SheetNo" msprop:Generator_UserColumnName="SheetNo" msprop:Generator_ColumnPropNameInRow="SheetNo" msprop:Generator_ColumnVarNameInTable="columnSheetNo" msprop:Generator_ColumnPropNameInTable="SheetNoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="village" msprop:Generator_UserColumnName="village" msprop:Generator_ColumnPropNameInRow="village" msprop:Generator_ColumnVarNameInTable="columnvillage" msprop:Generator_ColumnPropNameInTable="villageColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="REMDESC" msprop:Generator_UserColumnName="REMDESC" msprop:Generator_ColumnPropNameInRow="REMDESC" msprop:Generator_ColumnVarNameInTable="columnREMDESC" msprop:Generator_ColumnPropNameInTable="REMDESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RemDESC1" msprop:Generator_UserColumnName="RemDESC1" msprop:Generator_ColumnPropNameInRow="RemDESC1" msprop:Generator_ColumnVarNameInTable="columnRemDESC1" msprop:Generator_ColumnPropNameInTable="RemDESC1Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RemDESC2" msprop:Generator_UserColumnName="RemDESC2" msprop:Generator_ColumnPropNameInRow="RemDESC2" msprop:Generator_ColumnVarNameInTable="columnRemDESC2" msprop:Generator_ColumnPropNameInTable="RemDESC2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RemDESC3" msprop:Generator_UserColumnName="RemDESC3" msprop:Generator_ColumnPropNameInRow="RemDESC3" msprop:Generator_ColumnVarNameInTable="columnRemDESC3" msprop:Generator_ColumnPropNameInTable="RemDESC3Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RemDESC4" msprop:Generator_UserColumnName="RemDESC4" msprop:Generator_ColumnPropNameInRow="RemDESC4" msprop:Generator_ColumnVarNameInTable="columnRemDESC4" msprop:Generator_ColumnPropNameInTable="RemDESC4Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="rate_plot" msprop:Generator_UserColumnName="rate_plot" msprop:Generator_ColumnPropNameInRow="rate_plot" msprop:Generator_ColumnVarNameInTable="columnrate_plot" msprop:Generator_ColumnPropNameInTable="rate_plotColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="APrate" msprop:Generator_UserColumnName="APrate" msprop:Generator_ColumnPropNameInRow="APrate" msprop:Generator_ColumnVarNameInTable="columnAPrate" msprop:Generator_ColumnPropNameInTable="APrateColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ANPrate" msprop:Generator_UserColumnName="ANPrate" msprop:Generator_ColumnPropNameInRow="ANPrate" msprop:Generator_ColumnVarNameInTable="columnANPrate" msprop:Generator_ColumnPropNameInTable="ANPrateColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="NA_Res_Rate" msprop:Generator_UserColumnName="NA_Res_Rate" msprop:Generator_ColumnPropNameInRow="NA_Res_Rate" msprop:Generator_ColumnVarNameInTable="columnNA_Res_Rate" msprop:Generator_ColumnPropNameInTable="NA_Res_RateColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="NA_Comm_Rate" msprop:Generator_UserColumnName="NA_Comm_Rate" msprop:Generator_ColumnPropNameInRow="NA_Comm_Rate" msprop:Generator_ColumnVarNameInTable="columnNA_Comm_Rate" msprop:Generator_ColumnPropNameInTable="NA_Comm_RateColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="NA_Ind_Rate" msprop:Generator_UserColumnName="NA_Ind_Rate" msprop:Generator_ColumnPropNameInRow="NA_Ind_Rate" msprop:Generator_ColumnVarNameInTable="columnNA_Ind_Rate" msprop:Generator_ColumnPropNameInTable="NA_Ind_RateColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="NA_Prate" msprop:Generator_UserColumnName="NA_Prate" msprop:Generator_ColumnPropNameInRow="NA_Prate" msprop:Generator_ColumnVarNameInTable="columnNA_Prate" msprop:Generator_ColumnPropNameInTable="NA_PrateColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="NA_NPrate" msprop:Generator_UserColumnName="NA_NPrate" msprop:Generator_ColumnPropNameInRow="NA_NPrate" msprop:Generator_ColumnVarNameInTable="columnNA_NPrate" msprop:Generator_ColumnPropNameInTable="NA_NPrateColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:JantriRates" />
+      <xs:field xpath="mstns:distcd" />
+      <xs:field xpath="mstns:talcd" />
+      <xs:field xpath="mstns:villcd" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

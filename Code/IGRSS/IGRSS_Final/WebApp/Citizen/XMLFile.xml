@@ -1,0 +1,30 @@
+<IgrssSite>
+	<Module Name="Citizen"
+			Code="WEB">
+		<Module Name="ApplicationStatus"
+				Code="APS">
+		<View Name="AppealStatus"
+				  Url="~/Citizen/Status.aspx"
+				  Mode=""/>
+			<View Name="RegistrationStatus"
+				  Url="~/Citizen/Status.aspx"
+				  Mode="">
+			</View>
+		</Module>
+		<View Name="Suggestions"
+			  Url="~/Citizen/Suggestions.aspx"
+			  Mode=""/>
+		<View Name="ContactUs"
+			  Url="~/Citizen/ContactUs.aspx"
+			  Mode=""/>
+		<View Name="StampDuty"
+			  Url="~/Citizen/StampDuty.aspx"
+			  Mode=""/>
+		<View Name="Faq"
+			  Url="~/Citizen/Faq.aspx"
+			  Mode=""/>
+		<View Name="Application Form"
+			  Url="~/Citizen/DocumentDownload.aspx"
+			  Mode=""/>
+	</Module>
+</IgrssSite>

@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BoundFieldResource1.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.HeaderText" xml:space="preserve">
+    <value>નામ</value>
+  </data>
+  <data name="BoundFieldResource2.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource2.HeaderText" xml:space="preserve">
+    <value>અપીલ સમયસર છે ?</value>
+  </data>
+  <data name="BoundFieldResource3.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource3.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource3.HeaderText" xml:space="preserve">
+    <value>તારીખ</value>
+  </data>
+  <data name="BoundFieldResource4.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource4.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource4.HeaderText" xml:space="preserve">
+    <value>અપીલ વર્ષ</value>
+  </data>
+  <data name="BoundFieldResource5.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource5.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource5.HeaderText" xml:space="preserve">
+    <value>સુનાવણીની તારીખ</value>
+  </data>
+  <data name="BoundFieldResource6.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource6.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource6.HeaderText" xml:space="preserve">
+    <value>વિશેષનોંધ, ટીકા-ટિપ્પણ</value>
+  </data>
+  <data name="btnCancelInsResource1.Text" xml:space="preserve">
+    <value>રદ્દ કરવું</value>
+  </data>
+  <data name="btnCancelInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCancelUpdResource1.Text" xml:space="preserve">
+    <value>રદ્દ કરવું</value>
+  </data>
+  <data name="btnCancelUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnInsertInsResource1.Text" xml:space="preserve">
+    <value>સંગ્રહ કરવો</value>
+  </data>
+  <data name="btnInsertInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnSearchResource1.Text" xml:space="preserve">
+    <value>શોધ</value>
+  </data>
+  <data name="btnSearchResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnUpdatetUpdResource1.Text" xml:space="preserve">
+    <value>અદ્યતન રાખવું</value>
+  </data>
+  <data name="btnUpdatetUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="calInwardDateIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="calInwardDateUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkJudgementResource1.Text" xml:space="preserve">
+    <value>ચુકાદો</value>
+  </data>
+  <data name="chkJudgementResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkJudgementResource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkJudgementResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkJudgementResource3.Text" xml:space="preserve">
+    <value>ચુકાદો</value>
+  </data>
+  <data name="chkJudgementResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.CancelText" xml:space="preserve">
+    <value>રદ્દ કરવું</value>
+  </data>
+  <data name="CommandFieldResource1.DeleteText" xml:space="preserve">
+    <value>કાઢી નાખવું</value>
+  </data>
+  <data name="CommandFieldResource1.EditText" xml:space="preserve">
+    <value>સંપાદન કરવું</value>
+  </data>
+  <data name="CommandFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.InsertText" xml:space="preserve">
+    <value>ઉમેરવું અને દાખલ કરવું</value>
+  </data>
+  <data name="CommandFieldResource1.NewText" xml:space="preserve">
+    <value>નવું નવીન</value>
+  </data>
+  <data name="CommandFieldResource1.SelectText" xml:space="preserve">
+    <value>પસંદ કરવું</value>
+  </data>
+  <data name="CommandFieldResource1.UpdateText" xml:space="preserve">
+    <value>અદ્યતન રાખવું</value>
+  </data>
+  <data name="ddlDecisionTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvAppealHearingResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvAppealHearingResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvAppealHearingResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvAppealHearingResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvAppealHearingResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvAppealResource16.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvAppealResource16.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvAppealResource16.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvAppealResource16.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvAppealResource16.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvAppealHearingResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvAppealHearingResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvAppealHearingResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAppealHearing.Text" xml:space="preserve">
+    <value>અપીલની સુનાવણી વગતો</value>
+  </data>
+  <data name="lblAppealHearing.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAppealNoResource1.Text" xml:space="preserve">
+    <value>અપીલ નંબર દાખલ કરો</value>
+  </data>
+  <data name="lblAppealNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAppealNoResource11.Text" xml:space="preserve">
+    <value>નામ</value>
+  </data>
+  <data name="lblAppealNoResource11.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblApplicantAddressItm.Text" xml:space="preserve">
+    <value>અરજદારનું સરનામું</value>
+  </data>
+  <data name="lblApplicantAddressItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblApplicantNameItm.Text" xml:space="preserve">
+    <value>અરજદારનું નામ</value>
+  </data>
+  <data name="lblApplicantNameItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDecisionType.Text" xml:space="preserve">
+    <value>નિર્ણયનો નાખવું</value>
+  </data>
+  <data name="lblDecisionType.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDisFileNo.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDisFileNo.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFileNo.Text" xml:space="preserve">
+    <value>અપીલ સમયસર છે ?</value>
+  </data>
+  <data name="lblFileNo.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblHeadingIns.Text" xml:space="preserve">
+    <value>સુનાવણીની વિગતો</value>
+  </data>
+  <data name="lblHeadingIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblHeadingItm.Text" xml:space="preserve">
+    <value>સુનાવણીની વિગતો</value>
+  </data>
+  <data name="lblHeadingItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblHeadingUpd.Text" xml:space="preserve">
+    <value>સુનાવણીની વિગતો</value>
+  </data>
+  <data name="lblHeadingUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblHearingDate.Text" xml:space="preserve">
+    <value>સુનાવણીની તારીખ</value>
+  </data>
+  <data name="lblHearingDate.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblHVendorDetailItm.Text" xml:space="preserve">
+    <value>અપીલની વિગતો</value>
+  </data>
+  <data name="lblHVendorDetailItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblInwardDateItm.Text" xml:space="preserve">
+    <value>અપીલ અરજીની વિશેષ નોંધ</value>
+  </data>
+  <data name="lblInwardDateItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRemarksIns.Text" xml:space="preserve">
+    <value>વિશેષનોંધ, ટીકા-ટિપ્પણ</value>
+  </data>
+  <data name="lblRemarksIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRemarksItm.Text" xml:space="preserve">
+    <value>વિશેષનોંધ, ટીકા-ટિપ્પણ</value>
+  </data>
+  <data name="lblRemarksItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRemarksUpd.Text" xml:space="preserve">
+    <value>વિશેષનોંધ, ટીકા-ટિપ્પણ</value>
+  </data>
+  <data name="lblRemarksUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>અપીલની સુનાવણીની પ્રક્રિયા</value>
+  </data>
+  <data name="rfvHearingDateIns.ErrorMessage" xml:space="preserve">
+    <value>સુનાવણીની તારીખ દાખલ કરશો</value>
+  </data>
+  <data name="rfvHearingDateIns.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rfvHearingDateIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rfvRemarksIns.ErrorMessage" xml:space="preserve">
+    <value>ટીકા-ટિપ્પણ દાખલ કરશો</value>
+  </data>
+  <data name="rfvRemarksIns.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rfvRemarksIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAppealNoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAppealNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAppealNoResource11.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAppealNoResource11.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtApplicantAddressItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtApplicantNameItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtHearingDateIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtHearingDateItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtHearingDateUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtInwardDateItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRemarksIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRemarksItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRemarksUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="viewHearingDetailsResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="viewHearingDetailsResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="viewHearingDetailsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>

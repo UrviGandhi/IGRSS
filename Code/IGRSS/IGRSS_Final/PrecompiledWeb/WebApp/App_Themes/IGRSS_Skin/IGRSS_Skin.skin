@@ -1,0 +1,189 @@
+
+
+	<asp:loginstatus runat="server"
+					 loginimageurl="Images/login.png"
+					 logoutimageurl="Images/logout.png" />
+
+	<asp:wizard runat="server"
+				width="100%"
+				backcolor="#EFF3FB"
+				bordercolor="#B5C7DE"
+				borderwidth="1px"
+				font-names="Verdana"
+				font-size="9pt">
+		<StepStyle	Font-Size="9pt"
+					ForeColor="#333333" />
+		<SideBarStyle	BackColor="#507CD1"
+						Font-Size="9pt"
+						VerticalAlign="Top" />
+		<NavigationButtonStyle	BackColor="White"
+								BorderColor="#507CD1"
+								BorderStyle="Solid"
+								BorderWidth="1px"
+								Font-Names="Verdana"
+								Font-Size="9pt"
+								ForeColor="#284E98" />
+		<SideBarButtonStyle	ForeColor="White"
+							BackColor="#507CD1"
+							Font-Names="Verdana" />
+		<HeaderStyle	BackColor="#284E98"
+						BorderColor="#EFF3FB"
+						BorderStyle="Solid"
+						BorderWidth="2px"
+						Font-Bold="True"
+						Font-Size="9pt"
+						ForeColor="White"
+						HorizontalAlign="Center" />
+	</asp:wizard>
+
+	<asp:webpartzone runat="server"
+					 width="100%" />
+
+	<asp:Label runat="server"
+			   font-bold="True"
+			   forecolor="Black"
+			   style="text-align:left" />
+
+	<asp:button runat="server"
+				font-bold="True"
+				font-overline="False"
+				font-size="Larger"
+				forecolor="Black"
+				text="Button"
+				width="67px" />
+
+	<asp:Image runat="server"
+			   Height="76px"
+			   SkinID="AppLogo"
+			   ImageUrl="Images/nat_emb.gif" />
+
+	<asp:Label SkinID="Heading"
+			   runat="server"
+			   BackColor="PeachPuff"
+			   Font-Names="Verdana"
+			   Font-Size="10pt"
+			   font-bold="True"
+			   forecolor="Black"
+			   Width="100%"
+			   style="text-align:left" />
+
+	<asp:FormView runat="server"
+				  Width="100%"/>
+
+	<asp:ValidationSummary runat="server"
+						   CssClass="validation" />
+
+	<asp:Label SkinID="SubHeading"
+			   runat="server"
+			   BackColor="PeachPuff"
+			   Font-Names="Verdana"
+			   Font-Size="10pt"
+			   font-bold="True"
+			   forecolor="Black"
+			   Width="100%"
+			   style="text-align:left"/>
+
+	<asp:CheckBox SkinID="SubHeading"
+				  runat="server"
+				  BackColor="PeachPuff"
+				  Font-Names="Verdana"
+				  Font-Size="10pt"
+				  font-bold="True"
+				  forecolor="Black"
+				  Width="100%"
+				  style="text-align:left"/>
+
+	<asp:TextBox runat="server"
+				 Width="97%" />
+
+	<asp:TextBox SkinId="Calendar"
+				 runat="server"
+				 Width="80%" />
+
+	<asp:GridView runat="server"
+				  ForeColor="#333333"
+				  GridLines="None"
+				  Width="100%"
+				  AllowPaging="True"
+				  ShowFooter="False"
+				  BorderColor="White"
+				  BorderStyle="Dotted"
+				  BorderWidth="3px"
+				  CellPadding="5"
+				  CellSpacing="2"
+				  HorizontalAlign="Center"
+				  PageSize="10" >
+		<FooterStyle BackColor="#990000"
+					 Font-Bold="True"
+					 ForeColor="White" />
+		<RowStyle BackColor="#FFFBD6"
+				  ForeColor="#333333"
+				  CssClass="gridItems"
+				  BorderStyle="Solid"
+				  BorderWidth="5px" />
+		<SelectedRowStyle BackColor="#FFCC66"
+						  Font-Bold="True"
+						  ForeColor="Navy" />
+		<PagerStyle BackColor="#FFCC66"
+					ForeColor="#333333"
+					HorizontalAlign="Center" />
+		<HeaderStyle BackColor="#990000"
+					 Font-Bold="True"
+					 ForeColor="White" />
+		<AlternatingRowStyle BackColor="White" />
+		<PagerSettings Mode="NextPreviousFirstLast"
+					   NextPageImageUrl="~/App_Images/right arrow.png"
+					   PreviousPageImageUrl="~/App_Images/left arrow.png"
+					   FirstPageImageUrl="~/App_Images/first-arrow.png"
+					   LastPageImageUrl="~/App_Images/last-arrow.png" />
+	</asp:GridView>
+
+
+	<asp:DropDownList runat="server"
+					  Width="100%" />
+
+	<asp:CheckBox runat="server"
+				  font-bold="True"
+				  forecolor="Black"
+				  width="100%"
+				  style="text-align:left" />
+
+
+
+	<asp:Menu runat="server"
+			  BackColor="Transparent"
+			  BorderColor="#FFC080"
+			  BorderStyle="Solid"
+			  BorderWidth="0px"
+			  DynamicHorizontalOffset="2"
+			  Font-Names="Verdana"
+			  Font-Size="X-Small"
+			  ForeColor="#980000"
+			  ItemWrap="True"
+			  Orientation="Horizontal"
+			  StaticSubMenuIndent="10px"
+			  Style="display: block; overflow: auto; z-index: 100;
+							left: 50px; position: absolute; top: -43px;">
+		<StaticMenuItemStyle HorizontalPadding="5px"
+							 VerticalPadding="2px" />
+		<DynamicHoverStyle BackColor="Transparent"
+						   BorderColor="#FFC080"
+						   BorderStyle="Solid"
+						   BorderWidth="1px"
+						   ForeColor="Blue" />
+		<DynamicMenuStyle BackColor="#FFDC99" BorderColor="Black"
+						   BorderStyle="Solid"
+						   BorderWidth="1px" />
+		<StaticSelectedStyle BackColor="Transparent" />
+		<DynamicSelectedStyle BackColor="Transparent" ForeColor="Blue"/>
+		<DynamicMenuItemStyle HorizontalPadding="5px"
+							  VerticalPadding="2px" />
+		<StaticHoverStyle BackColor="Transparent"
+						  ForeColor="Blue" />
+	</asp:Menu>
+
+	<asp:ListBox runat="server"
+				 Width="100%"/>
+
+	<asp:CheckBoxList runat="server"
+					  Width="100%" />

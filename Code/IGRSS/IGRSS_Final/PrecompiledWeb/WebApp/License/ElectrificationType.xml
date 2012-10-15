@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<InvestigationType>
+	<item Key="Internal"
+		  Value="In">
+		<Description>Internal Type</Description>
+	</item>
+	<item Key="External Type"
+		  value="Ex">
+		<Description>External Type</Description>
+	</item>
+
+
+</InvestigationType>

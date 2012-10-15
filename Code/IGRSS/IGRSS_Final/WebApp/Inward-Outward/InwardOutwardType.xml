@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<InwardOutWardType>
+<item Key="Inward" Value="I">
+		<Description>For Inward Entry</Description>
+	</item>
+	<item Key="Outward" Value="O">
+		<Description>For Outward Entry</Description>
+	</item>
+</InwardOutWardType>

@@ -1,0 +1,78 @@
+<%@ Master AutoEventWireup="true" CodeFile="AdminConsole.master.cs" Inherits="AdminConsole"
+    Language="C#" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Assign Permission to the User</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table width="100%">
+            <tr>
+                <td>
+                    <div id="header" style="left: 1px">
+                        <table cellspacing="0" class="header" style="height: 1px" width="100%">
+                            <tr>
+                                <td colspan="2" align="left" style="width: 470px" valign="middle">
+                                    <asp:Label ID="Label1" runat="server" ForeColor="White" Text="WELCOME" Height="16px"
+                                        Width="63px"></asp:Label>
+                                    <asp:LoginName ID="LoginName" runat="server" Height="16px" ForeColor="White" />
+                                </td>
+                                <td style="text-align: right; width: 125px;">
+                                    &nbsp;<asp:ImageButton ID="imgGoHome" runat="server" AlternateText="Go Home" ImageUrl="~/Images/GoHome.png"
+                                        PostBackUrl="~/Default.aspx" ValidationGroup="GoHome" meta:resourcekey="imgGoHomeResource1" />
+                                </td>
+                                <td style="text-align: right;" valign="middle">
+                                    <asp:LoginStatus ID="userLoginStatus" runat="server" Height="23px" />
+                                </td>
+                            </tr>
+                            <tr align="left">
+                                <td class="logo" rowspan="2">
+                                    <asp:Image ID="imgLogo" runat="server" SkinID="AppLogo" />
+                                </td>
+                                <td colspan="2" valign="top">
+                                    <h1>
+                                        Central Administration Console</h1>
+                                    <h2>
+                                        Inspector General of Registration and Superintendent of Stamps (IGRSS System)</h2>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="bottom" colspan="2">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="content">
+                <td>
+                    <div id="cphContent" class="content">
+                        <asp:Menu ID="IgrssMainMenu" runat="server" DataSourceID="MenuSource" Style="z-index: 100;
+                            left: 57px; position: absolute; top: -29px">
+                            <DynamicItemTemplate>
+                                <%# Eval("Text") %>
+                            </DynamicItemTemplate>
+                            <StaticItemTemplate>
+                                <%# Eval("Text") %>
+                            </StaticItemTemplate>
+                            <DataBindings>
+                                <asp:MenuItemBinding DataMember="Module" TextField="Name" ValueField="Code" />
+                                <asp:MenuItemBinding DataMember="View" NavigateUrlField="Url" TextField="Name" ValueField="Name" />
+                            </DataBindings>
+                        </asp:Menu>
+                        <asp:XmlDataSource ID="MenuSource" runat="server" XPath='IgrssSite/Module[@Code="CAC"]/*'
+                            DataFile="~/XMLFile.xml"></asp:XmlDataSource>
+                        <asp:ContentPlaceHolder ID="Main" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </td>
+            </tr>
+            <tr class="footer">
+                <td>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

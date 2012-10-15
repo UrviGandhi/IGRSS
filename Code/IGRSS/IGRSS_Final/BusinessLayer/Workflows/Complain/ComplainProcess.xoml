@@ -1,0 +1,50 @@
+﻿<StateMachineWorkflowActivity x:Class="IGRSS.Workflows.Complain.ComplainProcess" InitialStateName="ComplainFiled" x:Name="ComplainProcess" DynamicUpdateCondition="{x:Null}" CompletedStateName="ComplainClosed" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateActivity x:Name="ComplainFiled">
+		<StateInitializationActivity x:Name="InitializeComplain">
+			<CodeActivity x:Name="InitilizeInstance" ExecuteCode="InitilizeInstance_ExecuteCode" />
+			<IfElseActivity x:Name="CheckComplainType">
+				<IfElseBranchActivity x:Name="ExternalComplain">
+					<IfElseBranchActivity.Condition>
+						<CodeCondition Condition="IsExternalComplain" />
+					</IfElseBranchActivity.Condition>
+					<CodeActivity x:Name="AlertUser" ExecuteCode="AlertUser_ExecuteCode" />
+				</IfElseBranchActivity>
+				<IfElseBranchActivity x:Name="InternalComplain">
+					<SetStateActivity x:Name="SetExternalComplain" TargetStateName="ComplainClosed" />
+				</IfElseBranchActivity>
+			</IfElseActivity>
+			<SetStateActivity x:Name="SetComplainAccepted" TargetStateName="ComplainOpen" />
+		</StateInitializationActivity>
+	</StateActivity>
+	<StateActivity x:Name="ComplainOpen">
+		<EventDrivenActivity x:Name="NoInvestigationRequired">
+			<HandleExternalEventActivity Invoked="OnNoInvestigationRequired_Invoked" x:Name="OnNoInvestigationRequired" EventName="NoInvestigationRequired" InterfaceType="{x:Type IGRSS.Workflows.Complain.Services.IComplainService}" />
+			<SetStateActivity x:Name="SetNoInvestigationRequired" TargetStateName="ComplainClosed" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="InvestigationRequired">
+			<HandleExternalEventActivity Invoked="OnInvestigationRequired_Invoked" x:Name="OnInvestigationRequired" EventName="InvestigationRequired" InterfaceType="{x:Type IGRSS.Workflows.Complain.Services.IComplainService}" />
+			<SetStateActivity x:Name="SetComplainOpen" TargetStateName="InvestigationProcess" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="InvestigationProcess">
+		<EventDrivenActivity x:Name="AddInvestigationDetails">
+			<HandleExternalEventActivity Invoked="OnAddInvestigationDetails_Invoked" x:Name="OnAddInvestigationDetails" EventName="AddInvedtigationDetails" InterfaceType="{x:Type IGRSS.Workflows.Complain.Services.IComplainService}" />
+			<SetStateActivity x:Name="SetAddInvestigationDetails" TargetStateName="InvestigationProcess" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="InvestigationDone">
+			<HandleExternalEventActivity Invoked="OnInvestigationDone_Invoked" x:Name="OnInvestigationDone" EventName="InvestigationDone" InterfaceType="{x:Type IGRSS.Workflows.Complain.Services.IComplainService}" />
+			<SetStateActivity x:Name="SetInvestigationDone" TargetStateName="InvestigationComplete" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="InvestigationComplete">
+		<EventDrivenActivity x:Name="ReAssignInvestigation">
+			<HandleExternalEventActivity Invoked="OnReAssignInvestigation_Invoked" x:Name="OnReAssignInvestigation" EventName="ReAssignInvestigation" InterfaceType="{x:Type IGRSS.Workflows.Complain.Services.IComplainService}" />
+			<SetStateActivity x:Name="SetReAssignInvestigation" TargetStateName="InvestigationProcess" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="FileClosed">
+			<HandleExternalEventActivity Invoked="OnFileClosed_Invoked" x:Name="OnFileClosed" EventName="FileClosed" InterfaceType="{x:Type IGRSS.Workflows.Complain.Services.IComplainService}" />
+			<SetStateActivity x:Name="SetFileClosed" TargetStateName="ComplainClosed" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="ComplainClosed" />
+</StateMachineWorkflowActivity>

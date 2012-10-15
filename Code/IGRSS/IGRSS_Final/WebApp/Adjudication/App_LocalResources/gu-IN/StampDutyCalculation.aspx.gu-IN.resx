@@ -1,0 +1,1860 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdjudicationIdLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AdjudicationIdLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AdjudicationIdTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AdjudicationIdTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AdjudicationIdTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AreaOfConstructionLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AreaOfConstructionTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AreaOfConstructionTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AreaOfPlotLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AreaOfPlotLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AreaOfPlotTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AreaOfPlotTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AreaOfPlotTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.HeaderText" xml:space="preserve">
+    <value>અભિપ્રાય</value>
+  </data>
+  <data name="BoundFieldResource2.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource2.HeaderText" xml:space="preserve">
+    <value>ફાઇલ નંબર</value>
+  </data>
+  <data name="BoundFieldResource3.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource3.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource3.HeaderText" xml:space="preserve">
+    <value>ફાઇલ નંબર</value>
+  </data>
+  <data name="BoundFieldResource4.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource4.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource4.HeaderText" xml:space="preserve">
+    <value>ફાઇલ નંબર</value>
+  </data>
+  <data name="BoundFieldResource5.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource5.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource5.HeaderText" xml:space="preserve">
+    <value>રસીદ નંબર</value>
+  </data>
+  <data name="BoundFieldResource6.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource6.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource6.HeaderText" xml:space="preserve">
+    <value>અભિપ્રાય</value>
+  </data>
+  <data name="btnCalculateResource1.Text" xml:space="preserve">
+    <value>વેપારનું સરનામું</value>
+  </data>
+  <data name="btnCalculateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCalculateResource2.Text" xml:space="preserve">
+    <value>કિંમત</value>
+  </data>
+  <data name="btnCalculateResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCalculateResource3.Text" xml:space="preserve">
+    <value>કિંમત</value>
+  </data>
+  <data name="btnCalculateResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnSearchResource1.Text" xml:space="preserve">
+    <value>શોધ</value>
+  </data>
+  <data name="btnSearchResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnStampDutyUpdateResource1.Text" xml:space="preserve">
+    <value>વિસંગતિ-તફાવત જણાઇ છે</value>
+  </data>
+  <data name="btnStampDutyUpdateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnUpdateResource1.Text" xml:space="preserve">
+    <value>સંગ્રહ કરવો</value>
+  </data>
+  <data name="btnUpdateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CertificateNumberResource1.Text" xml:space="preserve">
+    <value>મહેસૂલી સત્તા અધિકારીના નિયંત્રકની વિગતો</value>
+  </data>
+  <data name="CertificateNumberResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CheckBox1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CheckBox1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPhysicalVerificationResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPhysicalVerificationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.CancelText" xml:space="preserve">
+    <value>રદ્દ કરવું</value>
+  </data>
+  <data name="CommandFieldResource1.DeleteText" xml:space="preserve">
+    <value>કાઢી નાખવું</value>
+  </data>
+  <data name="CommandFieldResource1.EditText" xml:space="preserve">
+    <value>સંપાદન કરવું</value>
+  </data>
+  <data name="CommandFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.InsertText" xml:space="preserve">
+    <value>ઉમેરવું અને દાખલ કરવું</value>
+  </data>
+  <data name="CommandFieldResource1.NewText" xml:space="preserve">
+    <value>નવું નવીન</value>
+  </data>
+  <data name="CommandFieldResource1.SelectText" xml:space="preserve">
+    <value>પસંદ કરવું</value>
+  </data>
+  <data name="CommandFieldResource1.UpdateText" xml:space="preserve">
+    <value>અદ્યતન રાખવું</value>
+  </data>
+  <data name="ConstructionExpenseLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ConstructionExpenseTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ConstructionRateLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ConstructionRateTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlDistirctCodeInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlDistirctCodeInsResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlDistirctCodeItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlDistirctCodeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddloSchemeTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlTalukaCodeInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlTalukaCodeInsResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlTalukaCodeItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlTypeofConstructionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlValuatePropertyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlVillageCodeInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlVillageCodeInsResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlVillageCodeItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlVillageCodeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DepreciationLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DepreciationLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DepreciationTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DepreciationTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DepreciationTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DevelopmentExpenseLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DevelopmentExpenseLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DevelopmentExpenseTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DevelopmentExpenseTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DevelopmentExpenseTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DevelopmentRateLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DevelopmentRateLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DevelopmentRateTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DevelopmentRateTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DevelopmentRateTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DistrictCodeLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DistrictCodeLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DistrictCodeTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DistrictCodeTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DistrictCodeTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DropDownList1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DropDownList2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DropDownList3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EditButtonResource1.Text" xml:space="preserve">
+    <value>સંપાદન કરવું</value>
+  </data>
+  <data name="EditButtonResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EditButtonResource2.Text" xml:space="preserve">
+    <value>સંપાદન કરવું</value>
+  </data>
+  <data name="EditButtonResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EstimatedPriceLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EstimatedPriceLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EstimatedPriceOfConstructionLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EstimatedPriceOfConstructionLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EstimatedPriceOfConstructionTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EstimatedPriceOfConstructionTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EstimatedPriceOfConstructionTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EstimatedPriceTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EstimatedPriceTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EstimatedPriceTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FormView1Resource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FormView1Resource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FormView1Resource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FormView1Resource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FormView1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvIssuecertificateResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvIssuecertificateResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvIssuecertificateResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvIssuecertificateResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvIssuecertificateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvlandValuationResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvlandValuationResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvlandValuationResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvlandValuationResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvlandValuationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvStampDutyCalculationResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvStampDutyCalculationResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvStampDutyCalculationResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvStampDutyCalculationResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvStampDutyCalculationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GvAdjudicationRequestResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GvAdjudicationRequestResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GvAdjudicationRequestResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InsertButtonResource1.Text" xml:space="preserve">
+    <value>ઉમેરવું અને દાખલ કરવું</value>
+  </data>
+  <data name="InsertButtonResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InsertButtonResource2.Text" xml:space="preserve">
+    <value>ઉમેરવું અને દાખલ કરવું</value>
+  </data>
+  <data name="InsertButtonResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InsertCancelButtonResource1.Text" xml:space="preserve">
+    <value>રદ્દ કરવું</value>
+  </data>
+  <data name="InsertCancelButtonResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InsertCancelButtonResource2.Text" xml:space="preserve">
+    <value>રદ્દ કરવું</value>
+  </data>
+  <data name="InsertCancelButtonResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InternalElectrificationExpenseLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InternalElectrificationExpenseLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InternalElectrificationExpenseTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InternalElectrificationExpenseTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InternalElectrificationExpenseTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InternalElectrificationRateLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InternalElectrificationRateLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InternalElectrificationRateTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InternalElectrificationRateTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InternalElectrificationRateTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IsConstructedPropertyCheckBoxResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IsConstructedPropertyCheckBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IsConstructedPropertyCheckBoxResource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IsConstructedPropertyCheckBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IsConstructedPropertyCheckBoxResource3.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IsConstructedPropertyCheckBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IsConstructedPropertyCheckBoxResource4.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IsConstructedPropertyCheckBoxResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IsConstructedPropertyCheckBoxResource5.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IsConstructedPropertyCheckBoxResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label10Resource1.Text" xml:space="preserve">
+    <value>વિગતો</value>
+  </data>
+  <data name="Label10Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label11Resource1.Text" xml:space="preserve">
+    <value>અન્ય વિગતો, બીજી વિગતો</value>
+  </data>
+  <data name="Label11Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label12Resource1.Text" xml:space="preserve">
+    <value>ખરીદનાર, જેને વેચ્યું હોય તે</value>
+  </data>
+  <data name="Label12Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label13Resource1.Text" xml:space="preserve">
+    <value>વર્ષ</value>
+  </data>
+  <data name="Label13Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label14Resource1.Text" xml:space="preserve">
+    <value>લાઇસન્સ રીન્યુની પ્રક્રિયા</value>
+  </data>
+  <data name="Label14Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label16Resource1.Text" xml:space="preserve">
+    <value>સ્ટેમ્પની વિગતો ઉમેરો</value>
+  </data>
+  <data name="Label16Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label1Resource1.Text" xml:space="preserve">
+    <value>સક્રિય છે ?</value>
+  </data>
+  <data name="Label1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label2Resource1.Text" xml:space="preserve">
+    <value>સૂચિ માર્ગદર્શિકા</value>
+  </data>
+  <data name="Label2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label3Resource1.Text" xml:space="preserve">
+    <value>તારીખ સુધી કાયદેસર-માન્ય</value>
+  </data>
+  <data name="Label3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label4Resource1.Text" xml:space="preserve">
+    <value>સૂચિ માર્ગદર્શિકા</value>
+  </data>
+  <data name="Label4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label5Resource1.Text" xml:space="preserve">
+    <value>કાયદેસર વર્ષ દાખલ કરશો</value>
+  </data>
+  <data name="Label5Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label6Resource1.Text" xml:space="preserve">
+    <value>રીફંડ ઓર્ડર મંજુર કરવો</value>
+  </data>
+  <data name="Label6Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label7Resource1.Text" xml:space="preserve">
+    <value>રીફંડ ઓર્ડર મંજુર કરવો</value>
+  </data>
+  <data name="Label7Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label8Resource1.Text" xml:space="preserve">
+    <value>બેંકનો પ્રકાર</value>
+  </data>
+  <data name="Label8Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label9Resource1.Text" xml:space="preserve">
+    <value>મરામત કરેલા સાધનો</value>
+  </data>
+  <data name="Label9Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LandRateLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LandRateLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LandRateTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LandRateTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LandRateTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAdjudicationTotalFeesInsResource1.Text" xml:space="preserve">
+    <value>સૂચિ માર્ગદર્શિકા</value>
+  </data>
+  <data name="lblAdjudicationTotalFeesInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAreaOfConstructionResource1.Text" xml:space="preserve">
+    <value>રીફંડ ઓર્ડર મંજુર કરવો</value>
+  </data>
+  <data name="lblAreaOfConstructionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAreaOfConstructionResource2.Text" xml:space="preserve">
+    <value>રીફંડ ઓર્ડર મંજુર કરવો</value>
+  </data>
+  <data name="lblAreaOfConstructionResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAreaOfLandResource1.Text" xml:space="preserve">
+    <value>રીફંડ ઓર્ડર મંજુર કરવો</value>
+  </data>
+  <data name="lblAreaOfLandResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAreaOfLandResource2.Text" xml:space="preserve">
+    <value>રીફંડ ઓર્ડર મંજુર કરવો</value>
+  </data>
+  <data name="lblAreaOfLandResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAreaOfLandResource3.Text" xml:space="preserve">
+    <value>રીફંડ ઓર્ડર મંજુર કરવો</value>
+  </data>
+  <data name="lblAreaOfLandResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAreaOfPlotResource1.Text" xml:space="preserve">
+    <value>વિગતો</value>
+  </data>
+  <data name="lblAreaOfPlotResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCertificateIssuedOnResource1.Text" xml:space="preserve">
+    <value>મહેસૂલી સત્તા અધિકારીના નિયંત્રકની વિગતો</value>
+  </data>
+  <data name="lblCertificateIssuedOnResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCertificateRemarksResource1.Text" xml:space="preserve">
+    <value>વિશેષનોંધ, ટીકા-ટિપ્પણ</value>
+  </data>
+  <data name="lblCertificateRemarksResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCheckPhysicalVerificationResource1.Text" xml:space="preserve">
+    <value>ચેકની યાદી</value>
+  </data>
+  <data name="lblCheckPhysicalVerificationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCheckPhysicalVerificationResource2.Text" xml:space="preserve">
+    <value>ચેકની યાદી</value>
+  </data>
+  <data name="lblCheckPhysicalVerificationResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblConstructionExpenseResource1.Text" xml:space="preserve">
+    <value>કિંમત</value>
+  </data>
+  <data name="lblConstructionExpenseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblConstructionRate1Resource1.Text" xml:space="preserve">
+    <value>અરજદારનું નામ</value>
+  </data>
+  <data name="lblConstructionRate1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblConstructionRateResource1.Text" xml:space="preserve">
+    <value>ફરિયાદનો નંબર</value>
+  </data>
+  <data name="lblConstructionRateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblConstructionRateResource2.Text" xml:space="preserve">
+    <value>ચુકાદાની વિગતો</value>
+  </data>
+  <data name="lblConstructionRateResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDepreciationResource1.Text" xml:space="preserve">
+    <value>સ્ટેમ્પની કિંમત ખાલી ન હોવી જોઇએ</value>
+  </data>
+  <data name="lblDepreciationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDevelopmentFeeRateResource1.Text" xml:space="preserve">
+    <value>વિગતો</value>
+  </data>
+  <data name="lblDevelopmentFeeRateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDevelopmentFeeRateResource2.Text" xml:space="preserve">
+    <value>વિગતો</value>
+  </data>
+  <data name="lblDevelopmentFeeRateResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDevelopmentRateResource1.Text" xml:space="preserve">
+    <value>જમા રકમ</value>
+  </data>
+  <data name="lblDevelopmentRateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDistirctCodeResource1.Text" xml:space="preserve">
+    <value>જણાયેલ વિસંગતિ-તફાવત</value>
+  </data>
+  <data name="lblDistirctCodeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDistirctCodeResource2.Text" xml:space="preserve">
+    <value>જણાયેલ વિસંગતિ-તફાવત</value>
+  </data>
+  <data name="lblDistirctCodeResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDistirctCodeResource3.Text" xml:space="preserve">
+    <value>જણાયેલ વિસંગતિ-તફાવત</value>
+  </data>
+  <data name="lblDistirctCodeResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDistrictCodeResource1.Text" xml:space="preserve">
+    <value>જિલ્લો</value>
+  </data>
+  <data name="lblDistrictCodeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEstimatedPriceResource1.Text" xml:space="preserve">
+    <value>વિશેષનોંધ, ટીકા-ટિપ્પણ</value>
+  </data>
+  <data name="lblEstimatedPriceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFileSlNoResource1.Text" xml:space="preserve">
+    <value>અભિપ્રાય</value>
+  </data>
+  <data name="lblFileSlNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblInternalElectricficationRateResource1.Text" xml:space="preserve">
+    <value>મરામત કરેલા સાધનો</value>
+  </data>
+  <data name="lblInternalElectricficationRateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblInternalElectricficationRateResource2.Text" xml:space="preserve">
+    <value>મરામત કરેલા સાધનો</value>
+  </data>
+  <data name="lblInternalElectricficationRateResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblInternalElectrificationExpenseResource1.Text" xml:space="preserve">
+    <value>તારીખ સુધી કાયદેસર-માન્ય</value>
+  </data>
+  <data name="lblInternalElectrificationExpenseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIsConstructedPropertyResource1.Text" xml:space="preserve">
+    <value>મરામત કરેલા સાધનો</value>
+  </data>
+  <data name="lblIsConstructedPropertyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLandRateResource1.Text" xml:space="preserve">
+    <value>અન્ય વિગતો, બીજી વિગતો</value>
+  </data>
+  <data name="lblLandRateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLandTypeResource1.Text" xml:space="preserve">
+    <value>ચુકાદાની વિગતો</value>
+  </data>
+  <data name="lblLandTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lbllandTypeResource2.Text" xml:space="preserve">
+    <value>ચુકાદાની વિગતો</value>
+  </data>
+  <data name="lbllandTypeResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLiftExpenseResource1.Text" xml:space="preserve">
+    <value>લાઇસન્સ રીન્યુની પ્રક્રિયા</value>
+  </data>
+  <data name="lblLiftExpenseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLiftExpenseResource2.Text" xml:space="preserve">
+    <value>લાઇસન્સ રીન્યુની પ્રક્રિયા</value>
+  </data>
+  <data name="lblLiftExpenseResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOtherFeeRateResource1.Text" xml:space="preserve">
+    <value>અન્ય વિગતો, બીજી વિગતો</value>
+  </data>
+  <data name="lblOtherFeeRateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOtherFeeRateResource2.Text" xml:space="preserve">
+    <value>અન્ય વિગતો, બીજી વિગતો</value>
+  </data>
+  <data name="lblOtherFeeRateResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPhysicalVerificationResource1.Text" xml:space="preserve">
+    <value>ફોન સંખ્યાત્મક હોવો જોઇએ અને તેમાં ૫-૧૦ આંકડા જોઇએ</value>
+  </data>
+  <data name="lblPhysicalVerificationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPlinthAreaOfConstructionResource1.Text" xml:space="preserve">
+    <value>લાઇસન્સ રીન્યુની પ્રક્રિયા</value>
+  </data>
+  <data name="lblPlinthAreaOfConstructionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPlotNoResource1.Text" xml:space="preserve">
+    <value>કાયદેસર વર્ષ દાખલ કરશો</value>
+  </data>
+  <data name="lblPlotNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPlotNoResource2.Text" xml:space="preserve">
+    <value>કાયદેસર વર્ષ દાખલ કરશો</value>
+  </data>
+  <data name="lblPlotNoResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPlotNoResource3.Text" xml:space="preserve">
+    <value>કાયદેસર વર્ષ દાખલ કરશો</value>
+  </data>
+  <data name="lblPlotNoResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReceiptNumberInsResource1.Text" xml:space="preserve">
+    <value>વેચનારનું નામ દાખલ કરો</value>
+  </data>
+  <data name="lblReceiptNumberInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSchemeTypeResource1.Text" xml:space="preserve">
+    <value>ખરીદનાર, જેને વેચ્યું હોય તે</value>
+  </data>
+  <data name="lblSchemeTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSpecialDeductionResource1.Text" xml:space="preserve">
+    <value>ખરીદનાર, જેને વેચ્યું હોય તે</value>
+  </data>
+  <data name="lblSpecialDeductionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSpecialDeductionResource2.Text" xml:space="preserve">
+    <value>ખરીદનાર, જેને વેચ્યું હોય તે</value>
+  </data>
+  <data name="lblSpecialDeductionResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStampDutyCalculationInsResource1.Text" xml:space="preserve">
+    <value>સ્ટેમ્પની વિગતો ઉમેરો</value>
+  </data>
+  <data name="lblStampDutyCalculationInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStampDutyCalculationInsResource2.Text" xml:space="preserve">
+    <value>મહેસૂલી સત્તા અધિકારીના નિયંત્રકની વિગતો</value>
+  </data>
+  <data name="lblStampDutyCalculationInsResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStampDutyCalculationInsResource3.Text" xml:space="preserve">
+    <value>સ્ટેમ્પની વિગતો ઉમેરો</value>
+  </data>
+  <data name="lblStampDutyCalculationInsResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStampDutyCalculationItmResource1.Text" xml:space="preserve">
+    <value>સ્ટેમ્પની વિગતો ઉમેરો</value>
+  </data>
+  <data name="lblStampDutyCalculationItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStampDutyCalculationResource1.Text" xml:space="preserve">
+    <value>સ્ટેમ્પની વિગતો ઉમેરો</value>
+  </data>
+  <data name="lblStampDutyCalculationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStampDutyResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStampDutyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTalukaCodeResource1.Text" xml:space="preserve">
+    <value>તાલુકો</value>
+  </data>
+  <data name="lblTalukaCodeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTalukaCodeResource2.Text" xml:space="preserve">
+    <value>તાલુકો</value>
+  </data>
+  <data name="lblTalukaCodeResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTalukaCodeResource3.Text" xml:space="preserve">
+    <value>તાલુકો</value>
+  </data>
+  <data name="lblTalukaCodeResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTalukaCodeResource4.Text" xml:space="preserve">
+    <value>તાલુકો</value>
+  </data>
+  <data name="lblTalukaCodeResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTpSchemeNoResource1.Text" xml:space="preserve">
+    <value>સ્ટેમ્પની કુલ કિંમત</value>
+  </data>
+  <data name="lblTpSchemeNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTpSchemeNoResource2.Text" xml:space="preserve">
+    <value>સ્ટેમ્પની કુલ કિંમત</value>
+  </data>
+  <data name="lblTpSchemeNoResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTpSchemeNoResource3.Text" xml:space="preserve">
+    <value>સ્ટેમ્પની કુલ કિંમત</value>
+  </data>
+  <data name="lblTpSchemeNoResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTypeOfConstructionResource1.Text" xml:space="preserve">
+    <value>બેંકનો પ્રકાર</value>
+  </data>
+  <data name="lblTypeOfConstructionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValuationDateResource1.Text" xml:space="preserve">
+    <value>કિંમત</value>
+  </data>
+  <data name="lblValuationDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValueOfLandResource1.Text" xml:space="preserve">
+    <value>વેચનારનું નામ દાખલ કરો</value>
+  </data>
+  <data name="lblValueOfLandResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVillageCodeResource1.Text" xml:space="preserve">
+    <value>ગામ</value>
+  </data>
+  <data name="lblVillageCodeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVillageCodeResource2.Text" xml:space="preserve">
+    <value>ગામ</value>
+  </data>
+  <data name="lblVillageCodeResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVillageCodeResource3.Text" xml:space="preserve">
+    <value>ગામ</value>
+  </data>
+  <data name="lblVillageCodeResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVillageCodeResource4.Text" xml:space="preserve">
+    <value>ગામ</value>
+  </data>
+  <data name="lblVillageCodeResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblYearOfConstructionResource1.Text" xml:space="preserve">
+    <value>સ્પષ્ટ ચિહ્નૉ</value>
+  </data>
+  <data name="lblYearOfConstructionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblYearOfConstructionResource2.Text" xml:space="preserve">
+    <value>સ્પષ્ટ ચિહ્નૉ</value>
+  </data>
+  <data name="lblYearOfConstructionResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LifeOfConstructionLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LifeOfConstructionLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LifeOfConstructionTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LifeOfConstructionTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LifeOfConstructionTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LiftExpenseLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LiftExpenseLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LiftExpenseTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LiftExpenseTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LiftExpenseTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemResource1.Text" xml:space="preserve">
+    <value>લાઇસન્સ રીન્યુની પ્રક્રિયા</value>
+  </data>
+  <data name="ListItemResource1.Value" xml:space="preserve">
+    <value>વાપરનારને કચેરીઓ મુકરર કરો</value>
+  </data>
+  <data name="ListItemResource10.Text" xml:space="preserve">
+    <value>મહિનો</value>
+  </data>
+  <data name="ListItemResource10.Value" xml:space="preserve">
+    <value>મહિનો</value>
+  </data>
+  <data name="ListItemResource11.Text" xml:space="preserve">
+    <value>મહિનો</value>
+  </data>
+  <data name="ListItemResource11.Value" xml:space="preserve">
+    <value>મહિનો</value>
+  </data>
+  <data name="ListItemResource12.Text" xml:space="preserve">
+    <value>મહિનો</value>
+  </data>
+  <data name="ListItemResource12.Value" xml:space="preserve">
+    <value>મહિનો</value>
+  </data>
+  <data name="ListItemResource13.Text" xml:space="preserve">
+    <value>ચોંટાડેલા સ્ટેમ્પની કિંમત</value>
+  </data>
+  <data name="ListItemResource13.Value" xml:space="preserve">
+    <value>ચોંટાડેલા સ્ટેમ્પની કિંમત</value>
+  </data>
+  <data name="ListItemResource14.Text" xml:space="preserve">
+    <value>વિનંતી કરનાર</value>
+  </data>
+  <data name="ListItemResource14.Value" xml:space="preserve">
+    <value>વિનંતી કરનાર</value>
+  </data>
+  <data name="ListItemResource15.Text" xml:space="preserve">
+    <value>મળ્યા-મોકલ્યા તારીખ</value>
+  </data>
+  <data name="ListItemResource15.Value" xml:space="preserve">
+    <value>મળ્યા-મોકલ્યા તારીખ</value>
+  </data>
+  <data name="ListItemResource2.Text" xml:space="preserve">
+    <value>ભૂમિકાની વ્યવસ્થા કરો</value>
+  </data>
+  <data name="ListItemResource2.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemResource3.Text" xml:space="preserve">
+    <value>ઊંચાઇ ૧૦ થી ઓછી હોવી જોઇએ</value>
+  </data>
+  <data name="ListItemResource3.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemResource4.Text" xml:space="preserve">
+    <value>નવી યાદી</value>
+  </data>
+  <data name="ListItemResource4.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemResource5.Text" xml:space="preserve">
+    <value>વર્ષ</value>
+  </data>
+  <data name="ListItemResource5.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemResource6.Text" xml:space="preserve">
+    <value>સ્ટેમ્પની કુલ કિંમત</value>
+  </data>
+  <data name="ListItemResource6.Value" xml:space="preserve">
+    <value>સ્ટેમ્પની કુલ કિંમત</value>
+  </data>
+  <data name="ListItemResource7.Text" xml:space="preserve">
+    <value>રીફંડ ઓર્ડર મંજુર કરવો</value>
+  </data>
+  <data name="ListItemResource7.Value" xml:space="preserve">
+    <value>રીફંડ ઓર્ડર મંજુર કરવો</value>
+  </data>
+  <data name="ListItemResource8.Text" xml:space="preserve">
+    <value>રકમ ખાલી હોઈ શકે નહીં</value>
+  </data>
+  <data name="ListItemResource8.Value" xml:space="preserve">
+    <value>રકમ ખાલી હોઈ શકે નહીં</value>
+  </data>
+  <data name="ListItemResource9.Text" xml:space="preserve">
+    <value>મહિનો</value>
+  </data>
+  <data name="ListItemResource9.Value" xml:space="preserve">
+    <value>મહિનો</value>
+  </data>
+  <data name="m_ReceivedDateLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="m_ReceivedDateTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="m_ValuationDateLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="m_ValuationDateLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="m_ValuationDateTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="m_ValuationDateTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="m_ValuationDateTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NetPriceLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NetPriceLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NetPriceTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NetPriceTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NetPriceTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewButtonResource1.Text" xml:space="preserve">
+    <value>નવું નવીન</value>
+  </data>
+  <data name="NewButtonResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewButtonResource2.Text" xml:space="preserve">
+    <value>નવું નવીન</value>
+  </data>
+  <data name="NewButtonResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OtherFeeRateLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OtherFeeRateLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OtherFeeRateTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OtherFeeRateTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OtherFeeRateTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OtherFeesLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OtherFeesLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OtherFeesTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OtherFeesTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OtherFeesTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>સ્ટેમ્પની વિગતો ઉમેરો</value>
+  </data>
+  <data name="PlinthAreaOfConstructionLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PlinthAreaOfConstructionTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PlotNoLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PlotNoLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PlotNoTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PlotNoTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PlotNoTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PopCalendar3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeValidator1Resource1.ErrorMessage" xml:space="preserve">
+    <value>તપાસ અધિકારીનું નામ</value>
+  </data>
+  <data name="RangeValidator1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeValidator1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeValidator1Resource2.ErrorMessage" xml:space="preserve">
+    <value>તપાસ અધિકારીનું નામ</value>
+  </data>
+  <data name="RangeValidator1Resource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeValidator1Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeValidator2Resource1.ErrorMessage" xml:space="preserve">
+    <value>તપાસ અધિકારીનું નામ</value>
+  </data>
+  <data name="RangeValidator2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeValidator2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeValidator2Resource2.ErrorMessage" xml:space="preserve">
+    <value>તપાસ અધિકારીનું નામ</value>
+  </data>
+  <data name="RangeValidator2Resource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeValidator2Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeValidator3Resource1.ErrorMessage" xml:space="preserve">
+    <value>તપાસ અધિકારીનું નામ</value>
+  </data>
+  <data name="RangeValidator3Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeValidator3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeValidator3Resource2.ErrorMessage" xml:space="preserve">
+    <value>તપાસ અધિકારીનું નામ</value>
+  </data>
+  <data name="RangeValidator3Resource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeValidator3Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReceivedDateLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReceivedDateTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RemarksLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RemarksLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RemarksTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RemarksTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RemarksTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource1.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource2.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource3.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource3.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SchemeNoLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SchemeNoTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SchemeNoTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SchemeTypeLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SchemeTypeLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SchemeTypeTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SchemeTypeTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SchemeTypeTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SpecialDeductionLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SpecialDeductionLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SpecialDeductionRateLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SpecialDeductionRateTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SpecialDeductionRateTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SpecialDeductionTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SpecialDeductionTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SpecialDeductionTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StampDutyLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StampDutyLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StampDutyRateLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StampDutyRateLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StampDutyRateTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StampDutyRateTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StampDutyRateTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StampDutyTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StampDutyTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StampDutyTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TalukaCodeLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TalukaCodeLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TalukaCodeTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TalukaCodeTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TalukaCodeTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox10Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox11Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox12Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox13Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox14Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox5Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox6Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox7Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox8Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox9Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TpSchemeNoLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TpSchemeNoTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAreaOfConstructionInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAreaOfConstructionItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAreaOfLandInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAreaOfLandInsResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAreaOfLandItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAreaOfPlotResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCertificateIssuedOnResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCertificateIssuedOnResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCertificateNumberResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCertificateNumberResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCertificateRemarksResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCertificateRemarksResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtConstructionExpenseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtConstructionRateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtConstructionRateResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDepreciationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDevelopmentFeeRateInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDevelopmentFeeRateItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDevelopmentRateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEstimatedPriceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFileSlNoUpdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFileSlNoUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtInternalElectrificationExpenseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtInternalElectrificationRateInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtInternalElectrificationRateItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtIsConstructedPropertyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLandRateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLiftExpenseInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLiftExpenseItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtOtherFeeRateInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtOtherFeeRateItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPlinthAreaOfConstructionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPlotNoInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPlotNoInsResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPlotNoItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtReceiptNumberInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSchemeTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSpecialDeductionInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSpecialDeductionItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtTpSchemeNoInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtTpSchemeNoInsResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtTpSchemeNoItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtValuationDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtValueOfLandResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtYearOfConstructionInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtYearOfConstructionItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TypeOfLandLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TypeOfLandLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TypeOfLandTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TypeOfLandTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TypeOfLandTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UpdateButtonResource1.Text" xml:space="preserve">
+    <value>અદ્યતન રાખવું</value>
+  </data>
+  <data name="UpdateButtonResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UpdateCancelButtonResource1.Text" xml:space="preserve">
+    <value>રદ્દ કરવું</value>
+  </data>
+  <data name="UpdateCancelButtonResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValuationDateLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValuationDateLabelResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValuationDateTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValuationDateTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValuationDateTextBoxResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValuationIdLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValuationIdLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValuationIdTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValuationIdTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValuationIdTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValuationOfConstructionLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValuationOfConstructionTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValuationOfConstructionTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValuationOfPropertyLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValuationOfPropertyTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValueOfConstructionLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValueOfConstructionLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValueOfConstructionTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValueOfConstructionTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValueOfConstructionTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValueOfLandLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValueOfLandLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValueOfLandTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValueOfLandTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValueOfLandTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VillageCodeLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VillageCodeLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VillageCodeTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VillageCodeTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VillageCodeTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="YearOfConstructionLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="YearOfConstructionLabelResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="YearOfConstructionTextBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="YearOfConstructionTextBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="YearOfConstructionTextBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>

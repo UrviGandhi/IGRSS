@@ -1,0 +1,614 @@
+Provider name: SampleEventProvider
+Buffering: 
+Buffering modality: 
+
+SampleEventLogWebEventProvider buffer flush.
+NotificationType: Urgent
+EventsInBuffer: 0
+EventsDiscardedSinceLastNotification: 0
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 28/11/2007 4:06:43 PM
+Event time (UTC): 28/11/2007 10:36:43 AM
+Event ID: dd72201df6b0436194dc5aa22bb5b2fd
+Event sequence: 1
+Event occurrence: 1
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 28/11/2007 4:06:44 PM
+Event time (UTC): 28/11/2007 10:36:44 AM
+Event ID: 34b37de237b84bcfbfeb3815928c7513
+Event sequence: 2
+Event occurrence: 1
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 28/11/2007 4:06:44 PM
+Event time (UTC): 28/11/2007 10:36:44 AM
+Event ID: 545b0d736e2241ebadd5300fb6924575
+Event sequence: 3
+Event occurrence: 2
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 28/11/2007 4:06:45 PM
+Event time (UTC): 28/11/2007 10:36:45 AM
+Event ID: ca726b1e47ed4127856a845f75e0320d
+Event sequence: 4
+Event occurrence: 2
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 28/11/2007 4:06:45 PM
+Event time (UTC): 28/11/2007 10:36:45 AM
+Event ID: fc4684d4814c4c5a96423ed66279ad70
+Event sequence: 5
+Event occurrence: 3
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+
+
+SampleEventLogWebEventProvider buffer flush.
+NotificationType: Urgent
+EventsInBuffer: 5
+EventsDiscardedSinceLastNotification: 40
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 28/11/2007 4:07:09 PM
+Event time (UTC): 28/11/2007 10:37:09 AM
+Event ID: 86687c53481e4859a2b8d69ce111c851
+Event sequence: 46
+Event occurrence: 23
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 28/11/2007 4:07:09 PM
+Event time (UTC): 28/11/2007 10:37:09 AM
+Event ID: 209e610116894c1ea6b42e254bf182f3
+Event sequence: 47
+Event occurrence: 24
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 28/11/2007 4:07:11 PM
+Event time (UTC): 28/11/2007 10:37:11 AM
+Event ID: 53ee7ce3512d469cbe3094a1df747ece
+Event sequence: 48
+Event occurrence: 24
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 28/11/2007 4:07:12 PM
+Event time (UTC): 28/11/2007 10:37:12 AM
+Event ID: 5a8a33a96ad54390932a305cc61d1986
+Event sequence: 49
+Event occurrence: 25
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 28/11/2007 4:07:13 PM
+Event time (UTC): 28/11/2007 10:37:13 AM
+Event ID: 8c66100ada3940f39cb6af21eb18e828
+Event sequence: 50
+Event occurrence: 25
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+
+
+SampleEventLogWebEventProvider buffer flush.
+NotificationType: Urgent
+EventsInBuffer: 5
+EventsDiscardedSinceLastNotification: 52
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 28/11/2007 4:07:39 PM
+Event time (UTC): 28/11/2007 10:37:39 AM
+Event ID: 4dbad2b1c27b4940b53982c2ef7a31b4
+Event sequence: 103
+Event occurrence: 52
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 28/11/2007 4:07:39 PM
+Event time (UTC): 28/11/2007 10:37:39 AM
+Event ID: ba35001ec5664e8387c04626bf1143c5
+Event sequence: 104
+Event occurrence: 52
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 28/11/2007 4:07:40 PM
+Event time (UTC): 28/11/2007 10:37:40 AM
+Event ID: 1aade8aa051e4494abc46305314d59ba
+Event sequence: 105
+Event occurrence: 53
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 28/11/2007 4:07:40 PM
+Event time (UTC): 28/11/2007 10:37:40 AM
+Event ID: 66687c48735d42b38804a06579207df1
+Event sequence: 106
+Event occurrence: 53
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 28/11/2007 4:07:40 PM
+Event time (UTC): 28/11/2007 10:37:40 AM
+Event ID: eaa59d69adf746b5a35ee450de87b843
+Event sequence: 107
+Event occurrence: 54
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+
+
+SampleEventLogWebEventProvider buffer flush.
+NotificationType: Urgent
+EventsInBuffer: 0
+EventsDiscardedSinceLastNotification: 0
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 28/11/2007 4:07:41 PM
+Event time (UTC): 28/11/2007 10:37:41 AM
+Event ID: f11f2909b4f34c808f93b4e8f9593e6c
+Event sequence: 108
+Event occurrence: 54
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 28/11/2007 4:07:41 PM
+Event time (UTC): 28/11/2007 10:37:41 AM
+Event ID: 72fb5cba32fa4739be004b3ca4571142
+Event sequence: 109
+Event occurrence: 55
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 28/11/2007 4:07:42 PM
+Event time (UTC): 28/11/2007 10:37:42 AM
+Event ID: 4e8a64002cf74bbf9ae41a4e6fa7a940
+Event sequence: 110
+Event occurrence: 55
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 28/11/2007 4:07:42 PM
+Event time (UTC): 28/11/2007 10:37:42 AM
+Event ID: 351f6942fa9a4de096115936e5d5864a
+Event sequence: 111
+Event occurrence: 56
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 28/11/2007 4:07:42 PM
+Event time (UTC): 28/11/2007 10:37:42 AM
+Event ID: 29b68970637d4e7e9e790b326101f670
+Event sequence: 112
+Event occurrence: 56
+Event detail code: 0
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+
+
+SampleEventLogWebEventProvider buffer flush.
+NotificationType: Flush
+EventsInBuffer: 0
+EventsDiscardedSinceLastNotification: 0
+Event code: 1002
+Event message: Application is shutting down. Reason: A subdirectory in the Bin application directory was changed or renamed.
+Event time: 28/11/2007 4:09:56 PM
+Event time (UTC): 28/11/2007 10:39:56 AM
+Event ID: 759afdf5c7c845bba32bb1059e9e1e0f
+Event sequence: 113
+Event occurrence: 1
+Event detail code: 50007
+
+Application information:
+    Application domain: ff2b4755-6-128407198015156250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 2684
+    Process name: devenv.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+
+Provider name: SampleEventProvider
+Buffering: 
+Buffering modality: 
+
+SampleEventLogWebEventProvider buffer flush.
+NotificationType: Urgent
+EventsInBuffer: 1
+EventsDiscardedSinceLastNotification: 0
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 28/11/2007 4:09:59 PM
+Event time (UTC): 28/11/2007 10:39:59 AM
+Event ID: ad1bd619c5154fcd84254ed5a0b4931e
+Event sequence: 1
+Event occurrence: 1
+Event detail code: 0
+
+Application information:
+    Application domain: f0d333c7_precompile_u-1-128407199973906250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 3904
+    Process name: aspnet_compiler.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 28/11/2007 4:09:59 PM
+Event time (UTC): 28/11/2007 10:39:59 AM
+Event ID: 77981573da6540ca882f4d66c52aea64
+Event sequence: 2
+Event occurrence: 1
+Event detail code: 0
+
+Application information:
+    Application domain: f0d333c7_precompile_u-1-128407199973906250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 3904
+    Process name: aspnet_compiler.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 28/11/2007 4:10:00 PM
+Event time (UTC): 28/11/2007 10:40:00 AM
+Event ID: 3e7824d90cc5426e9b0c7136b7d7ed01
+Event sequence: 3
+Event occurrence: 2
+Event detail code: 0
+
+Application information:
+    Application domain: f0d333c7_precompile_u-1-128407199973906250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 3904
+    Process name: aspnet_compiler.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 28/11/2007 4:10:00 PM
+Event time (UTC): 28/11/2007 10:40:00 AM
+Event ID: fe39c81e241e4bfc87d3287f3e1ce6cd
+Event sequence: 4
+Event occurrence: 2
+Event detail code: 0
+
+Application information:
+    Application domain: f0d333c7_precompile_u-1-128407199973906250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 3904
+    Process name: aspnet_compiler.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 28/11/2007 4:10:00 PM
+Event time (UTC): 28/11/2007 10:40:00 AM
+Event ID: 13d46787562a4fdeb387883f59a7d24b
+Event sequence: 5
+Event occurrence: 3
+Event detail code: 0
+
+Application information:
+    Application domain: f0d333c7_precompile_u-1-128407199973906250
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: C:\Documents and Settings\Nitin\Desktop\IGRSS\IGRSS_FINAL\FINAL\WebApp\
+    Machine name: NW
+
+Process information:
+    Process ID: 3904
+    Process name: aspnet_compiler.exe
+    Account name: NW\Nitin
+
+----------------------------------------------------------
+

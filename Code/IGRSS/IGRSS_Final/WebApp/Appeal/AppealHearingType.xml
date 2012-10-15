@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<HearingType>
+
+	<item Key="Internal Hearing"
+		   Value="A">
+		<Description>Internal Hearing</Description>
+	</item>
+	<item Key="High Court Hearing"
+		   value="High Court Hearing">
+		<Description>High Court Hearing</Description>
+	</item>
+
+</HearingType>

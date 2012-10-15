@@ -1,0 +1,190 @@
+﻿<StateMachineWorkflowDesigner xmlns:ns0="clr-namespace:System.Drawing;Assembly=System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Name="LicenseIssueProcess" Location="30, 30" Size="798, 606" AutoSize="False" AutoSizeMargin="16, 24" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateMachineWorkflowDesigner.DesignerConnectors>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="Verification" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="SetInitilized" SourceStateName="InitilizeLicenseApplication" SourceConnectionEdge="Right" TargetActivity="Verification" SourceActivity="InitilizeLicenseApplication" EventHandlerName="InitilizeProcess">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="195" Y="110" />
+				<ns0:Point X="353" Y="110" />
+				<ns0:Point X="353" Y="221" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="Verification" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="SetUpdated" SourceStateName="Verification" SourceConnectionEdge="Left" TargetActivity="Verification" SourceActivity="Verification" EventHandlerName="ApplicationUpdated">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="362" Y="169" />
+				<ns0:Point X="349" Y="169" />
+				<ns0:Point X="349" Y="96" />
+				<ns0:Point X="445" Y="96" />
+				<ns0:Point X="445" Y="104" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="Approval" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="SetApproval" SourceStateName="Verification" SourceConnectionEdge="Right" TargetActivity="Approval" SourceActivity="Verification" EventHandlerName="InitilizeVerification">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="401" Y="262" />
+				<ns0:Point X="539" Y="262" />
+				<ns0:Point X="539" Y="328" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="Verification" SourceConnectionIndex="2" TargetConnectionEdge="Top" SetStateName="SetValid" SourceStateName="Verification" SourceConnectionEdge="Left" TargetActivity="Verification" SourceActivity="Verification" EventHandlerName="VerificationValid">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="362" Y="193" />
+				<ns0:Point X="349" Y="193" />
+				<ns0:Point X="349" Y="96" />
+				<ns0:Point X="445" Y="96" />
+				<ns0:Point X="445" Y="104" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="DataEntryPending" SourceConnectionIndex="3" TargetConnectionEdge="Top" SetStateName="SetInvalid" SourceStateName="Verification" SourceConnectionEdge="Left" TargetActivity="DataEntryPending" SourceActivity="Verification" EventHandlerName="VerificationInvalid">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="270" Y="334" />
+				<ns0:Point X="63" Y="334" />
+				<ns0:Point X="63" Y="158" />
+				<ns0:Point X="154" Y="158" />
+				<ns0:Point X="154" Y="165" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="Approval" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="SetApproved" SourceStateName="Approval" SourceConnectionEdge="Right" TargetActivity="Approval" SourceActivity="Approval" EventHandlerName="Approved">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="552" Y="393" />
+				<ns0:Point X="627" Y="393" />
+				<ns0:Point X="627" Y="320" />
+				<ns0:Point X="539" Y="320" />
+				<ns0:Point X="539" Y="328" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="Completed" SourceConnectionIndex="2" TargetConnectionEdge="Top" SetStateName="SetRejected" SourceStateName="Approval" SourceConnectionEdge="Left" TargetActivity="Completed" SourceActivity="Approval" EventHandlerName="Rejected">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="463" Y="417" />
+				<ns0:Point X="385" Y="417" />
+				<ns0:Point X="385" Y="496" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="IssueLicense" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="SetIssueLicense" SourceStateName="Approval" SourceConnectionEdge="Left" TargetActivity="IssueLicense" SourceActivity="Approval" EventHandlerName="InitilizeApproval">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="463" Y="369" />
+				<ns0:Point X="248" Y="369" />
+				<ns0:Point X="248" Y="398" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="Completed" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="SetComplete" SourceStateName="IssueLicense" SourceConnectionEdge="Right" TargetActivity="Completed" SourceActivity="IssueLicense" EventHandlerName="LicenseIssued">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="278" Y="463" />
+				<ns0:Point X="385" Y="463" />
+				<ns0:Point X="385" Y="496" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="Verification" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="SetVerification" SourceStateName="DataEntryPending" SourceConnectionEdge="Right" TargetActivity="Verification" SourceActivity="DataEntryPending" EventHandlerName="ApplicationSaved">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="206" Y="206" />
+				<ns0:Point X="353" Y="206" />
+				<ns0:Point X="353" Y="221" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+	</StateMachineWorkflowDesigner.DesignerConnectors>
+	<StateMachineWorkflowDesigner.Designers>
+		<StateDesigner Name="InitilizeLicenseApplication" Location="75, 69" Size="162, 80" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<StateInitializationDesigner Size="110, 212" Name="InitilizeProcess" Location="83, 100">
+					<StateInitializationDesigner.Designers>
+						<CodeDesigner Size="90, 40" Name="InitilizeFlow" Location="93, 172" />
+						<SetStateDesigner Size="90, 40" Name="SetInitilized" Location="93, 242" />
+					</StateInitializationDesigner.Designers>
+				</StateInitializationDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="Verification" Location="266, 221" Size="175, 126" AutoSize="False" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 212" Name="ApplicationUpdated" Location="366, 159">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="OnApplicationUpdated" Location="376, 231" />
+						<SetStateDesigner Size="90, 40" Name="SetUpdated" Location="376, 301" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<StateInitializationDesigner Size="301, 356" Name="InitilizeVerification" Location="366, 135">
+					<StateInitializationDesigner.Designers>
+						<IfElseDesigner Size="281, 254" Name="VerivicationStatus" Location="376, 207">
+							<IfElseDesigner.Designers>
+								<IfElseBranchDesigner Size="110, 152" Name="VerificationComplete" Location="395, 279">
+									<IfElseBranchDesigner.Designers>
+										<SetStateDesigner Size="90, 50" Name="SetApproval" Location="405, 351" />
+									</IfElseBranchDesigner.Designers>
+								</IfElseBranchDesigner>
+								<IfElseBranchDesigner Size="110, 152" Name="VerificationPending" Location="528, 279">
+									<IfElseBranchDesigner.Designers>
+										<CodeDesigner Size="90, 40" Name="VerificationAlert" Location="538, 356" />
+									</IfElseBranchDesigner.Designers>
+								</IfElseBranchDesigner>
+							</IfElseDesigner.Designers>
+						</IfElseDesigner>
+					</StateInitializationDesigner.Designers>
+				</StateInitializationDesigner>
+				<EventDrivenDesigner Size="110, 212" Name="VerificationValid" Location="374, 148">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="OnVerificationValid" Location="384, 220" />
+						<SetStateDesigner Size="90, 40" Name="SetValid" Location="384, 290" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="110, 212" Name="VerificationInvalid" Location="366, 207">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="OnVerificationInvalid" Location="376, 279" />
+						<SetStateDesigner Size="90, 40" Name="SetInvalid" Location="376, 349" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="Approval" Location="459, 328" Size="160, 102" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 222" Name="Approved" Location="467, 383">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="OnApproved" Location="477, 455" />
+						<SetStateDesigner Size="90, 50" Name="SetApproved" Location="477, 525" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="110, 222" Name="Rejected" Location="467, 407">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="OnRejected" Location="477, 479" />
+						<SetStateDesigner Size="90, 50" Name="SetRejected" Location="477, 549" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<StateInitializationDesigner Size="301, 356" Name="InitilizeApproval" Location="467, 359">
+					<StateInitializationDesigner.Designers>
+						<IfElseDesigner Size="281, 254" Name="ApprovalStatus" Location="477, 431">
+							<IfElseDesigner.Designers>
+								<IfElseBranchDesigner Size="110, 152" Name="ApprovalComplete" Location="496, 503">
+									<IfElseBranchDesigner.Designers>
+										<SetStateDesigner Size="90, 50" Name="SetIssueLicense" Location="506, 575" />
+									</IfElseBranchDesigner.Designers>
+								</IfElseBranchDesigner>
+								<IfElseBranchDesigner Size="110, 152" Name="ApprovalPending" Location="629, 503">
+									<IfElseBranchDesigner.Designers>
+										<CodeDesigner Size="90, 40" Name="ApprovalAlert" Location="639, 580" />
+									</IfElseBranchDesigner.Designers>
+								</IfElseBranchDesigner>
+							</IfElseDesigner.Designers>
+						</IfElseDesigner>
+					</StateInitializationDesigner.Designers>
+				</StateInitializationDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="IssueLicense" Location="161, 398" Size="175, 80" AutoSize="False" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 222" Name="LicenseIssued" Location="169, 453">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="OnLicenseIssued" Location="179, 525" />
+						<SetStateDesigner Size="90, 50" Name="SetComplete" Location="179, 595" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<StateInitializationDesigner Size="110, 129" Name="InitilizeLicenseIssue" Location="169, 429" />
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="Completed" Location="305, 496" Size="160, 80" AutoSizeMargin="16, 24" />
+		<StateDesigner Name="DataEntryPending" Location="74, 165" Size="160, 80" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 222" Name="ApplicationSaved" Location="82, 196">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="OnApplicationSaved" Location="92, 268" />
+						<SetStateDesigner Size="90, 50" Name="SetVerification" Location="92, 338" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+	</StateMachineWorkflowDesigner.Designers>
+</StateMachineWorkflowDesigner>

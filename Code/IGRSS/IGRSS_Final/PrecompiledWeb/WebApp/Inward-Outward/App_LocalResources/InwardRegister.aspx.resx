@@ -1,0 +1,876 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BoundFieldResource1.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.HeaderText" xml:space="preserve">
+    <value>Document No</value>
+  </data>
+  <data name="BoundFieldResource2.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource2.HeaderText" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="BoundFieldResource3.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource3.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource3.HeaderText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="BoundFieldResource4.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource4.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource4.HeaderText" xml:space="preserve">
+    <value>Delivery Type</value>
+  </data>
+  <data name="BoundFieldResource5.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource5.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource5.HeaderText" xml:space="preserve">
+    <value>Inward_outwardId</value>
+  </data>
+  <data name="btnCancelIns.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnCancelIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCancelItm.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnCancelItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCancelUpd.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnCancelUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnInsate.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnInsate.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnItmate.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnItmate.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnUpdate.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnUpdate.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlDeliveryBranchIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlDeliveryBranchUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlDeliveryTypeIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlDeliveryTypeItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlDeliveryTypeUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlDocTypeIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlDocTypeItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlDocTypeUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlReceivingOfficeIDIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlReceivingOfficeIDItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlReceivingOfficeIDUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlSentOfficeIDIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlSentOfficeIDItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlSentOfficeIDUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FvInwardResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FvInwardResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FvInwardResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FvInwardResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FvInwardResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvInwarddtlResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvInwarddtlResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvInwarddtlResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDeliveryBranchIns.Text" xml:space="preserve">
+    <value>Delivery Branch</value>
+  </data>
+  <data name="lblDeliveryBranchIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDeliveryBranchItm.Text" xml:space="preserve">
+    <value>Delivery Branch</value>
+  </data>
+  <data name="lblDeliveryBranchItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDeliveryBranchUpd.Text" xml:space="preserve">
+    <value>Delivery Branch</value>
+  </data>
+  <data name="lblDeliveryBranchUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDeliveryTypeIns.Text" xml:space="preserve">
+    <value>Delivery Type</value>
+  </data>
+  <data name="lblDeliveryTypeIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDeliveryTypeItm.Text" xml:space="preserve">
+    <value>Delivery Type</value>
+  </data>
+  <data name="lblDeliveryTypeItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDeliveryTypeUpd.Text" xml:space="preserve">
+    <value>Delivery Type</value>
+  </data>
+  <data name="lblDeliveryTypeUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDescriptionIns.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lblDescriptionIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDescriptionItm.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lblDescriptionItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDescriptionUpd.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lblDescriptionUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDocTypeIns.Text" xml:space="preserve">
+    <value>Letter Type</value>
+  </data>
+  <data name="lblDocTypeIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDocTypeItm.Text" xml:space="preserve">
+    <value>Letter Type</value>
+  </data>
+  <data name="lblDocTypeItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDocTypeUpd.Text" xml:space="preserve">
+    <value>Letter Type</value>
+  </data>
+  <data name="lblDocTypeUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDocumentNoIns.Text" xml:space="preserve">
+    <value>Letter No</value>
+  </data>
+  <data name="lblDocumentNoIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDocumentNoItm.Text" xml:space="preserve">
+    <value>Letter No</value>
+  </data>
+  <data name="lblDocumentNoItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDocumentNoUpd.Text" xml:space="preserve">
+    <value>Letter No</value>
+  </data>
+  <data name="lblDocumentNoUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDocumentSentFromIns.Text" xml:space="preserve">
+    <value>Document Sent From</value>
+  </data>
+  <data name="lblDocumentSentFromIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDocumentSentFromItm.Text" xml:space="preserve">
+    <value>Document Sent From</value>
+  </data>
+  <data name="lblDocumentSentFromItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDocumentSentFromUpd.Text" xml:space="preserve">
+    <value>Document Sent From</value>
+  </data>
+  <data name="lblDocumentSentFromUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDocumentSentToIns.Text" xml:space="preserve">
+    <value>Office Sent To</value>
+  </data>
+  <data name="lblDocumentSentToIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDocumentSentToItm.Text" xml:space="preserve">
+    <value>Sent To</value>
+  </data>
+  <data name="lblDocumentSentToItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDocumentSentToUpd.Text" xml:space="preserve">
+    <value>Sent To</value>
+  </data>
+  <data name="lblDocumentSentToUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblInOutDateIns.Text" xml:space="preserve">
+    <value>In/Out Date</value>
+  </data>
+  <data name="lblInOutDateIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblInOutDateItm.Text" xml:space="preserve">
+    <value>In/Out Date</value>
+  </data>
+  <data name="lblInOutDateItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblInOutDateUpd.Text" xml:space="preserve">
+    <value>In/Out Date</value>
+  </data>
+  <data name="lblInOutDateUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblInwardOutwardHeaderIns.Text" xml:space="preserve">
+    <value>Inward Register</value>
+  </data>
+  <data name="lblInwardOutwardHeaderIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblInwardOutwardHeaderItm.Text" xml:space="preserve">
+    <value>Inward Register</value>
+  </data>
+  <data name="lblInwardOutwardHeaderItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblInwardOutwardHeaderUpd.Text" xml:space="preserve">
+    <value>Inward  Register</value>
+  </data>
+  <data name="lblInwardOutwardHeaderUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReceiversNameIns.Text" xml:space="preserve">
+    <value>Receiver Name</value>
+  </data>
+  <data name="lblReceiversNameIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReceiversNameItm.Text" xml:space="preserve">
+    <value>Receiver Name</value>
+  </data>
+  <data name="lblReceiversNameItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReceiversNameUpd.Text" xml:space="preserve">
+    <value>Receiver Name</value>
+  </data>
+  <data name="lblReceiversNameUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReceivingOfficeIDIns.Text" xml:space="preserve">
+    <value>Sent To</value>
+  </data>
+  <data name="lblReceivingOfficeIDIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReceivingOfficeIDItm.Text" xml:space="preserve">
+    <value>Sent To</value>
+  </data>
+  <data name="lblReceivingOfficeIDItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReceivingOfficeIDUpd.Text" xml:space="preserve">
+    <value>Sent To</value>
+  </data>
+  <data name="lblReceivingOfficeIDUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRemarksIns.Text" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="lblRemarksIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRemarksItm.Text" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="lblRemarksItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRemarksUpd.Text" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="lblRemarksUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSenderNameIns.Text" xml:space="preserve">
+    <value>Sender Name</value>
+  </data>
+  <data name="lblSenderNameIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSenderNameItm.Text" xml:space="preserve">
+    <value>Sender Name</value>
+  </data>
+  <data name="lblSenderNameItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSenderNameUpd.Text" xml:space="preserve">
+    <value>Sender Name</value>
+  </data>
+  <data name="lblSenderNameUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSentOfficeIDIns.Text" xml:space="preserve">
+    <value>Office Sent From</value>
+  </data>
+  <data name="lblSentOfficeIDIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSentOfficeIDItm.Text" xml:space="preserve">
+    <value>Office Sent From</value>
+  </data>
+  <data name="lblSentOfficeIDItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSentOfficeIDUpd.Text" xml:space="preserve">
+    <value>Office Sent From</value>
+  </data>
+  <data name="lblSentOfficeIDUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStampValueAffixedIns.Text" xml:space="preserve">
+    <value>Affixed Stamp Value</value>
+  </data>
+  <data name="lblStampValueAffixedIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStampValueAffixedItm.Text" xml:space="preserve">
+    <value>Affixed Stamp Value</value>
+  </data>
+  <data name="lblStampValueAffixedItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStampValueAffixedUpd.Text" xml:space="preserve">
+    <value>Affixed Stamp Value</value>
+  </data>
+  <data name="lblStampValueAffixedUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Inward Outward Register</value>
+  </data>
+  <data name="PopCalInOutDateInsResource1.ToolTip" xml:space="preserve">
+    <value>select Date From Date Picker</value>
+  </data>
+  <data name="PopCalInOutDateItmResource1.ToolTip" xml:space="preserve">
+    <value>select Date From Date Picker</value>
+  </data>
+  <data name="PopCalInOutDateUpdResource1.ToolTip" xml:space="preserve">
+    <value>select Date From Date Picker</value>
+  </data>
+  <data name="RegExpStampValueResource1.ErrorMessage" xml:space="preserve">
+    <value>Stamp value is not proper format</value>
+  </data>
+  <data name="RegExpStampValueResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RegExpStampValueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RegexptxtDocumentNoInsResource1.ErrorMessage" xml:space="preserve">
+    <value>Document No is not in correct format</value>
+  </data>
+  <data name="RegexptxtDocumentNoInsResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RegexptxtDocumentNoInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RegexptxtDocumentNoItmResource1.ErrorMessage" xml:space="preserve">
+    <value>Document No is not in correct format</value>
+  </data>
+  <data name="RegexptxtDocumentNoItmResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RegexptxtDocumentNoItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RegexptxtDocumentNoUpdResource1.ErrorMessage" xml:space="preserve">
+    <value>Document No is not in correct format</value>
+  </data>
+  <data name="RegexptxtDocumentNoUpdResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RegexptxtDocumentNoUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RegexptxtDocumentSentFromInsResource1.ErrorMessage" xml:space="preserve">
+    <value>Document sent From is not in correct format</value>
+  </data>
+  <data name="RegexptxtDocumentSentFromInsResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RegexptxtDocumentSentFromInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RegexptxtDocumentSentFromItmResource1.ErrorMessage" xml:space="preserve">
+    <value>Document sent From is not in correct format</value>
+  </data>
+  <data name="RegexptxtDocumentSentFromItmResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RegexptxtDocumentSentFromItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RegexptxtDocumentSentFromUpdResource1.ErrorMessage" xml:space="preserve">
+    <value>Document sent From is not in correct format</value>
+  </data>
+  <data name="RegexptxtDocumentSentFromUpdResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RegexptxtDocumentSentFromUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RegexptxtDocumentSentToInsResource1.ErrorMessage" xml:space="preserve">
+    <value>Document sent To is not in correct format</value>
+  </data>
+  <data name="RegexptxtDocumentSentToInsResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RegexptxtDocumentSentToInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RegexptxtDocumentSentToItmResource1.ErrorMessage" xml:space="preserve">
+    <value>Document sent To is not in correct format</value>
+  </data>
+  <data name="RegexptxtDocumentSentToItmResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RegexptxtDocumentSentToItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RegexptxtDocumentSentToUpdResource1.ErrorMessage" xml:space="preserve">
+    <value>Document sent To is not in correct format</value>
+  </data>
+  <data name="RegexptxtDocumentSentToUpdResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RegexptxtDocumentSentToUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReqfldtxtDocumentSentFromInsResource1.ErrorMessage" xml:space="preserve">
+    <value>Document sent From Can't be blank</value>
+  </data>
+  <data name="ReqfldtxtDocumentSentFromInsResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="ReqfldtxtDocumentSentFromInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReqfldtxtDocumentSentFromItmResource1.ErrorMessage" xml:space="preserve">
+    <value>Document sent From Can't be blank</value>
+  </data>
+  <data name="ReqfldtxtDocumentSentFromItmResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="ReqfldtxtDocumentSentFromItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReqfldtxtDocumentSentFromUpdResource1.ErrorMessage" xml:space="preserve">
+    <value>Document sent From Can't be blank</value>
+  </data>
+  <data name="ReqfldtxtDocumentSentFromUpdResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="ReqfldtxtDocumentSentFromUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReqfldtxtDocumentSentToInsResource1.ErrorMessage" xml:space="preserve">
+    <value>Document sent To Can't be blank</value>
+  </data>
+  <data name="ReqfldtxtDocumentSentToInsResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="ReqfldtxtDocumentSentToInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReqfldtxtDocumentSentToItmResource1.ErrorMessage" xml:space="preserve">
+    <value>Document sent To Can't be blank</value>
+  </data>
+  <data name="ReqfldtxtDocumentSentToItmResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="ReqfldtxtDocumentSentToItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReqfldtxtDocumentSentToUpdResource1.ErrorMessage" xml:space="preserve">
+    <value>Document sent To Can't be blank</value>
+  </data>
+  <data name="ReqfldtxtDocumentSentToUpdResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="ReqfldtxtDocumentSentToUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReqFldValidatorResource1.ErrorMessage" xml:space="preserve">
+    <value>Please Enter Inward Date</value>
+  </data>
+  <data name="ReqFldValidatorResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="ReqFldValidatorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RfvDescriptionInsResource1.ErrorMessage" xml:space="preserve">
+    <value>Put Appropriate Description</value>
+  </data>
+  <data name="RfvDescriptionInsResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RfvDescriptionInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RfvDescriptionItmResource1.ErrorMessage" xml:space="preserve">
+    <value>Put Appropriate Description</value>
+  </data>
+  <data name="RfvDescriptionItmResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RfvDescriptionItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RfvDescriptionUpdResource1.ErrorMessage" xml:space="preserve">
+    <value>Put Appropriate Description</value>
+  </data>
+  <data name="RfvDescriptionUpdResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RfvDescriptionUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RfvDocumentNoInsResource1.ErrorMessage" xml:space="preserve">
+    <value>Document No Can't be blank</value>
+  </data>
+  <data name="RfvDocumentNoInsResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RfvDocumentNoInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RfvDocumentNoItmResource1.ErrorMessage" xml:space="preserve">
+    <value>Document No Can't be blank</value>
+  </data>
+  <data name="RfvDocumentNoItmResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RfvDocumentNoItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RfvDocumentNoUpdResource1.ErrorMessage" xml:space="preserve">
+    <value>Document No Can't be blank</value>
+  </data>
+  <data name="RfvDocumentNoUpdResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RfvDocumentNoUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RfvStampValueAffixedInsResource1.ErrorMessage" xml:space="preserve">
+    <value>Stamp Value should n't be blank</value>
+  </data>
+  <data name="RfvStampValueAffixedInsResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RfvStampValueAffixedInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RfvStampValueAffixedItmResource1.ErrorMessage" xml:space="preserve">
+    <value>Stamp Value should n't be blank</value>
+  </data>
+  <data name="RfvStampValueAffixedItmResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RfvStampValueAffixedItmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RfvStampValueAffixedUpdResource1.ErrorMessage" xml:space="preserve">
+    <value>Stamp Value should n't be blank</value>
+  </data>
+  <data name="RfvStampValueAffixedUpdResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RfvStampValueAffixedUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDeliveryBranchItm.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDeliveryBranchItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDescriptionIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDescriptionItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDescriptionUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDocumentNoIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDocumentNoItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDocumentNoUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDocumentSentFromIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDocumentSentFromItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDocumentSentFromUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDocumentSentToIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDocumentSentToItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDocumentSentToUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtInOutDateIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtInOutDateItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtInOutDateUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtReceiversNameIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtReceiversNameItm.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtReceiversNameItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtReceiversNameUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRemarksIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRemarksItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRemarksUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSenderNameIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSenderNameItm.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSenderNameItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSenderNameUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStampValueAffixedIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStampValueAffixedItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStampValueAffixedUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>

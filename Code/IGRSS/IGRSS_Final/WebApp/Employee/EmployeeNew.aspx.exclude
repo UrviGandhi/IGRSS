@@ -1,0 +1,297 @@
+<%@ Page Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true"
+	CodeFile="Employee.aspx.cs" Inherits="Employee_Employee" Title="Untitled Page" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="Server">
+	<table width="100%">
+		<tr>
+			<td colspan="6">
+				<asp:Label ID="lblEmployeeHeaderIns" runat="server" meta:resourcekey="lblEmployeeHeaderIns"
+					SkinID="SubHeading" Text="Employee Details"></asp:Label>
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblEmployeeNoIns" runat="server" meta:resourcekey="lblEmployeeNoIns"
+					Text="Employee Number"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtEmployeeNoIns" runat="server" meta:resourcekey="txtEmployeeNoIns"
+					Text='<%# Bind("EmployeeNo") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn" style="width: 2%">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblFirstNameIns" runat="server" meta:resourcekey="lblFirstNameIns"
+					Text="First Name"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtFirstNameIns" runat="server" meta:resourcekey="txtFirstNameIns"
+					Text='<%# Bind("FirstName") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblMiddleNameIns" runat="server" meta:resourcekey="lblMiddleNameIns"
+					Text="Middle Name"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtMiddleNameIns" runat="server" meta:resourcekey="txtMiddleNameIns"
+					Text='<%# Bind("MiddleName") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn" style="width: 2%">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblLastNameIns" runat="server" meta:resourcekey="lblLastNameIns" Text="Last Name"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtLastNameIns" runat="server" meta:resourcekey="txtLastNameIns"
+					Text='<%# Bind("LastName") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblPostalAddressIns" runat="server" meta:resourcekey="lblPostalAddressIns"
+					Text="Postal Address"></asp:Label>
+			</td>
+			<td colspan="4" style="width: 25%">
+				<asp:TextBox ID="txtPostalAddressIns" runat="server" meta:resourcekey="txtPostalAddressIns"
+					Text='<%# Bind("PostalAddress") %>' TextMode="multiline"></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblPermanentAddressIns" runat="server" meta:resourcekey="lblPermanentAddressIns"
+					Text="Permanent Address"></asp:Label>
+			</td>
+			<td colspan="4" style="width: 25%">
+				<asp:TextBox ID="txtPermanentAddressIns" runat="server" meta:resourcekey="txtPermanentAddressIns"
+					Text='<%# Bind("PermanentAddress") %>' TextMode="multiline"></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblDateOfBirthIns" runat="server" meta:resourcekey="lblDateOfBirthIns"
+					Text="Date Of Birth"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtDateOfBirthIns" runat="server" meta:resourcekey="txtDateOfBirthIns"
+					Text='<%# Bind("DateOfBirth") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn" style="width: 2%">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblFatherNameIns" runat="server" meta:resourcekey="lblFatherNameIns"
+					Text="Father Name"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtFatherNameIns" runat="server" meta:resourcekey="txtFatherNameIns"
+					Text='<%# Bind("FatherName") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblHeightIns" runat="server" meta:resourcekey="lblHeightIns" Text="Height"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtHeightIns" runat="server" meta:resourcekey="txtHeightIns" Text='<%# Bind("Height") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn" style="width: 2%">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblVisibleMarksIns" runat="server" meta:resourcekey="lblVisibleMarksIns"
+					Text="Visible Marks"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtVisibleMarksIns" runat="server" meta:resourcekey="txtVisibleMarksIns"
+					Text='<%# Bind("VisibleMarks") %>' TextMode="multiline"></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblOfficeIDIns" runat="server" meta:resourcekey="lblOfficeIDIns" Text="Office"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="OdsOfficeMaster"
+					DataTextField="OfficeName" DataValueField="OfficeId" SelectedValue='<%# Bind("OfficeId") %>'
+					Width="157px">
+				</asp:DropDownList>
+				
+				
+			</td>
+			<td class="validationColumn" style="width: 2%">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblDepartmentIDIns" runat="server" meta:resourcekey="lblDepartmentIDIns"
+					Text="Department"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:DropDownList ID="lblDepartmentIns" runat="server" DataSourceID="OdsDepartmentMaster"
+					DataTextField="Name" DataValueField="DepartmentId" SelectedValue='<%# Bind("DepartmentId") %>'
+					Width="157px">
+				</asp:DropDownList>
+				
+				
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblDesignationIDIns" runat="server" meta:resourcekey="lblDesignationIDIns"
+					Text="Designation"></asp:Label>
+			</td>
+			<td class="textColumn">
+				
+				
+				<asp:DropDownList ID="ddlDesignationIDIns" runat="server" DataSourceID="OdsDesignationMaster"
+					DataTextField="Name" DataValueField="DepartmentId" SelectedValue='<%# Bind("DesignationID") %>'
+					Width="157px">
+				</asp:DropDownList>
+				
+				
+			</td>
+			<td class="validationColumn" style="width: 2%">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblSalaryIns" runat="server" meta:resourcekey="lblSalaryIns" Text="Salary"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtSalaryIns" runat="server" meta:resourcekey="txtSalaryIns" Text='<%# Bind("Salary") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblAllowancesIns" runat="server" meta:resourcekey="lblAllowancesIns"
+					Text="Allowances"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtAllowancesIns" runat="server" meta:resourcekey="txtAllowancesIns"
+					Text='<%# Bind("Allowances") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn" style="width: 2%">
+			</td>
+			<td class="labelColumn">
+			</td>
+			<td class="textColumn">
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td class="labelColumn">
+				<asp:Label ID="lblStartDateIns" runat="server" meta:resourcekey="lblStartDateIns"
+					Text="Working in the Post from"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtStartDateIns" runat="server" meta:resourcekey="txtStartDateIns"
+					Text='<%# Bind("StartDate") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn" style="width: 2%">
+			</td>
+			<td class="labelColumn">
+				<asp:Label ID="lblEndDateIns" runat="server" meta:resourcekey="lblEndDateIns" Text="To"></asp:Label>
+			</td>
+			<td class="textColumn">
+				<asp:TextBox ID="txtEndDateIns" runat="server" meta:resourcekey="txtEndDateIns" Text='<%# Bind("EndDate") %>'></asp:TextBox>
+			</td>
+			<td class="validationColumn">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6">
+				<asp:Label ID="lblQualificationIns" runat="server" meta:resourcekey="lblQualificationIns"
+					SkinID="SubHeading" Text="Qualification Details"></asp:Label>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6">
+				<asp:ListBox ID="lstQualificationIns" runat="server" Rows="10" SelectionMode="Multiple" Width ="100%" meta:resourcekey="lblQualificationIns"/>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" colspan="6">
+				<asp:Button ID="EmployeeIns" runat="server" CausesValidation="True" CommandName="Insert"
+					Text="Save" />
+				<asp:Button ID="EmployeeCancelIns" runat="server" CausesValidation="False" CommandName="Cancel"
+					Text="Cancel" />
+			</td>
+		</tr>
+	</table>
+	<br />
+	<br />
+	<asp:ObjectDataSource ID="OdsOfficeMaster" runat="server" DataObjectTypeName="System.Guid" DeleteMethod="DeActivateOffice" InsertMethod="AddNewOfficeType" OldValuesParameterFormatString="original_{0}" SelectMethod="GetOffices" TypeName="IGRSS.BusinessLogicLayer.OfficeManagement">
+		<InsertParameters>
+			<asp:Parameter Name="OfficeTypeName" Type="String" />
+			<asp:Parameter Name="Description" Type="String" />
+		</InsertParameters>
+	</asp:ObjectDataSource>
+	<br />
+	<asp:ObjectDataSource ID="OdsQualificationMaster" runat="server" InsertMethod="InsertQualificationMaster" OldValuesParameterFormatString="original_{0}" SelectMethod="GetQualificationMasterDetails" TypeName="IGRSS.BusinessLogicLayer.Employee" UpdateMethod="UpdateEmployeeQualification">
+		<UpdateParameters>
+			<asp:Parameter Name="EmployeeQualiID" Type="Object" />
+			<asp:Parameter Name="EmployeeID" Type="Object" />
+			<asp:Parameter Name="QualificationID" Type="Object" />
+			<asp:Parameter Name="Details" Type="String" />
+			<asp:Parameter Name="ModifiedBy" Type="String" />
+			<asp:Parameter Name="ModifiedAt" Type="DateTime" />
+		</UpdateParameters>
+		<InsertParameters>
+			<asp:Parameter Name="QualificationID" Type="Object" />
+			<asp:Parameter Name="Name" Type="String" />
+			<asp:Parameter Name="Description" Type="String" />
+			<asp:Parameter Name="CreatedBy" Type="String" />
+			<asp:Parameter Name="CreatedAt" Type="DateTime" />
+		</InsertParameters>
+	</asp:ObjectDataSource>
+	<br />
+	<asp:ObjectDataSource ID="OdsDepartmentMaster" runat="server" InsertMethod="InsertDepartmentMaster" OldValuesParameterFormatString="original_{0}" SelectMethod="GetDepartmentMasterDetails" TypeName="IGRSS.BusinessLogicLayer.Employee" UpdateMethod="UpdateDepartmentMaster">
+		<UpdateParameters>
+			<asp:Parameter Name="DepartmentId" Type="Object" />
+			<asp:Parameter Name="Name" Type="String" />
+			<asp:Parameter Name="Description" Type="String" />
+			<asp:Parameter Name="ModifiedBy" Type="String" />
+			<asp:Parameter Name="ModifiedAt" Type="DateTime" />
+		</UpdateParameters>
+		<InsertParameters>
+			<asp:Parameter Name="DepartmentId" Type="Object" />
+			<asp:Parameter Name="Name" Type="String" />
+			<asp:Parameter Name="Description" Type="String" />
+			<asp:Parameter Name="CreatedBy" Type="String" />
+			<asp:Parameter Name="CreatedAt" Type="DateTime" />
+		</InsertParameters>
+	</asp:ObjectDataSource>
+	<br />
+	<asp:ObjectDataSource ID="OdsDesignationMaster" runat="server" InsertMethod="InsertDesignationMaster" OldValuesParameterFormatString="original_{0}" SelectMethod="GetDesignationMasterDetails" TypeName="IGRSS.BusinessLogicLayer.Employee" UpdateMethod="UpdateDesignationMaster">
+		<UpdateParameters>
+			<asp:Parameter Name="DesignationID" Type="Object" />
+			<asp:Parameter Name="Name" Type="String" />
+			<asp:Parameter Name="Description" Type="String" />
+			<asp:Parameter Name="ModifiedBy" Type="String" />
+			<asp:Parameter Name="ModifiedAt" Type="DateTime" />
+		</UpdateParameters>
+		<InsertParameters>
+			<asp:Parameter Name="DesignationId" Type="Object" />
+			<asp:Parameter Name="Name" Type="String" />
+			<asp:Parameter Name="Description" Type="String" />
+			<asp:Parameter Name="CreatedBy" Type="String" />
+			<asp:Parameter Name="CreatedAt" Type="DateTime" />
+		</InsertParameters>
+	</asp:ObjectDataSource>
+	<br />
+	<br />
+
+</asp:Content>

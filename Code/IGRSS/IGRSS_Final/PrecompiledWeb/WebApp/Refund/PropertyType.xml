@@ -1,0 +1,14 @@
+<RefundType>
+	<item Key="Used" Value="10">
+		<Description>Used</Description>
+	</item>
+	<item Key="NotUsed" Value="10">
+		<Description>Not Used</Description>
+	</item>
+	<item Key="e-Stamping" Value="10">
+		<Description>e Stamping</Description>
+	</item>
+	<item Key="FranckingStamp" Value="10">
+		<Description>FranckingStamp</Description>
+	</item>
+</RefundType>

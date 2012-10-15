@@ -1,0 +1,70 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using IGRSS.BusinessLogicLayer;
+using System.IO;
+using IGRSS.BusinessObjects;
+
+public partial class FileManagement_DocumentAttachment : IgrssPage
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        mvUpload.SetActiveView(mvUpload.Views[0]);
+
+    }
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            FileManagement flMgmt = new FileManagement();
+            Guid FileId = new Guid(ddlOffice.SelectedValue);
+            decimal FileNo = Convert.ToDecimal(txtFileSlNo.Text);
+            decimal FileYear = Convert.ToDecimal(txtFileYear.Text);
+            string FilePreFix = txtFilePrefix.Text;
+            string curfileid = (flMgmt.GetFileIDByFileNoAndOffice(FileId, FileNo, FilePreFix, FileYear)).ToString();
+            Session["fileId"] = curfileid;
+            if (Session["fileId"].ToString() == (Guid.Empty).ToString())
+            {
+
+            }
+            else
+            {
+                mvUpload.SetActiveView(mvUpload.Views[1]);
+            }
+        }
+        catch(Exception ex)
+        {
+            Response.Write("Error");
+        }
+
+
+    }
+    protected void btnAddDocs_Click(object sender, EventArgs e)
+    {
+        mvUpload.SetActiveView(mvUpload.Views[2]);
+    }
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        Image a;
+
+    }
+    protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        e.Cancel = true;
+        DataTable dtDoc = new DataTable();
+        string FileID = ((Label)GridView1.Rows[e.NewEditIndex].FindControl("lblFileId")).Text;
+        //dtDoc = FileManager.getDocuments(new Guid(FileID));
+        
+        Image img;
+        MemoryStream imgstrm = new MemoryStream(Convert.ToInt32(dtDoc.Rows[0]["DocContent"]));
+       
+        
+    }
+}

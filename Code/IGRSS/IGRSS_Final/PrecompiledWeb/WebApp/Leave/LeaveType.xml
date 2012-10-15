@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LeaveType>
+<item Key="Paid" value="cd75e7a9-e6c2-4738-a69b-0cd48db0b418">
+		<Description>Paid Leave</Description>
+	</item>
+	<item Key="Unpaid" value="80de5abb-f399-453c-8a8c-fb1c998d3645">
+		<Description>Unpaid </Description>
+	</item>
+	<item Key="Optional Leave"
+		  value="33eb2ea0-1d18-4176-8ff0-cc9d5668bf22">
+		<Description>Optional Leave </Description>
+	</item>
+	<item Key="Sick Leave"
+		  value="9ec9c473-dd5d-47af-885a-59a65a5bb651">
+		<Description>Sick Leave </Description>
+	</item>
+</LeaveType>

@@ -1,0 +1,107 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1259A68C-89FC-4B8A-A3F2-93244C6DC243}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>IGRSS.Workflows</RootNamespace>
+    <AssemblyName>IgrssWorkflowLibrary</AssemblyName>
+    <ProjectTypeGuids>{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activites\Feedback\FeedbackActivity.xoml.cs">
+      <DependentUpon>FeedbackActivity.xoml</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Activites\Feedback\FeedbackData.cs" />
+    <Compile Include="IgrssCommon.cs" />
+    <Compile Include="License\LicenseIssueProcess.xoml.cs">
+      <DependentUpon>LicenseIssueProcess.xoml</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Valuation\IValuationEvents.cs" />
+    <Compile Include="Activites\Feedback\Events\IFeedbackService.cs" />
+    <Compile Include="Activites\Feedback\Events\IFeedbackServiceCorrelated.cs" />
+    <Compile Include="Valuation\LicenseApplicationEvents.cs" />
+    <Compile Include="License\Events\ILicenseApplicationEvents.cs" />
+    <Compile Include="License\Events\LicenseApplicationEventArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Valuation\ValuationProcess.xoml.cs">
+      <DependentUpon>ValuationProcess.xoml</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Valuation\ValuationProcessEvents.cs" />
+    <Compile Include="Activites\Feedback\Events\FeedbackEventArgs.cs" />
+    <Compile Include="Activites\Feedback\Events\FeedbackService.cs" />
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Activites\Feedback\FeedbackActivity.xoml">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="License\LicenseIssueProcess.xoml">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Valuation\ValuationProcess.xoml">
+      <CustomToolNamespace>test</CustomToolNamespace>
+      <SubType>Component</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="License\LicenseIssueProcess.layout">
+      <DependentUpon>LicenseIssueProcess.xoml</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Valuation\ValuationProcess.layout">
+      <DependentUpon>ValuationProcess.xoml</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Test\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Windows Workflow Foundation\v3.0\Workflow.Targets" />
+</Project>

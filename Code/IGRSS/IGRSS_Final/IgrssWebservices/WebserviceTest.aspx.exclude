@@ -1,0 +1,217 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="WebserviceTest.aspx.cs" Inherits="_Default" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    
+    <div>
+    
+  
+		<%--<asp:Label ID="lblDistrictCode" runat="server" Text="DistrictCode"></asp:Label>
+		<asp:TextBox ID="txtDistrictCode" runat="server"></asp:TextBox><br />
+		<asp:Label ID="lblTalukaCode" runat="server" Text="TalukaCode"></asp:Label>
+		<asp:TextBox ID="txtTalukaCode" runat="server"></asp:TextBox><br />
+		<asp:Label ID="lblVillageCode" runat="server" Text="VillageCode"></asp:Label>
+		<asp:TextBox ID="txtVillageCode" runat="server"></asp:TextBox><br />--%>
+		&nbsp; &nbsp; &nbsp;<br />
+		<table style="width: 817px; height: 97px">
+			<tr>
+				<td align="center" colspan="6">
+					<asp:Label ID="Label1" runat="server"  Text="Testing Web Services For Property Valuation "
+						Width="447px"></asp:Label></td>
+			</tr>
+			<tr>
+				<td style="width: 95px">
+		
+		
+		
+		<asp:Label ID="lblDistrictCode" runat="server" Text="District Code" ></asp:Label></td>
+				<td style="width: 72px">
+		
+		<asp:DropDownList ID="ddlDistcode" runat="server" Width="135px" DataSourceID="odsDistMaster" DataTextField="distname" DataValueField="distcd">
+		</asp:DropDownList></td>
+				<td style="width: 100px">
+		
+		<asp:Label ID="lblTalukaCode" runat="server" Text="Taluka Code" ></asp:Label></td>
+				<td style="width: 100px">
+		<asp:DropDownList ID="ddlTalukacode" runat="server" DataSourceID="OdsTalukaMaster"
+			DataTextField="talukaname" DataValueField="talcd" Width="136px">
+		</asp:DropDownList></td>
+				<td style="width: 100px">
+		
+		<asp:Label ID="lblVillageCode" runat="server" Text="Village Code" ></asp:Label></td>
+				<td style="width: 100px">
+		
+		<asp:DropDownList ID="ddlVillageCode" runat="server" Width="131px" DataSourceID="OdsVillageMaster" DataTextField="villname" DataValueField="villcd">
+		</asp:DropDownList></td>
+			</tr>
+			<tr>
+				<td style="width: 95px">
+		
+		
+		<asp:Label ID="lblTpSchemeNo" runat="server" Text="Tp Scheme No" ></asp:Label></td>
+				<td style="width: 72px">
+		<asp:TextBox ID="txtTpSchemeNo" runat="server"></asp:TextBox></td>
+				<td style="width: 100px">
+				</td>
+				<td style="width: 100px">
+				</td>
+				<td style="width: 100px">
+				</td>
+				<td style="width: 100px">
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 95px">
+		<asp:Label ID="lblPlotNo" runat="server" Text="Plot No" ></asp:Label></td>
+				<td style="width: 72px">
+		<asp:TextBox ID="txtPlotNo" runat="server"></asp:TextBox></td>
+				<td style="width: 100px">
+		
+		<asp:Label ID="lblAreaOfLand" runat="server" Text="Area Of Land" ></asp:Label></td>
+				<td style="width: 100px">
+		<asp:TextBox ID="txtAreaOfLand" runat="server"></asp:TextBox></td>
+				<td style="width: 100px">
+				</td>
+				<td style="width: 100px">
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 95px">
+		<asp:Label ID="lblAreaOfConstruction" runat="server" Text="Area Of Construction" ></asp:Label></td>
+				<td style="width: 72px">
+		<asp:TextBox ID="txtAreaOfConstruction" runat="server"></asp:TextBox></td>
+				<td style="width: 100px">
+		
+		<asp:Label ID="lblTypeOfConstruction" runat="server" Text="Type Of Construction" ></asp:Label></td>
+				<td style="width: 100px">
+		<asp:TextBox ID="txtTypeOfConstruction" runat="server"></asp:TextBox></td>
+				<td style="width: 100px">
+				</td>
+				<td style="width: 100px">
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 95px; height: 40px">
+		
+		<asp:Label ID="lblInternalElectrificationRate" runat="server" Text="Internal Electrification Rate" ></asp:Label>*</td>
+				<td style="width: 72px; height: 40px">
+		<asp:TextBox ID="txtInternalElectrificationRate" runat="server"></asp:TextBox></td>
+				<td style="width: 100px; height: 40px">
+		<asp:RangeValidator ID="RangeValidator3" runat="server" ControlToValidate="txtInternalElectrificationRate"
+			ErrorMessage="Electrification Rate Is between 10 -15%" MaximumValue="15" MinimumValue="10"></asp:RangeValidator></td>
+				<td style="width: 100px; height: 40px">
+				</td>
+				<td style="width: 100px; height: 40px">
+				</td>
+				<td style="width: 100px; height: 40px">
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 95px">
+		<asp:Label ID="lblDevelopmentRate" runat="server" Text="Development Rate" ></asp:Label>*</td>
+				<td style="width: 72px">
+		<asp:TextBox ID="txtDevelopmentRate" runat="server"></asp:TextBox></td>
+				<td style="width: 100px">
+		<asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="txtDevelopmentRate"
+			ErrorMessage="Enter 10- 15% " MaximumValue="15" MinimumValue="10"></asp:RangeValidator></td>
+				<td style="width: 100px">
+				</td>
+				<td style="width: 100px">
+				</td>
+				<td style="width: 100px">
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 95px">
+		
+		<asp:Label ID="lblOtherFeeRate" runat="server" Text="Other Fee Rate" ></asp:Label>*</td>
+				<td style="width: 72px">
+		<asp:TextBox ID="txtOtherFeeRate" runat="server"></asp:TextBox></td>
+				<td style="width: 100px">
+		<asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txtOtherFeeRate"
+			ErrorMessage="Other Fee Rate 10 -15% " MaximumValue="15" MinimumValue="10"></asp:RangeValidator></td>
+				<td style="width: 100px">
+				</td>
+				<td style="width: 100px">
+				</td>
+				<td style="width: 100px">
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 95px">
+		<asp:Label ID="lblYearOfConstruction" runat="server" Text="Year Of Construction" ></asp:Label></td>
+				<td style="width: 72px">
+		<asp:TextBox ID="txtYearOfConstruction" runat="server"></asp:TextBox></td>
+				<td style="width: 100px">
+				</td>
+				<td style="width: 100px">
+				</td>
+				<td style="width: 100px">
+				</td>
+				<td style="width: 100px">
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 95px">
+		
+		<asp:Label ID="lblSpecialDeduction" runat="server" Text="Special Deduction" ></asp:Label>*</td>
+				<td style="width: 72px">
+		<asp:TextBox ID="txtSpecialDeduction" runat="server"></asp:TextBox></td>
+				<td style="width: 100px">
+		<asp:RangeValidator ID="RangeValidator4" runat="server" ControlToValidate="txtSpecialDeduction"
+			ErrorMessage="Deduction Rate within 10 -15 " MaximumValue="15" MinimumValue="10"></asp:RangeValidator></td>
+				<td style="width: 100px">
+				</td>
+				<td style="width: 100px">
+				</td>
+				<td style="width: 100px">
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 95px">
+		
+		<asp:Label ID="lblLiftExpense" runat="server" Text="LiftExpense" ></asp:Label></td>
+				<td style="width: 72px">
+		<asp:TextBox ID="txtLiftExpense" runat="server"></asp:TextBox></td>
+				<td style="width: 100px">
+				</td>
+				<td style="width: 100px">
+				</td>
+				<td style="width: 100px">
+				</td>
+				<td style="width: 100px">
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 95px; height: 21px">
+				</td>
+				<td style="width: 72px; height: 21px">
+				</td>
+				<td style="width: 100px; height: 21px">
+		
+		
+		<asp:Button ID="btnTest" runat="server" Text="TestWebService" OnClick="btnTest_Click" Font-Bold="True"  /></td>
+				<td style="width: 100px; height: 21px">
+				</td>
+				<td style="width: 100px; height: 21px">
+				</td>
+				<td style="width: 100px; height: 21px">
+				</td>
+			</tr>
+		</table>
+	</div>
+		<br />
+		<asp:ObjectDataSource ID="odsDistMaster" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetDistirctMasterDetails" TypeName="IGRSS.BusinessLogicLayer.Jantri"></asp:ObjectDataSource>
+		<asp:ObjectDataSource ID="OdsTalukaMaster" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetTalukaMasterDetails" TypeName="IGRSS.BusinessLogicLayer.Jantri"></asp:ObjectDataSource>
+		<asp:ObjectDataSource ID="OdsVillageMaster" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetVillageMasterDetails" TypeName="IGRSS.BusinessLogicLayer.Jantri"></asp:ObjectDataSource>
+    
+		
+    </form>
+</body>
+</html>

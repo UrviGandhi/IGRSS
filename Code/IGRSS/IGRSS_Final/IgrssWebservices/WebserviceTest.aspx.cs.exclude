@@ -1,0 +1,59 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+
+public partial class _Default : System.Web.UI.Page
+{
+	protected void Page_Load(object sender, EventArgs e)
+	{
+
+	}
+	protected void btnTest_Click(object sender, EventArgs e)
+	{
+		StampDutyCalculator objsdcalculator = new StampDutyCalculator();
+		ValuationRequest valRequest = new ValuationRequest();
+		//valRequest.DistrictCode = Convert.ToInt32(txtDistrictCode.Text);
+		//valRequest.TalukaCode = Convert.ToInt32(txtTalukaCode.Text);
+		//valRequest.VillageCode = Convert.ToInt32(txtVillageCode.Text);
+
+
+		valRequest.DistrictCode = Convert.ToInt32(ddlDistcode.SelectedItem.Value);
+		valRequest.TalukaCode =Convert.ToInt32(ddlTalukacode.SelectedItem.Value);
+		valRequest.VillageCode = Convert.ToInt32(ddlVillageCode.SelectedItem.Value);
+		valRequest.TpSchemeNo = txtTpSchemeNo.Text;
+		valRequest.PlotNo = txtPlotNo.Text;
+		valRequest.AreaOfPlot = Convert.ToDecimal(txtAreaOfLand.Text);
+		valRequest.AreaOfConstruction = Convert.ToDecimal(txtAreaOfConstruction.Text);
+
+		valRequest.TypeOfConstruction = new Guid(txtTypeOfConstruction.Text);
+
+		valRequest.InternalElectrificationRate = Convert.ToDecimal(txtInternalElectrificationRate.Text);
+
+		valRequest.DevelopmentRate = Convert.ToDecimal(txtDevelopmentRate.Text);
+		valRequest.OtherFeeRate = Convert.ToDecimal(txtOtherFeeRate.Text);
+		valRequest.YearOfConstruction = Convert.ToInt32(txtYearOfConstruction.Text);
+		valRequest.SpecialDeduction = Convert.ToDecimal(txtSpecialDeduction.Text);
+		valRequest.LiftExpense = Convert.ToDecimal(txtLiftExpense.Text);
+
+
+		//objsdcalculator.GetStampDutyCalculation(valRequest);
+		ValuationResult Result = objsdcalculator.GetStampDutyCalculation(valRequest);
+
+		//ValuationResult Result = new ValuationResult();
+
+		decimal ValuationOfProperty = Convert.ToDecimal(Result.ValuationOfProperty);
+		Response.Write("<h4>The Valuation Rate is</h4>:" + ValuationOfProperty.ToString());
+
+		//lblstampduty.Text = ValuationOfProperty.ToString();
+
+
+	}
+}

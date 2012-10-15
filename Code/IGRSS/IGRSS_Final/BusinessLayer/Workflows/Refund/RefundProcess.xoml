@@ -1,0 +1,72 @@
+﻿<StateMachineWorkflowActivity x:Class="IGRSS.Workflows.Refund.RefundProcess" InitialStateName="InitilizeRefund" x:Name="RefundProcess" DynamicUpdateCondition="{x:Null}" CompletedStateName="Completed" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateActivity x:Name="InitilizeRefund">
+		<StateInitializationActivity x:Name="InitilizeProcess">
+			<CodeActivity x:Name="InitilizeFlow" ExecuteCode="InitilizeFlow_ExecuteCode" Description="Initilizes the Process flow for the Workflow based on the initiating office" />
+			<SetStateActivity x:Name="SetRefundInitilized" TargetStateName="Verification" />
+		</StateInitializationActivity>
+	</StateActivity>
+	<StateActivity x:Name="Verification">
+		<StateInitializationActivity x:Name="InitilizeVerification">
+			<IfElseActivity x:Name="VerificationStatus">
+				<IfElseBranchActivity x:Name="VerificationComplete">
+					<IfElseBranchActivity.Condition>
+						<CodeCondition Condition="IsVerificationComplete" />
+					</IfElseBranchActivity.Condition>
+					<SetStateActivity x:Name="SetApproval" TargetStateName="Approval" />
+				</IfElseBranchActivity>
+				<IfElseBranchActivity x:Name="VerificationPending">
+					<CodeActivity x:Name="VerificationAlert" ExecuteCode="VerificationAlert_ExecuteCode" />
+				</IfElseBranchActivity>
+			</IfElseActivity>
+		</StateInitializationActivity>
+		<EventDrivenActivity x:Name="ApplicationUpdated">
+			<HandleExternalEventActivity Invoked="OnApplicationUpdated_Invoked" x:Name="OnApplicationUpdated" EventName="RefundApplicationUpdated" InterfaceType="{x:Type IGRSS.Workflows.Refund.Services.IRefundService}" />
+			<SetStateActivity x:Name="SetApplicationUpdated" TargetStateName="Verification" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="VerificationValid">
+			<HandleExternalEventActivity Invoked="OnVerificationValid_Invoked" x:Name="OnVerificationValid" EventName="RefundValid" InterfaceType="{x:Type IGRSS.Workflows.Refund.Services.IRefundService}" />
+			<SetStateActivity x:Name="SetVerificationValid" TargetStateName="Verification" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="VerificationInvalid">
+			<HandleExternalEventActivity Invoked="OnVerificationInvalid_Invoked" x:Name="OnVerificationInvalid" EventName="RefundInvalid" InterfaceType="{x:Type IGRSS.Workflows.Refund.Services.IRefundService}" />
+			<SetStateActivity x:Name="SetVerificationInvalid" TargetStateName="DataEntryPending" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="Approval">
+		<StateInitializationActivity x:Name="InitilizeApproval">
+			<IfElseActivity x:Name="ApprovalStatus">
+				<IfElseBranchActivity x:Name="ApprovalComplete">
+					<IfElseBranchActivity.Condition>
+						<CodeCondition Condition="IsApprovalComplete" />
+					</IfElseBranchActivity.Condition>
+					<SetStateActivity x:Name="SetIssueRefund" TargetStateName="IssueRefund" />
+				</IfElseBranchActivity>
+				<IfElseBranchActivity x:Name="ApprovalPending">
+					<CodeActivity x:Name="ApprovalAlert" ExecuteCode="ApprovalAlert_ExecuteCode" />
+				</IfElseBranchActivity>
+			</IfElseActivity>
+		</StateInitializationActivity>
+		<EventDrivenActivity x:Name="Approved">
+			<HandleExternalEventActivity Invoked="OnApproved_Invoked" x:Name="OnRefundApproved" EventName="RefundApproved" InterfaceType="{x:Type IGRSS.Workflows.Refund.Services.IRefundService}" />
+			<SetStateActivity x:Name="SetApproved" TargetStateName="Approval" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="Rejected">
+			<HandleExternalEventActivity Invoked="OnRejected_Invoked" x:Name="OnRefundRejected" EventName="RefundRejected" InterfaceType="{x:Type IGRSS.Workflows.Refund.Services.IRefundService}" />
+			<SetStateActivity x:Name="SetRejected" TargetStateName="Completed" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="DataEntryPending">
+		<EventDrivenActivity x:Name="ApplicationSaved">
+			<HandleExternalEventActivity Invoked="OnApplicationSaved_Invoked" x:Name="OnRefundApplicationSaved" EventName="RefundApplicationSaved" InterfaceType="{x:Type IGRSS.Workflows.Refund.Services.IRefundService}" />
+			<SetStateActivity x:Name="SetApplicationSaved" TargetStateName="Verification" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="IssueRefund">
+		<StateInitializationActivity x:Name="InitilizeRefundIssue" />
+		<EventDrivenActivity x:Name="RefundIssued">
+			<HandleExternalEventActivity Invoked="OnRefundIssued_Invoked" x:Name="OnRefundIssued" EventName="RefundIssued" InterfaceType="{x:Type IGRSS.Workflows.Refund.Services.IRefundService}" />
+			<SetStateActivity x:Name="SetRefundIssued" TargetStateName="Completed" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="Completed" />
+</StateMachineWorkflowActivity>

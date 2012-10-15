@@ -1,0 +1,1655 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Utility</name>
+    </assembly>
+    <members>
+        <member name="T:Trans.Utility.FTPClient">
+            <summary>
+            Summary description for FTPClient.
+            </summary>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.#ctor">
+            <summary>
+            No argument constructor
+            </summary>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.#ctor(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Overloaded constructor that initializes all parameters of a socket connection
+            </summary>
+            <param name="l_strFTPServer">FTP Server Name or IP address</param>
+            <param name="l_strUserID">FTP User Id</param>
+            <param name="l_strPassword">Password</param>
+            <param name="l_iPort">FTP Port</param>
+            <param name="l_iSendTimeOut">Send timeout in milli seconds</param>
+            <param name="l_iRecvTimeOut">Recv timeout in milli seconds</param>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.Connect">
+            <summary>
+            Connects to FTP Server and authenticates the user
+            </summary>
+            <returns>1 if success, else 0</returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.ParseForPWD(System.String)">
+            <summary>
+            Parses the output of PWD command
+            </summary>
+            <param name="l_strInput">Output string from PWD Command </param>
+            <returns>The current Directory</returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.ParseResponseCode(System.String,System.String)">
+            <summary>
+            Parses output code
+            </summary>
+            <param name="l_strCommand"></param>
+            <param name="l_strResponseCode">Response data</param>
+            <returns>1 if success, else 0</returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.ExecuteCommand(System.String,System.String@)">
+            <summary>
+            Executes commmand on a Ftp server 
+            </summary>
+            <param name="l_strCommand">Command string</param>
+            <param name="l_refstrOutput">Output string from Ftp server </param>
+            <returns>1 if success, else 0</returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.ExecuteDataCommand(System.String,System.String@)">
+            <summary>
+            Executes a Ftp Data Command
+            </summary>
+            <param name="l_strCommand">Command string</param>
+            <param name="l_strOutputData">Output string</param>
+            <returns>1 if success, else 0</returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.Disconnect">
+            <summary>
+            Disconnect from FTP server
+            </summary>
+            <returns>1 if success, else 0</returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.CloseConnection">
+            <summary>
+            Closes the socket connection
+            </summary>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.GetList(System.String)">
+            <summary>
+            LIST command implementation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.GetPort">
+            <summary>
+            Generate Port number
+            </summary>
+            <returns>Returns newly generated port number</returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.GetPortParameters(System.Int32)">
+            <summary>
+            Get PORT parameters
+            </summary>
+            <param name="l_iPort">Input Port number</param>
+            <returns>Output string</returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.GetFileInfoForUnix(System.String[],System.Data.DataRow@)">
+            <summary>
+            
+            </summary>
+            <param name="l_strarrFields"></param>
+            <param name="l_drNew"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.ParseStringArrayForUnix(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="l_arrFiles"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.SplitStringForUnix(System.String)">
+            <summary>
+            This function takes a string and squeezes more than
+            one space characters into one character and
+            then splits into array and returns back to the caller
+            </summary>
+            <param name="l_strInString">Input String</param>
+            <returns>Output string in an array</returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.ParseStringArrayForWindows(System.String[])">
+            <summary>
+            To Parse the output of LIST command from Windows FTP services
+            </summary>
+            <param name="l_arrFiles">Input string read from socket connection</param>
+            <returns>DataTable if success, else null</returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.SplitStringForWindows(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="l_strInString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.CreateFolder(System.String)">
+            <summary>
+            Creates a folder in the remote server
+            </summary>
+            <param name="l_strFolder">Name of the folder to be created</param>
+            <returns>1 if success, else 0</returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.RemoveFolder(System.String)">
+            <summary>
+            Removes a folder from the server
+            </summary>
+            <param name="l_strFolder">Name of the folder to be deleted</param>
+            <returns>1 if success, else 0</returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.ChangeWorkingFolder(System.String)">
+            <summary>
+            Changes the current working folder
+            </summary>
+            <param name="l_strDirectory">Folder name to be set as current working folder</param>
+            <returns>1 if success, else 0</returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.DownLoadFile(System.String,System.String)">
+            <summary>
+            Download a file from FTP server
+            </summary>
+            <param name="l_strServerFileName">Remote File full path</param>
+            <param name="l_strLocalFileName">Local File full path</param>
+            <returns>non zero value if success,else 0</returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.UploadFile(System.String,System.String)">
+            <summary>
+            Uploads file to FTP Server
+            </summary>
+            <param name="l_strLocalFile">Local file full path</param>
+            <param name="l_strRemoteFile">Remote file full path</param>
+            <returns>non zero value if success, else 0</returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.RemoveFile(System.String)">
+            <summary>
+            Remove a file from the remote server
+            </summary>
+            <param name="l_strFile">File to be removed</param>
+            <returns>1 if success, else 0</returns>
+        </member>
+        <member name="M:Trans.Utility.FTPClient.GetFileInfoForWindows(System.String[],System.Data.DataRow@)">
+            <summary>
+            
+            </summary>
+            <param name="l_strarrFields"></param>
+            <param name="l_drNew"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Trans.Utility.FTPClient.ErrorMessage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.FTPClient.ServerOS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.FTPClient.FTPServer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.FTPClient.UserID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.FTPClient.Password">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.FTPClient.Port">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.FTPClient.SendTimeOut">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.FTPClient.RecvTimeOut">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.FTPClient.RootDirectory">
+            <summary>
+            Root directory of FTP Server
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.FTPClient.CurrentDirectory">
+            <summary>
+            Current Working directory in FTP Server
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.FTPClient.TransferMode">
+            <summary>
+            Transfer mode
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.FTPClient.LocalWorkingDirectory">
+            <summary>
+            Current Local Working directory
+            </summary>
+        </member>
+        <member name="T:Trans.Utility.Cryptograph">
+            <summary>
+            Class to encrypt and decrypt given source string with the private key.
+            </summary>
+        </member>
+        <member name="T:Trans.Utility.Utils">
+            <summary>
+            Common functionalities used through out the application. 
+            All functions and subroutines are static hence no need to create instance of this class.
+            </summary> 
+        </member>
+        <member name="F:Trans.Utility.Utils.m_LogMode">
+            <summary>
+            Hold's LogModes property value
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.m_LogFilePath">
+            <summary>
+            Hold's LogFilePath property value
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.m_FtpAddress">
+            <summary>
+            Hold's FTPAddress property value
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.m_FtpLocation">
+            <summary>
+            Hold's FTPLocation property value
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.m_FtpUid">
+            <summary>
+            Hold's FTPUserId property value
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.m_FtpPass">
+            <summary>
+            Hold's FTPPassword property value
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.m_DoCryptoGraph">
+            <summary>
+            If true then encryption and decryption will be done
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.m_AppMode">
+            <summary>
+            String to hold application mode
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.WebPage">
+            <summary>
+            Initailize page to get session id
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.m_oUtil">
+            <summary>
+            Object of utility class
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.m_OracleDateFormat">
+            <summary>
+            Oracle dateformat needs at the time of insert and update
+            </summary>
+        </member>
+        <member name="M:Trans.Utility.Utils.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Trans.Utility.Utils.FillControl(System.Object,System.Data.DataTable)">
+            <summary>
+            Set datasource from datatable to controls (dropdownlist,ListBox,CheckListBox and DataGrid)
+            </summary>
+            <param name="Control">webcontrols dropdownlist,datagrid,checklistbox,listbox</param>
+            <param name="dtSource">DataTable Datasource needs to be set for the given control.</param>
+        </member>
+        <member name="M:Trans.Utility.Utils.FillControl(System.Object,System.Data.DataTable,System.String,System.String)">
+            <summary>
+            Set datasource from datatable for controls (dropdownlist,ListBox and CheckListBox)
+            </summary>
+            <param name="Control">webcontrols dropdownlist,checklistbox,listbox</param>
+            <param name="dtSource">DataTable Datasource needs to be set for the given control</param>
+            <param name="TextField">Textfield which will be shown in the control</param>
+            <param name="ValueField">ValueField which is the hidden value of each item bound with the control</param>
+        </member>
+        <member name="M:Trans.Utility.Utils.FillControl(System.Object,System.Data.DataTable,System.String,System.String,System.String)">
+            <summary>
+            Set datasource from datatable for controls (Tablist,Toolbar)
+            </summary>
+            <param name="Control">webcontrols tablist,toolbar</param>
+            <param name="dtSource">DataTable Datasource needs to be set for the given control</param>
+            <param name="TextField">Textfield which will be shown in the control</param>
+            <param name="ValueField">ID for the tabitem</param>
+            <param name="URL">URL path as property to tabitem</param>
+        </member>
+        <member name="M:Trans.Utility.Utils.SetIndexByValue(System.Object,System.String)">
+            <summary>
+            Subroutine to find the item in the control by value and set that item selected true
+            </summary>
+            <param name="Control">Webcontrol dropdownlist</param>
+            <param name="Value">value needs to be set selected</param>
+            <returns>True if control set the index successfully else false will be returned
+            and default -1 index will be selected</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.SetIndexByIndex(System.Object,System.String)">
+            <summary>
+            Subroutine to set the index selected true
+            </summary>
+            <param name="Control">Webcontrol dropdownlist</param>
+            <param name="Index">index needs to be set selected</param>
+            <returns>True if control set the index successfully else false will be returned
+            and default -1 index will be selected</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.SetIndexByText(System.Object,System.String)">
+            <summary>
+            Subroutine to find the item in the control by text and set that item selected true
+            </summary>
+            <param name="Control">Webcontrol dropdownlist</param>
+            <param name="Text">Text needs to be set selected</param>
+            <returns>True if control set the index successfully else false will be returned
+            and default -1 index will be selected</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.SetIndex(System.Object,System.String,Trans.Utility.Utils.SetIndexType)">
+            <summary>
+            Subroutine to find the item in the control by text,value,index and set that item selected true
+            </summary>
+            <param name="Control">Webcontrol dropdownlist</param>
+            <param name="IndexVal">string Text,value or index</param>
+            <param name="IndexType">Type:text,value or index</param>
+            <returns>True if control set the index successfully else false will be returned
+            and default -1 index will be selected</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.LogError(System.String)">
+            <summary>
+            Function to log Error,Warning,Information messages
+            </summary>
+            <param name="ErrorVal">Error,warning,information value needs to be logged</param>
+            <returns>returns 1 if success</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.LogWarn(System.String)">
+            <summary>
+            Function to log Information,Warning messages
+            </summary>
+            <param name="WarnVal">Information, warning value needs to be logged</param>
+            <returns>returns 1 if success</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.LogInfo(System.String)">
+            <summary>
+            Function to log Information messages only
+            </summary>
+            <param name="InfoVal">Information value needs to be logged</param>
+            <returns>returns 1 if success</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.LogError(System.String,System.String)">
+            <summary>
+            Function to log Error,Warning,Information messages
+            </summary>
+            <param name="ErrorVal">Error,warning,information value needs to be logged</param>
+            <param name="LoggedUser">User who logged into application. If null then session of user id will be checked
+            If session of userid also null then user will be identified as unknown</param>
+            <returns>returns 1 if success</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.LogWarn(System.String,System.String)">
+            <summary>
+            Function to log Information,Warning messages
+            </summary>
+            <param name="WarnVal">Information, warning value needs to be logged</param>
+            <param name="LoggedUser">User who logged into application. If null then session of user id will be checked
+            If session of userid also null then user will be identified as unknown</param>
+            <returns>returns 1 if success</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.LogInfo(System.String,System.String)">
+            <summary>
+            Function to log Information messages only
+            </summary>
+            <param name="InfoVal">Information value needs to be logged</param>
+            <param name="LoggedUser">User who logged into application. If null then session of user id will be checked
+            If session of userid also null then user will be identified as unknown</param>
+            <returns>returns 1 if success</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.LogValueSafely(System.String,System.Int32,System.String)">
+            <summary>
+            Function to Log values with thread safety
+            </summary>
+            <param name="LogVal">Log Value needs to be logged</param>
+            <param name="Level">Requested Log mode</param>
+            <param name="LoggedUser">User who logged into application. If null then session of user id will be checked
+            If session of userid also null then user will be identified as unknown</param>
+            <returns>returns 1 if success</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.LogValue(System.String,System.String)">
+            <summary>
+            Function to Log Values with thread safety
+            </summary>
+            <param name="LogVal">Log Value needs to be logged</param>
+            <param name="LoggedUser">User who logged into application. If null then session of user id will be checked
+            If session of userid also null then user will be identified as unknown</param>
+            <returns>returns 1 if success</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.Encrypt(System.String,System.String)">
+            <summary>
+            Function to encrypt the given string
+            </summary>
+            <param name="Source">source string needs to be encrypted</param>
+            <param name="PrivateKey">protected key which is used for encrypt the source</param>
+            <returns>returns encrypted string</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.Decrypt(System.String,System.String)">
+            <summary>
+            Function to decrypt the given string
+            </summary>
+            <param name="Source">source string needs to be decrypted</param>
+            <param name="PrivateKey">protected key which is used to decrypt the source</param>
+            <returns>returns decrypted string</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.Crypt(System.String,System.String,Trans.Utility.Utils.CryptType)">
+            <summary>
+            Function to Encrypt/Decrypt Source string
+            </summary>
+            <param name="Source">string needs to be encrypted/decrypted</param>
+            <param name="PrivateKey">protected key which is used to encrypt/decrypt the source</param>
+            <param name="Type">Type to specify encrypt or decrypt</param>
+            <returns>Encrypted/decrypted string</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.ConvertByte2Stream(System.Byte[])">
+            <summary>
+            Function to convert 1-Dimensional array to stream
+            </summary>
+            <param name="bytArray">1-Dimensional array of byte</param>
+            <returns>Memory stream</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.ConvertByte2File(System.String,System.Byte[])">
+            <summary>
+            Function to Convert 1-Dimensional array of byte to file
+            </summary>
+            <param name="FilePath">Full destination Filepath</param>
+            <param name="bytArray">1-Dimensional array of byte</param>
+            <returns>return 1 if success</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.ConvertByte2File(System.String,System.Byte[],System.Boolean)">
+            <summary>
+            Function to Convert 1-Dimensional array of byte to file
+            </summary>
+            <param name="FilePath">Full destination Filepath</param>
+            <param name="bytArray">1-Dimensional array of byte</param>
+            <param name="OverWrite">If overwrite=true then file will be overwriten if exists</param>
+            <returns>return 1 if success</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.ConvertFile2Byte(System.String)">
+            <summary>
+            Function to convert file to 1-Dimensional array of byte
+            </summary>
+            <param name="FilePath">Source Full Filepath</param>
+            <returns>1-Dimensional array of byte</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.ConvertStream2Byte(System.Object)">
+            <summary>
+            Function to convert stream to 1-Dimensional array of byte
+            </summary>
+            <param name="stream">Source file stream (filestream or stream)</param>
+            <returns>1-Dimensional array of byte</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.GetHashValue(System.Collections.Hashtable)">
+            <summary>
+            Function to GetHash values in 1-Dimensional array
+            </summary>
+            <param name="HashValue">Source hash table</param>
+            <returns>1-Dimensional array</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.GetHashKey(System.Collections.Hashtable)">
+            <summary>
+            Function to GetHash keys in 1-Dimensional array
+            </summary>
+            <param name="HashValue">Source hash value</param>
+            <returns>1-Dimensional array</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.GetHash(System.Collections.Hashtable,Trans.Utility.Utils.HashType)">
+            <summary>
+            Function to get hash keys or values in 1-Dimensional array
+            </summary>
+            <param name="HashValue">Source hash value</param>
+            <param name="Type">Type:key or value</param>
+            <returns>1-Dimensional array</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.PreserveType(System.String)">
+            <summary>
+            Function to find the type of string value and convert the string into its own type
+            </summary>
+            <param name="strSource">String source needs to be converted into its own type</param>
+            <returns>Object of its own type</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.Sort(System.Data.DataTable,System.String)">
+            <summary>
+            Function to sort data table physically
+            </summary>
+            <param name="dtSource">Data table needs to be sorted</param>
+            <param name="Expression">Sort expression 
+            Ex:Col2 asc</param>
+            <returns>Sorted datatable</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.ColumnEqual(System.Object,System.Object)">
+            <summary>
+            Compares two values to see if they are equal. Also compares DBNULL.Value.
+            Note: If your DataTable contains object fields, then you must extend this
+            function to handle them in a meaningful way if you intend to group on them.
+            </summary>
+            <param name="A">Value type object</param>
+            <param name="B">Value type object</param>
+            <returns>True if both value type object a and b are same</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.SelectDistinct(System.Data.DataTable,System.String)">
+            <summary>
+            Function to select distinct rows from a data table
+            </summary>
+            <param name="SourceTable">Source data table</param>
+            <param name="FieldName">Column name needs to be distinct</param>
+            <returns>Datatable with distinct rows</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.SetDbNullDt(System.Data.DataTable)">
+            <summary>
+            Function to set dbnull value instead of empty string("").
+            </summary>
+            <param name="dtSource">Data table in which values needs to be set dbnull</param>
+        </member>
+        <member name="M:Trans.Utility.Utils.SetForeignkey(System.Data.DataTable,System.String,System.Object)">
+            <summary>
+            Subroutine to set foreignkey value in data table
+            </summary>
+            <param name="dtSource">Data table in which foreign key needs to be set</param>
+            <param name="ColName">Foreign key column name</param>
+            <param name="ColValue">Foreign key column value</param>
+        </member>
+        <member name="M:Trans.Utility.Utils.SelFromDataTable(System.Data.DataTable,System.String,System.String,System.Object)">
+            <summary>
+            Function to select name column value from data table with respect to number column value
+            Ex:datatable with col1{'name1','name2','name3'}
+            Col2{1,2,3}
+            If keycol is Col2,valuecol is col1 and key=2 then resultant output is 'name2'
+            If keycol is col1,valuecol is col2 and key='name3' then resultant output is 3
+            </summary>
+            <param name="dt">Data table in which value needs to be selected</param>
+            <param name="KeyCol">Column which is used in where clause</param>
+            <param name="ValueCol">Column name which value will be outputed.
+            If valuecol is null then array of selected datarow will be returned
+            If valuecol is not null and if select return one row then value will be returned
+            If valuecol is not null and if select return more than one row then arraylist of selected values will be returned
+            </param>
+            <param name="Key">Where clause value</param>
+            <returns>Value of the selected row with respect to the valuecol column</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.SelFromDataTable(System.Data.DataTable,System.String,System.Object)">
+            <summary>
+            Function to select name column value from data table with respect to number column value
+            Ex:datatable with col1{'name1','name2','name3'}
+            Col2{1,2,3}
+            If keycol is Col2,valuecol is col1 and key=2 then resultant output is 'name2'
+            If keycol is col1,valuecol is col2 and key='name3' then resultant output is 3
+            </summary>
+            <param name="dt">Data table in which value needs to be selected</param>
+            <param name="KeyCol">Column which is used in where clause</param>
+            <param name="Key">Where clause value</param>
+            <returns>Value of the selected row with respect to the valuecol column</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.ValidateFormula(System.String)">
+            <summary>
+            Function to validate formula like execute immediate
+            </summary>
+            <param name="Formula">string expression needs to be validated</param>
+            <returns>True if valid formula</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.ExecuteFormula(System.String)">
+            <summary>
+            Function to execute formula expression
+            </summary>
+            <param name="Formula">Formula expression needs to be executed
+            ex:3+34*20-18+(14/7)+100</param>
+            <returns>Expression execution result
+            ex:767 
+            as a result for given example above</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.GetConfigValues(System.String)">
+            <summary>
+            Function to get configured value from web.config file
+            </summary>
+            <param name="key">Key string</param>
+            <returns>returns value string for the key</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.GetConfig(System.String)">
+            <summary>
+            Function to get config value
+            </summary>
+            <param name="key">Full key to get appropriate value from config file</param>
+            <returns>Respective value for key</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.GetDBConfigValues(System.String,System.Data.DataSet)">
+            <summary>
+            Function to get configured value from database
+            </summary>
+            <param name="key">Key string</param>
+            <param name="dsSource">Dataset which contains the configured value in database</param>
+            <returns>returns value string for the key</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.FTPFileUpload(System.String,System.String)">
+            <summary>
+            Function to upload file from web server to ftp server
+            </summary>
+            <param name="SourceFullFilePath">Full filepath of source ex:C:\folder1\file1.txt</param>
+            <param name="DestinationFileName">File name to be stored in destination ex:file1.txt</param>
+            <returns>return 1, if success</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.FTPFileManipulation(System.String,System.String,Trans.Utility.Utils.FTPAction)">
+            <summary>
+            Function to upload/download file from/to web server to/from ftp server
+            </summary>
+            <param name="SourceFilepath">source file path</param>
+            <param name="DestinationFilePath">destination file path</param>
+            <param name="ftpfileaction">ftpfileaction:upload, download</param>
+            <returns>return 1, if success</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.FTPFileDownload(System.String,System.String)">
+            <summary>
+            Function to download file from ftp server to web server
+            </summary>
+            <param name="SourceFileName">File name in ftp server</param>
+            <param name="DestinationFullFilePath">File name to be stored in web server</param>
+            <returns></returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.FixSQLValue(System.Object)">
+            <summary>
+            Function to set quote for query value
+            </summary>
+            <param name="QueryValue">Query value as object. Needs to be appended in query</param>
+            <returns>string to be appended in query build</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.FixQuote(System.String)">
+            <summary>
+            Function to fix quote at time of building insert,update,delete,select query
+            </summary>
+            <param name="Source">string needs to be fixed</param>
+            <returns>return string with fixed quote</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.FixHtmlTag(System.String)">
+            <summary>
+            Function to fix html tag with &lt; and &gt;
+            </summary>
+            <returns>return fixed string</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.CheckQuoteFixed(System.String)">
+            <summary>
+            Function to check whether quotes is already fixed
+            </summary>
+            <param name="Source">Source string</param>
+            <returns>return true if already fixed</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.FixFileName(System.String)">
+            <summary>
+            Function to remove \ / : * ? " &lt; &gt; | characters in file name
+            </summary>
+            <param name="Source">Source file name not full file path</param>
+            <returns>File name without these special characters \ / : * ? " &lt; &gt; |</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.FixFileName(System.String,System.String)">
+            <summary>
+            Function to remove \ / : * ? "  &lt; &gt; | characters in file name
+            </summary>
+            <param name="Source">Source file name, not full file path</param>
+            <param name="ReplaceWith">Replace character for these special characters \ / : * ? " &lt; &gt; |</param>
+            <returns>File name without these special characters \ / : * ? " &lt; &gt; |</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.TrimComma(System.String)">
+            <summary>
+            Function to trim comma in first and last char.
+            ex:,1,2,3,4=1,2,3,4 
+            1,2,3,4,=1,2,3,4
+            </summary>
+            <param name="Source">Source string with comma seperated</param>
+            <returns>Trimmed source without comma at the end and begining</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.CountString(System.String,System.String)">
+            <summary>
+            Function to find a string and count the occurence in the source string
+            </summary>
+            <param name="Source">Source string in which find needs to be done</param>
+            <param name="Find">String needs to be found in source</param>
+            <returns>No of occurence of find string in source string</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.Split(System.String,System.String)">
+            <summary>
+            Function to split string expression with delimiter
+            </summary>
+            <param name="Expression">String needs to be split</param>
+            <param name="Delimiter">Delimiter to split</param>
+            <returns>Array of splitted string</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.Split(System.String,System.Int32[])">
+            <summary>
+            Function to split the string expression with lenght delimiter
+            </summary>
+            <param name="Expression">String needs to be split 
+            Ex:abcdefgh</param>
+            <param name="Len">1-Dimensional integer array
+            Ex:{3,2,1,2}</param>
+            <returns>Array of string
+            Ex:{abc,de,f,gh}</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.ParseFromFile(System.String,System.String,System.String,System.String)">
+            <summary>
+            Function to parse data from file and build insert query
+            </summary>
+            <param name="SourceFlPath">Source file path (File which contains data)</param>
+            <param name="SourceFormat">Source file format. Format in which data is seperated
+            ex:',','|','~'</param>
+            <param name="StructureFlPath">Sturcture file path. File which contains the details
+            of the table in which data needs to be inserted</param>
+            <param name="StructureFormat">Structure file format. Format in which data in structure file seperated
+            ex:',','|','~'</param>
+            <returns>1-Dimesional string array of insert query</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.LoadLength(System.String,System.String)">
+            <summary>
+            Function to load array of length from format file
+            </summary>
+            <param name="FlPath">Format file path</param>
+            <param name="Format">String format in format file</param>
+            <returns>1-Dimensional array of integer</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.AppendBuilded(System.String,System.String,System.String)">
+            <summary>
+            Function to append builded column string and value string to make complete insert query
+            </summary>
+            <param name="StrCol">String variable which holds column information</param>
+            <param name="StrVal">String variable which holds value information</param>
+            <param name="TableName">Table name in which insert needs to be performed</param>
+            <returns>Builded insert query</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.ParseFromDataTable(System.Data.DataTable,System.Data.DataTable)">
+            <summary>
+            Function to build insert query from datatable
+            </summary>
+            <param name="dtSource">Data table which contains data to be inserted</param>
+            <param name="dtStruct">Data table which contains info abt where the data needs to be inserted</param>
+            <returns>1-Dimensional array builded insert query</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.LoadFromText(System.String,System.String,System.Int32[])">
+            <summary>
+            Function to parse text from file into datatable
+            </summary>
+            <param name="FlPath">File path</param>
+            <param name="Format">Format by which data are seperated
+            ex:',','|','~'</param>
+            <param name="Len">1-Dimensional integer array of length
+            If data is seperated by variable length</param>
+            <returns>Data table with loaded data from file</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.SplitText(System.String,System.String,System.Int32[])">
+            <summary>
+            Function to split string with format or length
+            </summary>
+            <param name="strSource">String source needs to be splitted</param>
+            <param name="Format">Format by which data is seperated in string</param>
+            <param name="Len">Length array by which data is seperated</param>
+            <returns>1-Dimensional array of splitted string</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.ParseToFile(System.Data.DataTable,System.String,System.String,System.String)">
+            <summary>
+            Function to write data from data table into file
+            </summary>
+            <param name="dtSource">Data source needs to be written in text file</param>
+            <param name="FilePath">File path in which data needs to be write</param>
+            <param name="ColSepeartor">Column seperator ex:"," or "|"</param>
+            <param name="RowSeperator"></param>
+            <returns>True if written into file</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.ParseToFile(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            Function to write data from data table into file
+            </summary>
+            <param name="dtSource">Data source needs to be written in text file</param>
+            <param name="FilePath">File path in which data needs to be write</param>
+            <param name="ColSepeartor">Column seperator ex:"," or "|"</param>
+            <returns>True if written into file</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.BuildSelect(System.Collections.Hashtable,System.Collections.Hashtable,System.String,System.String[])">
+            <summary>
+            Function to build select query from the hashtable
+            </summary>
+            <param name="HashValue">Hashtable with column name as key and column value as null</param>
+            <param name="WhereClause">Hashtable with column name as key and column value as WhereClause value</param>
+            <param name="TableName">Table name in which data needs to be selected</param>
+            <param name="LikeColumns">Params array indicating all the columns on which like compare has to be done</param>
+            <returns>builded select query</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.BuildSelect(System.Collections.Hashtable,System.String)">
+            <summary>
+            Function to build insert query from the hashtable
+            </summary>
+            <param name="HashValue">Hashtable with column name as key and column value as value</param>
+            <param name="TableName">Table name in which data needs to be selected</param>
+            <returns>builded select query</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.BuildInsert(System.Collections.Hashtable,System.String)">
+            <summary>
+            Function to build insert query from the hashtable
+            </summary>
+            <param name="HashValue">Hashtable with column name as key and column value as value</param>
+            <param name="TableName">Table name in which data needs to be inserted</param>
+            <returns>builded insert query</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.BuildInsert(System.Collections.Hashtable,System.String,System.String)">
+            <summary>
+            Function to build insert query from the hashtable
+            </summary>
+            <param name="HashValue">Hashtable with column name as key and column value as value</param>
+            <param name="TableName">Table name in which data needs to be inserted</param>
+            <param name="Schema">Schema where the table resides.</param>
+            <returns>builded insert query</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.BuildUpdate(System.Collections.Hashtable,System.Collections.Hashtable,System.String,System.String[])">
+            <summary>
+            Function to build update query from the hashtable
+            </summary>
+            <param name="HashValue">Hashtable with column name as key and column value as value</param>
+            <param name="WhereClause">Hashtable with column name as key and column value as WhereClause value</param>
+            <param name="TableName">Table name in which data needs to be inserted</param>
+            <param name="LikeColumns">Params array indicating all the columns on which like compare has to be done</param>
+            <returns>builded update query</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.BuildUpdate(System.Collections.Hashtable,System.Collections.Hashtable,System.String,System.String,System.String[])">
+            <summary>
+            Function to build update query from the hashtable
+            </summary>
+            <param name="HashValue">Hashtable with column name as key and column value as value</param>
+            <param name="WhereClause">Hashtable with column name as key and column value as WhereClause value</param>
+            <param name="TableName">Table name in which data needs to be inserted</param>
+            <param name="Schema">Schema where the table resides.</param>
+            <param name="LikeColumns">Params array indicating all the columns on which like compare has to be done</param>
+            <returns>builded update query</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.BuildSelInsert(System.Collections.Hashtable,System.Collections.Hashtable,System.String,System.String,System.String[])">
+            <summary>
+            Function to build insert query with select
+            </summary>
+            <param name="HashValue">Hash table with data needs to be inserted</param>
+            <param name="WhereClause">Hash table with where clause data</param>
+            <param name="SourceTable">Data from source table needs to be inserted</param>
+            <param name="DestinationTable">Data needs to be inserted into destination table</param>
+            <param name="LikeColumns">Params array indicating all the columns on which like compare has to be done</param>
+            <returns>Builded select insert query</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.BuildSelInsert(System.Data.DataTable,System.Boolean)">
+            <summary>
+            Function to build insert query with select
+            </summary>
+            <param name="dtValue">Data table with data needs to be build insert query</param>
+            <param name="IncludeValues">If include values is true then insert query will be
+            insert into table1(col1,col2)select col1,col2 from dual
+            else insert into table1 select col1,col2 from dual</param>
+            <returns>Builded select insert query</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.BuildDelete(System.Collections.Hashtable,System.String,System.String[])">
+            <summary>
+            Function to build delete query
+            </summary>
+            <param name="WhereClause">hash table with where clause data</param>
+            <param name="TableName">Table name on which delete needs to be fired</param>
+            <param name="LikeColumns">Params array indicating all the columns on which like compare has to be done</param>
+            <returns>Builded delete query</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.BuildDelete(System.Collections.Hashtable,System.String,System.String,System.String[])">
+            <summary>
+            Function to build delete query
+            </summary>
+            <param name="WhereClause">hash table with where clause data</param>
+            <param name="TableName">Table name on which delete needs to be fired</param>
+            <param name="Schema">Schema where the table resides.</param>
+            <param name="LikeColumns">Params array indicating all the columns on which like compare has to be done</param>
+            <returns>Builded delete query</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.BuildInsert(System.Data.DataTable,System.Boolean)">
+            <summary>
+            Function to build array of insert query from datatable
+            </summary>
+            <param name="dtValue">Data table for which query needs to be builded</param>
+            <param name="InsertPrimary">boolean if true then primary key column also considered in insert query</param>
+            <returns>builded insert query collection</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.BuildInsert(System.Data.DataTable,System.Boolean,System.String)">
+            <summary>
+            Function to build array of insert query from datatable
+            </summary>
+            <param name="dtValue"></param>
+            <param name="InsertPrimary"></param>
+            <param name="Schema"></param>
+            <returns>builded insert query collection</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.BuildUpdate(System.Data.DataTable,System.Boolean)">
+            <summary>
+            Function to build array of update query from datatable
+            </summary>
+            <param name="dtValue">Data table for which query needs to be builded</param>
+            <param name="UpdatePrimary">boolean if true then primary key column also considered in update query</param>
+            <returns>builded update query collection</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.BuildUpdate(System.Data.DataTable,System.Boolean,System.Boolean)">
+            <summary>
+            Function to build array of update query from datatable
+            </summary>
+            <param name="dtValue">Data table for which query needs to be builded</param>
+            <param name="UpdatePrimary">boolean if true then primary key column also considered in update query</param>
+            <param name="UpdateNull">Boolean if true then update query will be generated for value null
+            ex: if col2, row1 is null then update table1 set col1=val1,col2=null,col3=val3 .. 
+            </param>
+            <returns>builded update query collection</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.BuildSelect(System.Data.DataTable,System.Boolean,System.Boolean)">
+            <summary>
+            Function to build array of select query from datatable 
+            </summary>
+            <param name="dtValue">Data table for which query needs to be builded</param>
+            <param name="ConstructWhere">Boolean if true then where clause will be constructed</param>
+            <param name="SelectPrimary">Boolean if true then primary key column also considered in query</param>
+            <returns>Builded query collection</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.BuildSelect(System.Data.DataTable,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            Function to build array of select query from datatable 
+            </summary>
+            <param name="dtValue">Data table for which query needs to be builded</param>
+            <param name="ConstructWhere">Boolean if true then where clause will be constructed</param>
+            <param name="SelectPrimary">Boolean if true then primary key column also considered in query</param>
+            <param name="Schema">Schema where the table resides.</param>
+            <returns>Builded query collection</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.BuildWhere(System.Collections.Hashtable,System.String[])">
+            <summary>
+            Function to build where clause from hashtable
+            </summary>
+            <param name="WhereClause">hashtable which contains where clause data</param>
+            <param name="LikeColumns">Columns that need to be compared with LIKE</param>
+            <returns>builded where clause</returns>       
+        </member>
+        <member name="M:Trans.Utility.Utils.GetExtension(System.String)">
+            <summary>
+            Function to get the file extension from filename or filepath
+            </summary>
+            <param name="srcFilePath">Source file path from which extension should be retrieved</param>
+            <returns>File extension ex:.doc,.db,.gif etc.,</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.AppendFilePath(System.String,System.String)">
+            <summary>
+            Function to find whether string one is end with '\' or not and append accordingly
+            ex: if left is "C:\test" and right is mybook.txt then resultant is C:\test\mybook.txt"
+            if left is "C:\test\" and right is mybook.txt then resultant is "C:\test\mybook.txt"
+            </summary>
+            <param name="Left">String one, which contains directory information
+            ex:"C:\folder1\folder2\"</param>
+            <param name="Right">String two, which contains file information
+            ex:"mybook.txt" or "\mybook.txt"</param>
+            <returns></returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.LikeCompare(System.String,System.String)">
+            <summary>
+            Function to compare two source string with like operator in vb
+            if "test" like "t*" will return true in vb
+            </summary>
+            <param name="Source1">String source needs to be compared with string with *</param>
+            <param name="Source2">String source with *</param>
+            <returns>Ture if compared string is same</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.FormatNumber(System.Double,System.String)">
+            <summary>
+            Function to format number into given format with locale culture
+            </summary>
+            <param name="Source">Source number</param>
+            <param name="Format">Format:N or N0</param>
+            <returns>Formated number as string</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.FormatCurrency(System.Double,System.String)">
+            <summary>
+            Function to format currency into given format with locale culture
+            </summary>
+            <param name="Source">Source currency</param>
+            <param name="Format">Format:C or C0</param>
+            <returns>Formatted currency as string</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.FormatDate(System.DateTime,System.String)">
+            <summary>
+            Function to format date into given format with locale culture
+            </summary>
+            <param name="Source">Source date</param>
+            <param name="Format">Format: dd/mm/yyyy</param>
+            <returns>Formatted date as string</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.FormatPhone(System.String,System.String)">
+            <summary>
+            Function to format phone with custom format
+            </summary>
+            <param name="Source">Source phone value needs to be formatted</param>
+            <param name="Format">Custom format string
+             # ### [#] ###
+             []: optional
+             # - alphanumeric
+             ex1: format 123abc345 into this [#] ### e ## ##[#] b
+             result:1 23a e bc 345 b
+             ex2:format 23abc345 into this [#] ### e ## ##[#] b
+             result: 23a e bc 345 b
+            </param>
+            <returns>formatted string with custom format</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.FormatPad(System.Object,System.Int32,System.Char,Trans.Utility.Utils.PadDirection)">
+            <summary>
+            Function to format input source by filling the blank space with padding character
+            </summary>
+            <param name="Source">Source object which needs to be padded with pad char
+            Source can be int,double,long,string</param>
+            <param name="Length">Length upto which input object needs to be padded</param>
+            <param name="PadChar">Char which needs to be replaced with the space</param>
+            <param name="Pdir">Direction in which padding needs to be performed</param>
+            <returns>Formatted left padded string</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.FormatLPad(System.Object,System.Int32,System.Char)">
+            <summary>
+            Function to format input source by filling the blank space with padding character
+            </summary>
+            <param name="Source">Source object which needs to be padded with pad char
+            Source can be int,double,long,string</param>
+            <param name="Length">Length upto which input object needs to be padded</param>
+            <param name="PadChar">Char which needs to be replaced with the space</param>
+            <returns>Formatted left padded string</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.FormatRPad(System.Object,System.Int32,System.Char)">
+            <summary>
+            Function to format input source by filling the blank space with padding character
+            </summary>
+            <param name="Source">Source object which needs to be padded with pad char
+            Source can be int,double,long,string</param>
+            <param name="Length">Length upto which input object needs to be padded</param>
+            <param name="PadChar">Char which needs to be replaced with the space</param>
+            <returns>Formatted left padded string</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.IsCurrency(System.String,System.Boolean)">
+            <summary>
+            Function to validate currency
+            </summary>
+            <param name="Source">Source string</param>
+            <param name="LeaveNull">Boolean if true then return true on null source</param>
+            <returns>return true if source is currency</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.IsDecimal(System.String,System.Boolean)">
+            <summary>
+            Function to validate Decimal value
+            </summary>
+            <param name="Source">Source string</param>
+            <param name="LeaveNull">Boolean if true then return true on null source</param>
+            <returns>return true if source is decimal</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.IsInteger(System.String,System.Boolean)">
+            <summary>
+            Function to validate integer value
+            </summary>
+            <param name="Source">Source string</param>
+            <param name="LeaveNull">Boolean if true then return true on null source</param>
+            <returns>return true if source is integer</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.IsDate(System.String,System.Boolean)">
+            <summary>
+            Function to validate date
+            </summary>
+            <param name="Source">Source string</param>
+            <param name="LeaveNull">Boolean if true then return true on null source</param>
+            <returns>return true if source is date</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.IsEmail(System.String,System.Boolean)">
+            <summary>
+            Function to validate email id syntatically
+            </summary>
+            <param name="Source">Email id source. ex:trans@horizon.com</param>
+            <param name="LeaveNull">Boolean if true then return true on null source</param>
+            <returns>true if Source is a valid(syntatically) email id </returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.IsCurrency(System.String)">
+            <summary>
+            Function to validate currency
+            </summary>
+            <param name="Source">Source string</param>
+            <returns>return true if source is currency</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.IsDecimal(System.String)">
+            <summary>
+            Function to validate Decimal value
+            </summary>
+            <param name="Source">Source string</param>
+            <returns>return true if source is decimal</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.IsInteger(System.String)">
+            <summary>
+            Function to validate integer value
+            </summary>
+            <param name="Source">Source string</param>
+            <returns>return true if source is integer</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.IsDate(System.String)">
+            <summary>
+            Function to validate date
+            </summary>
+            <param name="Source">Source string</param>
+            <returns>return true if source is date</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.IsEmpty(System.Object)">
+            <summary>
+            Function to validate empty against object
+            </summary>
+            <param name="Control">webcontrols(textbox,dropdownlist,listbox,checkboxlist,hyperlink,literal control),
+            string,dataset,datatable</param>
+            <returns></returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.IsEmail(System.String)">
+            <summary>
+            Function to validate email id syntatically
+            </summary>
+            <param name="Source">Email id source. ex:trans@horizon.com</param>
+            <returns>true if Source is a valid(syntatically) email id </returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.IsPrimary(System.String,System.Data.DataTable)">
+            <summary>
+            Function to find whether given column is primarykey column or not
+            </summary>
+            <param name="ColName">Column name of the column needs to be check against primarykey column</param>
+            <param name="dtSource">Source datatable which holds that column</param>
+            <returns>true if the column is primarykey else false</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.IsPrimaryDefined(System.Data.DataTable)">
+            <summary>
+            Function to check whether primary key column is defined in datatable
+            </summary>
+            <param name="dtSource">Datatable to check against primary key column</param>
+            <returns>True if primary key column is defined else false</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.ValidateLoadLength(System.String,System.String)">
+            <summary>
+            Function to validate load length function
+            </summary>
+            <param name="FlPath">String file path should not be empty</param>
+            <param name="Format">String Format should not be empty</param>
+            <returns>True if validation success</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.ValidateAppendBuilded(System.String,System.String,System.String)">
+            <summary>
+            Function to validate append builded function
+            </summary>
+            <param name="StrCol">String col should not be empty</param>
+            <param name="StrVal">String val should not be empty</param>
+            <param name="TableName">String tablename should not be empty</param>
+            <returns>True if validation success</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.GetXml(System.String,System.String)">
+            <summary>
+            Function to get value from xml
+            </summary>
+            <param name="Path">Xml file path</param>
+            <param name="key">Respective key name(full path) to get value
+            ex: configuration/appSettings/add[@key='ConnectionString']
+            </param>
+            <returns>Value of the given key</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.DateDiff(Trans.Utility.Utils.DateTimeInterval,System.DateTime,System.DateTime)">
+            <summary>
+            Function to find date difference between two dates
+            </summary>
+            <param name="dtInterval">Enumerator datetime interval</param>
+            <param name="dt1">Date time one</param>
+            <param name="dt2">Date time two</param>
+            <returns>Difference between two date time with respect to interval</returns>
+        </member>
+        <member name="M:Trans.Utility.Utils.DownloadFile(System.Web.UI.Page,System.String,System.String,System.Boolean)">
+            <summary>
+            Subroutein used to download files from server
+            </summary>
+            <param name="ME">Page from web application.ex: this</param>
+            <param name="srcFilePath">srcFilePath is the physical file path of source file needs to be downloaded</param>
+            <param name="desFileName">desFileName is the file name to display while download</param>
+            <param name="RemoveSrc">If true then src file will be removed from server.</param>
+        </member>
+        <member name="M:Trans.Utility.Utils.DownloadFile(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            Subroutein used to download files from server
+            </summary>
+            <param name="ME">Page from web application.ex: this</param>
+            <param name="srcFilePath">srcFilePath is the physical file path of source file needs to be downloaded</param>
+            <param name="desFileName">desFileName is the file name to display while download</param>
+        </member>
+        <member name="M:Trans.Utility.Utils.DownloadfilePvt(System.Web.UI.Page,System.String,System.Byte[],System.String)">
+            <summary>
+            Subroutein used to download files from server
+            </summary>
+            <param name="ME">Page from web application.ex: this</param>
+            <param name="srcFileExt">Source file extension ex:.doc,.xls,.db etc.,</param>
+            <param name="srcFile">srcFilePath is the byte array of source file stream needs to be downloaded</param>
+            <param name="desFileName">desFileName is the file name to display while download</param>
+        </member>
+        <member name="M:Trans.Utility.Utils.DownloadFile(System.Web.UI.Page,System.String,System.Byte[],System.String)">
+            <summary>
+            Subroutein used to download files from server
+            </summary>
+            <param name="ME">Page from web application.ex: this</param>
+            <param name="srcFileExt">Source file extension ex:.doc,.xls,.db etc.,</param>
+            <param name="srcFile">srcFilePath is the byte array of source file stream needs to be downloaded</param>
+            <param name="desFileName">desFileName is the file name to display while download</param>
+        </member>
+        <member name="P:Trans.Utility.Utils.FtpAddress">
+            <summary>
+            FtpAddress in which file are going to uploaded and downloaded
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.Utils.FtpLocation">
+            <summary>
+            Sub folders are ftppath, in which files needs to be uploaded and downloaded
+            </summary>		
+        </member>
+        <member name="P:Trans.Utility.Utils.FtpUserID">
+            <summary>
+            Login credentials for particular ftp address
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.Utils.FtpPassword">
+            <summary>
+            Login credentials for particular ftp address
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.Utils.LogMode">
+            <summary>
+            Application current logmode (info or error or warn)
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.Utils.LogFilePath">
+            <summary>
+            Log file path in which log values are appended.
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.Utils.EnableCryptoGraph">
+            <summary>
+            If true then encryption and decryption will be done
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.Utils.AppMode">
+            <summary>
+            Write only property. According to app mode configured values will be taken
+            </summary>
+        </member>
+        <member name="P:Trans.Utility.Utils.OracleDateFormat">
+            <summary>
+            Oracle dateformat needs at the time of insert and update
+            </summary>
+        </member>
+        <member name="T:Trans.Utility.Utils.PadDirection">
+            <summary>
+            Enumerator collection of format string with pad
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.PadDirection.Left">
+            <summary>
+            Left direction
+            ex:****3434
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.PadDirection.Right">
+            <summary>
+            Right direction
+            ex:3434****
+            </summary>
+        </member>
+        <member name="T:Trans.Utility.Utils.FileFormat">
+            <summary>
+            FileFormat:Bankreconciliation flat file with formatted data.
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.FileFormat.Pipe">
+            <summary>
+            Pipe seperated '|'
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.FileFormat.Comma">
+            <summary>
+            Comma seperated ','
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.FileFormat.FixedLength">
+            <summary>
+            Fixed length ex:20 or 30
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.FileFormat.VariableLength">
+            <summary>
+            Variable length
+            </summary>
+        </member>
+        <member name="T:Trans.Utility.Utils.CryptType">
+            <summary>
+            Cryptograph action: Encrypt, Decrypt
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.CryptType.Encrypt">
+            <summary>
+            Perform encrypt action
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.CryptType.Decrypt">
+            <summary>
+            Perform decrypt action
+            </summary>
+        </member>
+        <member name="T:Trans.Utility.Utils.FTPAction">
+            <summary>
+            FTPAction:Upload, Download
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.FTPAction.Upload">
+            <summary>
+            Action to perform upload
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.FTPAction.Download">
+            <summary>
+            Action to perform download
+            </summary>
+        </member>
+        <member name="T:Trans.Utility.Utils.ParseFromFileEn">
+            <summary>
+            Data table parsed from file
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.ParseFromFileEn.ID">
+            <summary>
+            Column ID
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.ParseFromFileEn.Format">
+            <summary>
+            Column Format
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.ParseFromFileEn.Table">
+            <summary>
+            Column table
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.ParseFromFileEn.Column">
+            <summary>
+            Column col
+            </summary>
+        </member>
+        <member name="T:Trans.Utility.Utils.LogModes">
+            <summary>
+            LogModes:Info,Warn,Error
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.LogModes.Info">
+            <summary>
+            Action to be performed(Log information,warning and error)
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.LogModes.Warn">
+            <summary>
+            Action to be performed(Log warning and error)
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.LogModes.Error">
+            <summary>
+            Action to be performed(Log Error)
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.LogModes.OFF">
+            <summary>
+            Nothing will be logged
+            </summary>
+        </member>
+        <member name="T:Trans.Utility.Utils.NumberFormat">
+            <summary>
+            Currency and number format types
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.NumberFormat.C">
+            <summary>
+            Currency format with default two precision ex: 24523.2345=$24,523.23
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.NumberFormat.C0">
+            <summary>
+            Currency format with no precision ex:24523.2345=$24,523
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.NumberFormat.N">
+            <summary>
+            Number format with two precision ex:24523.2345=24,523.23
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.NumberFormat.N0">
+            <summary>
+            Number format with no precision ex:24523.2345=24,523
+            </summary>
+        </member>
+        <member name="T:Trans.Utility.Utils.DateFormat">
+            <summary>
+            DateTime format types
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateFormat.d">
+            <summary>
+             Convert datetime into shortdate string ( M/d/yyyy )
+             Ex:1/3/2002
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateFormat.D">
+            <summary>
+            Convert datetime into longdate string (dddd, MMMM dd, yyyy)
+            Ex:Thursday, January 03, 2002  
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateFormat.f">
+            <summary>
+            Convert datetime into longdate time string (dddd, MMMM dd, yyyy h:mm tt)
+            Ex:Thursday, January 03, 2002 12:00 AM
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateFormat.F">
+            <summary>
+            Convert datetime into longdate longtime string (dddd, MMMM dd, yyyy h:mm:ss tt)
+            Ex:Thursday, January 03, 2002 12:00:00 AM 
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateFormat.g">
+            <summary>
+            Convert datetime into smalldate time string (M/d/yyyy h:mm tt)
+            Ex:1/3/2002 12:00 AM
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateFormat.G">
+            <summary>
+            Convert datetime into smalldate longtime string (M/d/yyyy h:mm:ss tt)
+            Ex:1/3/2002 12:00:00 AM
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateFormat.m">
+            <summary>
+             MonthDayPattern ( MMMM dd)
+             Ex:January 03    
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateFormat.M">
+            <summary>
+            MonthDayPattern (MMMM dd)
+            Ex:January 03     
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateFormat.r">
+            <summary>
+            RFC1123Pattern (ddd, dd MMM yyyy HH':'mm':'ss 'GMT')
+            Ex:Thu, 03 Jan 2002 00:00:00 GMT     
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateFormat.R">
+            <summary>
+            RFC1123Pattern (ddd, dd MMM yyyy HH':'mm':'ss 'GMT')
+            Ex:Thu, 03 Jan 2002 00:00:00 GMT    
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateFormat.s">
+            <summary>
+            SortableDateTimePattern (yyyy'-'MM'-'dd'T'HH':'mm':'ss)  
+            Ex:2002-01-03T00:00:00   
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateFormat.t">
+            <summary>
+            ShortTimePattern ( h:mm tt)
+            Ex:12:00 AM   
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateFormat.T">
+            <summary>
+            LongTimePattern (h:mm:ss tt) 
+            Ex:12:00:00 AM   
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateFormat.u">
+            <summary>
+            UniversalSortableDateTimePattern (yyyy'-'MM'-'dd HH':'mm':'ss'Z')  
+            Ex:2002-01-03 00:00:00Z   
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateFormat.U">
+            <summary>
+            Ex:Thursday, January 03, 2002 8:00:00 AM
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateFormat.y">
+            <summary>
+            YearMonthPattern (MMMM, yyyy) 
+            Ex:January, 2002
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateFormat.Y">
+            <summary>
+            YearMonthPattern (MMMM, yyyy)
+            Ex:January, 2002  
+            </summary>
+        </member>
+        <member name="T:Trans.Utility.Utils.HashType">
+            <summary>
+            Convert hash key or values into array
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.HashType.Key">
+            <summary>
+            Key
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.HashType.Value">
+            <summary>
+            Value
+            </summary>
+        </member>
+        <member name="T:Trans.Utility.Utils.SetIndexType">
+            <summary>
+            Set control item selected by :Text,value or index
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.SetIndexType.Index">
+            <summary>
+            Index
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.SetIndexType.Value">
+            <summary>
+            Value
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.SetIndexType.Text">
+            <summary>
+            Text
+            </summary>
+        </member>
+        <member name="T:Trans.Utility.Utils.DateTimeInterval">
+            <summary>
+            DateTimeInterval enumeration defines constants to format date time in interval
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateTimeInterval.Day">
+            <summary>
+            Day interval
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateTimeInterval.Year">
+            <summary>
+            Year interval
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateTimeInterval.Minute">
+            <summary>
+            Minute interval
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateTimeInterval.Hour">
+            <summary>
+            Hour interval
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateTimeInterval.Second">
+            <summary>
+            Second interval
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateTimeInterval.Month">
+            <summary>
+            Month interval
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.DateTimeInterval.WeekDay">
+            <summary>
+            Weekday interval
+            </summary>
+        </member>
+        <member name="T:Trans.Utility.Utils.WhereType">
+            <summary>
+            Describes what type of comparison that is done by Where in Queries
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.WhereType.Equals">
+            <summary>
+            Substitutes the comparer with " = "
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.Utils.WhereType.Like">
+            <summary>
+            Performs a LIKE compare
+            </summary>
+        </member>
+        <member name="T:Trans.Utility.constString">
+            <summary>
+            Use this data type to bypass any manipulation by BuildQuery
+            </summary>
+        </member>
+        <member name="F:Trans.Utility.constString.val">
+            <summary>
+            The actual value of the variable
+            </summary>
+        </member>
+    </members>
+</doc>

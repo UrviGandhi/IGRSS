@@ -1,0 +1,1120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BA054258-5CDC-4529-B85E-D5D9355ED34E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IGRSS</RootNamespace>
+    <AssemblyName>BusinessLayer</AssemblyName>
+    <ProjectTypeGuids>{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SignAssembly>false</SignAssembly>
+    <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Daily Build|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Daily Build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'QA|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\QA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>C:\Program Files\Microsoft Visual Studio 8\Team Tools\Static Analysis Tools\FxCop\\rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Workflow.Activities, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Workflow.ComponentModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Workflow.Runtime, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLogicLayer\Administration\ManageOfficeProcess.cs" />
+    <Compile Include="BusinessLogicLayer\Administration\ManageOfficeTypes.cs" />
+    <Compile Include="BusinessLogicLayer\Administration\ManageUserRoles.cs" />
+    <Compile Include="BusinessLogicLayer\Administration\OfficeCommunicationLKP.cs" />
+    <Compile Include="BusinessLogicLayer\Administration\OfficeManagementMaster.cs" />
+    <Compile Include="BusinessLogicLayer\Administration\VillageMasterAdmin.cs" />
+    <Compile Include="BusinessLogicLayer\Citizen.cs" />
+    <Compile Include="BusinessLogicLayer\GovtDoc.cs" />
+    <Compile Include="BusinessLogicLayer\Complain.cs" />
+    <Compile Include="BusinessLogicLayer\Copy of TestTable.cs" />
+    <Compile Include="BusinessLogicLayer\DocumentUpload.cs" />
+    <Compile Include="BusinessLogicLayer\Employee.cs" />
+    <Compile Include="BusinessLogicLayer\Faq.cs" />
+    <Compile Include="BusinessLogicLayer\FileManagement.cs" />
+    <Compile Include="BusinessLogicLayer\InwardOutward.cs" />
+    <Compile Include="BusinessLogicLayer\Jantri.cs" />
+    <Compile Include="BusinessLogicLayer\Leave.cs" />
+    <Compile Include="BusinessLogicLayer\DetailsList.cs" />
+    <Compile Include="BusinessLogicLayer\Administration\ManageOffices.cs" />
+    <Compile Include="BusinessLogicLayer\OfficeMaster.cs" />
+    <Compile Include="BusinessLogicLayer\Purchase.cs" />
+    <Compile Include="BusinessLogicLayer\Registration.cs" />
+    <Compile Include="BusinessLogicLayer\Service.cs" />
+    <Compile Include="BusinessLogicLayer\Telephone.cs" />
+    <Compile Include="BusinessLogicLayer\Test.cs" />
+    <Compile Include="BusinessLogicLayer\ValuationApplication.cs" />
+    <Compile Include="BusinessLogicLayer\VendorMaster.cs" />
+    <Compile Include="BusinessLogicLayer\VendorOffence.cs" />
+    <Compile Include="BusinessObjects\IgrssAlert.cs" />
+    <Compile Include="BusinessObjects\IgrssCommon.cs" />
+    <Compile Include="BusinessObjects\Remarks.cs" />
+    <Compile Include="BusinessObjects\WorkflowServices\ContextService.cs" />
+    <Compile Include="BusinessObjects\WorkflowServices\IContextService.cs" />
+    <Compile Include="BusinessObjects\WorkflowServices\WorkflowMediator.cs" />
+    <Compile Include="BusinessObjects\WorkflowServices\WorkflowResults.cs" />
+    <Compile Include="DataAccessLayer\Adjudication.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Adjudication.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Citizen.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Citizen.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Config.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Config.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Document.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Document.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\DocumentUpload.cs">
+      <DependentUpon>DocumentUpload.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\DocumentUpload.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentUpload.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Employee.cs">
+      <DependentUpon>Employee.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\Employee.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Employee.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Faq.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Faq.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\FileAttachments.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FileAttachments.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\FileManagement.cs">
+      <DependentUpon>FileManagement.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\FileManagement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FileManagement.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\GovtDoc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GovtDoc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\InspectionDetails.cs">
+      <DependentUpon>InspectionDetails.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\InspectionDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InspectionDetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Inward.cs">
+      <DependentUpon>Inward.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\Inward.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Inward.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\InwardOutward.cs">
+      <DependentUpon>InwardOutward.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\InwardOutward.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InwardOutward.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Jantri.cs">
+      <DependentUpon>Jantri.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\Jantri.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Jantri.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Leave.cs">
+      <DependentUpon>Leave.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\Leave.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Leave.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\LicenseReNewal.cs">
+      <DependentUpon>LicenseReNewal.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\LicenseReNewal.Designer.cs">
+      <DependentUpon>LicenseReNewal.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DataAccessLayer\Outward.cs">
+      <DependentUpon>Outward.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\Outward.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Outward.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Purchase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Purchase.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Registration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Registration.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\RegistrationDocReq.cs">
+      <DependentUpon>RegistrationDocReq.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\RegistrationDocReq.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistrationDocReq.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Service.cs">
+      <DependentUpon>Service.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\Service.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Service.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\SRORates.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SRORates.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Telephone.cs">
+      <DependentUpon>Telephone.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\Telephone.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Telephone.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\TestTable.cs">
+      <DependentUpon>TestTable.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\TestTable.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestTable.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\VendorMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendorMaster.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\VendorOffence.cs">
+      <DependentUpon>VendorOffence.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\VendorOffence.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendorOffence.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\VillageMasterAdministrator.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VillageMasterAdministrator.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Worksheetregister.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Worksheetregister.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Exceptions\DataLayerException.cs" />
+    <Compile Include="Exceptions\OperationFailedException.cs" />
+    <Compile Include="BusinessObjects\FileManager.cs" />
+    <Compile Include="Management\SampleEvent.cs" />
+    <Compile Include="Management\SampleEventProvider.cs" />
+    <Compile Include="Properties\Settings.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Validation\Validation.cs" />
+    <Compile Include="Properties\WorkflowLinks.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>WorkflowLinks.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SdcService\Reference.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Workflows\Adjudication\AdjudicationProcess.xoml.cs">
+      <DependentUpon>AdjudicationProcess.xoml</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workflows\Adjudication\EventArgs\AdjudicationApplicationSavedEventArgs.cs" />
+    <Compile Include="Workflows\Adjudication\EventArgs\AdjudicationApplicationUpdatedEventArgs.cs" />
+    <Compile Include="Workflows\Adjudication\EventArgs\AdjudicationIssuedEventArgs.cs" />
+    <Compile Include="Workflows\Adjudication\Services\IAdjudicationService.cs" />
+    <Compile Include="Workflows\Adjudication\Services\AdjudicationService.cs" />
+    <Compile Include="Workflows\Appeal\AppealProcess.xoml.cs">
+      <DependentUpon>AppealProcess.xoml</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workflows\Common\Feedback\FeedbackData.cs" />
+    <Compile Include="Workflows\Common\Feedback\FeedbackEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Workflows\Common\Feedback\IFeedbackService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Workflows\Complain\ComplainProcess.xoml.cs">
+      <DependentUpon>ComplainProcess.xoml</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workflows\Complain\EventArgs\AddInvedtigationDetailsEventArgs.cs" />
+    <Compile Include="Workflows\Complain\EventArgs\ComplainAcceptedEventArgs.cs" />
+    <Compile Include="Workflows\Complain\EventArgs\ComplainFiledEventArgs.cs" />
+    <Compile Include="Workflows\Complain\EventArgs\FileClosedEventArgs.cs" />
+    <Compile Include="Workflows\Complain\EventArgs\InvestigationDoneEventArgs.cs" />
+    <Compile Include="Workflows\Complain\EventArgs\InvestigationRequiredEventArgs.cs" />
+    <Compile Include="Workflows\Complain\EventArgs\NoInvestigationRequiredEventArgs.cs" />
+    <Compile Include="Workflows\Complain\EventArgs\ReAssignInvestigationEventArgs.cs" />
+    <Compile Include="Workflows\Complain\Services\ComplainService.cs" />
+    <Compile Include="Workflows\Complain\Services\IComplainService.cs" />
+    <!--<Compile Include="Workflows\License\LicenseIssueProcess.xoml.cs">
+      <DependentUpon>LicenseIssueProcess.xoml</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>-->
+    <Compile Include="BusinessObjects\FormViewParameter.cs" />
+    <Compile Include="DataAccessLayer\WorkflowSupprot.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkflowSupprot.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessLogicLayer\AdjudicationRequest.cs" />
+    <Compile Include="BusinessLogicLayer\AppealApplication.cs" />
+    <Compile Include="BusinessLogicLayer\AppealType.cs" />
+    <Compile Include="BusinessLogicLayer\Inspection.cs" />
+    <Compile Include="BusinessLogicLayer\LicenseApplication.cs" />
+    <Compile Include="BusinessLogicLayer\LicenseMasterBLL.cs" />
+    <Compile Include="BusinessLogicLayer\LicenseRenewal.cs" />
+    <Compile Include="DataAccessLayer\Adjudication.cs">
+      <DependentUpon>Adjudication.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\Appeal.cs">
+      <DependentUpon>Appeal.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\Appeal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Appeal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\AppealTypeMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppealTypeMaster.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Complain.cs">
+      <DependentUpon>Complain.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\Complain.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Complain.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Inspection.cs">
+      <DependentUpon>Inspection.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\Inspection.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Inspection.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\LicenseApplication.cs">
+      <DependentUpon>LicenseApplication.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BusinessLogicLayer\RefundActMaster.cs" />
+    <Compile Include="BusinessLogicLayer\RefundApplication.cs" />
+    <Compile Include="BusinessLogicLayer\RefundTypeMaster.cs" />
+    <Compile Include="BusinessLogicLayer\RevenueStampMaster.cs" />
+    <Compile Include="BusinessObjects\ConstructionTypes.cs" />
+    <Compile Include="BusinessObjects\ValuationReport.cs" />
+    <Compile Include="DataAccessLayer\ActMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActMaster.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\LicenseApplication.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LicenseApplication.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\LicenseMaster.cs">
+      <DependentUpon>LicenseMaster.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\LicenseMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LicenseMaster.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\OfficesMaster.cs">
+      <DependentUpon>OfficesMaster.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\OfficesMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OfficesMaster.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Refund.cs">
+      <DependentUpon>Refund.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\Refund.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Refund.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\RefundTypeMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RefundTypeMaster.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\RevenueStampMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RevenueStampMaster.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Test.cs">
+      <DependentUpon>Test.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\Test.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Test.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\IgrssAdapters.cs" />
+    <Compile Include="BusinessObjects\OfficeType.cs" />
+    <Compile Include="Exceptions\BusinessException.cs" />
+    <Compile Include="BusinessObjects\Office.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\SecurityExceptionMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>SecurityExceptionMessages.settings</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessLogicLayer\WorkflowSupport.cs" />
+    <Compile Include="Workflows\Appeal\EventArgs\AppealApplicationSavedEventArgs.cs" />
+    <Compile Include="Workflows\Appeal\EventArgs\AppealApplicationUpdatedEventArgs.cs" />
+    <Compile Include="Workflows\Appeal\EventArgs\AppealIssuedEventArgs.cs" />
+    <Compile Include="Workflows\Appeal\Services\IAppealService.cs" />
+    <Compile Include="Workflows\Appeal\Services\AppealService.cs" />
+    <Compile Include="Workflows\License\EventArgs\ApplicationSavedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Workflows\License\EventArgs\ApplicationUpdatedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Workflows\License\EventArgs\LicenseIssuedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Workflows\License\Services\ILicenseApplicationService.cs" />
+    <Compile Include="Workflows\License\LicenseIssueProcess.xoml.cs">
+      <DependentUpon>LicenseIssueProcess.xoml</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workflows\License\Services\LicenseApplicationService.cs" />
+    <Compile Include="Workflows\Refund\EventArgs\RefundApplicationSavedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Workflows\Refund\EventArgs\RefundApplicationUpdatedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Workflows\Refund\EventArgs\RefundIssuedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Workflows\Refund\RefundProcess.xoml.cs">
+      <DependentUpon>RefundProcess.xoml</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workflows\Refund\Services\IRefundService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Workflows\Refund\Services\RefundService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="BusinessObjects\OfficeObject.cd" />
+    <None Include="DataAccessLayer\Adjudication.xsc">
+      <DependentUpon>Adjudication.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Adjudication.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Adjudication.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Adjudication.xss">
+      <DependentUpon>Adjudication.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Appeal.xsc">
+      <DependentUpon>Appeal.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Appeal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Appeal.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Appeal.xss">
+      <DependentUpon>Appeal.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\AppealTypeMaster.xsc">
+      <DependentUpon>AppealTypeMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\AppealTypeMaster.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AppealTypeMaster.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\AppealTypeMaster.xss">
+      <DependentUpon>AppealTypeMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Complain.xsc">
+      <DependentUpon>Complain.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Complain.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Complain.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Complain.xss">
+      <DependentUpon>Complain.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Document.xsc">
+      <DependentUpon>Document.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Document.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Document.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Document.xss">
+      <DependentUpon>Document.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Employee.xsc">
+      <DependentUpon>Employee.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Employee.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Employee.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Employee.xss">
+      <DependentUpon>Employee.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\GovtDoc.xsc">
+      <DependentUpon>GovtDoc.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\GovtDoc.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GovtDoc.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\GovtDoc.xss">
+      <DependentUpon>GovtDoc.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Inspection.xsc">
+      <DependentUpon>Inspection.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Inspection.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Inspection.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Inspection.xss">
+      <DependentUpon>Inspection.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\InspectionDetails.xsc">
+      <DependentUpon>InspectionDetails.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\InspectionDetails.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InspectionDetails.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\InspectionDetails.xss">
+      <DependentUpon>InspectionDetails.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Inward.xsc">
+      <DependentUpon>Inward.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Inward.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Inward.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Inward.xss">
+      <DependentUpon>Inward.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\InwardOutward.xsc">
+      <DependentUpon>InwardOutward.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\InwardOutward.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InwardOutward.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\InwardOutward.xss">
+      <DependentUpon>InwardOutward.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Jantri.xsc">
+      <DependentUpon>Jantri.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Jantri.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Jantri.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Jantri.xss">
+      <DependentUpon>Jantri.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Leave.xsc">
+      <DependentUpon>Leave.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Leave.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Leave.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Leave.xss">
+      <DependentUpon>Leave.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\ActMaster.xsc">
+      <DependentUpon>ActMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\ActMaster.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ActMaster.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\ActMaster.xss">
+      <DependentUpon>ActMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\LicenseApplication.xsc">
+      <DependentUpon>LicenseApplication.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\LicenseApplication.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LicenseApplication.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\LicenseApplication.xss">
+      <DependentUpon>LicenseApplication.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\LicenseMaster.xsc">
+      <DependentUpon>LicenseMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\LicenseMaster.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LicenseMaster.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\LicenseMaster.xss">
+      <DependentUpon>LicenseMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\LicenseReNewal.xsc">
+      <DependentUpon>LicenseReNewal.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\LicenseReNewal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LicenseReNewal.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\LicenseReNewal.xss">
+      <DependentUpon>LicenseReNewal.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\OfficesMaster.xsc">
+      <DependentUpon>OfficesMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\OfficesMaster.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>OfficesMaster.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\OfficesMaster.xss">
+      <DependentUpon>OfficesMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Outward.xsc">
+      <DependentUpon>Outward.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Outward.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Outward.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Outward.xss">
+      <DependentUpon>Outward.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Purchase.xsc">
+      <DependentUpon>Purchase.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Purchase.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Purchase.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Purchase.xss">
+      <DependentUpon>Purchase.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Refund.xsc">
+      <DependentUpon>Refund.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Refund.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Refund.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Refund.xss">
+      <DependentUpon>Refund.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\RefundTypeMaster.xsc">
+      <DependentUpon>RefundTypeMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\RefundTypeMaster.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RefundTypeMaster.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\RefundTypeMaster.xss">
+      <DependentUpon>RefundTypeMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\RevenueStampMaster.xsc">
+      <DependentUpon>RevenueStampMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\RevenueStampMaster.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RevenueStampMaster.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\RevenueStampMaster.xss">
+      <DependentUpon>RevenueStampMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Service.xsc">
+      <DependentUpon>Service.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Service.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Service.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Service.xss">
+      <DependentUpon>Service.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Telephone.xsc">
+      <DependentUpon>Telephone.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Telephone.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Telephone.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Telephone.xss">
+      <DependentUpon>Telephone.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Test.xsc">
+      <DependentUpon>Test.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Test.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Test.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\Test.xss">
+      <DependentUpon>Test.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\TestTable.xsc">
+      <DependentUpon>TestTable.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\TestTable.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TestTable.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\TestTable.xss">
+      <DependentUpon>TestTable.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\VendorMaster.xsc">
+      <DependentUpon>VendorMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\VendorMaster.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VendorMaster.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\VendorMaster.xss">
+      <DependentUpon>VendorMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\WorkflowSupprot.xsc">
+      <DependentUpon>WorkflowSupprot.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\WorkflowSupprot.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WorkflowSupprot.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\WorkflowSupprot.xss">
+      <DependentUpon>WorkflowSupprot.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Worksheetregister.xsc">
+      <DependentUpon>Worksheetregister.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Worksheetregister.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Worksheetregister.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Worksheetregister.xss">
+      <DependentUpon>Worksheetregister.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\SecurityExceptionMessages.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>SecurityExceptionMessages.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BusinessObjects\FileManager.cd" />
+    <None Include="DataAccessLayer\Citizen.xsc">
+      <DependentUpon>Citizen.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Citizen.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Citizen.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Citizen.xss">
+      <DependentUpon>Citizen.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Config.xsc">
+      <DependentUpon>Config.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Config.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Config.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Config.xss">
+      <DependentUpon>Config.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\DocumentUpload.xsc">
+      <DependentUpon>DocumentUpload.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\DocumentUpload.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DocumentUpload.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\DocumentUpload.xss">
+      <DependentUpon>DocumentUpload.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Faq.xsc">
+      <DependentUpon>Faq.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Faq.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Faq.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Faq.xss">
+      <DependentUpon>Faq.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\FileAttachments.xsc">
+      <DependentUpon>FileAttachments.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\FileAttachments.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FileAttachments.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\FileAttachments.xss">
+      <DependentUpon>FileAttachments.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\FileManagement.xsc">
+      <DependentUpon>FileManagement.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\FileManagement.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FileManagement.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\FileManagement.xss">
+      <DependentUpon>FileManagement.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Refund.xsx">
+      <DependentUpon>Refund.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Registration.xsc">
+      <DependentUpon>Registration.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Registration.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Registration.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Registration.xss">
+      <DependentUpon>Registration.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\RegistrationDocReq.xsc">
+      <DependentUpon>RegistrationDocReq.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\RegistrationDocReq.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RegistrationDocReq.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\RegistrationDocReq.xss">
+      <DependentUpon>RegistrationDocReq.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\SRORates.xsc">
+      <DependentUpon>SRORates.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\SRORates.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SRORates.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\SRORates.xss">
+      <DependentUpon>SRORates.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\VendorOffence.xsc">
+      <DependentUpon>VendorOffence.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\VendorOffence.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VendorOffence.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\VendorOffence.xss">
+      <DependentUpon>VendorOffence.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\VillageMasterAdministrator.xsc">
+      <DependentUpon>VillageMasterAdministrator.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\VillageMasterAdministrator.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VillageMasterAdministrator.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\VillageMasterAdministrator.xss">
+      <DependentUpon>VillageMasterAdministrator.xsd</DependentUpon>
+    </None>
+    <None Include="Web References\SdcService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SdcService\StampDutyCalculator.wsdl" />
+    <None Include="Web References\SdcService\StampDutyCalculator.disco" />
+    <None Include="Web References\SdcService\ValuationResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Properties\WorkflowLinks.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>WorkflowLinks.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Workflows\Adjudication\AdjudicationProcess.xoml">
+    </Content>
+    <Content Include="Workflows\Complain\ComplainProcess.xoml">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Workflows\Appeal\AppealProcess.xoml">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Workflows\License\LicenseIssueProcess.xoml">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Workflows\Refund\RefundProcess.xoml">
+      <SubType>Component</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Workflows\Adjudication\AdjudicationProcess.layout">
+      <DependentUpon>AdjudicationProcess.xoml</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workflows\Appeal\AppealProcess.layout">
+      <DependentUpon>AppealProcess.xoml</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workflows\Complain\ComplainProcess.layout">
+      <DependentUpon>ComplainProcess.xoml</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workflows\Complain\ComplainProcess.rules">
+      <DependentUpon>ComplainProcess.xoml</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workflows\License\LicenseIssueProcess.layout" />
+    <EmbeddedResource Include="Workflows\Refund\RefundProcess.layout">
+      <DependentUpon>RefundProcess.xoml</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:50970/IgrssWebservices/StampDutyCalculator.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SdcService\</RelPath>
+      <UpdateFromURL>http://localhost:50970/IgrssWebservices/StampDutyCalculator.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BusinessLayer_SdcService_StampDutyCalculator</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildToolsPath)\Workflow.Targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.         Other similar extension points exist, see Microsoft.Common.targets.   <Target Name="BeforeBuild"></Target>
+<Target Name="AfterBuild"></Target>-->
+</Project>

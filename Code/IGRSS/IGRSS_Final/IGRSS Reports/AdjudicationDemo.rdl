@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="IGRSS_REPORT">
+      <DataSourceReference>IGRSS_REPORT</DataSourceReference>
+      <rd:DataSourceID>12c799d7-7d23-40c2-806e-7d775ea390a0</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <ReportParameters>
+    <ReportParameter Name="FileSlNo">
+      <DataType>String</DataType>
+      <Prompt>FileSlNo</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox6">
+        <Top>0.875in</Top>
+        <ZIndex>10</ZIndex>
+        <Width>1in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Name</Value>
+      </Textbox>
+      <Textbox Name="textbox5">
+        <Left>0.125in</Left>
+        <Top>1.25in</Top>
+        <ZIndex>9</ZIndex>
+        <Width>1in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Name</Value>
+      </Textbox>
+      <Textbox Name="textbox4">
+        <Left>0.125in</Left>
+        <Top>1.625in</Top>
+        <ZIndex>8</ZIndex>
+        <Width>1in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Name</Value>
+      </Textbox>
+      <Textbox Name="textbox3">
+        <Left>0.125in</Left>
+        <Top>2in</Top>
+        <ZIndex>7</ZIndex>
+        <Width>1in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Name</Value>
+      </Textbox>
+      <Textbox Name="CertificateNumber">
+        <Left>1.5in</Left>
+        <Top>2in</Top>
+        <rd:DefaultName>CertificateNumber</rd:DefaultName>
+        <ZIndex>6</ZIndex>
+        <Width>1in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!CertificateNumber.Value)</Value>
+      </Textbox>
+      <Textbox Name="AdjudicationTotalFees">
+        <Left>1.5in</Left>
+        <Top>1.625in</Top>
+        <rd:DefaultName>AdjudicationTotalFees</rd:DefaultName>
+        <ZIndex>5</ZIndex>
+        <Width>1in</Width>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Sum(Fields!AdjudicationTotalFees.Value)</Value>
+      </Textbox>
+      <Textbox Name="ApplicationDate">
+        <Left>1.375in</Left>
+        <Top>1.25in</Top>
+        <rd:DefaultName>ApplicationDate</rd:DefaultName>
+        <ZIndex>4</ZIndex>
+        <Width>1in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!ApplicationDate.Value)</Value>
+      </Textbox>
+      <Textbox Name="FileYear">
+        <Left>1.25in</Left>
+        <Top>0.875in</Top>
+        <rd:DefaultName>FileYear</rd:DefaultName>
+        <ZIndex>3</ZIndex>
+        <Width>1in</Width>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Sum(Fields!FileYear.Value)</Value>
+      </Textbox>
+      <Textbox Name="FilePrefix">
+        <Left>1.25in</Left>
+        <Top>0.5in</Top>
+        <rd:DefaultName>FilePrefix</rd:DefaultName>
+        <ZIndex>2</ZIndex>
+        <Width>1in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!FilePrefix.Value)</Value>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <Left>0.125in</Left>
+        <Top>0.5in</Top>
+        <rd:DefaultName>textbox2</rd:DefaultName>
+        <ZIndex>1</ZIndex>
+        <Width>1in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Name</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Width>4.25in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontFamily>Tahoma</FontFamily>
+          <FontWeight>700</FontWeight>
+          <FontSize>20pt</FontSize>
+          <Color>SteelBlue</Color>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.36in</Height>
+        <Value>Report3</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>4.625in</Height>
+  </Body>
+  <rd:ReportID>0ee441df-26ee-4b9b-8833-f93a15a35786</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="IGRSS_REPORT">
+      <Query>
+        <CommandText>SELECT     AdjudicationId, FilePrefix, FileSlNo, FileYear, ValuationFormId, RegistrationId, OfficeId, ApplicationDate, ReceiptNumber, AdjudicationTotalFees, 
+                      PhysicalVerification, CertificateNumber, CertificateIssuedOn, CertificateDescription, Status, SchemeType
+FROM         AdjudicationRequest
+WHERE     (FileSlNo = @FileSlNo)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@FileSlNo">
+            <Value>=Parameters!FileSlNo.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>IGRSS_REPORT</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="AdjudicationId">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>AdjudicationId</DataField>
+        </Field>
+        <Field Name="FilePrefix">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>FilePrefix</DataField>
+        </Field>
+        <Field Name="FileSlNo">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>FileSlNo</DataField>
+        </Field>
+        <Field Name="FileYear">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>FileYear</DataField>
+        </Field>
+        <Field Name="ValuationFormId">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>ValuationFormId</DataField>
+        </Field>
+        <Field Name="RegistrationId">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>RegistrationId</DataField>
+        </Field>
+        <Field Name="OfficeId">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>OfficeId</DataField>
+        </Field>
+        <Field Name="ApplicationDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>ApplicationDate</DataField>
+        </Field>
+        <Field Name="ReceiptNumber">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ReceiptNumber</DataField>
+        </Field>
+        <Field Name="AdjudicationTotalFees">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>AdjudicationTotalFees</DataField>
+        </Field>
+        <Field Name="PhysicalVerification">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>PhysicalVerification</DataField>
+        </Field>
+        <Field Name="CertificateNumber">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CertificateNumber</DataField>
+        </Field>
+        <Field Name="CertificateIssuedOn">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>CertificateIssuedOn</DataField>
+        </Field>
+        <Field Name="CertificateDescription">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CertificateDescription</DataField>
+        </Field>
+        <Field Name="Status">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Status</DataField>
+        </Field>
+        <Field Name="SchemeType">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SchemeType</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>6.375in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<PropertyType>
+	<items>
+		<item1 Key="Industrial"
+			  >
+			<Description>Industrial Type</Description>
+		</item1>
+		<item2 Key="Commercial"
+			  >
+			<Description>Commercial Type</Description>
+		</item2>
+		<item2 Key="Residencial"
+			  >
+			<Description>Residencial Type</Description>
+		</item2>
+	</items>
+</PropertyType>

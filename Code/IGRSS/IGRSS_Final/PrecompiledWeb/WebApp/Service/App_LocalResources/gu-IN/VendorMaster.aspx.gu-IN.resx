@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnTelephoneCancelInsResource1.Text" xml:space="preserve">
+    <value>રદ્દ કરવું</value>
+  </data>
+  <data name="btnTelephoneCancelInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnvendorInsertInsResource1.Text" xml:space="preserve">
+    <value>સંગ્રહ કરવો</value>
+  </data>
+  <data name="btnvendorInsertInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnvendorUpdateCancelUpdResource1.Text" xml:space="preserve">
+    <value>રદ્દ કરવું</value>
+  </data>
+  <data name="btnvendorUpdateCancelUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnvendorUpdatetUpdResource1.Text" xml:space="preserve">
+    <value>અદ્યતન રાખવું</value>
+  </data>
+  <data name="btnvendorUpdatetUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlvendorTypeInsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlvendorTypeUpdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvVendorMasterResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvVendorMasterResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvVendorMasterResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvVendorMasterResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fvVendorMasterResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCompanyIns.Text" xml:space="preserve">
+    <value>કંપનીનું નામ</value>
+  </data>
+  <data name="lblCompanyIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCompanyItm.Text" xml:space="preserve">
+    <value>કંપનીનું નામ</value>
+  </data>
+  <data name="lblCompanyItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCompanyUpd.Text" xml:space="preserve">
+    <value>કંપનીનું નામ</value>
+  </data>
+  <data name="lblCompanyUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblContactPersonIns.Text" xml:space="preserve">
+    <value>ફરિયાદનો નંબર</value>
+  </data>
+  <data name="lblContactPersonIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblContactPersonItm.Text" xml:space="preserve">
+    <value>ફરિયાદનો નંબર</value>
+  </data>
+  <data name="lblContactPersonItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblContactPersonUpd.Text" xml:space="preserve">
+    <value>ફરિયાદનો નંબર</value>
+  </data>
+  <data name="lblContactPersonUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPhoneIns.Text" xml:space="preserve">
+    <value>ફોન</value>
+  </data>
+  <data name="lblPhoneIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPhoneItm.Text" xml:space="preserve">
+    <value>ફોન</value>
+  </data>
+  <data name="lblPhoneItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPhoneUpd.Text" xml:space="preserve">
+    <value>ફોન</value>
+  </data>
+  <data name="lblPhoneUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVendorAddressIns.Text" xml:space="preserve">
+    <value>સરનામું</value>
+  </data>
+  <data name="lblVendorAddressIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVendorAddressItm.Text" xml:space="preserve">
+    <value>સરનામું</value>
+  </data>
+  <data name="lblVendorAddressItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVendorAddressUpd.Text" xml:space="preserve">
+    <value>સરનામું</value>
+  </data>
+  <data name="lblVendorAddressUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVendorDetailsHeaderIns.Text" xml:space="preserve">
+    <value>વેચનારની વિગતો</value>
+  </data>
+  <data name="lblVendorDetailsHeaderIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVendorDetailsHeaderItm.Text" xml:space="preserve">
+    <value>વેચનારની વિગતો</value>
+  </data>
+  <data name="lblVendorDetailsHeaderItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVendorDetailsHeaderUpd.Text" xml:space="preserve">
+    <value>વેચનારની વિગતો</value>
+  </data>
+  <data name="lblVendorDetailsHeaderUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVendorNameIns.Text" xml:space="preserve">
+    <value>નામ</value>
+  </data>
+  <data name="lblVendorNameIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVendorNameItm.Text" xml:space="preserve">
+    <value>નામ</value>
+  </data>
+  <data name="lblVendorNameItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVendorNameUpd.Text" xml:space="preserve">
+    <value>નામ</value>
+  </data>
+  <data name="lblVendorNameUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVendorTypeIns.Text" xml:space="preserve">
+    <value>વેચનારનો પ્રકાર</value>
+  </data>
+  <data name="lblVendorTypeIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVendorTypeItm.Text" xml:space="preserve">
+    <value>વેચનારનો પ્રકાર</value>
+  </data>
+  <data name="lblVendorTypeItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVendorTypeUpd.Text" xml:space="preserve">
+    <value>વેચનારનો પ્રકાર</value>
+  </data>
+  <data name="lblVendorTypeUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>વ્યવસ્થા એકમ</value>
+  </data>
+  <data name="RequiredFieldValidator1Resource1.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredFieldValidator1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource2.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource2.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredFieldValidator1Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource3.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource3.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredFieldValidator1Resource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RfvAddressResource1.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RfvAddressResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RfvAddressResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RvfNameResource1.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RvfNameResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RvfNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAddressIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtApplicationDateItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtApplicationDateUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCompanyIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCompanyItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCompanyUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtContactPersonIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtContactPersonItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtContactPersonUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPhoneIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPhoneItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPhoneUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtVendorNameIns.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtVendorNameItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtVendorNameUpd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtVendorTypeItm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="IGRSS.BusinessLogicLayer.OfficeManagement">
+    <Position X="4" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>BusinessLogicLayer\OfficeManagement.cs</FileName>
+      <HashCode>QAAgAADAAAAIAAAABAgDAAAAAAABAAEIAAAAAAAAAQA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+  </Class>
+  <Class Name="IGRSS.BusinessLogicLayer.RolesManagement" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLogicLayer\RolesManagement.cs</FileName>
+      <HashCode>QAAAQAAAAAQAAAAAABAAgAIAAAIAAAAAAAQAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IGRSS.BusinessObjects.IgrssAdapters" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessObjects\IgrssAdapters.cs</FileName>
+      <HashCode>AAAYAQQBAAAoBACAQACAAAAEEQAIQQAQARAAAAgABAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IGRSS.BusinessLogicLayer.UserManagement" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLogicLayer\UserManagement.cs</FileName>
+      <HashCode>gAAAAAAgAQAEAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IGRSS.Security.IgrssMembershipProvider" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Security\IgrssMembershipProvider.cs</FileName>
+      <HashCode>QQQAAAIAAwCEgQqMmYAEgAAQAyIAAJYCPKUQIIkAAAQ=</HashCode>
+    </TypeIdentifier>
+    <NestedTypes>
+      <Enum Name="IGRSS.Security.IgrssMembershipProvider.FailureType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Security\IgrssMembershipProvider.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+  </Class>
+</ClassDiagram>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ElectrificationType>
+	<item Key="Concealed"
+		  Value="2cd90b7c-de3e-488e-be52-cb0f7f335812">
+		<Description>Concealed Type</Description>
+	</item>
+	<item Key="Open"
+		  value="dbd44bd2-28b4-4cdf-83b6-e434c2912985">
+		<Description>Open Type</Description>
+	</item>
+
+
+</ElectrificationType>

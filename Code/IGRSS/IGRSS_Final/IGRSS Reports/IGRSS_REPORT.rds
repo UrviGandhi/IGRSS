@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>IGRSS_REPORT</Name>
+  <DataSourceID>26f89810-4bf9-4666-809d-65f6493e2b3c</DataSourceID>
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=BLRSERVER\SQL2005;Initial Catalog=IGRSS_QA</ConnectString>
+  </ConnectionProperties>
+</RptDataSource>

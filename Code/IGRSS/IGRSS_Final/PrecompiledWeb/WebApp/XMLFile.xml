@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<IgrssSite>
+  <Module Name="Admin"
+    Code="CAC">
+    <View Name="Create Users"
+			  Url="~/Central%20Administration%20Console/CreateUser.aspx"
+			  Mode="CreateUser" Visible="False" />
+    <View Name="Assign Permissions"
+			  Url="~/Central%20Administration%20Console/AssignUserPermissions.aspx"
+			  Mode="AssignUserPermissions" Visible="False"/>
+    <Module Name="Masters"
+			Code="Mas">
+      <View Name="Acts"
+          Url="~/Central%20Administration%20Console/Masters/ActMaster.aspx"
+          Mode="" Visible="True" />
+      <View Name="Departments"
+          Url="~/Central%20Administration%20Console/Masters/DepartmentMaster.aspx"
+          Mode="CreateUser" Visible="True" />
+      <View Name="Documents"
+          Url="~/Central%20Administration%20Console/Masters/DocumentMaster.aspx"
+          Mode="" Visible="True" />
+      <View Name="Fee Types"
+          Url="~/Central%20Administration%20Console/Masters/FeeMaster.aspx"
+          Mode="" Visible="True" />
+      <View Name="Inspection CheckList"
+          Url="~/Central%20Administration%20Console/Masters/InspectionCheckListMaster.aspx"
+          Mode="" Visible="True"/>
+      <View Name="Inspection Types"
+          Url="~/Central%20Administration%20Console/Masters/InspectionTypeMaster.aspx"
+          Mode="" Visible="True"/>
+      <View Name="Item Master"
+          Url="~/Central%20Administration%20Console/Masters/ItemMaster.aspx"
+          Mode="" Visible="True"/>
+      <View Name="Office Communications"
+          Url="~/Central%20Administration%20Console/Masters/OfficeCommunicationLKP.aspx"
+          Mode="" Visible="True"/>
+
+      <View Name="Office Process"
+          Url="~/Central%20Administration%20Console/ManageOfficeProcess.aspx"
+          Mode="" Visible="True"/>
+
+      <View Name="Designations"
+          Url="~/Central%20Administration%20Console/Masters/DesignationMaster.aspx"
+          Mode="" Visible="True"/>
+
+      <View Name="Revenue Stamps"
+          Url="~/Central%20Administration%20Console/Masters/RevenueStampMaster.aspx"
+          Mode="" Visible="True"/>
+
+      <View Name="User Roles"
+          Url="~/Central%20Administration%20Console/UserRoleManagement/UserInOfficeRoles.aspx"
+          Mode="" Visible="True"/>
+
+      <View Name="Postal Delivery Types"
+          Url="~/Central%20Administration%20Console/Masters/PostalDeliveryTypeLKP.aspx"
+          Mode=""
+          Visible="True"/>
+
+      <View Name="Qualification"
+          Url="~/Central%20Administration%20Console/Masters/QualificationMaster.aspx"
+          Mode="" Visible="True"/>
+
+      <View Name="Manage Offices"
+          Url="~/Central%20Administration%20Console/Offices/OfficeMaster.aspx"
+          Mode="" Visible="True"/>
+      <View Name="Employee"
+          Url="~/Employee/EmployeeMaster.aspx"
+          Mode="" Visible="True"/>
+      <View Name="Vendor Master"
+          Url="~/Central%20Administration%20Console/Masters/VendorMaster.aspx"
+          Mode="" Visible="True"/>
+      <View Name="UOM Master"
+          Url="~/Central%20Administration%20Console/Masters/UnitOfManagementMaster.aspx"
+          Mode="" Visible="True"/>
+    </Module>
+  </Module>
+  
+  <Module Name="Adjudication"
+			Code="ADJ">
+    <View Name="New"
+			  Url="~/Adjudication/AdjApplication.aspx?Mode=DataEntry"
+			  Mode="DataEntry" Visible="True"/>
+    <View Name="Verify"
+			  Url="~/Adjudication/AdjApplication.aspx?Mode=Verify"
+			  Mode="Verify" Visible="True"/>
+    <View Name="View"
+			  Url="~/Adjudication/AdjApplication.aspx?Mode=Readonly"
+			  Mode="Readonly" Visible="True"/>
+  </Module>
+  <Module Name="Valuation"
+			Code="VAL">
+    <View Name="Valuation Request"
+			  Url="~//Adjudication/StampDutyCalculation.aspx"
+			  Mode="DataEntry" Visible="True"/>
+    <View Name="PV Request"
+			  Url="~/Adjudication/AdjApplication.aspx?Mode=Verify"
+			  Mode="Verify" Visible="True"/>
+  </Module>
+  <Module Name="Appeal"
+			Code="APL">
+    <View Name="New"
+			  Url="~/Appeal/AppealApplication.aspx?Mode=DataEntry"
+			  Mode="DataEntry" Visible="True"/>
+    <View Name="Verify"
+		
+			  Url="~/Appeal/AppealApplication.aspx?Mode=Verify"
+			  Mode="Verify" Visible="True"/>
+    <View Name="Approve"
+			  Url="~/Appeal/AppealApplication.aspx?Mode=Approve"
+			  Mode="Approve" Visible="True"/>
+    <View Name="Hearing"
+			  Url="~/Appeal/AppealHearing.aspx?Mode=Hearing"
+			  Mode="Hearing" Visible="True"/>
+    <View Name="Dist / High Court Details"
+			  Url="~/Appeal/HighCourtAppeal.aspx?Mode=HighCourt"
+			  Mode="HighCourt" Visible="True"/>
+    <View Name="Dist / High Court Judgement"
+			  Url="~/Appeal/HighCourtJudgeMent.aspx?Mode=Judgement"
+			  Mode="Judgement" Visible="True"/>
+    <View Name="View"
+			  Url="~/Appeal/AppealApplication.aspx?Mode=ReadOnly"
+			  Mode="ReadOnly" Visible="True"/>
+  </Module>
+  <Module Name="Complaint"
+			Code="COM">
+    <View Name="New"
+			  Url="~/Complain/Complaint.aspx?Mode=DataEntry"
+			  Mode="DataEntry" Visible="True"/>
+    <View Name="Verify"
+			  Url="~/Complain/Complaint.aspx?Mode=Verify"
+			  Mode="Verify" Visible="True"/>
+    <View Name="Assign investigation Officer"
+			  Url="~/Complain/AssignInvestigationOfficer.aspx?Mode=AssignOfficer"
+			  Mode="AssignOfficer" Visible="True"/>
+    <View Name="InvestigationResult"
+			  Url="~/Complain/InvestigationResult.aspx?Mode=InvestigationResult"
+			  Mode="InvestigationResult" Visible="True"/>
+  </Module>
+  <Module Name="Inspection"
+			Code="IPS">
+    <View Name="Inspection Itenary New"
+			  Url="~/Inspection/InspectionIternary.aspx?Mode=InspectionItenaryDe"
+			  Mode="" Visible="True"/>
+    <View Name="Inspection Itenary View"
+			  Url="~/Inspection/InspectionIternary.aspx?Mode=InspectionItenary"
+			  Mode="" Visible="True"/>
+    <View Name="Inspection Yearly Schedule New"
+			  Url="~/Inspection/InspectionYearlySchedule.aspx?Mode=InspectionYearlyScheduleDe"
+			  Mode="" Visible="True"/>
+    <View Name="Inspection Yearly Schedule View"
+			  Url="~/Inspection/InspectionYearlySchedule.aspx?Mode=InspectionYearlySchedule"
+			  Mode="" Visible="True"/>
+	  <View Name="Inspection Details"
+				Url="~/Inspection/InspectionWizard.aspx"
+				Mode="" Visible="True"/>
+	  <View Name="Inspection Chechlist Details"
+				Url="~/Inspection/InspectionCheckList.aspx"
+				Mode="" Visible="True"/>
+  </Module>
+  <Module Name="License"
+			Code="LIC">
+    <View Name="New"
+			  Url="~/License/LicenseApplication.aspx?Mode=DataEntry"
+			  Mode="DataEntry" Visible="True"/>
+    <View Name="Verify"
+			  Url="~/License/LicenseApplication.aspx?Mode=Verify"
+			  Mode="Verify" Visible="True"/>
+    <View Name="Cancel"
+			  Url="~/License/LicenseCancelation.aspx"
+			  Mode="Cancel" Visible="True"/>
+    <View Name="Renew"
+			  Url="~/License/LicenseRenewal.aspx"
+			  Mode="Renew" Visible="True"/>
+    <View Name="Vendor Offence"
+			  Url="~/License/VendorOffence.aspx?Mode=Offence"
+			  Mode="Offence" Visible="True"/>
+    <View Name="High Court Appeal"
+			  Url="~/License/VendorHighCourt.aspx?Mode=HighCourt"
+			  Mode="High Court" Visible="True"/>
+    <View Name="View"
+			  Url="~/License/LicenseApplication.aspx?Mode=ReadOnly"
+			  Mode="ReadOnly" Visible="True"/>
+	  <View Name="Hearing"
+			 Url="~/License/Judgement.aspx"
+			 Mode="Judgement" Visible="True"/>
+    <!--<View Name="Sale Register" 
+          Url="~/License/StatementOfSale.aspx"
+          Mode="SalesInsert" Visible="True"/>-->
+    <Module Name="Franking Details" Code="FRD">
+      <View Name="Franking Details" 
+            Url="~/License/FrankingMachine.aspx?Mode=DataEntry"
+            Mode="MachineInsert" Visible="True"/>
+    </Module>
+
+  </Module>
+
+  <Module Name="Refund"
+			Code="REF">
+    <View Name="New"
+			  Url="~/Refund/RefundApplication.aspx?Mode=DataEntry"
+			  Mode="DataEntry" Visible="True"/>
+
+    <View Name="View"
+			  Url="~/Refund/RefundApplication.aspx?Mode=ReadOnly"
+			  Mode="ReadOnly" Visible="True"/>
+  </Module>
+  
+  <Module Name="Registers" Code="RGS">
+    <Module Name="Branch"
+			Code="Branch">
+      <View Name="New"
+          Url="~/Inward-Outward/BranchToBranchInward.aspx?Mode=DataEntry"
+          Mode="DataEntry" Visible="True"/>
+      <View Name="Verify"
+          Url="~/Inward-Outward/BranchToBranchInward.aspx?Mode=Verify"
+          Mode="Verify" Visible="True"/>
+    </Module>
+    <Module Name="Inward"
+			Code="Inward">
+      <View Name="New"
+          Url="~/Inward-Outward/InwardRegister.aspx?Mode=DataEntry"
+          Mode="DataEntry" Visible="True"/>
+      <View Name="Verify"
+          Url="~/Inward-Outward/InwardRegister.aspx?Mode=Verify"
+          Mode="Verify" Visible="True"/>
+      <View Name="View"
+          Url="~/Inward-Outward/InwardOutwardReport.aspx?Mode=ReadOnly"
+          Mode="ReadOnly" Visible="True"/>
+
+    </Module>
+    <Module Name="Outward"
+			Code="Outward">
+      <View Name="New"
+          Url="~/Inward-Outward/OutwardRegister.aspx?Mode=DataEntry"
+          Mode="DataEntry" Visible="True"/>
+      <View Name="Verify"
+          Url="~/Inward-Outward/OutwardRegister.aspx?Mode=Verify"
+          Mode="Verify" Visible="True"/>
+    </Module>
+    <Module Name="Purchase"
+			Code="PCE">
+      <View Name="New"
+          Url="~/Purchase/Purchase.aspx?Mode=DataEntry"
+          Mode="DataEntry" Visible="True"/>
+      <View Name="Verify"
+          Url="~/Purchase/Purchase.aspx?Mode=Verify"
+          Mode="Verify" Visible="True"/>
+    </Module>
+    <Module Name="Service"
+          Code="SER">
+      <View Name="New"
+          Url="~/Service/Service.aspx?Mode=DataEntry"
+          Mode="DataEntry" Visible="True"/>
+      <View Name="Verify"
+          Url="~/Service/Service.aspx?Mode=Verify"
+          Mode="Verify" Visible="True"/>
+      <View Name="View"
+          Url="~/Service/ServiceReport.aspx?Mode=ReadOnly"
+          Mode="ReadOnly" Visible="True"/>
+    </Module>
+
+    <Module Name="Telephone"
+			Code="TPH">
+      <View Name="New"
+          Url="~/Telephone/Telephone.aspx?Mode=DataEntry"
+          Mode="DataEntry" Visible="True"/>
+      <View Name="Verify"
+          Url="~/Telephone/Telephone.aspx?Mode=Verify"
+          Mode="Verify" Visible="True"/>
+      <View Name="View"
+          Url="~/Telephone/TelephoneReport.aspx?Mode=ReadOnly"
+          Mode="ReadOnly" Visible="True"/>
+    </Module>
+    <Module Name="License" Code="LIS">
+      <View Name="Sale Register" 
+          Url="~/License/StatementOfSale.aspx"
+          Mode="SalesInsert" Visible="True"/>
+    </Module>
+    
+    
+    
+    
+  </Module>
+
+  
+
+</IgrssSite>

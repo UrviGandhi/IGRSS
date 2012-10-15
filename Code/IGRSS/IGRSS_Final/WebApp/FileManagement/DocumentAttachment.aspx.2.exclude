@@ -1,0 +1,103 @@
+<%@ Page Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true"
+    CodeFile="DocumentAttachment.aspx.cs" Inherits="FileManagement_DocumentAttachment"
+    Title="Untitled Page" %>
+
+<%@ Register Src="../UserControls/DocumentUpload.ascx" TagName="DocumentUpload" TagPrefix="uc1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="Server">
+     <asp:ObjectDataSource ID="OdsOfficeMaster" runat="server" SelectMethod="GetOffices"
+        TypeName="IGRSS.BusinessLogicLayer.Administration.ManageOffices" OldValuesParameterFormatString="original_{0}" DataObjectTypeName="System.Guid" DeleteMethod="DeActivateOffice" InsertMethod="UpdateOfficeDetailsById">
+         <InsertParameters>
+             <asp:Parameter Name="OfficeId" Type="Object" />
+             <asp:Parameter Name="OfficeName" Type="String" />
+             <asp:Parameter Name="OfficeTypeId" Type="Object" />
+             <asp:Parameter Name="Description" Type="String" />
+         </InsertParameters>
+    </asp:ObjectDataSource>
+    <asp:MultiView ID="mvUpload" runat="server" ActiveViewIndex="2">
+        <asp:View ID="ViewSearch" runat="server">
+    <table style="width: 100%">
+        <tr>
+            <td style="width:20%; height: 26px;">
+                <asp:Label ID="lblFileNumber" runat="server" Text="File Number"></asp:Label>
+            </td>
+            <td class="textColumn" style="width:20%; height: 26px;">
+                <asp:TextBox ID="txtFilePrefix" runat="server" MaxLength="5" Text='<%# Bind("RefundPrefix") %>'
+                    Width="22%" meta:resourcekey="txtRefundPrefixInsResource1"></asp:TextBox>
+                / &nbsp;
+                <asp:TextBox ID="txtFileSlNo" runat="server" MaxLength="5" Text='<%# Bind("RefundSlNo") %>'
+                    Width="19%" meta:resourcekey="txtRefundSlNoInsResource1"></asp:TextBox>
+                / &nbsp;
+                <asp:TextBox ID="txtFileYear" runat="server" MaxLength="4" Text='<%# Bind("RefundYear") %>'
+                    Width="21%" meta:resourcekey="txtRefundYearInsResource1"></asp:TextBox>
+            </td>
+            <td style="width:10%; height: 26px;"></td>
+            <td style="width:20%; height: 26px;">
+                <asp:Label ID="lblOffice" runat="server" Text="Office"></asp:Label>
+            </td>
+            <td style="width:20%; height: 26px;">
+                <asp:DropDownList ID="ddlOffice" runat="server" DataSourceID="OdsOfficeMaster" DataTextField="OfficeName" DataValueField="OfficeId"></asp:DropDownList>
+            </td>
+            
+        </tr>
+        <tr>
+            <td style="height: 26px">
+            </td>
+            <td style="height: 26px">
+            </td>
+            <td style="height: 26px">
+            </td>
+            <td style="height: 26px">
+            </td>
+            <td style="height: 26px">
+                <asp:Button ID="btnSearch" runat="server" Text="View" OnClick="btnSearch_Click" />
+                <asp:Button ID="btnAddDocs" runat="server" OnClick="btnAddDocs_Click" Text="Add " /></td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                &nbsp;&nbsp;
+            </td>
+            <td>
+            </td>
+            
+        </tr>
+    </table>
+        </asp:View>
+        <asp:View ID="ViewResult" runat="server">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="odsDocuments" OnRowEditing="GridView1_RowEditing" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                <Columns>
+                    <asp:TemplateField HeaderText="FileID" SortExpression="FileID" Visible="False">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("FileID") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblFileId" runat="server" Text='<%# Bind("FileID") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="DocId" HeaderText="DocId" SortExpression="DocId" Visible="False" />
+                    <asp:BoundField DataField="UploadedBy" HeaderText="UploadedBy" SortExpression="UploadedBy"
+                        Visible="False" />
+                    <asp:BoundField DataField="DocName" HeaderText="Name" SortExpression="DocName" />
+                    <asp:BoundField DataField="UploadedAt" HeaderText="UploadedAt" SortExpression="UploadedAt" />
+                    <asp:CommandField ShowSelectButton="True" />
+                    <asp:CommandField ShowEditButton="True" />
+                </Columns>
+            </asp:GridView>
+            <asp:ObjectDataSource ID="odsDocuments" runat="server" InsertMethod="InsertNewFile" SelectMethod="GetAttachedDocuments"
+                TypeName="IGRSS.BusinessLogicLayer.FileManagement" OldValuesParameterFormatString="original_{0}">
+                <SelectParameters>
+                    <asp:SessionParameter Name="fileId" SessionField="fileId" Type="Object" />
+                </SelectParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="OfficeId" Type="Object" />
+                    <asp:Parameter Name="FileDepartment" Type="String" />
+                </InsertParameters>
+            </asp:ObjectDataSource>
+        </asp:View>
+        <asp:View ID="ViewUplodaDoc" runat="server">
+            <uc1:DocumentUpload ID="DocumentUpload1" runat="server" />
+        </asp:View>
+    </asp:MultiView>
+</asp:Content>

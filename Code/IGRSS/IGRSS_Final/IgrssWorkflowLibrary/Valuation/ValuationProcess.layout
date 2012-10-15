@@ -1,0 +1,64 @@
+﻿<StateMachineWorkflowDesigner xmlns:ns0="clr-namespace:System.Drawing;Assembly=System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Name="ValuationProcess" Location="30, 30" Size="690, 606" AutoSize="False" AutoSizeMargin="16, 24" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateMachineWorkflowDesigner.DesignerConnectors>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="ValuateProperty" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="setStateActivity2" SourceStateName="ValuationProcessInitialState" SourceConnectionEdge="Right" TargetActivity="ValuateProperty" SourceActivity="ValuationProcessInitialState" EventHandlerName="NoPhysicalVerificationRequired">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="390" Y="254" />
+				<ns0:Point X="434" Y="254" />
+				<ns0:Point X="434" Y="321" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="ValuationProcessInitialState" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setStateActivity1" SourceStateName="ValuationRequest" SourceConnectionEdge="Right" TargetActivity="ValuationProcessInitialState" SourceActivity="ValuationRequest" EventHandlerName="RequestValuation">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="192" Y="117" />
+				<ns0:Point X="290" Y="117" />
+				<ns0:Point X="290" Y="189" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="ValuationComplete" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setStateActivity3" SourceStateName="ValuateProperty" SourceConnectionEdge="Right" TargetActivity="ValuationComplete" SourceActivity="ValuateProperty" EventHandlerName="SaveValuationReport">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="505" Y="362" />
+				<ns0:Point X="552" Y="362" />
+				<ns0:Point X="552" Y="443" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+	</StateMachineWorkflowDesigner.DesignerConnectors>
+	<StateMachineWorkflowDesigner.Designers>
+		<StateDesigner Name="ValuationProcessInitialState" Location="187, 189" Size="207, 94" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 142" Name="PhysicalVerificationRequired" Location="195, 220">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handlePhysicalVerificationRequired" Location="205, 292" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="110, 222" Name="NoPhysicalVerificationRequired" Location="195, 244">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="HandleNoPhysicalVerificationRequired" Location="205, 316" />
+						<SetStateDesigner Size="90, 50" Name="setStateActivity2" Location="205, 386" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="ValuationRequest" Location="58, 76" Size="160, 80" AutoSize="False" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 292" Name="RequestValuation" Location="320, 148">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="HandleValuationRequest" Location="330, 220" />
+						<CodeDesigner Size="90, 40" Name="AlertValuation" Location="330, 290" />
+						<SetStateDesigner Size="90, 50" Name="setStateActivity1" Location="330, 360" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="ValuateProperty" Location="354, 321" Size="160, 80" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 222" Name="SaveValuationReport" Location="362, 352">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="HandleSaveCaluationReport" Location="372, 424" />
+						<SetStateDesigner Size="90, 50" Name="setStateActivity3" Location="372, 494" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="ValuationComplete" Location="472, 443" Size="160, 80" AutoSizeMargin="16, 24" />
+	</StateMachineWorkflowDesigner.Designers>
+</StateMachineWorkflowDesigner>

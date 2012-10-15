@@ -1,0 +1,72 @@
+﻿<StateMachineWorkflowActivity x:Class="IGRSS.Workflows.Appeal.AppealProcess" InitialStateName="InitilizeAppeal" x:Name="AppealProcess" DynamicUpdateCondition="{x:Null}" CompletedStateName="Completed" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateActivity x:Name="InitilizeAppeal">
+		<StateInitializationActivity x:Name="InitilizeProcess">
+			<CodeActivity x:Name="InitilizeFlow" ExecuteCode="InitilizeFlow_ExecuteCode" />
+			<SetStateActivity x:Name="SetAppealInitilized" TargetStateName="Verification" />
+		</StateInitializationActivity>
+	</StateActivity>
+	<StateActivity x:Name="Verification">
+		<StateInitializationActivity x:Name="InitilizeVerification">
+			<IfElseActivity x:Name="VerivicationStatus">
+				<IfElseBranchActivity x:Name="VerificationComplete">
+					<IfElseBranchActivity.Condition>
+						<CodeCondition Condition="IsVerificationComplete" />
+					</IfElseBranchActivity.Condition>
+					<SetStateActivity x:Name="SetApproval" TargetStateName="Approval" />
+				</IfElseBranchActivity>
+				<IfElseBranchActivity x:Name="VerificationPending">
+					<CodeActivity x:Name="VerificationAlert" ExecuteCode="VerificationAlert_ExecuteCode" />
+				</IfElseBranchActivity>
+			</IfElseActivity>
+		</StateInitializationActivity>
+		<EventDrivenActivity x:Name="ApplicationUpdated">
+			<HandleExternalEventActivity Invoked="OnApplicationUpdated_Invoked" x:Name="OnApplicationUpdated" EventName="AppealApplicationUpdated" InterfaceType="{x:Type IGRSS.Workflows.Appeal.Services.IAppealService}" />
+			<SetStateActivity x:Name="SetApplicationUpdated" TargetStateName="Verification" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="VerificationValid">
+			<HandleExternalEventActivity Invoked="OnVerificationValid_Invoked" x:Name="OnVerificationValid" EventName="Approve" InterfaceType="{x:Type IGRSS.Workflows.Appeal.Services.IAppealService}" />
+			<SetStateActivity x:Name="SetVerificationValid" TargetStateName="Verification" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="VerificationInvalid">
+			<HandleExternalEventActivity Invoked="OnVerificationInvalid_Invoked" x:Name="OnVerificationInvalid" EventName="Reject" InterfaceType="{x:Type IGRSS.Workflows.Appeal.Services.IAppealService}" />
+			<SetStateActivity x:Name="SetVerificationInvalid" TargetStateName="DataEntryPending" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="Approval">
+		<StateInitializationActivity x:Name="InitilizeApproval">
+			<IfElseActivity x:Name="ApprovalStatus">
+				<IfElseBranchActivity x:Name="ApprovalComplete">
+					<IfElseBranchActivity.Condition>
+						<CodeCondition Condition="IsApprovalComplete" />
+					</IfElseBranchActivity.Condition>
+					<SetStateActivity x:Name="SetApprovalInitilized" TargetStateName="IssueAppeal" />
+				</IfElseBranchActivity>
+				<IfElseBranchActivity x:Name="ApprovalPending">
+					<CodeActivity x:Name="ApprovalAlert" ExecuteCode="ApprovalAlert_ExecuteCode" />
+				</IfElseBranchActivity>
+			</IfElseActivity>
+		</StateInitializationActivity>
+		<EventDrivenActivity x:Name="Approved">
+			<HandleExternalEventActivity Invoked="OnApproved_Invoked" x:Name="OnAppealApproved" EventName="Approve" InterfaceType="{x:Type IGRSS.Workflows.Appeal.Services.IAppealService}" />
+			<SetStateActivity x:Name="SetApproved" TargetStateName="Approval" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="Rejected">
+			<HandleExternalEventActivity x:Name="OnAppealRejected" EventName="Reject" InterfaceType="{x:Type IGRSS.Workflows.Appeal.Services.IAppealService}" />
+			<SetStateActivity x:Name="SetRejected" TargetStateName="Completed" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="DataEntryPending">
+		<EventDrivenActivity x:Name="ApplicationSaved">
+			<HandleExternalEventActivity Invoked="OnApplicationSaved_Invoked" x:Name="OnAppealApplicationSaved" EventName="AppealApplicationSaved" InterfaceType="{x:Type IGRSS.Workflows.Appeal.Services.IAppealService}" />
+			<SetStateActivity x:Name="SetApplicationSaved" TargetStateName="Verification" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="IssueAppeal">
+		<StateInitializationActivity x:Name="InitilizeAppealIssue" />
+		<EventDrivenActivity x:Name="AppealIssued">
+			<HandleExternalEventActivity Invoked="OnLicenseIssued_Invoked" x:Name="OnAppealIssued" EventName="AppealIssued" InterfaceType="{x:Type IGRSS.Workflows.Appeal.Services.IAppealService}" />
+			<SetStateActivity x:Name="SetAppealIssued" TargetStateName="Completed" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="Completed" />
+</StateMachineWorkflowActivity>

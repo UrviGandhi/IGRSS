@@ -1,0 +1,1058 @@
+<%@ Page AutoEventWireup="true" CodeFile="AppealApplication.aspx.cs" Culture="auto"
+	Inherits="Appeal_AppealApplication" Language="C#" MasterPageFile="~/IGRSS_Default.master"
+	meta:resourcekey="PageAppealApplication" Title="Untitled Page" UICulture="auto" %>
+
+<%@ Register Assembly="RJS.Web.WebControl.PopCalendar" Namespace="RJS.Web.WebControl"
+	TagPrefix="rjs" %>
+<asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="Main">
+	<asp:MultiView ID="mvAppealType" runat="server" ActiveViewIndex="0">
+		<asp:View ID="vietest" runat="server">
+			<asp:LinkButton ID="lnltest" runat="server" Text="Appeal Application" OnClick="lnltest_Click"></asp:LinkButton>
+			<asp:LinkButton ID="LinkButton1" runat="server" Text="Update Appeal Application"
+				OnClick="LinkButton1_Click"></asp:LinkButton>
+			<asp:LinkButton ID="LinkButton2" runat="server" Text="Approve Appeal" OnClick="LinkButton2_Click"></asp:LinkButton>
+		</asp:View>
+		<asp:View ID="vieSearchAppli" runat="server">
+			<table style="width: 100%; text-align: left;">
+				<tr>
+					<td colspan="6">
+						<asp:Label ID="lblAppealRegistartion" runat="server" meta:resourcekey="lblAppealRegistartion"
+							SkinID="SubHeading" Text="Appeal Registration Details"></asp:Label>
+					</td>
+				</tr>
+				<tr>
+					<td class="labelColumn">
+						<asp:Label ID="lblAppealNo" runat="server" Text="Enter Appeal No"></asp:Label>
+					</td>
+					<td class="textColumn">
+						<asp:TextBox ID="txtAppealNo" runat="server"></asp:TextBox>
+					</td>
+					<td class="labelColumn">
+						<asp:Label ID="lblAppliCantName" runat="server" Text="Enter AppliCant Name"></asp:Label>
+					</td>
+					<td class="textColumn">
+						<asp:TextBox ID="txtAppliCantName" runat="server"></asp:TextBox>
+					</td>
+				</tr>
+				<tr>
+					<td align="right" colspan="6">
+						<asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />&nbsp;
+					</td>
+				</tr>
+			</table>
+			<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="AppealApplicationId"
+				OnSelectedIndexChanged="GridView1_SelectedIndexChanged" ShowFooter="True">
+				<Columns>
+					<asp:BoundField DataField="ApplicantName" HeaderText="Applicant Name" SortExpression="ApplicantName" />
+					<asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
+					<asp:BoundField DataField="RegistrationNo" HeaderText="Registration No" SortExpression="RegistrationNo" />
+					<asp:BoundField DataField="AppealYear" HeaderText="Appeal Year" SortExpression="AppealYear" />
+					<asp:CommandField ShowSelectButton="True">
+						<ControlStyle Font-Bold="True" ForeColor="#C00000" />
+					</asp:CommandField>
+				</Columns>
+			</asp:GridView>
+		</asp:View>
+		<asp:View ID="vieFv" runat="server">
+			<asp:FormView ID="FormView1" runat="server" DataSourceID="odsAppealApplication" OnPageIndexChanging="FormView1_PageIndexChanging"
+				OnItemCommand="FormView1_ItemCommand" OnItemInserting="FormView1_ItemInserting"
+				OnItemUpdating="FormView1_ItemUpdating" DataKeyNames="AppealApplicationId" OnItemUpdated="FormView1_ItemUpdated">
+				<ItemTemplate>
+					<table style="width: 100%; text-align: left;">
+						<tr>
+							<td colspan="6" style="height: 18px">
+								<asp:Label ID="lblFileDetailsHeaderItm" runat="server" meta:resourcekey="lblFileDetailsHeaderItm"
+									SkinID="SubHeading" Text="Application Details"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn" style="height: 26px">
+								<asp:Label ID="lblFileNoItm" runat="server" meta:resourcekey="lblFileNoItm" Text="File No"></asp:Label>
+							</td>
+							<td class="textColumn" align="left" style="height: 26px">
+								<asp:TextBox ID="txtFilePrefixItm" runat="server" meta:resourcekey="txtFilePrefixItm"
+									ReadOnly="True" Text='<%# Bind("AppealPrefix") %>' Width="20%"></asp:TextBox>
+								/
+								<asp:TextBox ID="txtFileNoItm" runat="server" meta:resourcekey="txtFileNoItm" ReadOnly="True"
+									Text='<%# Bind("AppealSlNo") %>' Width="20%"></asp:TextBox>
+								/
+								<asp:TextBox ID="txtFileYearItm" runat="server" meta:resourcekey="txtFileYearItm"
+									ReadOnly="True" Text='<%# Bind("AppealYear") %>' Width="20%"></asp:TextBox>
+							</td>
+							<td class="validationColumn" style="height: 26px">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblOfficeIdItm" runat="server" meta:resourcekey="lblOfficeIdItm" Text="Office Name"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtOfficeIdItm" runat="server" meta:resourcekey="txtOfficeIdItm"
+									ReadOnly="True" Text='<%# Bind("OfficeName") %>'>
+								</asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:Label ID="lblApplicantDetailsHeaderItm" runat="server" meta:resourcekey="lblApplicantDetailsHeaderItm"
+									SkinID="SubHeading" Text="Applicant Details"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblApplicantNameItm" runat="server" meta:resourcekey="lblApplicantNameItm"
+									Text="Applicant Name"></asp:Label>
+							</td>
+							<td colspan="4" style="width: 25%">
+								<asp:TextBox ID="txtApplicantNameItm" runat="server" meta:resourcekey="txtApplicantNameItm"
+									ReadOnly="true" Text='<%# Bind("ApplicantName") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblApplicantAddressItm" runat="server" meta:resourcekey="lblApplicantAddressItm"
+									Text="Applicant Address"></asp:Label>
+							</td>
+							<td colspan="4" style="width: 25%">
+								<asp:TextBox ID="txtApplicantAddressItm" runat="server" meta:resourcekey="txtApplicantAddressItm"
+									ReadOnly="true" Text='<%# Bind("Address") %>' TextMode="MultiLine"></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:CheckBox ID="chkIsPaidAppealFeeItm" Enabled="false" runat="server" Checked='<%# Bind("IsPaidAppealFee") %>'
+									meta:resourcekey="chkIsPaidAppealFeeItm" SkinID="SubHeading" Text="Is Appeal Fee Paid" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblFeeReceiptNoItm" runat="server" meta:resourcekey="lblFeeReceiptNoItm"
+									Text="Receipt Number"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtFeeReceiptNoItm" runat="server" meta:resourcekey="txtFeeReceiptNoItm"
+									ReadOnly="True" Text='<%# Bind("FeeReceiptNo") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn">
+								<asp:Label ID="lblAmountItm" runat="server" meta:resourcekey="lblAmountItm" Text="Amount"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtAmountItm" runat="server" meta:resourcekey="txtAmountItm" ReadOnly="true"
+									Text='<%# Bind("Amount") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:Label ID="lblAppealDetailsHeaderItm" runat="server" meta:resourcekey="lblAppealDetailsHeaderItm"
+									SkinID="SubHeading" Text="Appeal Details"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblTypeOfAppealItm" runat="server" meta:resourcekey="lblTypeOfAppealItm"
+									Text="Type of Appeal"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtAppealItm" ReadOnly="true" runat="server" meta:resourcekey="txtAppealItm"
+									Text='<%# Bind("AppealName") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn">
+								<asp:Label ID="lblRegistrationNoItm" runat="server" meta:resourcekey="lblRegistrationNoItm"
+									Text="Registration No"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtRegistrationNoItm" runat="server" meta:resourcekey="txtRegistrationNoItm"
+									ReadOnly="true" Text='<%# Bind("RegistrationNo") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblCalculatedAmountItm" runat="server" meta:resourcekey="lblCalculatedAmountItm"
+									Text="Calculated Amount"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtCalculatedAmountItm" runat="server" meta:resourcekey="txtCalculatedAmountItm"
+									ReadOnly="True" Text='<%# Bind("CalculatedAmount") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn">
+								<asp:Label ID="lblDepositAmountItm" runat="server" meta:resourcekey="lblDepositAmountItm"
+									Text="Deposit Amount"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtDepositAmountItm" runat="server" meta:resourcekey="txtDepositAmountItm"
+									ReadOnly="true" Text='<%# Bind("DepositAmount") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblInwardDateItm" runat="server" meta:resourcekey="lblInwardDateItm"
+									Text="Inward Date"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtInwardDateItm" runat="server" meta:resourcekey="txtInwardDateItm"
+									ReadOnly="true" SkinID="Calendar" Text='<%# Bind("InwardDate") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn">
+								<asp:Label ID="lblAdjudicationTotalFeesInsItm" runat="server" meta:resourcekey="lblAdjudicationTotalFeesInsItm"
+									Text="Adjudication Total Fees"></asp:Label>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblCourtFeeTicketItm" runat="server" meta:resourcekey="lblCourtFeeTicketItm"
+									Text="Court Fee Ticket Pasted?"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:CheckBox ID="chkCourtFeeTicketItm" Enabled="false" runat="server" meta:resourcekey="chkCourtFeeTicketItm" />
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn">
+								<asp:Label ID="lblPaperFromToItm" runat="server" meta:resourcekey="lblPaperFromToItm"
+									Text="Paper From To"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtPaperFromToItm" runat="server" meta:resourcekey="txtPaperFromToItm"
+									ReadOnly="true" Text='<%# Bind("PaperFromTo") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:Label ID="lblAppealActsHeadingItm" runat="server" meta:resourcekey="lblAppealActsHeadingItm"
+									SkinID="SubHeading" Text="Appeal Act"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn" style="height: 37px">
+								<asp:Label ID="lblAppealActItm" runat="server" Text="Appeal Act"></asp:Label></td>
+							<td style="height: 37px">
+								<asp:ListBox ID="liAppealActItm" runat="server" Enabled="false" Width="140px" DataSourceID="odsGetAppealActs"
+									DataTextField="NameOfAct" DataValueField="ActId"></asp:ListBox>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:Label ID="lblAppealRemarksHeadingItm" runat="server" meta:resourcekey="lblAppealRemarksHeadingItm"
+									SkinID="SubHeading" Text="Appeal Application Remarks"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:TextBox ID="txtAppealRemarksHeadingItm" runat="server" meta:resourcekey="txtAppealRemarksHeadingItm"
+									ReadOnly="True" TextMode="MultiLine" Text='<%# Bind("AppealRemarks") %>'></asp:TextBox>
+							</td>
+						</tr>
+						<tr>
+							<td align="right" colspan="4" style="height: 26px">
+								<asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="ApproveAppealApplication"
+									Text="Approve" />
+								<asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="RejectAppealApplication"
+									Text="Reject" />
+							</td>
+						</tr>
+					</table>
+				</ItemTemplate>
+				<EditItemTemplate>
+					<table style="width: 100%; text-align: left;">
+						<tr>
+							<td colspan="6">
+								<asp:Label ID="lblFileDetailsHeaderIns" runat="server" meta:resourcekey="lblFileDetailsHeaderIns"
+									SkinID="SubHeading" Text="Application Details"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td align="left">
+								<asp:Label ID="lblFileNoIns" runat="server" meta:resourcekey="lblFileNoIns" Text="File No"></asp:Label>
+							</td>
+							<td align="left" class="textColumn">
+								<asp:TextBox ID="txtFilePrefixIns" runat="server" meta:resourcekey="txtFilePrefixIns"
+									Text='<%# Bind("AppealPrefix") %>' Width="20%"></asp:TextBox>
+								/
+								<asp:TextBox ID="txtFileNoIns" runat="server" meta:resourcekey="txtFileNoIns" Text='<%# Bind("AppealSlNo") %>'
+									Width="20%"></asp:TextBox>
+								/
+								<asp:TextBox ID="txtFileYearIns" runat="server" meta:resourcekey="txtFileYearIns"
+									Text='<%# Bind("AppealYear") %>' Width="20%"></asp:TextBox>
+							</td>
+							<td class="validationColumn" style="width: 2%">
+							</td>
+							<td align="left" class="labelColumn">
+								<asp:Label ID="lblOfficeIdIns" runat="server" meta:resourcekey="lblOfficeIdIns" Text="Office Id"></asp:Label>
+							</td>
+							<td align="left" class="textColumn">
+								<asp:DropDownList ID="ddlOfficeIdIns" runat="server" DataSourceID="odsGetOffices"
+									DataTextField="OfficeName" DataValueField="OfficeId" meta:resourcekey="ddlOfficeIdIns"
+									Text='<%# Bind("OfficeId") %>' Width="100px" SelectedValue='<%# Bind("OfficeId") %>'>
+								</asp:DropDownList>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:Label ID="lblApplicantDetailsHeaderIns" runat="server" meta:resourcekey="lblApplicantDetailsHeaderIns"
+									SkinID="SubHeading" Text="Applicant Details"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblApplicantNameIns" runat="server" meta:resourcekey="lblApplicantNameIns"
+									Text="Applicant Name"></asp:Label>
+							</td>
+							<td colspan="4">
+								<asp:TextBox ID="txtApplicantNameIns" runat="server" meta:resourcekey="txtApplicantNameIns"
+									Text='<%# Bind("ApplicantName") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblApplicantAddressIns" runat="server" meta:resourcekey="lblApplicantAddressIns"
+									Text="Applicant Address"></asp:Label>
+							</td>
+							<td colspan="4">
+								<asp:TextBox ID="txtApplicantAddressIns" runat="server" meta:resourcekey="txtApplicantAddressIns"
+									Text='<%# Bind("Address") %>' TextMode="MultiLine"></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:CheckBox ID="chkIsPaidAppealFeeIns" runat="server" Checked='<%# Bind("IsPaidAppealFee") %>'
+									meta:resourcekey="chkIsPaidAppealFeeIns" SkinID="SubHeading" Text="Is Appeal Fee Paid" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblFeeReceiptNoIns" runat="server" meta:resourcekey="lblFeeReceiptNoIns"
+									Text="Receipt Number"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtFeeReceiptNoIns" runat="server" meta:resourcekey="txtFeeReceiptNoIns"
+									Text='<%# Bind("FeeReceiptNo") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn" style="width: 2%">
+							</td>
+							<td class="labelColumn">
+								<asp:Label ID="lblAmountIns" runat="server" meta:resourcekey="lblAmountIns" Text="Amount"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtAmountIns" runat="server" meta:resourcekey="txtAmountIns" Text='<%# Bind("Amount") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn" style="width: 2%">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:Label ID="lblAppealDetailsHeaderIns" runat="server" meta:resourcekey="lblAppealDetailsHeaderIns"
+									SkinID="SubHeading" Text="Appeal Details"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblTypeOfAppealIns" runat="server" meta:resourcekey="lblTypeOfAppealIns"
+									Text="Type of Appeal"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:DropDownList ID="ddlTypeOfAppealIns" runat="server" DataSourceID="odsGetAppealType"
+									SelectedValue='<%# Bind("TypeOfAppeal") %>' DataTextField="AppealName" DataValueField="AppealTypeId">
+								</asp:DropDownList>
+							</td>
+							<td class="validationColumn" style="width: 2%">
+							</td>
+							<td class="labelColumn" style="width: 23%">
+								<asp:Label ID="lblRegistrationNoIns" runat="server" meta:resourcekey="lblRegistrationNoIns"
+									Text="Registration No"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtRegistrationNoIns" runat="server" meta:resourcekey="txtRegistrationNoIns"
+									Text='<%# Bind("RegistrationNo") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn" style="width: 2%">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn" style="height: 28px">
+								<asp:Label ID="lblCalculatedAmountIns" runat="server" meta:resourcekey="lblCalculatedAmountIns"
+									Text="Calculated Amount"></asp:Label>
+							</td>
+							<td class="textColumn" style="height: 28px">
+								<asp:TextBox ID="txtCalculatedAmountIns" runat="server" meta:resourcekey="txtCalculatedAmountIns"
+									Text='<%# Bind("CalculatedAmount") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn" style="width: 2%; height: 28px">
+							</td>
+							<td class="labelColumn" style="width: 23%; height: 28px;">
+								<asp:Label ID="lblDepositAmountIns" runat="server" meta:resourcekey="lblDepositAmountIns"
+									Text="Deposit Amount"></asp:Label>
+							</td>
+							<td class="textColumn" style="height: 28px">
+								<asp:TextBox ID="txtDepositAmountIns" runat="server" meta:resourcekey="txtDepositAmountIns"
+									Text='<%# Bind("DepositAmount") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn" style="width: 2%; height: 28px;">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn" style="height: 50px">
+								<asp:Label ID="lblInwardDateIns" runat="server" meta:resourcekey="lblInwardDateIns"
+									Text="Inward Date"></asp:Label>
+							</td>
+							<td class="textColumn" style="height: 50px">
+								<asp:TextBox ID="txtInwardDateIns" runat="server" meta:resourcekey="txtInwardDateIns"
+									SkinID="Calendar" Text='<%# Bind("InwardDate") %>'></asp:TextBox>
+								<rjs:PopCalendar ID="calInwardDateIns" runat="server" meta:resourcekey="calInwardDateIns"
+									Move="True" />
+							</td>
+							<td class="validationColumn" style="height: 50px; width: 2%;">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblCourtFeeTicketIns" runat="server" meta:resourcekey="lblCourtFeeTicketIns"
+									Text="Court Fee Ticket Pasted?"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:CheckBox ID="chkCourtFeeTicketIns" runat="server" meta:resourcekey="chkCourtFeeTicketIns"
+									Checked='<%# Bind("CourtFeeTicket") %>' />
+							</td>
+							<td class="validationColumn" style="width: 2%">
+							</td>
+							<td class="labelColumn" style="width: 23%">
+								<asp:Label ID="lblPaperFromToIns" runat="server" meta:resourcekey="lblPaperFromToIns"
+									Text="Paper From To"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtPaperFromToIns" runat="server" meta:resourcekey="txtPaperFromToIns"
+									Text='<%# Bind("PaperFromTo") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn" style="width: 2%">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblAppealIntimeUpd" runat="server" meta:resourcekey="lblAppealIntimeUpd"
+									Text="Appeal In Time"></asp:Label>
+							</td>
+							<td class="textColumn" colspan="5">
+								<asp:CheckBox ID="ChkAppealIntimeUpd" runat="server" Checked='<%# Bind("AppealInTime") %>'
+									meta:resourcekey="ChkAppealIntimeUpd" />
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:Label ID="lblAppealActsHeadingIns" runat="server" meta:resourcekey="lblAppealActsHeadingIns"
+									SkinID="SubHeading" Text="Appeal Act"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn" style="height: 37px">
+								<asp:Label ID="lblAppealAct" runat="server" Text="Select Appeal Act"></asp:Label></td>
+							<td style="height: 37px">
+								<asp:ListBox ID="liActUpd" runat="server" SelectionMode="Multiple" Width="140px"
+									DataSourceID="odsGetAct" DataTextField="NameOfAct" DataValueField="ActId"></asp:ListBox>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:Label ID="lblAppealRemarksHeadingIns" runat="server" meta:resourcekey="lblAppealRemarksHeadingIns"
+									SkinID="SubHeading" Text="Appeal Application Remarks"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:TextBox ID="txtAppealRemarksHeadingIns" runat="server" meta:resourcekey="txtAppealRemarksHeadingIns"
+									Text='<%# Bind("AppealRemarks") %>' TextMode="MultiLine"></asp:TextBox>
+							</td>
+						</tr>
+						<tr>
+							<td align="right" colspan="6">
+								<asp:Button ID="LicInsert" runat="server" CausesValidation="True" CommandName="Update"
+									Text="Update" />
+								<asp:Button ID="CancelButton" runat="server" CausesValidation="False" CommandName="Cancel"
+									Text="Cancel" />
+							</td>
+						</tr>
+					</table>
+				</EditItemTemplate>
+				<InsertItemTemplate>
+					<table style="width: 100%; text-align: left;">
+						<tr>
+							<td colspan="6">
+								<asp:Label ID="lblFileDetailsHeaderIns" runat="server" meta:resourcekey="lblFileDetailsHeaderIns"
+									SkinID="SubHeading" Text="Application Details"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td align="left">
+								<asp:Label ID="lblFileNoIns" runat="server" meta:resourcekey="lblFileNoIns" Text="File No"></asp:Label>
+							</td>
+							<td class="textColumn" align="left">
+								<asp:TextBox ID="txtFilePrefixIns" runat="server" meta:resourcekey="txtFilePrefixIns"
+									Text='<%# Bind("AppealPrefix") %>' Width="20%"></asp:TextBox>
+								/
+								<asp:TextBox ID="txtFileNoIns" runat="server" meta:resourcekey="txtFileNoIns" Text='<%# Bind("AppealSlNo") %>'
+									Width="20%"></asp:TextBox>
+								/
+								<asp:TextBox ID="txtFileYearIns" runat="server" meta:resourcekey="txtFileYearIns"
+									Text='<%# Bind("AppealYear") %>' Width="20%"></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn" align="left">
+								<asp:Label ID="lblOfficeIdIns" runat="server" meta:resourcekey="lblOfficeIdIns" Text="Office Id"></asp:Label>
+							</td>
+							<td class="textColumn" align="left">
+								<asp:DropDownList ID="ddlOfficeIdIns" runat="server" meta:resourcekey="ddlOfficeIdIns"
+									Text='<%# Bind("OfficeId") %>' DataSourceID="odsGetOffices" DataTextField="OfficeName"
+									DataValueField="OfficeId" Width="100px" SelectedValue='<%# Bind("OfficeId") %>'>
+								</asp:DropDownList>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:Label ID="lblApplicantDetailsHeaderIns" runat="server" meta:resourcekey="lblApplicantDetailsHeaderIns"
+									SkinID="SubHeading" Text="Applicant Details"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblApplicantNameIns" runat="server" meta:resourcekey="lblApplicantNameIns"
+									Text="Applicant Name"></asp:Label>
+							</td>
+							<td colspan="4">
+								<asp:TextBox ID="txtApplicantNameIns" runat="server" meta:resourcekey="txtApplicantNameIns"
+									Text='<%# Bind("ApplicantName") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblApplicantAddressIns" runat="server" meta:resourcekey="lblApplicantAddressIns"
+									Text="Applicant Address"></asp:Label>
+							</td>
+							<td colspan="4">
+								<asp:TextBox ID="txtApplicantAddressIns" runat="server" meta:resourcekey="txtApplicantAddressIns"
+									Text='<%# Bind("Address") %>' TextMode="MultiLine"></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:CheckBox ID="chkIsPaidAppealFeeIns" runat="server" Checked='<%# Bind("IsPaidAppealFee") %>'
+									meta:resourcekey="chkIsPaidAppealFeeIns" SkinID="SubHeading" Text="Is Appeal Fee Paid" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblFeeReceiptNoIns" runat="server" meta:resourcekey="lblFeeReceiptNoIns"
+									Text="Receipt Number"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtFeeReceiptNoIns" runat="server" meta:resourcekey="txtFeeReceiptNoIns"
+									Text='<%# Bind("FeeReceiptNo") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn">
+								<asp:Label ID="lblAmountIns" runat="server" meta:resourcekey="lblAmountIns" Text="Amount"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtAmountIns" runat="server" meta:resourcekey="txtAmountIns" Text='<%# Bind("Amount") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn" style="width: 2%">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:Label ID="lblAppealDetailsHeaderIns" runat="server" meta:resourcekey="lblAppealDetailsHeaderIns"
+									SkinID="SubHeading" Text="Appeal Details"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblTypeOfAppealIns" runat="server" meta:resourcekey="lblTypeOfAppealIns"
+									Text="Type of Appeal"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:DropDownList ID="ddlTypeOfAppealIns" runat="server" DataSourceID="odsGetAppealType"
+									DataTextField="AppealName" DataValueField="AppealTypeId" meta:resourcekey="ddlTypeOfAppealIns"
+									SelectedValue='<%# Bind("TypeOfAppeal") %>' Text='<%# Bind("TypeOfAppeal") %>'>
+								</asp:DropDownList>
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn" style="width: 23%">
+								<asp:Label ID="lblRegistrationNoIns" runat="server" meta:resourcekey="lblRegistrationNoIns"
+									Text="Registration No"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtRegistrationNoIns" runat="server" meta:resourcekey="txtRegistrationNoIns"
+									Text='<%# Bind("RegistrationNo") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn" style="width: 2%">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblCalculatedAmountIns" runat="server" meta:resourcekey="lblCalculatedAmountIns"
+									Text="Calculated Amount"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtCalculatedAmountIns" runat="server" meta:resourcekey="txtCalculatedAmountIns"
+									Text='<%# Bind("CalculatedAmount") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn" style="width: 23%">
+								<asp:Label ID="lblDepositAmountIns" runat="server" meta:resourcekey="lblDepositAmountIns"
+									Text="Deposit Amount"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtDepositAmountIns" runat="server" meta:resourcekey="txtDepositAmountIns"
+									Text='<%# Bind("DepositAmount") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn" style="width: 2%">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblInwardDateIns" runat="server" meta:resourcekey="lblInwardDateIns"
+									Text="Inward Date"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtInwardDateIns" runat="server" meta:resourcekey="txtInwardDateIns"
+									SkinID="Calendar" Text='<%# Bind("InwardDate") %>'></asp:TextBox>
+								<rjs:PopCalendar ID="calInwardDateIns" Control="" runat="server" meta:resourcekey="calInwardDateIns"
+									Move="True" />
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblCourtFeeTicketIns" runat="server" meta:resourcekey="lblCourtFeeTicketIns"
+									Text="Court Fee Ticket Pasted?"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:CheckBox ID="chkCourtFeeTicketIns" runat="server" Checked='<%# Bind("CourtFeeTicket") %>'
+									meta:resourcekey="chkCourtFeeTicketIns" />
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn" style="width: 23%">
+								<asp:Label ID="lblPaperFromToIns" runat="server" meta:resourcekey="lblPaperFromToIns"
+									Text="Paper From To"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtPaperFromToIns" runat="server" meta:resourcekey="txtPaperFromToIns"
+									Text='<%# Bind("PaperFromTo") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn" style="width: 2%">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblAppealIntimeIns" runat="server" meta:resourcekey="lblAppealIntimeIns"
+									Text="Appeal In Time"></asp:Label>
+							</td>
+							<td class="textColumn" colspan="5">
+								<asp:CheckBox ID="ChkAppealIntimeIns" runat="server" Checked='<%# Bind("AppealInTime") %>'
+									meta:resourcekey="ChkAppealIntimeIns" />
+						</tr>
+						<tr>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:Label ID="lblAppealActsHeadingIns" runat="server" meta:resourcekey="lblAppealActsHeadingIns"
+									SkinID="SubHeading" Text="Appeal Act"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn" style="height: 37px">
+								<asp:Label ID="lblAppealAct" runat="server" Text="Select Appeal Act"></asp:Label></td>
+							<td style="height: 37px">
+								<asp:ListBox ID="liAppealAct" runat="server" SelectionMode="Multiple" Width="140px"
+									DataSourceID="odsGetAct" DataTextField="NameOfAct" DataValueField="ActId"></asp:ListBox>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:Label ID="lblAppealRemarksHeadingIns" runat="server" meta:resourcekey="lblAppealRemarksHeadingIns"
+									SkinID="SubHeading" Text="Appeal Application Remarks"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6" style="height: 40px">
+								<asp:TextBox ID="txtAppealRemarksHeadingIns" runat="server" meta:resourcekey="txtAppealRemarksHeadingIns"
+									TextMode="MultiLine" Text='<%# Bind("AppealRemarks") %>'></asp:TextBox>
+							</td>
+						</tr>
+						<tr>
+							<td align="right" colspan="6">
+								<asp:Button ID="LicInsert" runat="server" CausesValidation="True" CommandName="Insert"
+									Text="Save" />
+								<asp:Button ID="CancelButton" runat="server" CausesValidation="False" CommandName="Cancel"
+									Text="Cancel" />
+							</td>
+						</tr>
+					</table>
+				</InsertItemTemplate>
+			</asp:FormView>
+			<asp:ObjectDataSource ID="odsAppealApplication" runat="server" InsertMethod="AddAppealAplication"
+				SelectMethod="GetAppealApplicationByAppealID" TypeName="IGRSS.BusinessLogicLayer.AppealApplication"
+				UpdateMethod="UpdateAppealAplication" OnInserting="odsAppealApplication_Inserting"
+				OnUpdating="odsAppealApplication_Updating">
+				<UpdateParameters>
+					<asp:Parameter Name="parameter" Type="Object" />
+					<asp:Parameter Name="dtAct" Type="Object" />
+					<asp:Parameter Name="AppealApplicationId" Type="Object" />
+				</UpdateParameters>
+				<SelectParameters>
+					<asp:ControlParameter ControlID="GridView1" Name="AppealApplicationId" PropertyName="SelectedValue"
+						Type="Object" />
+				</SelectParameters>
+				<InsertParameters>
+					<asp:Parameter Name="parameter" Type="Object" />
+					<asp:Parameter Name="dtAct" Type="Object" />
+				</InsertParameters>
+			</asp:ObjectDataSource>
+			<asp:ObjectDataSource ID="odsGetAppealType" runat="server" OldValuesParameterFormatString="original_{0}"
+				SelectMethod="GetAppealType" TypeName="IGRSS.BusinessLogicLayer.AppealType"></asp:ObjectDataSource>
+			<asp:ObjectDataSource ID="odsGetOffices" runat="server" DataObjectTypeName="System.Guid"
+				DeleteMethod="DeActivateOffice" InsertMethod="AddNewOfficeType" OldValuesParameterFormatString="original_{0}"
+				SelectMethod="GetOffices" TypeName="IGRSS.BusinessLogicLayer.OfficeManagement">
+				<InsertParameters>
+					<asp:Parameter Name="OfficeTypeName" Type="String" />
+					<asp:Parameter Name="Description" Type="String" />
+				</InsertParameters>
+			</asp:ObjectDataSource>
+			<asp:ObjectDataSource ID="odsGetApplicantDtl" runat="server" OldValuesParameterFormatString="original_{0}"
+				SelectMethod="GetAppealApplicationByAppealNo" TypeName="IGRSS.BusinessLogicLayer.AppealApplication"
+				DataObjectTypeName="System.Guid" UpdateMethod="RejectAppealApplication">
+				<SelectParameters>
+					<asp:ControlParameter ControlID="txtAppealNo" Name="AppealSlNo" PropertyName="Text"
+						Type="Decimal" />
+				</SelectParameters>
+			</asp:ObjectDataSource>
+			<asp:ObjectDataSource ID="odsGetAct" runat="server" InsertMethod="InsertNewActMaster"
+				OldValuesParameterFormatString="original_{0}" SelectMethod="GetActMaster" TypeName="IGRSS.BusinessLogicLayer.RefundActMaster"
+				UpdateMethod="UpdateActMaster">
+				<UpdateParameters>
+					<asp:Parameter Name="ActId" Type="Object" />
+					<asp:Parameter Name="DescriptionOfAct" Type="String" />
+					<asp:Parameter Name="NameOfAct" Type="String" />
+				</UpdateParameters>
+				<InsertParameters>
+					<asp:Parameter Name="DescriptionOfAct" Type="String" />
+					<asp:Parameter Name="NameOfAct" Type="String" />
+					<asp:Parameter Name="IsActive" Type="Boolean" />
+				</InsertParameters>
+			</asp:ObjectDataSource>
+			<asp:ObjectDataSource ID="odsGetAppealActs" runat="server" DataObjectTypeName="System.Guid"
+				OldValuesParameterFormatString="original_{0}" SelectMethod="GetActDetailByApppealId"
+				TypeName="IGRSS.BusinessLogicLayer.AppealApplication" UpdateMethod="RejectAppealApplication">
+				<SelectParameters>
+					<asp:ControlParameter ControlID="GridView1" Name="AppealApplicationId" PropertyName="SelectedValue"
+						Type="Object" />
+				</SelectParameters>
+			</asp:ObjectDataSource>
+		</asp:View>
+		<asp:View ID="viewReadOnly" runat="server">
+			<asp:FormView ID="fvReadOnly" runat="server" DataKeyNames="AppealApplicationId" DataSourceID="odsAppealApplication">
+				<ItemTemplate>
+					<table style="width: 100%;">
+						<tr>
+							<td colspan="6" style="height: 18px">
+								<asp:Label ID="lblFileDetailsHeaderItm" runat="server" meta:resourcekey="lblFileDetailsHeaderItm"
+									SkinID="SubHeading" Text="Application Details"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn" style="height: 26px">
+								<asp:Label ID="lblFileNoItm" runat="server" meta:resourcekey="lblFileNoItm" Text="File No"></asp:Label>
+							</td>
+							<td align="left" class="textColumn" style="height: 26px">
+								<asp:TextBox ID="txtFilePrefixItm" runat="server" meta:resourcekey="txtFilePrefixItm"
+									ReadOnly="True" Text='<%# Bind("AppealPrefix") %>' Width="20%"></asp:TextBox>
+								/
+								<asp:TextBox ID="txtFileNoItm" runat="server" meta:resourcekey="txtFileNoItm" ReadOnly="True"
+									Text='<%# Bind("AppealSlNo") %>' Width="20%"></asp:TextBox>
+								/
+								<asp:TextBox ID="txtFileYearItm" runat="server" meta:resourcekey="txtFileYearItm"
+									ReadOnly="True" Text='<%# Bind("AppealYear") %>' Width="20%"></asp:TextBox>
+							</td>
+							<td class="validationColumn" style="height: 26px">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblOfficeIdItm" runat="server" meta:resourcekey="lblOfficeIdItm" Text="Office Name"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtOfficeIdItm" runat="server" meta:resourcekey="txtOfficeIdItm"
+									ReadOnly="True" Text='<%# Bind("OfficeName") %>'>
+								</asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:Label ID="lblApplicantDetailsHeaderItm" runat="server" meta:resourcekey="lblApplicantDetailsHeaderItm"
+									SkinID="SubHeading" Text="Applicant Details"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblApplicantNameItm" runat="server" meta:resourcekey="lblApplicantNameItm"
+									Text="Applicant Name"></asp:Label>
+							</td>
+							<td colspan="4" style="width: 25%">
+								<asp:TextBox ID="txtApplicantNameItm" runat="server" meta:resourcekey="txtApplicantNameItm"
+									ReadOnly="true" Text='<%# Bind("ApplicantName") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblApplicantAddressItm" runat="server" meta:resourcekey="lblApplicantAddressItm"
+									Text="Applicant Address"></asp:Label>
+							</td>
+							<td colspan="4">
+								<asp:TextBox ID="txtApplicantAddressItm" runat="server" meta:resourcekey="txtApplicantAddressItm"
+									ReadOnly="true" Text='<%# Bind("Address") %>' TextMode="MultiLine"></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:Label ID="lblAppealDetailsHeaderItm" runat="server" meta:resourcekey="lblAppealDetailsHeaderItm"
+									SkinID="SubHeading" Text="Appeal Details"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblTypeOfAppealItm" runat="server" meta:resourcekey="lblTypeOfAppealItm"
+									Text="Type of Appeal"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtAppealItm" runat="server" meta:resourcekey="txtAppealItm" ReadOnly="true"
+									Text='<%# Bind("AppealName") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn">
+								<asp:Label ID="lblRegistrationNoItm" runat="server" meta:resourcekey="lblRegistrationNoItm"
+									Text="Registration No"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtRegistrationNoItm" runat="server" meta:resourcekey="txtRegistrationNoItm"
+									ReadOnly="true" Text='<%# Bind("RegistrationNo") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblFeeReceiptNoItm" runat="server" meta:resourcekey="lblFeeReceiptNoItm"
+									Text="Receipt Number"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtFeeReceiptNoItm" runat="server" meta:resourcekey="txtFeeReceiptNoItm"
+									ReadOnly="True" Text='<%# Bind("FeeReceiptNo") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn">
+								<asp:Label ID="lblAmountItm" runat="server" meta:resourcekey="lblAmountItm" Text="Amount"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtAmountItm" runat="server" meta:resourcekey="txtAmountItm" ReadOnly="true"
+									Text='<%# Bind("Amount") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblCalculatedAmountItm" runat="server" meta:resourcekey="lblCalculatedAmountItm"
+									Text="Calculated Amount"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtCalculatedAmountItm" runat="server" meta:resourcekey="txtCalculatedAmountItm"
+									ReadOnly="True" Text='<%# Bind("CalculatedAmount") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn">
+								<asp:Label ID="lblDepositAmountItm" runat="server" meta:resourcekey="lblDepositAmountItm"
+									Text="Deposit Amount"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtDepositAmountItm" runat="server" meta:resourcekey="txtDepositAmountItm"
+									ReadOnly="true" Text='<%# Bind("DepositAmount") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblInwardDateItm" runat="server" meta:resourcekey="lblInwardDateItm"
+									Text="Inward Date"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtInwardDateItm" runat="server" meta:resourcekey="txtInwardDateItm"
+									ReadOnly="true" SkinID="Calendar" Text='<%# Bind("InwardDate") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn">
+							</td>
+							<asp:Label ID="lblAdjudicationTotalFeesInsItm" runat="server" meta:resourcekey="lblAdjudicationTotalFeesInsItm"
+								Text="Adjudication Total Fees"></asp:Label>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblCourtFeeTicketItm" runat="server" meta:resourcekey="lblCourtFeeTicketItm"
+									Text="Court Fee Ticket Pasted?"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:CheckBox ID="chkCourtFeeTicketItm" runat="server" Enabled="false" meta:resourcekey="chkCourtFeeTicketItm" />
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn">
+								<asp:Label ID="lblIsPaidAppealFees" runat="server" meta:resourcekey="lblIsPaidAppealFees"
+									Text="IsPaidAppealFees?"></asp:Label>
+							</td>
+							<td>
+								<asp:CheckBox ID="chkIsPaidAppealFeeItm" runat="server" Checked='<%# Bind("IsPaidAppealFee") %>'
+									Enabled="false" meta:resourcekey="chkIsPaidAppealFeeItm" />
+							</td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<asp:Label ID="lblOtherDetails" runat="server" meta:resourcekey="lblOtherDetails"
+									SkinID="SubHeading" Text="Other Details"></asp:Label>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblPaperFromToItm" runat="server" meta:resourcekey="lblPaperFromToItm"
+									Text="Paper From To"></asp:Label>
+							</td>
+							<td class="textColumn">
+								<asp:TextBox ID="txtPaperFromToItm" runat="server" meta:resourcekey="txtPaperFromToItm"
+									ReadOnly="true" Text='<%# Bind("PaperFromTo") %>'></asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn">
+								<asp:Label ID="lblAppealStatus" runat="server" Text="Status"></asp:Label></td>
+							<td>
+								<asp:TextBox ID="txtAppealStatus" runat="server" Text='<%# Bind("AppealStatus") %>'>
+								</asp:TextBox></td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblCreatedBy" runat="server" Text="Created By"></asp:Label></td>
+							<td>
+								<asp:TextBox ID="txtCreatedBy" runat="server" Text='<%# Bind("CreatedBy") %>'>
+								</asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn">
+								<asp:Label ID="lblCreatedAt" runat="server" Text="CreatedAt"></asp:Label></td>
+							<td>
+								<asp:TextBox ID="txtCreatedAt" runat="server" Text='<%# Bind("CreatedAt") %>'>
+								</asp:TextBox></td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblModifiedBy" runat="server" Text="Modified By"></asp:Label></td>
+							<td>
+								<asp:TextBox ID="txtModifiedBy" runat="server" Text='<%# Bind("ModifiedBy") %>'>
+								</asp:TextBox>
+							</td>
+							<td class="validationColumn">
+							</td>
+							<td class="labelColumn">
+								<asp:Label ID="lblModifiedAt" runat="server" Text="Modified Time"></asp:Label></td>
+							<td>
+								<asp:TextBox ID="txtModifiedAt" runat="server" Text='<%# Bind("ModifiedAt") %>'>
+								</asp:TextBox></td>
+							<td class="validationColumn">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblIsDeleted" runat="server" Text="Is Deleted"></asp:Label></td>
+							<td>
+								<asp:CheckBox ID="chkIsDeleted" runat="server" />
+							</td>
+							<td class="validationColumn" colspan="4">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblAppealActItm" runat="server" Text="Appeal Act"></asp:Label></td>
+							<td>
+								<asp:ListBox ID="liAppealActItm" runat="server" DataSourceID="odsGetAppealActs" DataTextField="NameOfAct"
+									DataValueField="ActId" Enabled="false"></asp:ListBox>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumn">
+								<asp:Label ID="lblRemarks" runat="server" Text="Remarks"></asp:Label></td>
+							<td colspan="6">
+								<asp:TextBox ID="txtAppealRemarksHeadingItm" runat="server" meta:resourcekey="txtAppealRemarksHeadingItm"
+									ReadOnly="True" Text='<%# Bind("AppealRemarks") %>' TextMode="MultiLine"></asp:TextBox>
+							</td>
+						</tr>
+					</table>
+				</ItemTemplate>
+			</asp:FormView>
+		</asp:View>
+	</asp:MultiView>
+</asp:Content>

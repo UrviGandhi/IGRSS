@@ -1,0 +1,7 @@
+﻿<SequentialWorkflowActivity x:Class="IGRSS.Workflows.License.LicenseIssueProcess" x:Name="LicenseIssueProcess" xmlns:ns0="clr-namespace:IGRSS.Workflows.Activites.Feedback" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<CodeActivity x:Name="SaveApplication" ExecuteCode="SaveApplication_ExecuteCode" />
+	<ReplicatorActivity InitialChildData="{ActivityBind LicenseIssueProcess,Path=VerificationChildData}" x:Name="ReplicateVerification" ChildCompleted="ReplicateVerification_ChildCompleted" ChildInitialized="ReplicateVerification_ChildCompleted" Initialized="ReplicateVerification_Initialized" ExecutionType="Sequence">
+		<ns0:FeedbackActivity x:Name="Verification" Verified="False" AssignedTo="00000000-0000-0000-0000-000000000000" />
+	</ReplicatorActivity>
+	<CodeActivity x:Name="CompleteProcess" ExecuteCode="CompleteProcess_ExecuteCode" />
+</SequentialWorkflowActivity>

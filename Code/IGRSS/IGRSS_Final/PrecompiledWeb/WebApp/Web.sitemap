@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<siteMap enableLocalization="true"
+		 xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+	<siteMapNode>
+		<siteMapNode url="Default.aspx"
+					 title="Home" />
+		
+		<siteMapNode title="Adjudication">
+			<siteMapNode url="Adjudication/AdjApplication.aspx"
+						 title="AdjApplication" />
+		</siteMapNode>
+		
+		<siteMapNode title="Inspection">
+			<siteMapNode url="Inspection/InspectionDetails.aspx"
+						 title="InspectionDetails" />
+		</siteMapNode>
+
+		<siteMapNode title="License">
+			<siteMapNode url="License/LicenseApplication.aspx"
+						 title="LicenseApplication" />
+			<siteMapNode url="License/LicenseApproval.aspx"
+						 title="LicenseApproval" />
+			<siteMapNode url="License/LicenseCancelation.aspx"
+						 title="LicenseCancelation" />
+			<siteMapNode url="License/LicenseMaster.aspx"
+						 title="LicenseMaster" />
+			<siteMapNode url="License/LicenseMaster1.aspx"
+						 title="LicenseMaster1" />
+			<siteMapNode url="License/LicenseRenewal.aspx"
+						 title="LicenseRenewal" />
+		</siteMapNode>
+
+		<siteMapNode title="Refund">
+			<siteMapNode url="Refund/ActMaster.aspx"
+						 title="ActMaster" />
+			<siteMapNode url="Refund/RefundApplication.aspx"
+						 title="RefundApplication" />
+			<siteMapNode url="Refund/RefundTypeMasters.aspx"
+						 title="RefundTypeMasters" />
+			<siteMapNode url="Refund/RevenueStampsMaster.aspx"
+						 title="RevenueStampsMaster" />
+			<siteMapNode url="Refund/SearchLicenseDetails.aspx"
+						 title="SearchLicenseDetails" />
+		</siteMapNode>
+
+		<siteMapNode title="Valuation">
+			<siteMapNode url="Valuation/Default.aspx"
+						 title="Default" />
+			<siteMapNode url="Valuation/ValuationAlerts.aspx"
+						 title="ValuationAlerts" />
+			<siteMapNode url="Valuation/ValuationRequestDetails.aspx"
+						 title="ValuationRequestDetails" />
+		</siteMapNode>
+
+		<siteMapNode title="Appeal">
+			<siteMapNode url="Appeal/AppealApplication.aspx"
+						 title="Appeal"/>
+
+		</siteMapNode>
+
+		<siteMapNode title="Complain">
+			<siteMapNode url="Complain/Complaint.aspx"
+						 title="Submit Complaint"/>
+			<siteMapNode url="Complain/AssignInvestigationOfficer.aspx"
+						 title="Assign Officer"/>
+			<siteMapNode url="Complain/InvestigationResult.aspx"
+						 title="Submit Investigation Result"/>
+		</siteMapNode>
+		
+	</siteMapNode>
+</siteMap>

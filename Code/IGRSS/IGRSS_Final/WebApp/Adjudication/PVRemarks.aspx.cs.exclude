@@ -1,0 +1,93 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using IGRSS.BusinessObjects;
+
+public partial class Adjudication_PVRemarks : IgrssPage
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            if (Request.Params["AlertId"] != null)
+            {
+                //IgrssAlert alert = WorkflowSupport.GetAlertById(new Guid(Request.Params["AlertId"]));
+            }
+
+        }
+    }
+
+    //protected void ddlTypeOfPropertyUpd_SelectedIndexChanged(object sender, EventArgs e)
+    //{
+    //    String PropertyType = ((DropDownList)fvValuationForm.FindControl("ddlTypeOfPropertyUpd")).SelectedItem.Text;
+    //    switch (PropertyType)
+    //    {
+    //        case "Residencial":
+    //            {
+    //                MultiView mvR = ((MultiView)fvValuationForm.FindControl("mvPropertyDetailsUpd"));
+    //                mvR.SetActiveView(mvR.Views[0]);
+    //                break;
+    //            }
+    //        case "Commercial":
+    //            {
+    //                MultiView mvC = ((MultiView)fvValuationForm.FindControl("mvPropertyDetailsUpd"));
+    //                mvC.SetActiveView(mvC.Views[1]);
+    //                break;
+    //            }
+    //        case "Industrial":
+    //            {
+
+    //                MultiView mvi = ((MultiView)fvValuationForm.FindControl("mvPropertyDetailsUpd"));
+    //                mvi.SetActiveView(mvi.Views[2]);
+    //                break;
+    //            }
+    //    }
+    //}
+
+    //protected void ddlTypeOfPropertyUpd_DataBound(object sender, EventArgs e)
+    //{
+    //    String PropertyType = ((DropDownList)fvValuationForm.FindControl("ddlTypeOfPropertyUpd")).SelectedItem.Text;
+    //    switch (PropertyType)
+    //    {
+    //        case "Residencial":
+    //            {
+    //                MultiView mvR = ((MultiView)fvValuationForm.FindControl("mvPropertyDetailsUpd"));
+    //                mvR.SetActiveView(mvR.Views[0]);
+    //                break;
+    //            }
+    //        case "Commercial":
+    //            {
+    //                MultiView mvC = ((MultiView)fvValuationForm.FindControl("mvPropertyDetailsUpd"));
+    //                mvC.SetActiveView(mvC.Views[1]);
+    //                break;
+    //            }
+    //        case "Industrial":
+    //            {
+
+    //                MultiView mvi = ((MultiView)fvValuationForm.FindControl("mvPropertyDetailsUpd"));
+    //                mvi.SetActiveView(mvi.Views[2]);
+    //                break;
+    //            }
+
+    //    }
+
+    //}
+
+    //protected void ddlOfficeIdIns_Load(object sender, EventArgs e)
+    //{
+    //    Profile.Permissions.FillOffices((DropDownList)sender, "ADJ", Request.Params["Mode"]);
+    //}
+
+
+    protected void gvPVRequests_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        fldAdjId.Value = Convert.ToString(gvPVRequests.SelectedDataKey.Values["AdjudicationId"]);
+    }
+}

@@ -1,0 +1,116 @@
+<%@ Page Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true"
+    CodeFile="AnualSchedule.aspx.cs" Inherits="Inspection_AnualSchedule" Title="Untitled Page" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="Server">
+    <table width="100%">
+        <tr>
+            <td colspan="6">
+                <asp:Label ID="lblYearlyScheduleHeading" runat="server" SkinID="SubHeading" Text="Yearly Schedule Details"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td class="labelColumn">
+                <asp:Label ID="lblInspectingOfficer" runat="server" Text="Inspecting Officer"></asp:Label>
+            </td>
+            <td class="textColumn">
+                &nbsp;<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="odsEmployees"
+                    DataTextField="FirstName" DataValueField="EmployeeID">
+                </asp:DropDownList><asp:ObjectDataSource ID="odsEmployees" runat="server" OldValuesParameterFormatString="original_{0}"
+                    SelectMethod="GetEmployeeDetails" TypeName="IGRSS.BusinessLogicLayer.Employee"></asp:ObjectDataSource>
+            </td>
+            <td class="validationColumn">
+            </td>
+            <td class="labelColumn">
+                <asp:Label ID="lblScheduleYear" runat="server" Text="ScheduleYear"></asp:Label>
+            </td>
+            <td class="textColumn">
+                <asp:TextBox ID="txtScheduleYear" runat="server" MaxLength="4"></asp:TextBox>
+            </td>
+            <td class="validationColumn">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <asp:Label ID="lblScheduleDetails" runat="server" SkinID="SubHeading" Text="Schedule Details"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td class="labelColumn">
+                <asp:Label ID="lblInspectionMonth" runat="server" Text="Inspection Month"></asp:Label>
+            </td>
+            <td class="textColumn">
+                <asp:DropDownList ID="ddlInspectionMonth" runat="server">
+                    <asp:ListItem Text="January" Value="1" />
+                    <asp:ListItem Text="February" Value="2" />
+                    <asp:ListItem Text="March" Value="3" />
+                    <asp:ListItem Text="April" Value="4" />
+                    <asp:ListItem Text="May" Value="5" />
+                    <asp:ListItem Text="June" Value="6" />
+                    <asp:ListItem Text="July" Value="7" />
+                    <asp:ListItem Text="August" Value="8" />
+                    <asp:ListItem Text="September" Value="9" />
+                    <asp:ListItem Text="October" Value="10" />
+                    <asp:ListItem Text="November" Value="11" />
+                    <asp:ListItem Text="December" Value="12" />
+                </asp:DropDownList>
+            </td>
+            <td class="validationColumn">
+            </td>
+            <td class="labelColumn">
+                <asp:Label ID="lblInspectingOffice" runat="server" Text="Inspecting Office"></asp:Label>
+            </td>
+            <td class="textColumn">
+                <asp:ListBox ID="lstInspectingOffice" runat="server" DataSourceID="odsOffices" DataTextField="OfficeName" DataValueField="OfficeId"></asp:ListBox><asp:ObjectDataSource ID="odsOffices" runat="server" OldValuesParameterFormatString="original_{0}"
+                    SelectMethod="GetOffices" TypeName="IGRSS.BusinessLogicLayer.Administration.ManageOffices">
+                </asp:ObjectDataSource>
+            </td>
+            <td class="validationColumn">
+            </td>
+        </tr>
+        <tr>
+            <td class="labelColumn">
+                <asp:Label ID="lblDetailRemarks" runat="server" Text="Detail Remarks"></asp:Label>
+            </td>
+            <td class="textColumn" colspan="4">
+                <asp:TextBox ID="txtDetailRemarks" runat="server" TextMode="MultiLine" Rows="3"></asp:TextBox>
+            </td>
+            <td class="validationColumn">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6" align="right">
+                <asp:Button ID="btnAddScheduleDetails" runat="server" Text="Add" CommandName="Add" OnCommand="btnAddScheduleDetails_Command" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6" style="height: 198px">
+                <asp:GridView ID="grdScheduleDetails" runat="server" AutoGenerateColumns="False" DataKeyNames="ScheduleId" OnSelectedIndexChanged="grdScheduleDetails_SelectedIndexChanged">
+                    <Columns>
+                        <asp:BoundField DataField="ScheduleId" HeaderText="Schedule Id" Visible="False" />
+                        <asp:TemplateField HeaderText="Month">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Month") %>'></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:LinkButton ID="LinkButton1" runat="server" CommandName="Select" Text='<%# Bind("Month") %>'></asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="Remarks" HeaderText="Remarks" />
+                        <asp:BoundField DataField="OfficeName" HeaderText="OfficeName" />
+                        <asp:CommandField ShowDeleteButton="True" />
+                    </Columns>
+                </asp:GridView>
+            </td>
+        </tr>
+        <tr>
+            <td class="labelColumn">
+                <asp:Label ID="lblRemarks" runat="server" Text="Remarks"></asp:Label>
+            </td>
+            <td class="textColumn" colspan="4">
+                <asp:TextBox ID="txtRemarks" runat="server" TextMode="MultiLine"></asp:TextBox>
+            </td>
+            <td class="validationColumn">
+            </td>
+        </tr>
+    </table>
+</asp:Content>

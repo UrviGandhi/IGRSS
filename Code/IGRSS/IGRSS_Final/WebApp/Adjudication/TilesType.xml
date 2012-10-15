@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TilesType>
+
+	<item Key="Mosaic"
+		   Value="2cd90b7c-de3e-488e-be52-cb0f7f335812">
+		<Description>Mosaic</Description>
+	</item>
+	<item Key="Marble"
+		   value="dbd44bd2-28b4-4cdf-83b6-e434c2912985">
+		<Description>Marble</Description>
+	</item>
+	<item Key="Red Oxide"
+			   value="4f1ac771-b5e4-424d-85bf-6a6931d93559">
+		<Description>Red Oxide</Description>
+	</item>
+</TilesType>
+
+
+
+

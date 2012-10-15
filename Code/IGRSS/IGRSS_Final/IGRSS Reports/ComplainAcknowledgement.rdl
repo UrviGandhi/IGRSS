@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="IGRSS_REPORT">
+      <DataSourceReference>IGRSS_REPORT</DataSourceReference>
+      <rd:DataSourceID>14c35bb0-234e-4c67-8280-7468d434c7c9</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Textbox Name="Detail">
+        <Left>1.75in</Left>
+        <Top>2in</Top>
+        <rd:DefaultName>Detail</rd:DefaultName>
+        <ZIndex>16</ZIndex>
+        <Width>2.625in</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!Detail.Value)</Value>
+      </Textbox>
+      <Textbox Name="Subject">
+        <Left>1.75in</Left>
+        <Top>1.75in</Top>
+        <rd:DefaultName>Subject</rd:DefaultName>
+        <ZIndex>15</ZIndex>
+        <Width>2.5in</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!Subject.Value)</Value>
+      </Textbox>
+      <Textbox Name="ComplainantAddress">
+        <Left>1.75in</Left>
+        <Top>1.5in</Top>
+        <rd:DefaultName>ComplainantAddress</rd:DefaultName>
+        <ZIndex>14</ZIndex>
+        <Width>2.5in</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!ComplainantAddress.Value)</Value>
+      </Textbox>
+      <Textbox Name="ComplainingEmpID">
+        <Left>1.75in</Left>
+        <Top>1.25in</Top>
+        <rd:DefaultName>ComplainingEmpID</rd:DefaultName>
+        <ZIndex>13</ZIndex>
+        <Width>2.5in</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!ComplainingEmpID.Value)</Value>
+      </Textbox>
+      <Textbox Name="ReceivingOfficeId">
+        <Left>1.75in</Left>
+        <Top>1in</Top>
+        <rd:DefaultName>ReceivingOfficeId</rd:DefaultName>
+        <ZIndex>12</ZIndex>
+        <Width>2.625in</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!ReceivingOfficeId.Value)</Value>
+      </Textbox>
+      <Textbox Name="ComplaintType">
+        <Left>1.75in</Left>
+        <Top>0.625in</Top>
+        <rd:DefaultName>ComplaintType</rd:DefaultName>
+        <ZIndex>11</ZIndex>
+        <Width>2.625in</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!ComplaintType.Value)</Value>
+      </Textbox>
+      <Textbox Name="textbox10">
+        <Left>2in</Left>
+        <Top>2.75in</Top>
+        <ZIndex>10</ZIndex>
+        <Width>1in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Date</Value>
+      </Textbox>
+      <Textbox Name="textbox9">
+        <Left>2in</Left>
+        <Top>2.5in</Top>
+        <ZIndex>9</ZIndex>
+        <Width>1in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Signature</Value>
+      </Textbox>
+      <Textbox Name="textbox8">
+        <Top>1.875in</Top>
+        <ZIndex>8</ZIndex>
+        <Width>1.25in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Complain Details</Value>
+      </Textbox>
+      <Textbox Name="textbox7">
+        <Top>1.625in</Top>
+        <ZIndex>7</ZIndex>
+        <Width>1.125in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Subject</Value>
+      </Textbox>
+      <Textbox Name="textbox3">
+        <Top>1.375in</Top>
+        <ZIndex>6</ZIndex>
+        <Width>1.125in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Complain Date</Value>
+      </Textbox>
+      <Textbox Name="ComplaintNo">
+        <Left>1.75in</Left>
+        <Top>0.375in</Top>
+        <rd:DefaultName>ComplaintNo</rd:DefaultName>
+        <ZIndex>5</ZIndex>
+        <Width>1.375in</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.19792in</Height>
+        <Value>=First(Fields!ComplaintNo.Value)</Value>
+      </Textbox>
+      <Textbox Name="textbox6">
+        <Top>0.625in</Top>
+        <ZIndex>4</ZIndex>
+        <Width>1.125in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Complain Type</Value>
+      </Textbox>
+      <Textbox Name="textbox5">
+        <Top>0.875in</Top>
+        <ZIndex>3</ZIndex>
+        <Width>1.125in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Office </Value>
+      </Textbox>
+      <Textbox Name="textbox4">
+        <Top>1.125in</Top>
+        <ZIndex>2</ZIndex>
+        <Width>1.25in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Employee Name </Value>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <Top>0.375in</Top>
+        <rd:DefaultName>textbox2</rd:DefaultName>
+        <ZIndex>1</ZIndex>
+        <Width>1in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Complain No</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Width>3in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontFamily>Tahoma</FontFamily>
+          <FontWeight>700</FontWeight>
+          <FontSize>12pt</FontSize>
+          <Color>SteelBlue</Color>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.36in</Height>
+        <Value>Complain Acknowledgement</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>4.375in</Height>
+  </Body>
+  <rd:ReportID>768e4422-7f22-42c9-aac9-455295bb92b4</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="IGRSS_REPORT">
+      <Query>
+        <CommandText>SELECT     ComplainId, ComplaintNo, ComplaintType, AgainstEmpID, ComplainingEmpID, ComplainantName, ComplainantAddress, ComplaintDate, 
+                      ReceivingOfficeId, Subject, Detail, InvestigatingOfficer, StartDate, EndDate, Report, Remarks, Status, CreatedBy, CreatedAt, ModifiedBy, ModifiedAt, 
+                      WfInstanceId, WfInfo
+FROM         ComplainDetails</CommandText>
+        <DataSourceName>IGRSS_REPORT</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="ComplainId">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>ComplainId</DataField>
+        </Field>
+        <Field Name="ComplaintNo">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ComplaintNo</DataField>
+        </Field>
+        <Field Name="ComplaintType">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>ComplaintType</DataField>
+        </Field>
+        <Field Name="AgainstEmpID">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>AgainstEmpID</DataField>
+        </Field>
+        <Field Name="ComplainingEmpID">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>ComplainingEmpID</DataField>
+        </Field>
+        <Field Name="ComplainantName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ComplainantName</DataField>
+        </Field>
+        <Field Name="ComplainantAddress">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ComplainantAddress</DataField>
+        </Field>
+        <Field Name="ComplaintDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>ComplaintDate</DataField>
+        </Field>
+        <Field Name="ReceivingOfficeId">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>ReceivingOfficeId</DataField>
+        </Field>
+        <Field Name="Subject">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Subject</DataField>
+        </Field>
+        <Field Name="Detail">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Detail</DataField>
+        </Field>
+        <Field Name="InvestigatingOfficer">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>InvestigatingOfficer</DataField>
+        </Field>
+        <Field Name="StartDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>StartDate</DataField>
+        </Field>
+        <Field Name="EndDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>EndDate</DataField>
+        </Field>
+        <Field Name="Report">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Report</DataField>
+        </Field>
+        <Field Name="Remarks">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Remarks</DataField>
+        </Field>
+        <Field Name="Status">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>Status</DataField>
+        </Field>
+        <Field Name="CreatedBy">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CreatedBy</DataField>
+        </Field>
+        <Field Name="CreatedAt">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>CreatedAt</DataField>
+        </Field>
+        <Field Name="ModifiedBy">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ModifiedBy</DataField>
+        </Field>
+        <Field Name="ModifiedAt">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>ModifiedAt</DataField>
+        </Field>
+        <Field Name="WfInstanceId">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>WfInstanceId</DataField>
+        </Field>
+        <Field Name="WfInfo">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>WfInfo</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>6.25in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

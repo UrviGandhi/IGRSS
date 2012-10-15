@@ -1,0 +1,595 @@
+Provider name: SampleEventProvider
+Buffering: 
+Buffering modality: 
+
+SampleEventLogWebEventProvider buffer flush.
+NotificationType: Urgent
+EventsInBuffer: 0
+EventsDiscardedSinceLastNotification: 0
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 26/10/2007 10:47:14 AM
+Event time (UTC): 26/10/2007 5:17:14 AM
+Event ID: f42902ca419e4ee393d0595f4495d818
+Event sequence: 1
+Event occurrence: 1
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 26/10/2007 10:47:15 AM
+Event time (UTC): 26/10/2007 5:17:15 AM
+Event ID: 36a990b1a23a4d9da30fb716bc946a7b
+Event sequence: 2
+Event occurrence: 1
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 26/10/2007 10:47:15 AM
+Event time (UTC): 26/10/2007 5:17:15 AM
+Event ID: 03dba666da5b423bab97ab02a1994b40
+Event sequence: 3
+Event occurrence: 2
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 26/10/2007 10:47:15 AM
+Event time (UTC): 26/10/2007 5:17:15 AM
+Event ID: f52cfd7725e54ee7989bc1975c883b8e
+Event sequence: 4
+Event occurrence: 2
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 26/10/2007 10:47:16 AM
+Event time (UTC): 26/10/2007 5:17:16 AM
+Event ID: 33e0131ef2e643d9bddb009b75107a49
+Event sequence: 5
+Event occurrence: 3
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+
+
+SampleEventLogWebEventProvider buffer flush.
+NotificationType: Urgent
+EventsInBuffer: 5
+EventsDiscardedSinceLastNotification: 44
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 26/10/2007 10:47:41 AM
+Event time (UTC): 26/10/2007 5:17:41 AM
+Event ID: 556fba2d714a464483953087143d6f24
+Event sequence: 50
+Event occurrence: 25
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 26/10/2007 10:47:42 AM
+Event time (UTC): 26/10/2007 5:17:42 AM
+Event ID: af198228bcf3438c8aaf83163a52ff12
+Event sequence: 51
+Event occurrence: 26
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 26/10/2007 10:47:43 AM
+Event time (UTC): 26/10/2007 5:17:43 AM
+Event ID: bb1c5be55eba437398548f6e06cada72
+Event sequence: 52
+Event occurrence: 26
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 26/10/2007 10:47:43 AM
+Event time (UTC): 26/10/2007 5:17:43 AM
+Event ID: b06cda3208dd4675885ccdfd83028bba
+Event sequence: 53
+Event occurrence: 27
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 26/10/2007 10:47:44 AM
+Event time (UTC): 26/10/2007 5:17:44 AM
+Event ID: 8279b6d06b3a47deb897cf98adf02d01
+Event sequence: 54
+Event occurrence: 27
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+
+
+SampleEventLogWebEventProvider buffer flush.
+NotificationType: Urgent
+EventsInBuffer: 5
+EventsDiscardedSinceLastNotification: 40
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 26/10/2007 10:48:04 AM
+Event time (UTC): 26/10/2007 5:18:04 AM
+Event ID: 1c134e6b75f241e4af1c3401c95bbc26
+Event sequence: 95
+Event occurrence: 48
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 26/10/2007 10:48:04 AM
+Event time (UTC): 26/10/2007 5:18:04 AM
+Event ID: 1fa993413151474bafc2f1b49a5fbd0c
+Event sequence: 96
+Event occurrence: 48
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 26/10/2007 10:48:05 AM
+Event time (UTC): 26/10/2007 5:18:05 AM
+Event ID: 0007838a40e541788b98aed138381c88
+Event sequence: 97
+Event occurrence: 49
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 26/10/2007 10:48:05 AM
+Event time (UTC): 26/10/2007 5:18:05 AM
+Event ID: bdce87988a014fcd83fe73a23a7d3f40
+Event sequence: 98
+Event occurrence: 49
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 26/10/2007 10:48:06 AM
+Event time (UTC): 26/10/2007 5:18:06 AM
+Event ID: 0009b6c7edbc4314b5b6312cf677defd
+Event sequence: 99
+Event occurrence: 50
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+
+
+SampleEventLogWebEventProvider buffer flush.
+NotificationType: Urgent
+EventsInBuffer: 0
+EventsDiscardedSinceLastNotification: 0
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 26/10/2007 10:48:06 AM
+Event time (UTC): 26/10/2007 5:18:06 AM
+Event ID: 18ce61044c814fd6871b6557824ebad1
+Event sequence: 100
+Event occurrence: 50
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 26/10/2007 10:48:07 AM
+Event time (UTC): 26/10/2007 5:18:07 AM
+Event ID: 45c8f67854e044e6b519b8b52bb072dc
+Event sequence: 101
+Event occurrence: 51
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 26/10/2007 10:48:07 AM
+Event time (UTC): 26/10/2007 5:18:07 AM
+Event ID: 5ea686ad535b41809fcf98ddc2544098
+Event sequence: 102
+Event occurrence: 51
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 26/10/2007 10:48:08 AM
+Event time (UTC): 26/10/2007 5:18:08 AM
+Event ID: 9bd603ccfd1444d8a7fdb8aadf2473ec
+Event sequence: 103
+Event occurrence: 52
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 26/10/2007 10:48:08 AM
+Event time (UTC): 26/10/2007 5:18:08 AM
+Event ID: 491a10e3cb02476f8024bea6713b4f58
+Event sequence: 104
+Event occurrence: 52
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+
+
+SampleEventLogWebEventProvider buffer flush.
+NotificationType: Urgent
+EventsInBuffer: 0
+EventsDiscardedSinceLastNotification: 0
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 26/10/2007 4:20:04 PM
+Event time (UTC): 26/10/2007 10:50:04 AM
+Event ID: 4d15c39b5d1d4ba5b9639901ed56a377
+Event sequence: 105
+Event occurrence: 53
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 26/10/2007 4:20:06 PM
+Event time (UTC): 26/10/2007 10:50:06 AM
+Event ID: 9bf099a4dcd14670b843bea5fc70911e
+Event sequence: 106
+Event occurrence: 53
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+Event code: 1003
+Event message: Application compilation is starting.
+Event time: 26/10/2007 4:20:06 PM
+Event time (UTC): 26/10/2007 10:50:06 AM
+Event ID: 4193155be9454f53aa91f3e46e0bb125
+Event sequence: 107
+Event occurrence: 54
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+
+
+SampleEventLogWebEventProvider buffer flush.
+NotificationType: Urgent
+EventsInBuffer: 0
+EventsDiscardedSinceLastNotification: 0
+Event code: 1004
+Event message: Application compilation finished.
+Event time: 26/10/2007 4:20:07 PM
+Event time (UTC): 26/10/2007 10:50:07 AM
+Event ID: bd97197175ec4d979bd48053e930c5d1
+Event sequence: 108
+Event occurrence: 54
+Event detail code: 0
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+
+
+SampleEventLogWebEventProvider buffer flush.
+NotificationType: Flush
+EventsInBuffer: 0
+EventsDiscardedSinceLastNotification: 0
+Event code: 1002
+Event message: Application is shutting down. Reason: A subdirectory in the Bin application directory was changed or renamed.
+Event time: 26/10/2007 4:29:52 PM
+Event time (UTC): 26/10/2007 10:59:52 AM
+Event ID: 31f317d3631946a4b89a99c24b8c4c2c
+Event sequence: 109
+Event occurrence: 1
+Event detail code: 50007
+
+Application information:
+    Application domain: 52c5324e-5-128378494296544072
+    Trust level: Full
+    Application Virtual Path: /WebApp
+    Application Path: E:\Projects\Igrss\Final\WebApp\
+    Machine name: CDCGS1030
+
+Process information:
+    Process ID: 2568
+    Process name: devenv.exe
+    Account name: CDCBLR\pradeepy
+
+----------------------------------------------------------
+

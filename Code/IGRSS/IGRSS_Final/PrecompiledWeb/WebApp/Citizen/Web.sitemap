@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap>
+	<siteMapNode url="ApplicationStatus.aspx"
+				 title="Home">
+
+	</siteMapNode>
+	<siteMapNode title="Suggestions.aspx"
+				 description="Our Services">
+
+	</siteMapNode>
+
+</siteMap>

@@ -1,0 +1,203 @@
+﻿<StateMachineWorkflowDesigner xmlns:ns0="clr-namespace:System.Drawing;Assembly=System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Name="AdjudicationProcess" Location="30, 30" Size="1273, 792" AutoSize="False" AutoSizeMargin="16, 24" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateMachineWorkflowDesigner.DesignerConnectors>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="Verification" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="SetAdjudicationInitilized" SourceStateName="InitilizeAdjudication" SourceConnectionEdge="Right" TargetActivity="Verification" SourceActivity="InitilizeAdjudication" EventHandlerName="InitilizeProcess">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="164" Y="110" />
+				<ns0:Point X="306" Y="110" />
+				<ns0:Point X="306" Y="177" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="ValuationRequest" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="SetVerified" SourceStateName="Verification" SourceConnectionEdge="Right" TargetActivity="ValuationRequest" SourceActivity="Verification" EventHandlerName="InitilizeVerification">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="361" Y="218" />
+				<ns0:Point X="526" Y="218" />
+				<ns0:Point X="526" Y="257" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="Verification" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="SetApplicationUpdated" SourceStateName="Verification" SourceConnectionEdge="Left" TargetActivity="Verification" SourceActivity="Verification" EventHandlerName="ApplicationUpdated">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="230" Y="242" />
+				<ns0:Point X="218" Y="242" />
+				<ns0:Point X="218" Y="169" />
+				<ns0:Point X="306" Y="169" />
+				<ns0:Point X="306" Y="177" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="Verification" SourceConnectionIndex="2" TargetConnectionEdge="Top" SetStateName="SetVerificationValid" SourceStateName="Verification" SourceConnectionEdge="Left" TargetActivity="Verification" SourceActivity="Verification" EventHandlerName="VerificationValid">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="230" Y="266" />
+				<ns0:Point X="218" Y="266" />
+				<ns0:Point X="218" Y="169" />
+				<ns0:Point X="306" Y="169" />
+				<ns0:Point X="306" Y="177" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="DataEntryPending" SourceConnectionIndex="3" TargetConnectionEdge="Top" SetStateName="SetVerificationInvalid" SourceStateName="Verification" SourceConnectionEdge="Left" TargetActivity="DataEntryPending" SourceActivity="Verification" EventHandlerName="VerificationInvalid">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="230" Y="290" />
+				<ns0:Point X="153" Y="290" />
+				<ns0:Point X="153" Y="334" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="Verification" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="SetApplicationSaved" SourceStateName="DataEntryPending" SourceConnectionEdge="Left" TargetActivity="Verification" SourceActivity="DataEntryPending" EventHandlerName="ApplicationSaved">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="77" Y="375" />
+				<ns0:Point X="66" Y="375" />
+				<ns0:Point X="66" Y="169" />
+				<ns0:Point X="306" Y="169" />
+				<ns0:Point X="306" Y="177" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="PhysicalVerification" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="SetPhysicalVerificationRequired" SourceStateName="ValuationRequest" SourceConnectionEdge="Right" TargetActivity="PhysicalVerification" SourceActivity="ValuationRequest" EventHandlerName="PhysicalVerificationRequired">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="607" Y="322" />
+				<ns0:Point X="686" Y="322" />
+				<ns0:Point X="686" Y="379" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="ValuateProperty" SourceConnectionIndex="2" TargetConnectionEdge="Top" SetStateName="SetNoPhysicalVerificationRequired" SourceStateName="ValuationRequest" SourceConnectionEdge="Left" TargetActivity="ValuateProperty" SourceActivity="ValuationRequest" EventHandlerName="NoPhysicalVerificationRequired">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="427" Y="346" />
+				<ns0:Point X="345" Y="346" />
+				<ns0:Point X="345" Y="381" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="ValuationRequest" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="SetSubmitVerificationReport" SourceStateName="PhysicalVerification" SourceConnectionEdge="Right" TargetActivity="ValuationRequest" SourceActivity="PhysicalVerification" EventHandlerName="SubmitVerificationReport">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="767" Y="420" />
+				<ns0:Point X="782" Y="420" />
+				<ns0:Point X="782" Y="249" />
+				<ns0:Point X="526" Y="249" />
+				<ns0:Point X="526" Y="257" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="ValuationComplete" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="SetIssueValuationReport" SourceStateName="ValuateProperty" SourceConnectionEdge="Right" TargetActivity="ValuationComplete" SourceActivity="ValuateProperty" EventHandlerName="IssueValuationReport">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="415" Y="422" />
+				<ns0:Point X="516" Y="422" />
+				<ns0:Point X="516" Y="464" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="Complete" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="SetIssueStampCertificate" SourceStateName="ValuationComplete" SourceConnectionEdge="Left" TargetActivity="Complete" SourceActivity="ValuationComplete" EventHandlerName="IssueStampCertificate">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="440" Y="505" />
+				<ns0:Point X="250" Y="505" />
+				<ns0:Point X="250" Y="519" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+	</StateMachineWorkflowDesigner.DesignerConnectors>
+	<StateMachineWorkflowDesigner.Designers>
+		<StateDesigner Name="InitilizeAdjudication" Location="46, 69" Size="160, 80" AutoSize="False" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<StateInitializationDesigner Size="150, 194" Name="InitilizeProcess" Location="54, 100">
+					<StateInitializationDesigner.Designers>
+						<CodeDesigner Size="130, 41" Name="InitilizeFlow" Location="64, 162" />
+						<SetStateDesigner Size="130, 53" Name="SetAdjudicationInitilized" Location="64, 222" />
+					</StateInitializationDesigner.Designers>
+				</StateInitializationDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="Verification" Location="226, 177" Size="160, 142" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<StateInitializationDesigner Size="381, 303" Name="InitilizeVerification" Location="234, 208">
+					<StateInitializationDesigner.Designers>
+						<IfElseDesigner Size="361, 222" Name="VerificationStatus" Location="244, 270">
+							<IfElseDesigner.Designers>
+								<IfElseBranchDesigner Size="150, 122" Name="VerificationComplete" Location="263, 341">
+									<IfElseBranchDesigner.Designers>
+										<SetStateDesigner Size="130, 41" Name="SetVerified" Location="273, 403" />
+									</IfElseBranchDesigner.Designers>
+								</IfElseBranchDesigner>
+								<IfElseBranchDesigner Size="150, 122" Name="VerificationPending" Location="436, 341">
+									<IfElseBranchDesigner.Designers>
+										<CodeDesigner Size="130, 41" Name="VerificationAlert" Location="446, 403" />
+									</IfElseBranchDesigner.Designers>
+								</IfElseBranchDesigner>
+							</IfElseDesigner.Designers>
+						</IfElseDesigner>
+					</StateInitializationDesigner.Designers>
+				</StateInitializationDesigner>
+				<EventDrivenDesigner Size="150, 194" Name="ApplicationUpdated" Location="234, 232">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 41" Name="OnApplicationUpdated" Location="244, 294" />
+						<SetStateDesigner Size="130, 53" Name="SetApplicationUpdated" Location="244, 354" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="150, 194" Name="VerificationValid" Location="234, 256">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 41" Name="OnVerificationValid" Location="244, 318" />
+						<SetStateDesigner Size="130, 53" Name="SetVerificationValid" Location="244, 378" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="150, 194" Name="VerificationInvalid" Location="234, 280">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 41" Name="OnVerificationInvalid" Location="244, 342" />
+						<SetStateDesigner Size="130, 53" Name="SetVerificationInvalid" Location="244, 402" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="DataEntryPending" Location="73, 334" Size="160, 80" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="150, 194" Name="ApplicationSaved" Location="81, 365">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 41" Name="OnAdjudicationApplicationSaved" Location="91, 427" />
+						<SetStateDesigner Size="130, 53" Name="SetApplicationSaved" Location="91, 487" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="ValuationRequest" Location="423, 257" Size="207, 102" AutoSize="False" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<StateInitializationDesigner Size="150, 122" Name="InitilizeValuationRequest" Location="591, 148">
+					<StateInitializationDesigner.Designers>
+						<CodeDesigner Size="130, 41" Name="SendValuationRequest" Location="601, 210" />
+					</StateInitializationDesigner.Designers>
+				</StateInitializationDesigner>
+				<EventDrivenDesigner Size="150, 194" Name="PhysicalVerificationRequired" Location="583, 159">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 41" Name="handleExternalEventActivity1" Location="593, 221" />
+						<SetStateDesigner Size="130, 53" Name="SetPhysicalVerificationRequired" Location="593, 281" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="150, 194" Name="NoPhysicalVerificationRequired" Location="583, 183">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 41" Name="handleExternalEventActivity2" Location="593, 245" />
+						<SetStateDesigner Size="130, 53" Name="SetNoPhysicalVerificationRequired" Location="593, 305" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="PhysicalVerification" Location="599, 379" Size="174, 80" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="150, 194" Name="SubmitVerificationReport" Location="607, 410">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 41" Name="handleExternalEventActivity3" Location="617, 472" />
+						<SetStateDesigner Size="130, 53" Name="SetSubmitVerificationReport" Location="617, 532" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="ValuateProperty" Location="265, 381" Size="160, 80" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="150, 194" Name="IssueValuationReport" Location="273, 412">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 41" Name="handleExternalEventActivity4" Location="283, 474" />
+						<SetStateDesigner Size="130, 53" Name="SetIssueValuationReport" Location="283, 534" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="Complete" Location="170, 519" Size="160, 80" AutoSizeMargin="16, 24" />
+		<StateDesigner Name="ValuationComplete" Location="436, 464" Size="160, 80" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="150, 194" Name="IssueStampCertificate" Location="444, 495">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 41" Name="handleExternalEventActivity5" Location="454, 557" />
+						<SetStateDesigner Size="130, 53" Name="SetIssueStampCertificate" Location="454, 617" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+	</StateMachineWorkflowDesigner.Designers>
+</StateMachineWorkflowDesigner>

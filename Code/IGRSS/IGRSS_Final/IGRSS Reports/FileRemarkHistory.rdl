@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="IGRSS_REPORT">
+      <DataSourceReference>IGRSS_REPORT</DataSourceReference>
+      <rd:DataSourceID>f09c2f1b-87dd-4d54-80cf-1d5a23735a05</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <ReportParameters>
+    <ReportParameter Name="FileId">
+      <DataType>String</DataType>
+      <Prompt>FileId</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontFamily>Tahoma</FontFamily>
+          <FontWeight>700</FontWeight>
+          <FontSize>20pt</FontSize>
+          <Color>SteelBlue</Color>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.36in</Height>
+        <Value>File Remark Report</Value>
+      </Textbox>
+      <List Name="List1">
+        <Sorting>
+          <SortBy>
+            <SortExpression>=Fields!FileId.Value</SortExpression>
+            <Direction>Ascending</Direction>
+          </SortBy>
+        </Sorting>
+        <ReportItems>
+          <List Name="list2">
+            <ReportItems>
+              <Textbox Name="RemarkBy">
+                <Top>0.25in</Top>
+                <rd:DefaultName>RemarkBy</rd:DefaultName>
+                <ZIndex>4</ZIndex>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.25in</Height>
+                <Value>="By: " &amp; Fields!RemarkBy.Value &amp; "  At : " &amp; Fields!RemarkAt.Value</Value>
+              </Textbox>
+              <Textbox Name="Body_1">
+                <Left>0.625in</Left>
+                <Top>1in</Top>
+                <rd:DefaultName>Body_1</rd:DefaultName>
+                <ZIndex>3</ZIndex>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Value>=Fields!Body.Value</Value>
+              </Textbox>
+              <Textbox Name="Subject_1">
+                <Left>0.625in</Left>
+                <Top>0.625in</Top>
+                <rd:DefaultName>Subject_1</rd:DefaultName>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.25in</Height>
+                <Value>=Fields!Subject.Value</Value>
+              </Textbox>
+              <Textbox Name="textbox6">
+                <Top>0.625in</Top>
+                <rd:DefaultName>textbox6</rd:DefaultName>
+                <ZIndex>1</ZIndex>
+                <Width>0.625in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.25in</Height>
+                <Value>Subject:</Value>
+              </Textbox>
+              <Textbox Name="textbox7">
+                <Top>1in</Top>
+                <Width>0.625in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Value>Body:</Value>
+              </Textbox>
+            </ReportItems>
+            <Top>0.125in</Top>
+            <Height>1.25in</Height>
+          </List>
+        </ReportItems>
+        <DataSetName>IGRSS_REPORT</DataSetName>
+        <Top>0.36in</Top>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>14pt</FontSize>
+          <Color>SlateGray</Color>
+        </Style>
+        <Grouping Name="list1_FileId">
+          <PageBreakAtEnd>true</PageBreakAtEnd>
+          <GroupExpressions>
+            <GroupExpression>=Fields!FileId.Value</GroupExpression>
+          </GroupExpressions>
+        </Grouping>
+      </List>
+    </ReportItems>
+    <Height>2.11in</Height>
+  </Body>
+  <rd:ReportID>da276438-dade-4da3-a2e8-8a7692cc1957</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="IGRSS_REPORT">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>SELECT * FROM FileRemarks WHERE FileId=@FileId</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@FileId">
+            <Value>=Parameters!FileId.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>IGRSS_REPORT</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="RemarkId">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>RemarkId</DataField>
+        </Field>
+        <Field Name="FileId">
+          <rd:TypeName>System.Guid</rd:TypeName>
+          <DataField>FileId</DataField>
+        </Field>
+        <Field Name="RemarkNo">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>RemarkNo</DataField>
+        </Field>
+        <Field Name="Subject">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Subject</DataField>
+        </Field>
+        <Field Name="Body">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Body</DataField>
+        </Field>
+        <Field Name="RemarkBy">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>RemarkBy</DataField>
+        </Field>
+        <Field Name="RemarkAt">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>RemarkAt</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>5in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="IGRSS.BusinessLayer.Properties" GeneratedClassName="SecurityExceptionMessages">
+  <Profiles />
+  <Settings>
+    <Setting Name="LockedOutUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">This user has beed lockedout.</Value>
+    </Setting>
+    <Setting Name="IncorrectPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">The username and password that you provided does not match.</Value>
+    </Setting>
+    <Setting Name="UserNotFound" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">The username specified has invalid</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,223 @@
+<%@ Page Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true"
+	CodeFile="PurchaseRegHeader.aspx.cs" Inherits="Purchase_PurchaseRegHeader" Title="Untitled Page" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="Server">
+	<asp:FormView ID="FormView1" runat="server" DefaultMode="Insert">
+		<InsertItemTemplate>
+			<table width="100%">
+				<tr>
+					<td colspan="6">
+						<asp:Label ID="lblFileDetailsHeaderIns" runat="server" meta:resourcekey="lblFileDetailsHeaderIns"
+							SkinID="SubHeading" Text="Application Details"></asp:Label>
+					</td>
+				</tr>
+				<tr>
+					<td class="labelColumn">
+						<asp:Label ID="lblReceiptNumberIns" runat="server" meta:resourcekey="lblReceiptNumberIns"
+							Text="PurRequsition No"></asp:Label>
+					</td>
+					<td class="textColumn">
+						<asp:TextBox ID="txtReceiptNumberIns" runat="server" meta:resourcekey="txtReceiptNumberIns"
+							Text='<%# Bind("PurRequsitionNo") %>'></asp:TextBox>
+					</td>
+					<td class="validationColumn">
+					</td>
+					<td class="labelColumn">
+						<asp:Label ID="lblAdjudicationTotalFeesIns" runat="server" meta:resourcekey="lblAdjudicationTotalFeesIns"
+							Text="Vendor ID"></asp:Label>
+					</td>
+					<td class="textColumn">
+						<%--<asp:TextBox ID="txtAdjudicationTotalFeesIns" runat="server" meta:resourcekey="txtAdjudicationTotalFeesIns"
+							Text='<%# Bind("VendorID") %>'></asp:TextBox>--%>
+							
+						<asp:DropDownList ID="ddlOfficeNameIns" runat="server" DataSourceID="OdsVendorMaster"
+							DataTextField="VendorName" DataValueField="VendorID" SelectedValue='<%# Bind("VendorID") %>'
+							Width="157px">
+						</asp:DropDownList>
+						
+							
+							
+					</td>
+					<td class="validationColumn">
+					</td>
+				</tr>
+				<tr>
+					<td class="labelColumn">
+						<asp:Label ID="Label1" runat="server" meta:resourcekey="lblReceiptNumberIns" Text="Purchase Date"></asp:Label>
+					</td>
+					<td class="textColumn">
+						<asp:TextBox ID="TextBox1" runat="server" meta:resourcekey="txtReceiptNumberIns"
+							Text='<%# Bind("PurchaseDate") %>'></asp:TextBox>
+					</td>
+					<td class="validationColumn">
+					</td>
+					<td class="labelColumn">
+						<asp:Label ID="Label2" runat="server" meta:resourcekey="lblAdjudicationTotalFeesIns"
+							Text="Req By Emp ID"></asp:Label>
+					</td>
+					<td class="textColumn">
+						<asp:TextBox ID="TextBox2" runat="server" meta:resourcekey="txtAdjudicationTotalFeesIns"
+							Text='<%# Bind("ReqByEmpID") %>'></asp:TextBox>
+					</td>
+					<td class="validationColumn">
+					</td>
+				</tr>
+				<tr>
+					<td class="labelColumn">
+						<asp:Label ID="Label3" runat="server" meta:resourcekey="lblReceiptNumberIns" Text="Request Date"></asp:Label>
+					</td>
+					<td class="textColumn">
+						<asp:TextBox ID="TextBox3" runat="server" meta:resourcekey="txtReceiptNumberIns"
+							Text='<%# Bind("RequestDate") %>'></asp:TextBox>
+					</td>
+					<td class="validationColumn">
+					</td>
+					<td class="labelColumn">
+						<asp:Label ID="Label4" runat="server" meta:resourcekey="lblAdjudicationTotalFeesIns"
+							Text="Purchase ID"></asp:Label>
+					</td>
+					<td class="textColumn">
+						<asp:TextBox ID="TextBox4" runat="server" meta:resourcekey="txtAdjudicationTotalFeesIns"
+							Text='<%# Bind("PurchaseID") %>'></asp:TextBox>
+					</td>
+					<td class="validationColumn">
+					</td>
+				</tr>
+				<tr>
+					<td class="labelColumn">
+						<asp:Label ID="Label5" runat="server" meta:resourcekey="lblReceiptNumberIns" Text="Item ID"></asp:Label>
+					</td>
+					<td class="textColumn">
+						<asp:TextBox ID="TextBox5" runat="server" meta:resourcekey="txtReceiptNumberIns"
+							Text='<%# Bind("ItemID") %>'></asp:TextBox>
+					</td>
+					<td class="validationColumn">
+					</td>
+					<td class="labelColumn">
+						<asp:Label ID="Label6" runat="server" meta:resourcekey="lblAdjudicationTotalFeesIns"
+							Text="Pack Type"></asp:Label>
+					</td>
+					<td class="textColumn">
+						<asp:TextBox ID="TextBox6" runat="server" meta:resourcekey="txtAdjudicationTotalFeesIns"
+							Text='<%# Bind("PackType") %>'></asp:TextBox>
+					</td>
+					<td class="validationColumn">
+					</td>
+				</tr>
+				<tr>
+					<td class="labelColumn">
+						<asp:Label ID="Label7" runat="server" meta:resourcekey="lblReceiptNumberIns" Text="Quantity"></asp:Label>
+					</td>
+					<td class="textColumn">
+						<asp:TextBox ID="TextBox7" runat="server" meta:resourcekey="txtReceiptNumberIns"
+							Text='<%# Bind("Quantity") %>'></asp:TextBox>
+					</td>
+					<td class="validationColumn">
+					</td>
+					<td class="labelColumn">
+						<asp:Label ID="Label8" runat="server" meta:resourcekey="lblAdjudicationTotalFeesIns"
+							Text="Price"></asp:Label>
+					</td>
+					<td class="textColumn">
+						<asp:TextBox ID="TextBox8" runat="server" meta:resourcekey="txtAdjudicationTotalFeesIns"
+							Text='<%# Bind("Price") %>'></asp:TextBox>
+					</td>
+					<td class="validationColumn">
+					</td>
+				</tr>
+				<tr>
+					<td class="labelColumn">
+						<asp:Label ID="Label9" runat="server" meta:resourcekey="lblReceiptNumberIns" Text="Value"></asp:Label>
+					</td>
+					<td class="textColumn">
+						<asp:TextBox ID="TextBox9" runat="server" meta:resourcekey="txtReceiptNumberIns"
+							Text='<%# Bind("Value") %>'></asp:TextBox>
+					</td>
+					<td class="validationColumn">
+					</td>
+					<td class="labelColumn">
+						<asp:Label ID="Label10" runat="server" meta:resourcekey="lblAdjudicationTotalFeesIns"
+							Text="Adjudication Total Fees"></asp:Label>
+					</td>
+					<td class="textColumn">
+					</td>
+					<td class="validationColumn">
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+					</td>
+					<td>
+					</td>
+					<td>
+					</td>
+					<td>
+						<asp:Button ID="Button1" runat="server" Text="Save" />
+					</td>
+					<td>
+					</td>
+				</tr>
+			</table>
+		</InsertItemTemplate>
+	</asp:FormView>
+	<br />
+	<br />
+	<br />
+	<br />
+	<asp:ObjectDataSource ID="ObjectDataSource5" runat="server"></asp:ObjectDataSource>
+	<br />
+	<br />
+	<asp:ObjectDataSource ID="ObjectDataSource4" runat="server"></asp:ObjectDataSource>
+	<br />
+	<asp:ObjectDataSource ID="ObjectDataSource1" runat="server"></asp:ObjectDataSource>
+	<br />
+	<asp:ObjectDataSource ID="OdsEmployeeMaster" runat="server" DataObjectTypeName="System.Guid"
+		DeleteMethod="DeleteEmployeeQualification" InsertMethod="AddNewEmployeeMaster"
+		OldValuesParameterFormatString="original_{0}" SelectMethod="GetEmployeeDetails"
+		TypeName="IGRSS.BusinessLogicLayer.Employee" UpdateMethod="UpdateEmployeeMaster">
+		<UpdateParameters>
+			<asp:Parameter Name="EmployeeID" Type="Object" />
+			<asp:Parameter Name="Parameters" Type="Object" />
+			<asp:Parameter Name="QualificationDetails" Type="Object" />
+		</UpdateParameters>
+		<InsertParameters>
+			<asp:Parameter Name="Parameter" Type="Object" />
+			<asp:Parameter Name="dtQualification" Type="Object" />
+		</InsertParameters>
+	</asp:ObjectDataSource>
+	<br />
+	<asp:ObjectDataSource ID="OdsVendorMaster" runat="server" InsertMethod="InsertVendorMaster"
+		OldValuesParameterFormatString="original_{0}" SelectMethod="GetVendorMasterTableDetails"
+		TypeName="IGRSS.BusinessLogicLayer.Purchase" UpdateMethod="UpdateVendorMaster">
+		<UpdateParameters>
+			<asp:Parameter Name="VendorID" Type="Object" />
+			<asp:Parameter Name="VendorType" Type="String" />
+			<asp:Parameter Name="CompanyName" Type="String" />
+			<asp:Parameter Name="VendorName" Type="String" />
+			<asp:Parameter Name="Address" Type="String" />
+			<asp:Parameter Name="Phone" Type="String" />
+			<asp:Parameter Name="ContactPerson" Type="String" />
+			<asp:Parameter Name="CreatedBy" Type="String" />
+			<asp:Parameter Name="CreatedAt" Type="DateTime" />
+		</UpdateParameters>
+		<InsertParameters>
+			<asp:Parameter Name="VendorID" Type="Object" />
+			<asp:Parameter Name="VendorType" Type="String" />
+			<asp:Parameter Name="CompanyName" Type="String" />
+			<asp:Parameter Name="VendorName" Type="String" />
+			<asp:Parameter Name="Address" Type="String" />
+			<asp:Parameter Name="Phone" Type="String" />
+			<asp:Parameter Name="ContactPerson" Type="String" />
+			<asp:Parameter Name="CreatedBy" Type="String" />
+			<asp:Parameter Name="CreatedAt" Type="DateTime" />
+		</InsertParameters>
+	</asp:ObjectDataSource>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+</asp:Content>

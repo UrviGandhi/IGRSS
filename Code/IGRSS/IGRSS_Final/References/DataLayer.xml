@@ -1,0 +1,409 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DataLayer</name>
+    </assembly>
+    <members>
+        <member name="F:Trans.DataLayer.DataManager.m_CloseConnection">
+            <summary>
+            if m_CloseConnection=true then connection will be closed and disposed after action (select,insert,delete and update) 
+            performed
+            </summary>
+        </member>
+        <member name="F:Trans.DataLayer.DataManager.BackendType">
+            <summary>
+            Indicates the type of Backend that will be used.
+            All backend specific operations must be performed checking this property
+            </summary>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.#ctor(Trans.DataLayer.DataManager.DatabaseType)">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteNonQuery(System.String,System.String,System.Collections.Hashtable)">
+            <summary>
+            Function to execute insert/update/delete queries/stored procedure 
+            and return number of rows affected
+            </summary>
+            <param name="connString">Connection String</param>
+            <param name="spName">Stored procedure name. 
+            If package then packagename.procedurename</param>
+            <param name="ParamTable">Parameter collection in hashtable</param>
+            <returns>Number of rows affected</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteNonQuery(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Function to execute insert/update/delete queries/stored procedure and return number of rows affected
+            </summary>
+            <param name="connString">Oracle Connection string</param>
+            <param name="CmdType">Type:Storedprocedure or Text</param>
+            <param name="cmdText">Insert/update/delete query to be executed</param>
+            <returns>Number of rows affected</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteNonQuery(System.String,System.String)">
+            <summary>
+            Function to execute insert/update/delete queries/stored procedure and return number of rows affected
+            </summary>
+            <param name="connString">Oracle Connection string</param>
+            <param name="cmdText">Insert/update/delete query to be executed</param>
+            <returns>Number of rows affected</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteNonQuery(System.String,System.String,System.Data.CommandType,System.Collections.Hashtable)">
+            <summary>
+            Function to execute insert/update/delete queries/stored procedure and return number of rows affected
+            </summary>
+            <param name="connString">Oracle Connection string</param>
+            <param name="spName">Stored procedure name. if package then packagename.procedurename</param>
+            <param name="CmdType">Type:Storedprocedure or Text</param>
+            <param name="ParamTable">Parameter collection in hashtable</param>
+            <returns>Number of rows affected</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Hashtable)">
+            <summary>
+            Function to execute insert/update/delete queries/stored procedure and return number of rows affected
+            </summary>
+            <param name="DbConn">Oracle Connection </param>
+            <param name="spName">Stored procedure name. if package then packagename.procedurename</param>
+            <param name="CmdType">Type:Storedprocedure or Text</param>
+            <param name="ParamTable">Parameter collection in hashtable</param>
+            <returns>Number of rows affected</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteNonQuery(System.Data.Common.DbTransaction,System.String,System.Data.CommandType,System.Collections.Hashtable)">
+            <summary>
+            Function to execute insert/update/delete queries/stored procedure and return number of rows affected
+            </summary>
+            <param name="DbTrans">Oracle transaction</param>
+            <param name="spName">Stored procedure name. if package then packagename.procedurename</param>
+            <param name="CmdType">Type:Storedprocedure or Text</param>
+            <param name="ParamTable">Parameter collection in hashtable</param>
+            <returns>Number of rows affected</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteQuery(System.Data.Common.DbConnection,System.Data.Common.DbTransaction,System.String,System.Data.CommandType,System.Collections.Hashtable,Trans.DataLayer.DataManager.ExecuteAction)">
+            <summary>
+            Function to execute insert/update/delete queries/stored procedure and return number of rows affected
+            </summary>
+            <param name="DbConn">Oracle Connection</param>
+            <param name="DbTrans">Oracle transaction</param>
+            <param name="spName">Stored procedure name. if package then packagename.procedurename</param>
+            <param name="CmdType">Type:Storedprocedure or Text</param>
+            <param name="ParamTable">Parameter collection in hashtable</param>
+            <param name="ExecAction">ExecAction:Execute nonquery or Scalar</param>
+            <returns>Number of rows affected for nonquery action and First row first column value will be returned
+            for executescalar action
+            </returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteNonQuery(System.Data.Common.DbTransaction,System.String)">
+            <summary>
+            Function to execute insert/update/delete queries/stored procedure and return number of rows affected
+            </summary>
+            <param name="DbTrans">Oracle transaction</param>
+            <param name="cmdText">Insert/update/delete query to be executed</param>
+            <returns>Number of rows affected</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteNonQuery(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Function to execute insert/update/delete queries/stored procedure and return number of rows affected
+            </summary>
+            <param name="DbTrans">Oracle transaction</param>
+            <param name="CmdType">Type:Storedprocedure or Text</param>
+            <param name="cmdText">Insert/update/delete query to be executed</param>
+            <returns>Number of rows affected</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteNonQuery(System.Data.Common.DbTransaction,System.String,System.Collections.Hashtable)">
+            <summary>
+            Function to execute insert/update/delete queries/stored procedure and return number of rows affected
+            </summary>
+            <param name="DbTrans">Oracle transaction</param>
+            <param name="spName">Stored procedure name. if package then packagename.procedurename</param>
+            <param name="ParamTable">parameter collection in hashtable</param>
+            <returns>Number of rows affected</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteDataset(System.String,System.String,System.Collections.Hashtable)">
+            <summary>
+            Function to select and fill dataset from queries/stored procedure and return filled dataset
+            </summary>
+            <param name="connString">Oracle Connection string</param>
+            <param name="spName">Stored procedure name. if package then packagename.procedurename</param>
+            <param name="ParamTable">parameter collection in hashtable</param>
+            <returns>Resultant dataset</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteDataset(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Function to select and fill dataset from queries/stored procedure and return filled dataset
+            </summary>
+            <param name="connString">Oracle Connection string</param>
+            <param name="CmdType">Type:Storedprocedure or Text</param>
+            <param name="cmdText">Select command text</param>
+            <returns>Resultant dataset</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteDataset(System.String,System.String)">
+            <summary>
+            Function to select and fill dataset from queries/stored procedure and return filled dataset
+            </summary>
+            <param name="connString">Oracle Connection string</param>
+            <param name="cmdText">Select command text</param>
+            <returns>Resultant dataset</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteDataset(System.String,System.String,System.Data.CommandType,System.Collections.Hashtable)">
+            <summary>
+            Function to select and fill dataset from queries/stored procedure and return filled dataset
+            </summary>
+            <param name="connString">Oracle Connection string</param>
+            <param name="spName">Stored procedure name. if package then packagename.procedurename</param>
+            <param name="CmdType">Type:Storedprocedure or Text</param>
+            <param name="ParamTable">Parameter collection in hashtable</param>
+            <returns>Resultant dataset</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteDataset(System.Data.Common.DbTransaction,System.String,System.Data.CommandType,System.Collections.Hashtable)">
+            <summary>
+            Function to select and fill dataset from queries/stored procedure and return filled dataset
+            </summary>
+            <param name="DbTrans">Oracle transaction</param>
+            <param name="spName">Stored procedure name. if package then packagename.procedurename</param>
+            <param name="CmdType">Type:Storedprocedure or Text</param>
+            <param name="ParamTable">Parameter collection in hashtable</param>
+            <returns>Resultant dataset</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteDataset(System.Data.Common.DbConnection,System.Data.Common.DbTransaction,System.String,System.Data.CommandType,System.Collections.Hashtable)">
+            <summary>
+            Function to select and fill dataset from queries/stored procedure and return filled dataset
+            </summary>
+            <param name="DbConn">Oracle Connection</param>
+            <param name="DbTrans">Oracle transaction</param>
+            <param name="spName">Stored procedure name. if package then packagename.procedurename</param>
+            <param name="CmdType">Type:Storedprocedure or Text</param>
+            <param name="ParamTable">Parameter collection in hashtable</param>
+            <returns>Resultant dataset</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteDataset(System.Data.Common.DbTransaction,System.String,System.Collections.Hashtable)">
+            <summary>
+            Function to select and fill dataset from queries/stored procedure and return filled dataset
+            </summary>
+            <param name="DbTrans">Oracle transaction</param>
+            <param name="spName">Stored procedure name. if package then packagename.procedurename</param>
+            <param name="ParamTable">Parameter collection in hashtable</param>
+            <returns>Resultant dataset</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteDataset(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Function to select and fill dataset from queries/stored procedure and return filled dataset
+            </summary>
+            <param name="DbTrans">Oracle transaction</param>
+            <param name="CmdType">Type:Storedprocedure or Text</param>
+            <param name="cmdText">Select command text</param>
+            <returns>Resultant dataset</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteDataset(System.Data.Common.DbTransaction,System.String)">
+            <summary>
+            Function to select and fill dataset from queries/stored procedure and return filled dataset
+            </summary>
+            <param name="DbTrans">Oracle transaction</param>
+            <param name="cmdText">Select command text</param>
+            <returns>Resultant dataset</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.UpdateDataTable(System.String,System.String,System.Data.DataTable)">
+            <summary>
+            Function to update datatable and return success
+            </summary>
+            <param name="connString">Oracle Connection string</param>
+            <param name="SelQry">Select command text</param>
+            <param name="dt">Datatable to be updated</param>
+            <returns>return 1, if success</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.UpdateDataTable(System.Data.Common.DbTransaction,System.String,System.Data.DataTable)">
+            <summary>
+            Function to update datatable and return success
+            </summary>
+            <param name="Trans">Oracle transaction</param>
+            <param name="SelQry">Select command text</param>
+            <param name="dt">Datatable to be updated</param>
+            <returns>return 1, if success</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.UpdateDataTable(System.Data.Common.DbTransaction,System.Data.Common.DbConnection,System.String,System.Data.DataTable)">
+            <summary>
+            Function to update datatable and return success
+            </summary>
+            <param name="Trans">Oracle Transaction</param>
+            <param name="oraConn">Oracle Connection</param>
+            <param name="SelQry">Select command text</param>
+            <param name="dt">Datatable to be updated</param>
+            <returns>return 1, if success</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteScalar(System.String,System.String,System.Collections.Hashtable)">
+            <summary>
+            Function to execute select queries/stored procedure and return firstrow firstcol value
+            </summary>
+            <param name="connString">Oracle Connection string</param>
+            <param name="spName">Stored procedure name. if package then packagename.procedurename</param>
+            <param name="ParamTable">Parameter collection in hashtable</param>
+            <returns>First row first column of select table</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteScalar(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Function to execute select queries/stored procedure and return firstrow firstcol value
+            </summary>
+            <param name="connString">Oracle Connection string</param>
+            <param name="CmdType">Type:Storedprocedure or Text</param>
+            <param name="cmdText">Select command text</param>
+            <returns>First row first column of select table</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteScalar(System.String,System.String)">
+            <summary>
+            Function to execute select queries/stored procedure and return firstrow firstcol value
+            </summary>
+            <param name="connString">Oracle Connection string</param>
+            <param name="cmdText">Select command text</param>
+            <returns>First row first column of select table</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteScalar(System.String,System.String,System.Data.CommandType,System.Collections.Hashtable)">
+            <summary>
+            Function to execute select queries/stored procedure and return firstrow firstcol value
+            </summary>
+            <param name="connString">Oracle Connection string</param>
+            <param name="spName">Stored procedure name. if package then packagename.procedurename</param>
+            <param name="CmdType">Type:Storedprocedure or Text</param>
+            <param name="ParamTable">Parameter collection in hashtable</param>
+            <returns>First row first column of select table</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteScalar(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Hashtable)">
+            <summary>
+            Function to execute select queries/stored procedure and return firstrow firstcol value
+            </summary>
+            <param name="DbConn">Oracle Connection</param>
+            <param name="spName">Stored procedure name. if package then packagename.procedurename</param>
+            <param name="CmdType">Type:Storedprocedure or Text</param>
+            <param name="ParamTable">Parameter collection in hashtable</param>
+            <returns>First row first column of select table</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteScalar(System.Data.Common.DbTransaction,System.String,System.Data.CommandType,System.Collections.Hashtable)">
+            <summary>
+            Function to execute select queries/stored procedure and return firstrow firstcol value
+            </summary>
+            <param name="DbTrans">Oracle transaction</param>
+            <param name="spName">Stored procedure name. if package then packagename.procedurename</param>
+            <param name="CmdType">Type:Storedprocedure or Text</param>
+            <param name="ParamTable">Parameter collection in hashtable</param>
+            <returns>First row first column of select table</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteScalar(System.Data.Common.DbTransaction,System.String)">
+            <summary>
+            Function to execute select queries/stored procedure and return firstrow firstcol value
+            </summary>
+            <param name="DbTrans">Oracle transaction</param>
+            <param name="cmdText">Select command text</param>
+            <returns>First row first column of select table</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteScalar(System.Data.Common.DbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Function to execute select queries/stored procedure and return firstrow firstcol value
+            </summary>
+            <param name="DbTrans">Oracle transaction</param>
+            <param name="CmdType">Type:Storedprocedure or Text</param>
+            <param name="cmdText">Select command text</param>
+            <returns>First row first column of select table</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ExecuteScalar(System.Data.Common.DbTransaction,System.String,System.Collections.Hashtable)">
+            <summary>
+            Function to execute select queries/stored procedure and return firstrow firstcol value
+            </summary>
+            <param name="DbTrans">Oracle transaction</param>
+            <param name="spName">Stored procedure name. if package then packagename.procedurename</param>
+            <param name="ParamTable">Parameter collection in hashtable</param>
+            <returns>First row first column of select table</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.GetConnection(System.String)">
+            <summary>
+            Function to get oracle connection
+            </summary>
+            <param name="connString">Oracle connection string</param>
+            <returns>Oracle Connection</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.GetConnection(System.String,System.Boolean)">
+            <summary>
+            Function to get oracle connection
+            </summary>
+            <param name="connString">Oracle connection string</param>
+            <param name="closeConn">Boolean to check whether connection needs to be closed or not</param>
+            <returns>Oracle Connection</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.CanConnect(System.String)">
+            <summary>
+            Function to check oracle connection string
+            </summary>
+            <param name="connString">Oracle connection string</param>
+            <returns>true if oracle connection string is correct,false if cannot connect</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ValidateConnectionString(System.String)">
+            <summary>
+            Function to Check whether connString is valid or not
+            </summary>
+            <param name="connString"></param>
+            <returns>returns true if validation succeed</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.ValidateCommandText(System.String)">
+            <summary>
+            Function to check whether CommandText is valid or not
+            </summary>
+            <param name="spName">Commandtext or stored proc</param>
+            <returns>returns true if validation succeed</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.xlsconnec(System.String,System.String)">
+            <summary>
+            Function To Get XlSheet Data into DataSet using Oledb.
+            </summary>
+            <param name="strSql"> string sql to select data
+            Table name should be wrapped with square brackets [].
+            ex:str_sql = "select * from [Sheet1$]"</param>
+            <param name="xlsDataSource">Xls full file path</param>
+            <returns>DataSet with XlSheet Data.</returns>
+        </member>
+        <member name="M:Trans.DataLayer.DataManager.Sheets(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="xls_DataSource"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Trans.DataLayer.DataManager.DatabaseType">
+            <summary>
+            Lists all the Databases that are currently supported by DataLayer
+            </summary>
+        </member>
+        <member name="F:Trans.DataLayer.DataManager.DatabaseType.MsSql">
+            <summary>
+            Microsoft SQL Server Database
+            </summary>
+        </member>
+        <member name="F:Trans.DataLayer.DataManager.DatabaseType.MsAccess">
+            <summary>
+            Microsoft Access Database
+            </summary>
+        </member>
+        <member name="F:Trans.DataLayer.DataManager.DatabaseType.MsExcel">
+            <summary>
+            Microsoft Excel Workbook data
+            </summary>
+        </member>
+        <member name="F:Trans.DataLayer.DataManager.DatabaseType.Oracle">
+            <summary>
+            Oracle Database Server
+            </summary>
+        </member>
+        <member name="T:Trans.DataLayer.DataManager.ExecuteAction">
+            <summary>
+            Execute Action: NonQuery and Scalar
+            </summary>
+        </member>
+        <member name="F:Trans.DataLayer.DataManager.ExecuteAction.NonQuery">
+            <summary>
+            ExecuteNonQuery
+            </summary>
+        </member>
+        <member name="F:Trans.DataLayer.DataManager.ExecuteAction.Scalar">
+            <summary>
+            ExecuteScalar
+            </summary>
+        </member>
+    </members>
+</doc>
