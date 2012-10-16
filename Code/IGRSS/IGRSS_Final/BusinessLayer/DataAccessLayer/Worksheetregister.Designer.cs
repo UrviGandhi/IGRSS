@@ -24,7 +24,7 @@ namespace IGRSS.DataAccessLayer {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class Worksheetregister : global::System.Data.DataSet {
         
-        private Worksheet_RegisterDataTable tableWorksheet_Register;
+        private WorkSheetRegisterDataTable tableWorkSheetRegister;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace IGRSS.DataAccessLayer {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Worksheet_Register"] != null)) {
-                    base.Tables.Add(new Worksheet_RegisterDataTable(ds.Tables["Worksheet_Register"]));
+                if ((ds.Tables["WorkSheetRegister"] != null)) {
+                    base.Tables.Add(new WorkSheetRegisterDataTable(ds.Tables["WorkSheetRegister"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace IGRSS.DataAccessLayer {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Worksheet_RegisterDataTable Worksheet_Register {
+        public WorkSheetRegisterDataTable WorkSheetRegister {
             get {
-                return this.tableWorksheet_Register;
+                return this.tableWorkSheetRegister;
             }
         }
         
@@ -152,8 +152,8 @@ namespace IGRSS.DataAccessLayer {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Worksheet_Register"] != null)) {
-                    base.Tables.Add(new Worksheet_RegisterDataTable(ds.Tables["Worksheet_Register"]));
+                if ((ds.Tables["WorkSheetRegister"] != null)) {
+                    base.Tables.Add(new WorkSheetRegisterDataTable(ds.Tables["WorkSheetRegister"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace IGRSS.DataAccessLayer {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableWorksheet_Register = ((Worksheet_RegisterDataTable)(base.Tables["Worksheet_Register"]));
+            this.tableWorkSheetRegister = ((WorkSheetRegisterDataTable)(base.Tables["WorkSheetRegister"]));
             if ((initTable == true)) {
-                if ((this.tableWorksheet_Register != null)) {
-                    this.tableWorksheet_Register.InitVars();
+                if ((this.tableWorkSheetRegister != null)) {
+                    this.tableWorkSheetRegister.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace IGRSS.DataAccessLayer {
             this.Namespace = "http://tempuri.org/Worksheetregister.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableWorksheet_Register = new Worksheet_RegisterDataTable();
-            base.Tables.Add(this.tableWorksheet_Register);
+            this.tableWorkSheetRegister = new WorkSheetRegisterDataTable();
+            base.Tables.Add(this.tableWorkSheetRegister);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeWorksheet_Register() {
+        private bool ShouldSerializeWorkSheetRegister() {
             return false;
         }
         
@@ -270,31 +270,31 @@ namespace IGRSS.DataAccessLayer {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void Worksheet_RegisterRowChangeEventHandler(object sender, Worksheet_RegisterRowChangeEvent e);
+        public delegate void WorkSheetRegisterRowChangeEventHandler(object sender, WorkSheetRegisterRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Worksheet_RegisterDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
+        public partial class WorkSheetRegisterDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
-            private global::System.Data.DataColumn columnSrNo;
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnWorkSheet_No;
             
             private global::System.Data.DataColumn columnInward_No;
             
-            private global::System.Data.DataColumn columnWorkSheet_no;
+            private global::System.Data.DataColumn columnName_Of_Person;
             
-            private global::System.Data.DataColumn columnNameofPerson;
+            private global::System.Data.DataColumn columnLetter_Details;
             
-            private global::System.Data.DataColumn columnLetter_details;
-            
-            private global::System.Data.DataColumn columnWork_Disposal;
+            private global::System.Data.DataColumn columnWork_Disposal_Date;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Worksheet_RegisterDataTable() {
-                this.TableName = "Worksheet_Register";
+            public WorkSheetRegisterDataTable() {
+                this.TableName = "WorkSheetRegister";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -302,7 +302,7 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal Worksheet_RegisterDataTable(global::System.Data.DataTable table) {
+            internal WorkSheetRegisterDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -319,16 +319,24 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected Worksheet_RegisterDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected WorkSheetRegisterDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SrNoColumn {
+            public global::System.Data.DataColumn IDColumn {
                 get {
-                    return this.columnSrNo;
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn WorkSheet_NoColumn {
+                get {
+                    return this.columnWorkSheet_No;
                 }
             }
             
@@ -342,33 +350,25 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WorkSheet_noColumn {
+            public global::System.Data.DataColumn Name_Of_PersonColumn {
                 get {
-                    return this.columnWorkSheet_no;
+                    return this.columnName_Of_Person;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NameofPersonColumn {
+            public global::System.Data.DataColumn Letter_DetailsColumn {
                 get {
-                    return this.columnNameofPerson;
+                    return this.columnLetter_Details;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Letter_detailsColumn {
+            public global::System.Data.DataColumn Work_Disposal_DateColumn {
                 get {
-                    return this.columnLetter_details;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Work_DisposalColumn {
-                get {
-                    return this.columnWork_Disposal;
+                    return this.columnWork_Disposal_Date;
                 }
             }
             
@@ -383,51 +383,51 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Worksheet_RegisterRow this[int index] {
+            public WorkSheetRegisterRow this[int index] {
                 get {
-                    return ((Worksheet_RegisterRow)(this.Rows[index]));
+                    return ((WorkSheetRegisterRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Worksheet_RegisterRowChangeEventHandler Worksheet_RegisterRowChanging;
+            public event WorkSheetRegisterRowChangeEventHandler WorkSheetRegisterRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Worksheet_RegisterRowChangeEventHandler Worksheet_RegisterRowChanged;
+            public event WorkSheetRegisterRowChangeEventHandler WorkSheetRegisterRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Worksheet_RegisterRowChangeEventHandler Worksheet_RegisterRowDeleting;
+            public event WorkSheetRegisterRowChangeEventHandler WorkSheetRegisterRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Worksheet_RegisterRowChangeEventHandler Worksheet_RegisterRowDeleted;
+            public event WorkSheetRegisterRowChangeEventHandler WorkSheetRegisterRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddWorksheet_RegisterRow(Worksheet_RegisterRow row) {
+            public void AddWorkSheetRegisterRow(WorkSheetRegisterRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Worksheet_RegisterRow AddWorksheet_RegisterRow(int SrNo, int Inward_No, int WorkSheet_no, string NameofPerson, string Letter_details, System.DateTime Work_Disposal) {
-                Worksheet_RegisterRow rowWorksheet_RegisterRow = ((Worksheet_RegisterRow)(this.NewRow()));
+            public WorkSheetRegisterRow AddWorkSheetRegisterRow(int WorkSheet_No, string Inward_No, string Name_Of_Person, string Letter_Details, System.DateTime Work_Disposal_Date) {
+                WorkSheetRegisterRow rowWorkSheetRegisterRow = ((WorkSheetRegisterRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        SrNo,
+                        null,
+                        WorkSheet_No,
                         Inward_No,
-                        WorkSheet_no,
-                        NameofPerson,
-                        Letter_details,
-                        Work_Disposal};
-                rowWorksheet_RegisterRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowWorksheet_RegisterRow);
-                return rowWorksheet_RegisterRow;
+                        Name_Of_Person,
+                        Letter_Details,
+                        Work_Disposal_Date};
+                rowWorkSheetRegisterRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowWorkSheetRegisterRow);
+                return rowWorkSheetRegisterRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Worksheet_RegisterRow FindBySrNo(int SrNo) {
-                return ((Worksheet_RegisterRow)(this.Rows.Find(new object[] {
-                            SrNo})));
+            public WorkSheetRegisterRow FindByID(int ID) {
+                return ((WorkSheetRegisterRow)(this.Rows.Find(new object[] {
+                            ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -439,7 +439,7 @@ namespace IGRSS.DataAccessLayer {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                Worksheet_RegisterDataTable cln = ((Worksheet_RegisterDataTable)(base.Clone()));
+                WorkSheetRegisterDataTable cln = ((WorkSheetRegisterDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -447,68 +447,76 @@ namespace IGRSS.DataAccessLayer {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new Worksheet_RegisterDataTable();
+                return new WorkSheetRegisterDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnSrNo = base.Columns["SrNo"];
+                this.columnID = base.Columns["ID"];
+                this.columnWorkSheet_No = base.Columns["WorkSheet_No"];
                 this.columnInward_No = base.Columns["Inward_No"];
-                this.columnWorkSheet_no = base.Columns["WorkSheet_no"];
-                this.columnNameofPerson = base.Columns["NameofPerson"];
-                this.columnLetter_details = base.Columns["Letter_details"];
-                this.columnWork_Disposal = base.Columns["Work_Disposal"];
+                this.columnName_Of_Person = base.Columns["Name_Of_Person"];
+                this.columnLetter_Details = base.Columns["Letter_Details"];
+                this.columnWork_Disposal_Date = base.Columns["Work_Disposal_Date"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnSrNo = new global::System.Data.DataColumn("SrNo", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSrNo);
-                this.columnInward_No = new global::System.Data.DataColumn("Inward_No", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnWorkSheet_No = new global::System.Data.DataColumn("WorkSheet_No", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWorkSheet_No);
+                this.columnInward_No = new global::System.Data.DataColumn("Inward_No", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnInward_No);
-                this.columnWorkSheet_no = new global::System.Data.DataColumn("WorkSheet_no", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWorkSheet_no);
-                this.columnNameofPerson = new global::System.Data.DataColumn("NameofPerson", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNameofPerson);
-                this.columnLetter_details = new global::System.Data.DataColumn("Letter_details", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLetter_details);
-                this.columnWork_Disposal = new global::System.Data.DataColumn("Work_Disposal", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWork_Disposal);
+                this.columnName_Of_Person = new global::System.Data.DataColumn("Name_Of_Person", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName_Of_Person);
+                this.columnLetter_Details = new global::System.Data.DataColumn("Letter_Details", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLetter_Details);
+                this.columnWork_Disposal_Date = new global::System.Data.DataColumn("Work_Disposal_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWork_Disposal_Date);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnSrNo}, true));
-                this.columnSrNo.AllowDBNull = false;
-                this.columnSrNo.Unique = true;
-                this.columnWorkSheet_no.AllowDBNull = false;
-                this.columnNameofPerson.MaxLength = 500;
-                this.columnLetter_details.MaxLength = 500;
+                                this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
+                this.columnID.AllowDBNull = false;
+                this.columnID.ReadOnly = true;
+                this.columnID.Unique = true;
+                this.columnWorkSheet_No.AllowDBNull = false;
+                this.columnInward_No.AllowDBNull = false;
+                this.columnInward_No.MaxLength = 50;
+                this.columnName_Of_Person.AllowDBNull = false;
+                this.columnName_Of_Person.MaxLength = 500;
+                this.columnLetter_Details.MaxLength = 1000;
+                this.columnWork_Disposal_Date.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Worksheet_RegisterRow NewWorksheet_RegisterRow() {
-                return ((Worksheet_RegisterRow)(this.NewRow()));
+            public WorkSheetRegisterRow NewWorkSheetRegisterRow() {
+                return ((WorkSheetRegisterRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Worksheet_RegisterRow(builder);
+                return new WorkSheetRegisterRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(Worksheet_RegisterRow);
+                return typeof(WorkSheetRegisterRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.Worksheet_RegisterRowChanged != null)) {
-                    this.Worksheet_RegisterRowChanged(this, new Worksheet_RegisterRowChangeEvent(((Worksheet_RegisterRow)(e.Row)), e.Action));
+                if ((this.WorkSheetRegisterRowChanged != null)) {
+                    this.WorkSheetRegisterRowChanged(this, new WorkSheetRegisterRowChangeEvent(((WorkSheetRegisterRow)(e.Row)), e.Action));
                 }
             }
             
@@ -516,8 +524,8 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.Worksheet_RegisterRowChanging != null)) {
-                    this.Worksheet_RegisterRowChanging(this, new Worksheet_RegisterRowChangeEvent(((Worksheet_RegisterRow)(e.Row)), e.Action));
+                if ((this.WorkSheetRegisterRowChanging != null)) {
+                    this.WorkSheetRegisterRowChanging(this, new WorkSheetRegisterRowChangeEvent(((WorkSheetRegisterRow)(e.Row)), e.Action));
                 }
             }
             
@@ -525,8 +533,8 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.Worksheet_RegisterRowDeleted != null)) {
-                    this.Worksheet_RegisterRowDeleted(this, new Worksheet_RegisterRowChangeEvent(((Worksheet_RegisterRow)(e.Row)), e.Action));
+                if ((this.WorkSheetRegisterRowDeleted != null)) {
+                    this.WorkSheetRegisterRowDeleted(this, new WorkSheetRegisterRowChangeEvent(((WorkSheetRegisterRow)(e.Row)), e.Action));
                 }
             }
             
@@ -534,14 +542,14 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.Worksheet_RegisterRowDeleting != null)) {
-                    this.Worksheet_RegisterRowDeleting(this, new Worksheet_RegisterRowChangeEvent(((Worksheet_RegisterRow)(e.Row)), e.Action));
+                if ((this.WorkSheetRegisterRowDeleting != null)) {
+                    this.WorkSheetRegisterRowDeleting(this, new WorkSheetRegisterRowChangeEvent(((WorkSheetRegisterRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveWorksheet_RegisterRow(Worksheet_RegisterRow row) {
+            public void RemoveWorkSheetRegisterRow(WorkSheetRegisterRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -568,7 +576,7 @@ namespace IGRSS.DataAccessLayer {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Worksheet_RegisterDataTable";
+                attribute2.FixedValue = "WorkSheetRegisterDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -612,149 +620,98 @@ namespace IGRSS.DataAccessLayer {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class Worksheet_RegisterRow : global::System.Data.DataRow {
+        public partial class WorkSheetRegisterRow : global::System.Data.DataRow {
             
-            private Worksheet_RegisterDataTable tableWorksheet_Register;
+            private WorkSheetRegisterDataTable tableWorkSheetRegister;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal Worksheet_RegisterRow(global::System.Data.DataRowBuilder rb) : 
+            internal WorkSheetRegisterRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableWorksheet_Register = ((Worksheet_RegisterDataTable)(this.Table));
+                this.tableWorkSheetRegister = ((WorkSheetRegisterDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int SrNo {
+            public int ID {
                 get {
-                    return ((int)(this[this.tableWorksheet_Register.SrNoColumn]));
+                    return ((int)(this[this.tableWorkSheetRegister.IDColumn]));
                 }
                 set {
-                    this[this.tableWorksheet_Register.SrNoColumn] = value;
+                    this[this.tableWorkSheetRegister.IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Inward_No {
+            public int WorkSheet_No {
                 get {
-                    try {
-                        return ((int)(this[this.tableWorksheet_Register.Inward_NoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Inward_No\' in table \'Worksheet_Register\' is DBNull.", e);
-                    }
+                    return ((int)(this[this.tableWorkSheetRegister.WorkSheet_NoColumn]));
                 }
                 set {
-                    this[this.tableWorksheet_Register.Inward_NoColumn] = value;
+                    this[this.tableWorkSheetRegister.WorkSheet_NoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int WorkSheet_no {
+            public string Inward_No {
                 get {
-                    return ((int)(this[this.tableWorksheet_Register.WorkSheet_noColumn]));
+                    return ((string)(this[this.tableWorkSheetRegister.Inward_NoColumn]));
                 }
                 set {
-                    this[this.tableWorksheet_Register.WorkSheet_noColumn] = value;
+                    this[this.tableWorkSheetRegister.Inward_NoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string NameofPerson {
+            public string Name_Of_Person {
                 get {
-                    try {
-                        return ((string)(this[this.tableWorksheet_Register.NameofPersonColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NameofPerson\' in table \'Worksheet_Register\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableWorkSheetRegister.Name_Of_PersonColumn]));
                 }
                 set {
-                    this[this.tableWorksheet_Register.NameofPersonColumn] = value;
+                    this[this.tableWorkSheetRegister.Name_Of_PersonColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Letter_details {
+            public string Letter_Details {
                 get {
                     try {
-                        return ((string)(this[this.tableWorksheet_Register.Letter_detailsColumn]));
+                        return ((string)(this[this.tableWorkSheetRegister.Letter_DetailsColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Letter_details\' in table \'Worksheet_Register\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Letter_Details\' in table \'WorkSheetRegister\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableWorksheet_Register.Letter_detailsColumn] = value;
+                    this[this.tableWorkSheetRegister.Letter_DetailsColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Work_Disposal {
+            public System.DateTime Work_Disposal_Date {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableWorksheet_Register.Work_DisposalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Work_Disposal\' in table \'Worksheet_Register\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableWorkSheetRegister.Work_Disposal_DateColumn]));
                 }
                 set {
-                    this[this.tableWorksheet_Register.Work_DisposalColumn] = value;
+                    this[this.tableWorkSheetRegister.Work_Disposal_DateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsInward_NoNull() {
-                return this.IsNull(this.tableWorksheet_Register.Inward_NoColumn);
+            public bool IsLetter_DetailsNull() {
+                return this.IsNull(this.tableWorkSheetRegister.Letter_DetailsColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetInward_NoNull() {
-                this[this.tableWorksheet_Register.Inward_NoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNameofPersonNull() {
-                return this.IsNull(this.tableWorksheet_Register.NameofPersonColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNameofPersonNull() {
-                this[this.tableWorksheet_Register.NameofPersonColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLetter_detailsNull() {
-                return this.IsNull(this.tableWorksheet_Register.Letter_detailsColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLetter_detailsNull() {
-                this[this.tableWorksheet_Register.Letter_detailsColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsWork_DisposalNull() {
-                return this.IsNull(this.tableWorksheet_Register.Work_DisposalColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetWork_DisposalNull() {
-                this[this.tableWorksheet_Register.Work_DisposalColumn] = global::System.Convert.DBNull;
+            public void SetLetter_DetailsNull() {
+                this[this.tableWorkSheetRegister.Letter_DetailsColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -762,22 +719,22 @@ namespace IGRSS.DataAccessLayer {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class Worksheet_RegisterRowChangeEvent : global::System.EventArgs {
+        public class WorkSheetRegisterRowChangeEvent : global::System.EventArgs {
             
-            private Worksheet_RegisterRow eventRow;
+            private WorkSheetRegisterRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Worksheet_RegisterRowChangeEvent(Worksheet_RegisterRow row, global::System.Data.DataRowAction action) {
+            public WorkSheetRegisterRowChangeEvent(WorkSheetRegisterRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Worksheet_RegisterRow Row {
+            public WorkSheetRegisterRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -805,7 +762,7 @@ namespace IGRSS.DataAccessLayer.WorksheetregisterTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Worksheet_RegisterTableAdapter : global::System.ComponentModel.Component {
+    public partial class WorkSheetRegisterTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -819,7 +776,7 @@ namespace IGRSS.DataAccessLayer.WorksheetregisterTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public Worksheet_RegisterTableAdapter() {
+        public WorkSheetRegisterTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -916,60 +873,53 @@ namespace IGRSS.DataAccessLayer.WorksheetregisterTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Worksheet_Register";
-            tableMapping.ColumnMappings.Add("SrNo", "SrNo");
+            tableMapping.DataSetTable = "WorkSheetRegister";
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("WorkSheet_No", "WorkSheet_No");
             tableMapping.ColumnMappings.Add("Inward_No", "Inward_No");
-            tableMapping.ColumnMappings.Add("WorkSheet_no", "WorkSheet_no");
-            tableMapping.ColumnMappings.Add("NameofPerson", "NameofPerson");
-            tableMapping.ColumnMappings.Add("Letter_details", "Letter_details");
-            tableMapping.ColumnMappings.Add("Work_Disposal", "Work_Disposal");
+            tableMapping.ColumnMappings.Add("Name_Of_Person", "Name_Of_Person");
+            tableMapping.ColumnMappings.Add("Letter_Details", "Letter_Details");
+            tableMapping.ColumnMappings.Add("Work_Disposal_Date", "Work_Disposal_Date");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Worksheet_Register] WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_Inward_No = 1 AND [Inward_No] IS NULL) OR ([Inward_No] = @Original_Inward_No)) AND ([WorkSheet_no] = @Original_WorkSheet_no) AND ((@IsNull_NameofPerson = 1 AND [NameofPerson] IS NULL) OR ([NameofPerson] = @Original_NameofPerson)) AND ((@IsNull_Letter_details = 1 AND [Letter_details] IS NULL) OR ([Letter_details] = @Original_Letter_details)) AND ((@IsNull_Work_Disposal = 1 AND [Work_Disposal] IS NULL) OR ([Work_Disposal] = @Original_Work_Disposal)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[WorkSheetRegister] WHERE (([ID] = @Original_ID) AND ([WorkSheet_No] = @Original_WorkSheet_No) AND ([Inward_No] = @Original_Inward_No) AND ([Name_Of_Person] = @Original_Name_Of_Person) AND ((@IsNull_Letter_Details = 1 AND [Letter_Details] IS NULL) OR ([Letter_Details] = @Original_Letter_Details)) AND ([Work_Disposal_Date] = @Original_Work_Disposal_Date))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Inward_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inward_No", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Inward_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inward_No", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WorkSheet_no", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WorkSheet_no", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NameofPerson", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NameofPerson", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NameofPerson", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NameofPerson", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Letter_details", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letter_details", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Letter_details", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letter_details", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Work_Disposal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Work_Disposal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Work_Disposal", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Work_Disposal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WorkSheet_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WorkSheet_No", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Inward_No", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inward_No", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name_Of_Person", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name_Of_Person", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Letter_Details", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letter_Details", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Letter_Details", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letter_Details", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Work_Disposal_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Work_Disposal_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Worksheet_Register] ([SrNo], [Inward_No], [WorkSheet_no], [NameofPerson], [Letter_details], [Work_Disposal]) VALUES (@SrNo, @Inward_No, @WorkSheet_no, @NameofPerson, @Letter_details, @Work_Disposal);
-SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposal FROM dbo.Worksheet_Register WHERE (SrNo = @SrNo)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[WorkSheetRegister] ([WorkSheet_No], [Inward_No], [Name_Of_Person], [Letter_Details], [Work_Disposal_Date]) VALUES (@WorkSheet_No, @Inward_No, @Name_Of_Person, @Letter_Details, @Work_Disposal_Date);
+SELECT ID, WorkSheet_No, Inward_No, Name_Of_Person, Letter_Details, Work_Disposal_Date FROM dbo.WorkSheetRegister WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inward_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inward_No", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WorkSheet_no", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WorkSheet_no", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NameofPerson", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NameofPerson", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Letter_details", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letter_details", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Work_Disposal", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Work_Disposal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WorkSheet_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WorkSheet_No", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inward_No", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inward_No", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name_Of_Person", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name_Of_Person", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Letter_Details", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letter_Details", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Work_Disposal_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Work_Disposal_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Worksheet_Register] SET [SrNo] = @SrNo, [Inward_No] = @Inward_No, [WorkSheet_no] = @WorkSheet_no, [NameofPerson] = @NameofPerson, [Letter_details] = @Letter_details, [Work_Disposal] = @Work_Disposal WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_Inward_No = 1 AND [Inward_No] IS NULL) OR ([Inward_No] = @Original_Inward_No)) AND ([WorkSheet_no] = @Original_WorkSheet_no) AND ((@IsNull_NameofPerson = 1 AND [NameofPerson] IS NULL) OR ([NameofPerson] = @Original_NameofPerson)) AND ((@IsNull_Letter_details = 1 AND [Letter_details] IS NULL) OR ([Letter_details] = @Original_Letter_details)) AND ((@IsNull_Work_Disposal = 1 AND [Work_Disposal] IS NULL) OR ([Work_Disposal] = @Original_Work_Disposal)));
-SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposal FROM dbo.Worksheet_Register WHERE (SrNo = @SrNo)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[WorkSheetRegister] SET [WorkSheet_No] = @WorkSheet_No, [Inward_No] = @Inward_No, [Name_Of_Person] = @Name_Of_Person, [Letter_Details] = @Letter_Details, [Work_Disposal_Date] = @Work_Disposal_Date WHERE (([ID] = @Original_ID) AND ([WorkSheet_No] = @Original_WorkSheet_No) AND ([Inward_No] = @Original_Inward_No) AND ([Name_Of_Person] = @Original_Name_Of_Person) AND ((@IsNull_Letter_Details = 1 AND [Letter_Details] IS NULL) OR ([Letter_Details] = @Original_Letter_Details)) AND ([Work_Disposal_Date] = @Original_Work_Disposal_Date));
+SELECT ID, WorkSheet_No, Inward_No, Name_Of_Person, Letter_Details, Work_Disposal_Date FROM dbo.WorkSheetRegister WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inward_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inward_No", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WorkSheet_no", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WorkSheet_no", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NameofPerson", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NameofPerson", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Letter_details", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letter_details", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Work_Disposal", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Work_Disposal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Inward_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inward_No", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Inward_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inward_No", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WorkSheet_no", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WorkSheet_no", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NameofPerson", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NameofPerson", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NameofPerson", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NameofPerson", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Letter_details", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letter_details", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Letter_details", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letter_details", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Work_Disposal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Work_Disposal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Work_Disposal", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Work_Disposal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WorkSheet_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WorkSheet_No", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inward_No", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inward_No", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name_Of_Person", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name_Of_Person", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Letter_Details", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letter_Details", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Work_Disposal_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Work_Disposal_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WorkSheet_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WorkSheet_No", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Inward_No", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inward_No", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name_Of_Person", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name_Of_Person", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Letter_Details", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letter_Details", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Letter_Details", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letter_Details", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Work_Disposal_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Work_Disposal_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -985,8 +935,8 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_D" +
-                "isposal\r\nFROM            dbo.Worksheet_Register";
+            this._commandCollection[0].CommandText = "SELECT        ID, WorkSheet_No, Inward_No, Name_Of_Person, Letter_Details, Work_D" +
+                "isposal_Date\r\nFROM            dbo.WorkSheetRegister";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -994,7 +944,7 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Worksheetregister.Worksheet_RegisterDataTable dataTable) {
+        public virtual int Fill(Worksheetregister.WorkSheetRegisterDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1007,9 +957,9 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Worksheetregister.Worksheet_RegisterDataTable GetData() {
+        public virtual Worksheetregister.WorkSheetRegisterDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Worksheetregister.Worksheet_RegisterDataTable dataTable = new Worksheetregister.Worksheet_RegisterDataTable();
+            Worksheetregister.WorkSheetRegisterDataTable dataTable = new Worksheetregister.WorkSheetRegisterDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1017,7 +967,7 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Worksheetregister.Worksheet_RegisterDataTable dataTable) {
+        public virtual int Update(Worksheetregister.WorkSheetRegisterDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -1025,7 +975,7 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(Worksheetregister dataSet) {
-            return this.Adapter.Update(dataSet, "Worksheet_Register");
+            return this.Adapter.Update(dataSet, "WorkSheetRegister");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1047,41 +997,30 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_SrNo, global::System.Nullable<int> Original_Inward_No, int Original_WorkSheet_no, string Original_NameofPerson, string Original_Letter_details, global::System.Nullable<global::System.DateTime> Original_Work_Disposal) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_SrNo));
-            if ((Original_Inward_No.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Inward_No.Value));
+        public virtual int Delete(int Original_ID, int Original_WorkSheet_No, string Original_Inward_No, string Original_Name_Of_Person, string Original_Letter_Details, System.DateTime Original_Work_Disposal_Date) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_WorkSheet_No));
+            if ((Original_Inward_No == null)) {
+                throw new global::System.ArgumentNullException("Original_Inward_No");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Inward_No));
             }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_WorkSheet_no));
-            if ((Original_NameofPerson == null)) {
+            if ((Original_Name_Of_Person == null)) {
+                throw new global::System.ArgumentNullException("Original_Name_Of_Person");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Name_Of_Person));
+            }
+            if ((Original_Letter_Details == null)) {
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_NameofPerson));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Letter_Details));
             }
-            if ((Original_Letter_details == null)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Letter_details));
-            }
-            if ((Original_Work_Disposal.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((System.DateTime)(Original_Work_Disposal.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_Work_Disposal_Date));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1102,33 +1041,27 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int SrNo, global::System.Nullable<int> Inward_No, int WorkSheet_no, string NameofPerson, string Letter_details, global::System.Nullable<global::System.DateTime> Work_Disposal) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(SrNo));
-            if ((Inward_No.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Inward_No.Value));
+        public virtual int Insert(int WorkSheet_No, string Inward_No, string Name_Of_Person, string Letter_Details, System.DateTime Work_Disposal_Date) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(WorkSheet_No));
+            if ((Inward_No == null)) {
+                throw new global::System.ArgumentNullException("Inward_No");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Inward_No));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(WorkSheet_no));
-            if ((NameofPerson == null)) {
+            if ((Name_Of_Person == null)) {
+                throw new global::System.ArgumentNullException("Name_Of_Person");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Name_Of_Person));
+            }
+            if ((Letter_Details == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(NameofPerson));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Letter_Details));
             }
-            if ((Letter_details == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Letter_details));
-            }
-            if ((Work_Disposal.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(Work_Disposal.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(Work_Disposal_Date));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1149,67 +1082,51 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int SrNo, global::System.Nullable<int> Inward_No, int WorkSheet_no, string NameofPerson, string Letter_details, global::System.Nullable<global::System.DateTime> Work_Disposal, int Original_SrNo, global::System.Nullable<int> Original_Inward_No, int Original_WorkSheet_no, string Original_NameofPerson, string Original_Letter_details, global::System.Nullable<global::System.DateTime> Original_Work_Disposal) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(SrNo));
-            if ((Inward_No.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Inward_No.Value));
+        public virtual int Update(int WorkSheet_No, string Inward_No, string Name_Of_Person, string Letter_Details, System.DateTime Work_Disposal_Date, int Original_ID, int Original_WorkSheet_No, string Original_Inward_No, string Original_Name_Of_Person, string Original_Letter_Details, System.DateTime Original_Work_Disposal_Date, int ID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(WorkSheet_No));
+            if ((Inward_No == null)) {
+                throw new global::System.ArgumentNullException("Inward_No");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Inward_No));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(WorkSheet_no));
-            if ((NameofPerson == null)) {
+            if ((Name_Of_Person == null)) {
+                throw new global::System.ArgumentNullException("Name_Of_Person");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Name_Of_Person));
+            }
+            if ((Letter_Details == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(NameofPerson));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Letter_Details));
             }
-            if ((Letter_details == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Letter_details));
-            }
-            if ((Work_Disposal.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Work_Disposal.Value));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Work_Disposal_Date));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_WorkSheet_No));
+            if ((Original_Inward_No == null)) {
+                throw new global::System.ArgumentNullException("Original_Inward_No");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Inward_No));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_SrNo));
-            if ((Original_Inward_No.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Inward_No.Value));
+            if ((Original_Name_Of_Person == null)) {
+                throw new global::System.ArgumentNullException("Original_Name_Of_Person");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Name_Of_Person));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_WorkSheet_no));
-            if ((Original_NameofPerson == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            if ((Original_Letter_Details == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_NameofPerson));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Letter_Details));
             }
-            if ((Original_Letter_details == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Letter_details));
-            }
-            if ((Original_Work_Disposal.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_Work_Disposal.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_Work_Disposal_Date));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1230,8 +1147,8 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> Inward_No, int WorkSheet_no, string NameofPerson, string Letter_details, global::System.Nullable<global::System.DateTime> Work_Disposal, int Original_SrNo, global::System.Nullable<int> Original_Inward_No, int Original_WorkSheet_no, string Original_NameofPerson, string Original_Letter_details, global::System.Nullable<global::System.DateTime> Original_Work_Disposal) {
-            return this.Update(Original_SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposal, Original_SrNo, Original_Inward_No, Original_WorkSheet_no, Original_NameofPerson, Original_Letter_details, Original_Work_Disposal);
+        public virtual int Update(int WorkSheet_No, string Inward_No, string Name_Of_Person, string Letter_Details, System.DateTime Work_Disposal_Date, int Original_ID, int Original_WorkSheet_No, string Original_Inward_No, string Original_Name_Of_Person, string Original_Letter_Details, System.DateTime Original_Work_Disposal_Date) {
+            return this.Update(WorkSheet_No, Inward_No, Name_Of_Person, Letter_Details, Work_Disposal_Date, Original_ID, Original_WorkSheet_No, Original_Inward_No, Original_Name_Of_Person, Original_Letter_Details, Original_Work_Disposal_Date, Original_ID);
         }
     }
     
@@ -1247,7 +1164,7 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
         
         private UpdateOrderOption _updateOrder;
         
-        private Worksheet_RegisterTableAdapter _worksheet_RegisterTableAdapter;
+        private WorkSheetRegisterTableAdapter _workSheetRegisterTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1269,12 +1186,12 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public Worksheet_RegisterTableAdapter Worksheet_RegisterTableAdapter {
+        public WorkSheetRegisterTableAdapter WorkSheetRegisterTableAdapter {
             get {
-                return this._worksheet_RegisterTableAdapter;
+                return this._workSheetRegisterTableAdapter;
             }
             set {
-                this._worksheet_RegisterTableAdapter = value;
+                this._workSheetRegisterTableAdapter = value;
             }
         }
         
@@ -1297,9 +1214,9 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._worksheet_RegisterTableAdapter != null) 
-                            && (this._worksheet_RegisterTableAdapter.Connection != null))) {
-                    return this._worksheet_RegisterTableAdapter.Connection;
+                if (((this._workSheetRegisterTableAdapter != null) 
+                            && (this._workSheetRegisterTableAdapter.Connection != null))) {
+                    return this._workSheetRegisterTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1314,7 +1231,7 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._worksheet_RegisterTableAdapter != null)) {
+                if ((this._workSheetRegisterTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1328,12 +1245,12 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(Worksheetregister dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._worksheet_RegisterTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Worksheet_Register.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._workSheetRegisterTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.WorkSheetRegister.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._worksheet_RegisterTableAdapter.Update(updatedRows));
+                    result = (result + this._workSheetRegisterTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1347,11 +1264,11 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(Worksheetregister dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._worksheet_RegisterTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Worksheet_Register.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._workSheetRegisterTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.WorkSheetRegister.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._worksheet_RegisterTableAdapter.Update(addedRows));
+                    result = (result + this._workSheetRegisterTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1365,11 +1282,11 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(Worksheetregister dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._worksheet_RegisterTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Worksheet_Register.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._workSheetRegisterTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.WorkSheetRegister.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._worksheet_RegisterTableAdapter.Update(deletedRows));
+                    result = (result + this._workSheetRegisterTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1412,8 +1329,8 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._worksheet_RegisterTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._worksheet_RegisterTableAdapter.Connection) == false))) {
+            if (((this._workSheetRegisterTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._workSheetRegisterTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1449,13 +1366,13 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._worksheet_RegisterTableAdapter != null)) {
-                    revertConnections.Add(this._worksheet_RegisterTableAdapter, this._worksheet_RegisterTableAdapter.Connection);
-                    this._worksheet_RegisterTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._worksheet_RegisterTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._worksheet_RegisterTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._worksheet_RegisterTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._worksheet_RegisterTableAdapter.Adapter);
+                if ((this._workSheetRegisterTableAdapter != null)) {
+                    revertConnections.Add(this._workSheetRegisterTableAdapter, this._workSheetRegisterTableAdapter.Connection);
+                    this._workSheetRegisterTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._workSheetRegisterTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._workSheetRegisterTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._workSheetRegisterTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._workSheetRegisterTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1516,9 +1433,9 @@ SELECT SrNo, Inward_No, WorkSheet_no, NameofPerson, Letter_details, Work_Disposa
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._worksheet_RegisterTableAdapter != null)) {
-                    this._worksheet_RegisterTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._worksheet_RegisterTableAdapter]));
-                    this._worksheet_RegisterTableAdapter.Transaction = null;
+                if ((this._workSheetRegisterTableAdapter != null)) {
+                    this._workSheetRegisterTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._workSheetRegisterTableAdapter]));
+                    this._workSheetRegisterTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
