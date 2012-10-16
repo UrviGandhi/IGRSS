@@ -210,6 +210,7 @@ public partial class Inward_Outward_InwardRegister : IgrssPage
         { 
             case "Back":
                     mvInward.SetActiveView(vieGrid);
+                    gvInwarddtl.DataBind();
                 break;
             case "UploadFile":
                 FileUpload FileUploadDocument = FormView_Inward.FindControl("FileUploadDocument") as FileUpload;
@@ -218,7 +219,9 @@ public partial class Inward_Outward_InwardRegister : IgrssPage
                 {
                     // write the code to insert a new entry to Document_Upload
                     Document_UploadTableAdapter documentUploader = new Document_UploadTableAdapter();
-                    documentUploader.UploadNewDocument("", "", "");
+                    string fileName =  System.IO.Path.GetFileName(FileUploadDocument.PostedFile.FileName);
+                    int documentUploadId = Convert.ToInt32(documentUploader.UploadNewDocument(fileName, string.Empty, uploadedPath));
+                    ViewState["documentUploadId"] = documentUploadId;
                 }
                 break;
         }
@@ -231,7 +234,7 @@ public partial class Inward_Outward_InwardRegister : IgrssPage
             if ((fileUploadControl.PostedFile != null) && (fileUploadControl.PostedFile.ContentLength > 0))
             {
                     string fileName = System.IO.Path.GetFileName(fileUploadControl.PostedFile.FileName);
-                    string SaveLocation = Server.MapPath("Uploaded Documents\\Inward\\") + fileName;
+                    string SaveLocation = Server.MapPath("~\\Uploaded Documents\\Inward\\") + fileName;
                     fileUploadControl.PostedFile.SaveAs(SaveLocation);
                     return SaveLocation;
             }
@@ -243,6 +246,7 @@ public partial class Inward_Outward_InwardRegister : IgrssPage
     {
         DropDownList dropDownOffice = FormView_Inward.FindControl("dropdownlistSentTo") as DropDownList;
         e.Values["SentTo"] = dropDownOffice.SelectedValue;
+        e.Values["Document_Upload_Id"] = ViewState["documentUploadId"];
         //e.Values["InwardNo"] +=(@"\"+dropDownOffice.SelectedValue);
     }
     protected void gvInwarddtl_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -271,7 +275,6 @@ public partial class Inward_Outward_InwardRegister : IgrssPage
     {
             e.InputParameters["searchKeyWord"] = txtFileNo.Text.Trim();
             odsgv.SelectMethod = "GetDataBy";
-
     }
    
 }

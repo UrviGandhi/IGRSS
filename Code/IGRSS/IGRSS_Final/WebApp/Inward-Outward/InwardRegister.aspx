@@ -78,8 +78,10 @@
                             <Columns>
                                 <asp:BoundField DataField="SrNo" HeaderText="SrNo" 
                                     SortExpression="SrNo" InsertVisible="False" ReadOnly="True" Visible="false"/>
-                                <asp:BoundField DataField="inward_no" HeaderText="InwardNo" 
-                                    SortExpression="inward_no"/>
+                                <asp:BoundField DataField="InwardNo" HeaderText="InwardNo" 
+                                    SortExpression="InwardNo" Visible="false"/>
+                                    <asp:BoundField DataField="inward_no" HeaderText="Inward No" ReadOnly="True" 
+                                    SortExpression="inward_no" />
                                 <asp:BoundField DataField="InwardDate" HeaderText="Inward Date" 
                                     SortExpression="InwardDate" />
                                 <asp:BoundField DataField="Description" HeaderText="Description" 
@@ -94,13 +96,11 @@
                                     SortExpression="Remarks" />
                                 <asp:BoundField DataField="ApplicantAddress" HeaderText="Applicant Address" 
                                     SortExpression="ApplicantAddress" />
+                                
                                 <asp:BoundField DataField="Document_Upload_Id" HeaderText="Document_Upload_Id" 
-                                    HtmlEncode="False" InsertVisible="False" ReadOnly="True" 
-                                    SortExpression="Document_Upload_Id" Visible="False" />
-                                <asp:BoundField DataField="Name" HeaderText="Document Name" SortExpression="Name" />
-                                <asp:BoundField DataField="Document_Description" 
-                                    HeaderText="Document_Description" SortExpression="Document_Description" 
-                                    Visible="False" />
+                                    SortExpression="Document_Upload_Id" InsertVisible="False" ReadOnly="True" Visible="false"/>
+                                <asp:BoundField DataField="Name" 
+                                    HeaderText="Document Name" SortExpression="Name" />
 
                             </Columns>
                             <EmptyDataTemplate>
@@ -123,21 +123,21 @@
                 oniteminserting="FormView_Inward_ItemInserting">
                 <EditItemTemplate>
                     <table cellpadding="2">
-                    <tr><td align="right">InwardNo:</td><td align="left"><asp:TextBox ID="InwardNoTextBox" runat="server" Text='<%# Bind("InwardNo") %>' Width="160px" /></td></tr>
-                    <tr><td align="right">InwardDate:</td><td align="left"><asp:TextBox ID="InwardDateTextBox" runat="server" Text='<%# Bind("InwardDate") %>' /></td></tr>
+                    <tr><td align="right">Inward No:</td><td align="left"><asp:TextBox ID="InwardNoTextBox" runat="server" Text='<%# Bind("InwardNo") %>' Width="160px" /></td></tr>
+                    <tr><td align="right">Inward Date:</td><td align="left"><asp:TextBox ID="InwardDateTextBox" runat="server" Text='<%# Bind("InwardDate") %>' /></td></tr>
                     <tr><td align="right">Description:</td><td align="left">
                         <asp:TextBox ID="DescriptionTextBox" runat="server" 
                             Text='<%# Bind("Description") %>' TextMode="MultiLine" /></td></tr>
-                    <tr><td align="right">ApplicantName:</td><td align="left"><asp:TextBox ID="ApplicantNameTextBox" runat="server" Text='<%# Bind("ApplicantName") %>' /></td></tr>
-                    <tr><td align="right">ApplicationDate:</td><td align="left"><asp:TextBox ID="ApplicationDateTextBox" runat="server" Text='<%# Bind("ApplicationDate") %>' /></td></tr>
-                    <tr><td align="right">SentTo:</td><td align="left">
+                    <tr><td align="right">Applicant Name:</td><td align="left"><asp:TextBox ID="ApplicantNameTextBox" runat="server" Text='<%# Bind("ApplicantName") %>' /></td></tr>
+                    <tr><td align="right">Application Date:</td><td align="left"><asp:TextBox ID="ApplicationDateTextBox" runat="server" Text='<%# Bind("ApplicationDate") %>' /></td></tr>
+                    <tr><td align="right">Sent To:</td><td align="left">
                         <asp:DropDownList ID="dropdownlistSentTo" runat="server" 
                             DataSourceID="OdsOffices" DataTextField="OfficeName" 
-                            DataValueField="OfficeId"></asp:DropDownList></td></tr>
+                            DataValueField="OfficeName"></asp:DropDownList></td></tr>
                     <tr><td align="right">Remarks:</td><td align="left">
                         <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
                             TextMode="MultiLine" /></td></tr>
-                    <tr><td align="right">ApplicantAddress:</td><td align="left">
+                    <tr><td align="right">Applicant Address:</td><td align="left">
                         <asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
                             Text='<%# Bind("ApplicantAddress") %>' TextMode="MultiLine" /></td></tr>
                              <tr>
@@ -163,29 +163,29 @@
                 </EditItemTemplate>
                 <InsertItemTemplate>
                     <table cellpadding="2">
-                    <tr><td align="right">InwardNo:</td><td align="left">
+                    <tr><td align="right">Inward No:</td><td align="left">
                         <asp:TextBox ID="InwardNoTextBox" runat="server" Text='<%# Bind("InwardNo") %>' 
                             Width="160px" /></td></tr>
-                    <tr><td align="right">InwardDate:</td><td align="left">
+                    <tr><td align="right">Inward Date:</td><td align="left">
                         <asp:TextBox ID="InwardDateTextBox" runat="server" 
                             Text='<%# Bind("InwardDate") %>' Width="160px" /></td></tr>
                     <tr><td align="right">Description:</td><td align="left">
                         <asp:TextBox ID="DescriptionTextBox" runat="server" 
                             Text='<%# Bind("Description") %>' TextMode="MultiLine" Width="160px" /></td></tr>
-                    <tr><td align="right">ApplicantName:</td><td align="left">
+                    <tr><td align="right">Applicant Name:</td><td align="left">
                         <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
                             Text='<%# Bind("ApplicantName") %>' Width="160px" /></td></tr>
-                    <tr><td align="right">ApplicationDate:</td><td align="left">
+                    <tr><td align="right">Application Date:</td><td align="left">
                         <asp:TextBox ID="ApplicationDateTextBox" runat="server" 
                             Text='<%# Bind("ApplicationDate") %>' Width="160px" /></td></tr>
-                    <tr><td align="right">SentTo:</td><td align="left">
+                    <tr><td align="right">Sent To:</td><td align="left">
                         <asp:DropDownList ID="dropdownlistSentTo" runat="server" 
-                            DataSourceID="OdsOffices" DataTextField="OfficeName" DataValueField="OfficeId" 
+                            DataSourceID="OdsOffices" DataTextField="OfficeName" DataValueField="OfficeName" 
                             Width="160px"></asp:DropDownList></td></tr>
                     <tr><td align="right">Remarks:</td><td align="left">
                         <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
                             TextMode="MultiLine" Width="160px" /></td></tr>
-                    <tr><td align="right">ApplicantAddress:</td><td align="left">
+                    <tr><td align="right">Applicant Address:</td><td align="left">
                         <asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
                             Text='<%# Bind("ApplicantAddress") %>' TextMode="MultiLine" Width="160px" /></td></tr>
                             <tr>
@@ -210,10 +210,10 @@
                     SrNo:
                     <asp:Label ID="SrNoLabel" runat="server" Text='<%# Eval("SrNo") %>' />
                     <br />
-                    InwardNo:
+                    Inward No:
                     <asp:Label ID="InwardNoLabel" runat="server" Text='<%# Bind("InwardNo") %>' />
                     <br />
-                    InwardDate:
+                    Inward Date:
                     <asp:Label ID="InwardDateLabel" runat="server" 
                         Text='<%# Bind("InwardDate") %>' />
                     <br />
@@ -221,11 +221,11 @@
                     <asp:Label ID="DescriptionLabel" runat="server" 
                         Text='<%# Bind("Description") %>' />
                     <br />
-                    ApplicantName:
+                    Applicant Name:
                     <asp:Label ID="ApplicantNameLabel" runat="server" 
                         Text='<%# Bind("ApplicantName") %>' />
                     <br />
-                    ApplicationDate:
+                    Application Date:
                     <asp:Label ID="ApplicationDateLabel" runat="server" 
                         Text='<%# Bind("ApplicationDate") %>' />
                     <br />
@@ -235,7 +235,7 @@
                     Remarks:
                     <asp:Label ID="RemarksLabel" runat="server" Text='<%# Bind("Remarks") %>' />
                     <br />
-                    ApplicantAddress:
+                    Applicant Address:
                     <asp:Label ID="ApplicantAddressLabel" runat="server" 
                         Text='<%# Bind("ApplicantAddress") %>' />
                     <br />
@@ -413,24 +413,13 @@
       <%--      <asp:ObjectDataSource ID="odsDeliveryType" runat="server" SelectMethod="GetDeliveryType"
                 TypeName="IGRSS.BusinessLogicLayer.InwardOutward"></asp:ObjectDataSource>--%>
             <asp:ObjectDataSource ID="odsgv" runat="server" OldValuesParameterFormatString="original_{0}"
-                SelectMethod="GetData" 
+                SelectMethod="GetDataBy" 
                 
                 
                 
-                TypeName="IGRSS.DataAccessLayer.InwardTableAdapters.InwardRegisterTableAdapter" 
-                DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update" 
+                
+                TypeName="IGRSS.DataAccessLayer.InwardTableAdapters.InwardRegisterTableAdapter" InsertMethod="InsertQuery" 
                 onselecting="odsgv_Selecting">
-                <DeleteParameters>
-                    <asp:Parameter Name="Original_SrNo" Type="Int32" />
-                    <asp:Parameter Name="Original_InwardNo" Type="String" />
-                    <asp:Parameter Name="Original_InwardDate" Type="DateTime" />
-                    <asp:Parameter Name="Original_Description" Type="String" />
-                    <asp:Parameter Name="Original_ApplicantName" Type="String" />
-                    <asp:Parameter Name="Original_ApplicationDate" Type="DateTime" />
-                    <asp:Parameter DbType="Guid" Name="Original_SentTo" />
-                    <asp:Parameter Name="Original_Remarks" Type="String" />
-                    <asp:Parameter Name="Original_ApplicantAddress" Type="String" />
-                </DeleteParameters>
                 <InsertParameters>
                     <asp:Parameter Name="InwardNo" Type="String" />
                     <asp:Parameter Name="InwardDate" Type="DateTime" />
@@ -440,26 +429,12 @@
                     <asp:Parameter DbType="Guid" Name="SentTo" />
                     <asp:Parameter Name="Remarks" Type="String" />
                     <asp:Parameter Name="ApplicantAddress" Type="String" />
+                    <asp:Parameter Name="Document_Upload_Id" Type="Int32" />
                 </InsertParameters>
-                <UpdateParameters>
-                    <asp:Parameter Name="InwardNo" Type="String" />
-                    <asp:Parameter Name="InwardDate" Type="DateTime" />
-                    <asp:Parameter Name="Description" Type="String" />
-                    <asp:Parameter Name="ApplicantName" Type="String" />
-                    <asp:Parameter Name="ApplicationDate" Type="DateTime" />
-                    <asp:Parameter DbType="Guid" Name="SentTo" />
-                    <asp:Parameter Name="Remarks" Type="String" />
-                    <asp:Parameter Name="ApplicantAddress" Type="String" />
-                    <asp:Parameter Name="Original_SrNo" Type="Int32" />
-                    <asp:Parameter Name="Original_InwardNo" Type="String" />
-                    <asp:Parameter Name="Original_InwardDate" Type="DateTime" />
-                    <asp:Parameter Name="Original_Description" Type="String" />
-                    <asp:Parameter Name="Original_ApplicantName" Type="String" />
-                    <asp:Parameter Name="Original_ApplicationDate" Type="DateTime" />
-                    <asp:Parameter DbType="Guid" Name="Original_SentTo" />
-                    <asp:Parameter Name="Original_Remarks" Type="String" />
-                    <asp:Parameter Name="Original_ApplicantAddress" Type="String" />
-                </UpdateParameters>
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="txtFileNo" Name="searchKeyWord" 
+                        PropertyName="Text" Type="String" />
+                </SelectParameters>
             </asp:ObjectDataSource>
             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server">
             </asp:ObjectDataSource>

@@ -196,6 +196,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FileManagement.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\FileRegister.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FileRegister.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\GovtDoc.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -637,6 +642,17 @@
     </None>
     <None Include="DataAccessLayer\Employee.xss">
       <DependentUpon>Employee.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\FileRegister.xsc">
+      <DependentUpon>FileRegister.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\FileRegister.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FileRegister.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\FileRegister.xss">
+      <DependentUpon>FileRegister.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\GovtDoc.xsc">
       <DependentUpon>GovtDoc.xsd</DependentUpon>
