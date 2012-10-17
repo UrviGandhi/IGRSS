@@ -11,8 +11,9 @@
 *.sln.docstates
 
 # Build results
-[Dd]ebug/
-[Rr]elease/
+#[Dd]ebug/
+#[Rr]elease/
+IGRSSWebApp_deploy/
 *_i.c
 *_p.c
 *.ilk
@@ -66,7 +67,7 @@ DocProject/Help/html
 publish
 
 # Others
-[Bb]in
+#[Bb]in
 [Oo]bj
 sql
 TestResults
@@ -95,3 +96,4 @@ Thumbs.db
 # Folder config file
 Desktop.ini
 _OtherStuff/
+/bin/Debug/vssver2.scc
