@@ -213,6 +213,7 @@ public partial class Inward_Outward_InwardRegister : IgrssPage
                     gvInwarddtl.DataBind();
                 break;
             case "UploadFile":
+                
                 FileUpload FileUploadDocument = FormView_Inward.FindControl("FileUploadDocument") as FileUpload;
                 string uploadedPath = UploadFile(FileUploadDocument);
                 if (string.IsNullOrEmpty(uploadedPath) == false)
