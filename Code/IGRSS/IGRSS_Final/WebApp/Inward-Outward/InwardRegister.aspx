@@ -8,7 +8,7 @@
     
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="Server">
 
-    <script>
+    <script language="javascript">
 
     function resetTextFields() {
         $("input").each(function (index, element) { $(element).val(""); });
@@ -156,9 +156,9 @@
                                     <asp:Button runat="server" ID="buttonUpload" Text="Upload" CommandName="UploadFile" />
                                 </td>
                             </tr>
-                    <tr><td colspan="2" align="center"><asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
-                    &nbsp;<a href="#" onclick="resetTextFields();">Reset</a>
-                    &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
+                    <tr><td colspan="2" align="center"><asp:Button ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                    <%--&nbsp;<asp:Button ID="ResetButton" Text="Reset" onclick="resetTextFields();" runat="server" />--%>
+                    &nbsp;<asp:Button ID="UpdateCancelButton" runat="server" 
                             CausesValidation="False" CommandName="Back" Text="Back" /></tr>
                         <td>
                             </tr>
@@ -206,10 +206,10 @@
                                     <asp:Button runat="server" ID="buttonUpload" Text="Upload" CommandName="UploadFile" />
                                 </td>
                             </tr>
-                    <tr><td colspan="2" align="center"><asp:LinkButton ID="InsertButton" runat="server" 
+                    <tr><td colspan="2" align="center"><asp:Button ID="InsertButton" runat="server" 
                             CausesValidation="True" CommandName="Insert" Text="Insert" 
-                             />&nbsp;<a href="#" onclick="resetTextFields();">Reset</a>&nbsp;<asp:LinkButton 
-                            ID="InsertCancelButton" runat="server" CausesValidation="False" 
+                             /><%--&nbsp;<asp:Button ID="ResetButton" Text="Reset" onclick="resetTextFields();" runat="server" />&nbsp;--%>
+                             <asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" 
                             CommandName="Back" Text="Back" /></tr>
                     </table>
                 </InsertItemTemplate>
@@ -246,11 +246,11 @@
                     <asp:Label ID="ApplicantAddressLabel" runat="server" 
                         Text='<%# Bind("ApplicantAddress") %>' />
                     <br />
-                    <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" 
+                    <asp:Button ID="EditButton" runat="server" CausesValidation="False" 
                         CommandName="Edit" Text="Edit" />
-                    &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" 
+                    &nbsp;<asp:Button ID="DeleteButton" runat="server" CausesValidation="False" 
                         CommandName="Delete" Text="Delete" />
-                    &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" 
+                    &nbsp;<asp:Button ID="NewButton" runat="server" CausesValidation="False" 
                         CommandName="New" Text="New" />
                 </ItemTemplate>
             </asp:FormView>
