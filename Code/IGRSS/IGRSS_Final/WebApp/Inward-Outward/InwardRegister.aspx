@@ -7,7 +7,8 @@
 
     
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="Server">
-    <script>
+
+    <script language="javascript">
 
     function resetTextFields() {
         $("input").each(function (index, element) { $(element).val(""); });
@@ -55,6 +56,7 @@
     <asp:MultiView ID="mvInward" runat="server" ActiveViewIndex="0">
         <asp:View ID="vieGrid" runat="server">
         <hr /><br />
+        <h1>INWARD REGISTER</h1>
             <table width="100%" >
              <tr>
                     <td align="right" style="width:641px;" >
@@ -115,7 +117,8 @@
         </asp:View>
         
         <asp:View ID="vieFv" runat="server">
-        <center>
+       <center>
+        <h1>INWARD REGISTER</h1>
             <asp:FormView ID="FormView_Inward" runat="server" DataKeyNames="SrNo" 
                 DataSourceID="odsgv" EnableModelValidation="True" 
                 oniteminserted="FormView_Inward_ItemInserted" DefaultMode="Insert" 
@@ -127,7 +130,8 @@
                     <tr><td align="right">Inward Date:</td><td align="left"><asp:TextBox ID="InwardDateTextBox" runat="server" Text='<%# Bind("InwardDate") %>' /></td></tr>
                     <tr><td align="right">Description:</td><td align="left">
                         <asp:TextBox ID="DescriptionTextBox" runat="server" 
-                            Text='<%# Bind("Description") %>' TextMode="MultiLine" /></td></tr>
+                            Text='<%# Bind("Description") %>' TextMode="MultiLine" Height="60px" 
+                            Width="160px" /></td></tr>
                     <tr><td align="right">Applicant Name:</td><td align="left"><asp:TextBox ID="ApplicantNameTextBox" runat="server" Text='<%# Bind("ApplicantName") %>' /></td></tr>
                     <tr><td align="right">Application Date:</td><td align="left"><asp:TextBox ID="ApplicationDateTextBox" runat="server" Text='<%# Bind("ApplicationDate") %>' /></td></tr>
                     <tr><td align="right">Sent To:</td><td align="left">
@@ -136,10 +140,11 @@
                             DataValueField="OfficeName"></asp:DropDownList></td></tr>
                     <tr><td align="right">Remarks:</td><td align="left">
                         <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
-                            TextMode="MultiLine" /></td></tr>
+                            TextMode="MultiLine" Height="60px" Width="160px" /></td></tr>
                     <tr><td align="right">Applicant Address:</td><td align="left">
                         <asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
-                            Text='<%# Bind("ApplicantAddress") %>' TextMode="MultiLine" /></td></tr>
+                            Text='<%# Bind("ApplicantAddress") %>' TextMode="MultiLine" Height="60px" 
+                            Width="160px" /></td></tr>
                              <tr>
                                 <td align="right">
                                     Upload Document: 
@@ -151,9 +156,9 @@
                                     <asp:Button runat="server" ID="buttonUpload" Text="Upload" CommandName="UploadFile" />
                                 </td>
                             </tr>
-                    <tr><td colspan="2" align="center"><asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
-                    &nbsp;<a href="#" onclick="resetTextFields();">Reset</a>
-                    &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
+                    <tr><td colspan="2" align="center"><asp:Button ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                    <%--&nbsp;<asp:Button ID="ResetButton" Text="Reset" onclick="resetTextFields();" runat="server" />--%>
+                    &nbsp;<asp:Button ID="UpdateCancelButton" runat="server" 
                             CausesValidation="False" CommandName="Back" Text="Back" /></tr>
                         <td>
                             </tr>
@@ -171,7 +176,8 @@
                             Text='<%# Bind("InwardDate") %>' Width="160px" /></td></tr>
                     <tr><td align="right">Description:</td><td align="left">
                         <asp:TextBox ID="DescriptionTextBox" runat="server" 
-                            Text='<%# Bind("Description") %>' TextMode="MultiLine" Width="160px" /></td></tr>
+                            Text='<%# Bind("Description") %>' TextMode="MultiLine" Width="160px" 
+                            Height="60px" /></td></tr>
                     <tr><td align="right">Applicant Name:</td><td align="left">
                         <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
                             Text='<%# Bind("ApplicantName") %>' Width="160px" /></td></tr>
@@ -184,10 +190,11 @@
                             Width="160px"></asp:DropDownList></td></tr>
                     <tr><td align="right">Remarks:</td><td align="left">
                         <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
-                            TextMode="MultiLine" Width="160px" /></td></tr>
+                            TextMode="MultiLine" Width="160px" Height="60px" /></td></tr>
                     <tr><td align="right">Applicant Address:</td><td align="left">
                         <asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
-                            Text='<%# Bind("ApplicantAddress") %>' TextMode="MultiLine" Width="160px" /></td></tr>
+                            Text='<%# Bind("ApplicantAddress") %>' TextMode="MultiLine" Width="160px" 
+                            Height="60px" /></td></tr>
                             <tr>
                                 <td align="right">
                                     Upload Document: 
@@ -199,10 +206,10 @@
                                     <asp:Button runat="server" ID="buttonUpload" Text="Upload" CommandName="UploadFile" />
                                 </td>
                             </tr>
-                    <tr><td colspan="2" align="center"><asp:LinkButton ID="InsertButton" runat="server" 
+                    <tr><td colspan="2" align="center"><asp:Button ID="InsertButton" runat="server" 
                             CausesValidation="True" CommandName="Insert" Text="Insert" 
-                             />&nbsp;<a href="#" onclick="resetTextFields();">Reset</a>&nbsp;<asp:LinkButton 
-                            ID="InsertCancelButton" runat="server" CausesValidation="False" 
+                             /><%--&nbsp;<asp:Button ID="ResetButton" Text="Reset" onclick="resetTextFields();" runat="server" />&nbsp;--%>
+                             <asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" 
                             CommandName="Back" Text="Back" /></tr>
                     </table>
                 </InsertItemTemplate>
@@ -239,11 +246,11 @@
                     <asp:Label ID="ApplicantAddressLabel" runat="server" 
                         Text='<%# Bind("ApplicantAddress") %>' />
                     <br />
-                    <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" 
+                    <asp:Button ID="EditButton" runat="server" CausesValidation="False" 
                         CommandName="Edit" Text="Edit" />
-                    &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" 
+                    &nbsp;<asp:Button ID="DeleteButton" runat="server" CausesValidation="False" 
                         CommandName="Delete" Text="Delete" />
-                    &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" 
+                    &nbsp;<asp:Button ID="NewButton" runat="server" CausesValidation="False" 
                         CommandName="New" Text="New" />
                 </ItemTemplate>
             </asp:FormView>
