@@ -4,6 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="server">
 <asp:MultiView ID="MultiView_worksheet" runat="server" ActiveViewIndex="0">
 <asp:View ID="viewGrid" runat="server">
+<h1>WORKSHEET REGISTER</h1>
 <table>
 <tr>
                 <td align="right" style="width: 641px">
@@ -22,21 +23,21 @@
     <tr>
         <td align="right" colspan="3">
             <asp:GridView ID="GridView_worksheet" runat="server" AllowPaging="True" 
-                AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="SrNo" 
+                AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" 
                 DataSourceID="ods_worksheet" EnableModelValidation="True">
                 <Columns>
-                    <asp:BoundField DataField="SrNo" HeaderText="SrNo" ReadOnly="True" 
-                        SortExpression="SrNo" Visible="False" />
-                    <asp:BoundField DataField="Inward_No" HeaderText="Inward_No" 
+                    <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" 
+                        SortExpression="ID" Visible="False" InsertVisible="False" />
+                    <asp:BoundField DataField="WorkSheet_No" HeaderText="WorkSheet No" 
+                        SortExpression="WorkSheet_No" />
+                    <asp:BoundField DataField="Inward_No" HeaderText="Inward No" 
                         SortExpression="Inward_No" />
-                    <asp:BoundField DataField="WorkSheet_no" HeaderText="WorkSheet_no" 
-                        SortExpression="WorkSheet_no" />
-                    <asp:BoundField DataField="NameofPerson" HeaderText="NameofPerson" 
-                        SortExpression="NameofPerson" />
-                    <asp:BoundField DataField="Letter_details" HeaderText="Letter_details" 
-                        SortExpression="Letter_details" />
-                    <asp:BoundField DataField="Work_Disposal" HeaderText="Work_Disposal" 
-                        SortExpression="Work_Disposal" />
+                    <asp:BoundField DataField="Name_Of_Person" HeaderText="Name Of Person" 
+                        SortExpression="Name_Of_Person" />
+                    <asp:BoundField DataField="Letter_Details" HeaderText="Letter Details" 
+                        SortExpression="Letter_Details" />
+                    <asp:BoundField DataField="Work_Disposal_Date" HeaderText="Work Disposal Date" 
+                        SortExpression="Work_Disposal_Date" />
                 </Columns>
             </asp:GridView>
         </td>
@@ -51,143 +52,128 @@
 </asp:View>
 
 <asp:View ID="Worksheetregister" runat="server">
+<h1>WORKSHEET REGISTER</h1>
 
-    <asp:ObjectDataSource ID="ods_worksheet" runat="server" DeleteMethod="Delete" 
-        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_worksheet" runat="server" OldValuesParameterFormatString="original_{0}" 
         SelectMethod="GetData" 
-        TypeName="IGRSS.DataAccessLayer.WorksheetregisterTableAdapters.Worksheet_RegisterTableAdapter" 
-        UpdateMethod="Update">
-        <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Inward_No" Type="Int32" />
-            <asp:Parameter Name="Original_WorkSheet_no" Type="Int32" />
-            <asp:Parameter Name="Original_NameofPerson" Type="String" />
-            <asp:Parameter Name="Original_Letter_details" Type="String" />
-            <asp:Parameter Name="Original_Work_Disposal" Type="DateTime" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="SrNo" Type="Int32" />
-            <asp:Parameter Name="Inward_No" Type="Int32" />
-            <asp:Parameter Name="WorkSheet_no" Type="Int32" />
-            <asp:Parameter Name="NameofPerson" Type="String" />
-            <asp:Parameter Name="Letter_details" Type="String" />
-            <asp:Parameter Name="Work_Disposal" Type="DateTime" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="Inward_No" Type="Int32" />
-            <asp:Parameter Name="WorkSheet_no" Type="Int32" />
-            <asp:Parameter Name="NameofPerson" Type="String" />
-            <asp:Parameter Name="Letter_details" Type="String" />
-            <asp:Parameter Name="Work_Disposal" Type="DateTime" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Inward_No" Type="Int32" />
-            <asp:Parameter Name="Original_WorkSheet_no" Type="Int32" />
-            <asp:Parameter Name="Original_NameofPerson" Type="String" />
-            <asp:Parameter Name="Original_Letter_details" Type="String" />
-            <asp:Parameter Name="Original_Work_Disposal" Type="DateTime" />
-        </UpdateParameters>
+        
+        TypeName="IGRSS.DataAccessLayer.WorksheetregisterTableAdapters.WorkSheetRegisterTableAdapter">
     </asp:ObjectDataSource>
-    <center><asp:FormView ID="FormView_worksheet" Width="50%" runat="server" DataKeyNames="SrNo" 
+    <center>
+        <asp:FormView ID="FormView_worksheet" Width="50%" runat="server" DataKeyNames="ID" 
         DataSourceID="ods_worksheet" EnableModelValidation="True" 
         DefaultMode="Insert" oniteminserted="FormView_worksheet_ItemInserted" 
         onitemupdated="FormView_worksheet_ItemUpdated">
         <EditItemTemplate>
-         <table>
-<tr><td>SrNo:</td><td><asp:TextBox ID="SrNoTextBox" runat="server" 
-        Text='<%# Bind("SrNo") %>' Width="160px" /></td></tr>
-
- <tr><td>           Inward_No:</td><td>
-            <asp:TextBox ID="Inward_NoTextBox" runat="server" 
-                Text='<%# Bind("Inward_No") %>' Width="160px" /></td></tr>
-
-<tr><td>            WorkSheet_no:</td><td>
-            <asp:TextBox ID="WorkSheet_noTextBox" runat="server" 
-                Text='<%# Bind("WorkSheet_no") %>' Width="160px" /></td></tr>
-
-<tr><td>            NameofPerson:</td><td>
-            <asp:TextBox ID="NameofPersonTextBox" runat="server" 
-                Text='<%# Bind("NameofPerson") %>' Width="160px" /></td></tr>
-
-<tr><td>            Letter_details:</td><td>
-            <asp:TextBox ID="Letter_detailsTextBox" runat="server" 
-                Text='<%# Bind("Letter_details") %>' Width="160px" /></td></tr>
-
-<tr><td>            Work_Disposal:</td><td>
-            <asp:TextBox ID="Work_DisposalTextBox" runat="server" 
-                Text='<%# Bind("Work_Disposal") %>' Width="160px" /></td></tr>
-
-<tr><td>            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                CommandName="Insert" Text="Insert" />
+                <table>
+        <tr><td>WorkSheet No:</td>
+		    <td><asp:TextBox ID="WorkSheet_NoTextBox" runat="server" 
+                Text='<%# Bind("WorkSheet_No") %>' Width="160px" />
+			</td>
+		</tr>		
+           
+		<tr><td>Inward No:</td>
+		    <td><asp:TextBox ID="Inward_NoTextBox" runat="server" 
+                Text='<%# Bind("Inward_No") %>' Width="160px" />
+			</td>
+		</tr>        
+            				
+        <tr><td>Name Of Person:</td>
+		    <td><asp:TextBox ID="Name_Of_PersonTextBox" runat="server" 
+                Text='<%# Bind("Name_Of_Person") %>' Width="160px" />
+			</td>
+		</tr>          
+            			
+        <tr><td>Letter Details:</td>
+		    <td><asp:TextBox ID="Letter_DetailsTextBox" runat="server" Height="60px" 
+                Text='<%# Bind("Letter_Details") %>' TextMode="MultiLine" Width="160px" />
+			</td>
+		</tr>           
+            				
+        <tr><td>Work Disposal Date:</td>
+		    <td><asp:TextBox ID="Work_Disposal_DateTextBox" runat="server" 
+                Text='<%# Bind("Work_Disposal_Date") %>' Width="160px" />
+			</td>
+		</tr>           
+            			
+        <tr><td colspan=2 align="center"><asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
+                CommandName="Update" Text="Update" />
+			&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
+                CausesValidation="False" CommandName="Reset" Text="Reset" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" /></td></tr>
-
-
-
-</table>
+                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+			</td>
+		</tr>	
+	</table>			
+            
         </EditItemTemplate>
         <InsertItemTemplate>
-           <table>
-<tr><td>SrNo:</td><td><asp:TextBox ID="SrNoTextBox" runat="server" 
-        Text='<%# Bind("SrNo") %>' Width="160px" /></td></tr>
-
- <tr><td>           Inward_No:</td><td>
-            <asp:TextBox ID="Inward_NoTextBox" runat="server" 
-                Text='<%# Bind("Inward_No") %>' Width="160px" /></td></tr>
-
-<tr><td>            WorkSheet_no:</td><td>
-            <asp:TextBox ID="WorkSheet_noTextBox" runat="server" 
-                Text='<%# Bind("WorkSheet_no") %>' Width="160px" /></td></tr>
-
-<tr><td>            NameofPerson:</td><td>
-            <asp:TextBox ID="NameofPersonTextBox" runat="server" 
-                Text='<%# Bind("NameofPerson") %>' Width="160px" /></td></tr>
-
-<tr><td>            Letter_details:</td><td>
-            <asp:TextBox ID="Letter_detailsTextBox" runat="server" 
-                Text='<%# Bind("Letter_details") %>' Width="160px" /></td></tr>
-
-<tr><td>            Work_Disposal:</td><td>
-            <asp:TextBox ID="Work_DisposalTextBox" runat="server" 
-                Text='<%# Bind("Work_Disposal") %>' Width="160px" /></td></tr>
-
-<tr><td>            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                <table>
+        <tr><td>WorkSheet No:</td>
+		    <td><asp:TextBox ID="WorkSheet_NoTextBox" runat="server" 
+                Text='<%# Bind("WorkSheet_No") %>' Width="160px" />
+			</td>
+		</tr>		
+           
+		<tr><td>Inward No:</td>
+		    <td><asp:TextBox ID="Inward_NoTextBox" runat="server" 
+                Text='<%# Bind("Inward_No") %>' Width="160px" />
+			</td>
+		</tr>        
+            				
+        <tr><td>Name Of Person:</td>
+		    <td><asp:TextBox ID="Name_Of_PersonTextBox" runat="server" 
+                Text='<%# Bind("Name_Of_Person") %>' Width="160px" />
+			</td>
+		</tr>          
+            			
+        <tr><td>Letter Details:</td>
+		    <td><asp:TextBox ID="Letter_DetailsTextBox" runat="server" Height="60px" 
+                Text='<%# Bind("Letter_Details") %>' TextMode="MultiLine" Width="160px" />
+			</td>
+		</tr>           
+            				
+        <tr><td>Work Disposal Date:</td>
+		    <td><asp:TextBox ID="Work_Disposal_DateTextBox" runat="server" 
+                Text='<%# Bind("Work_Disposal_Date") %>' Width="160px" />
+			</td>
+		</tr>           
+            			
+        <tr><td colspan=2 align="center"><asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
                 CommandName="Insert" Text="Insert" />
+			&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
+                CausesValidation="False" CommandName="Reset" Text="Reset" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" /></td></tr>
-
-
-
-</table>
+                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+			</td>
+		</tr>	
+	</table>			
+            
         </InsertItemTemplate>
         <ItemTemplate>
-            SrNo:
-            <asp:Label ID="SrNoLabel" runat="server" Text='<%# Eval("SrNo") %>' />
+            ID:
+            <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
+            <br />
+            WorkSheet_No:
+            <asp:Label ID="WorkSheet_NoLabel" runat="server" 
+                Text='<%# Bind("WorkSheet_No") %>' />
             <br />
             Inward_No:
-            <asp:Label ID="Inward_NoLabel" runat="server" Text='<%# Bind("Inward_No") %>' />
+            <asp:Label ID="Inward_NoLabel" runat="server" 
+                Text='<%# Bind("Inward_No") %>' />
             <br />
-            WorkSheet_no:
-            <asp:Label ID="WorkSheet_noLabel" runat="server" 
-                Text='<%# Bind("WorkSheet_no") %>' />
+            Name_Of_Person:
+            <asp:Label ID="Name_Of_PersonLabel" runat="server" 
+                Text='<%# Bind("Name_Of_Person") %>' />
             <br />
-            NameofPerson:
-            <asp:Label ID="NameofPersonLabel" runat="server" 
-                Text='<%# Bind("NameofPerson") %>' />
+            Letter_Details:
+            <asp:Label ID="Letter_DetailsLabel" runat="server" 
+                Text='<%# Bind("Letter_Details") %>' />
             <br />
-            Letter_details:
-            <asp:Label ID="Letter_detailsLabel" runat="server" 
-                Text='<%# Bind("Letter_details") %>' />
+            Work_Disposal_Date:
+            <asp:Label ID="Work_Disposal_DateLabel" runat="server" 
+                Text='<%# Bind("Work_Disposal_Date") %>' />
             <br />
-            Work_Disposal:
-            <asp:Label ID="Work_DisposalLabel" runat="server" 
-                Text='<%# Bind("Work_Disposal") %>' />
-            <br />
-            <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" 
-                CommandName="Edit" Text="Edit" />
-            &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" 
-                CommandName="Delete" Text="Delete" />
-            &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" 
-                CommandName="New" Text="New" />
         </ItemTemplate>
     </asp:FormView></center>
     

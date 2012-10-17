@@ -18,4 +18,9 @@ public partial class LatestPages_FileRegister : System.Web.UI.Page
     {
 
     }
+    protected void Button_new_Click(object sender, EventArgs e)
+    {
+        MultiView_File.SetActiveView(MultiView_File.Views[1]);
+        FormView_File.ChangeMode(FormViewMode.Insert);
+    }
 }
