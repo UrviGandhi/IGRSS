@@ -78,31 +78,33 @@
                             EnableModelValidation="True" DataKeyNames="SrNo" 
                             onrowcommand="gvInwarddtl_RowCommand" onrowdatabound="gvInwarddtl_RowDataBound">
                             <Columns>
+                                                            <asp:BoundField DataField="inward_no_" 
+                                    HeaderText="Inward No" SortExpression="inward_no_" ReadOnly="True" />
                                 <asp:BoundField DataField="SrNo" HeaderText="SrNo" 
                                     SortExpression="SrNo" InsertVisible="False" ReadOnly="True" Visible="false"/>
                                 <asp:BoundField DataField="InwardNo" HeaderText="InwardNo" 
                                     SortExpression="InwardNo" Visible="false"/>
-                                    <asp:BoundField DataField="inward_no" HeaderText="Inward No" ReadOnly="True" 
-                                    SortExpression="inward_no" />
-                                <asp:BoundField DataField="InwardDate" HeaderText="Inward Date" 
+                                    <asp:BoundField DataField="InwardDate" HeaderText="Inward Date" 
                                     SortExpression="InwardDate" />
                                 <asp:BoundField DataField="Description" HeaderText="Description" 
                                     SortExpression="Description" />
                                 <asp:BoundField DataField="ApplicantName" HeaderText="Applicant Name" 
                                     SortExpression="ApplicantName" />
-                                <asp:BoundField DataField="ApplicationDate" HeaderText="Application Date"
+                                <asp:BoundField DataField="ApplicationDate" HeaderText="Application Date" 
                                     SortExpression="ApplicationDate" />
-                                <asp:BoundField DataField="SentTo" HeaderText="Sent To" 
+                                <asp:BoundField DataField="SentTo" HeaderText="Sent To"
                                     SortExpression="SentTo" />
                                 <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
                                     SortExpression="Remarks" />
                                 <asp:BoundField DataField="ApplicantAddress" HeaderText="Applicant Address" 
                                     SortExpression="ApplicantAddress" />
-                                
                                 <asp:BoundField DataField="Document_Upload_Id" HeaderText="Document_Upload_Id" 
-                                    SortExpression="Document_Upload_Id" InsertVisible="False" ReadOnly="True" Visible="false"/>
-                                <asp:BoundField DataField="Name" 
-                                    HeaderText="Document Name" SortExpression="Name" />
+                                    SortExpression="Document_Upload_Id" InsertVisible="False" 
+                                    ReadOnly="True" Visible="false"/>
+                                
+                                <asp:BoundField DataField="Name" HeaderText="Name" 
+                                    SortExpression="Name"/>
+
 
                             </Columns>
                             <EmptyDataTemplate>
@@ -186,7 +188,7 @@
                             Text='<%# Bind("ApplicationDate") %>' Width="160px" /></td></tr>
                     <tr><td align="right">Sent To:</td><td align="left">
                         <asp:DropDownList ID="dropdownlistSentTo" runat="server" 
-                            DataSourceID="OdsOffices" DataTextField="OfficeName" DataValueField="OfficeName" 
+                            DataSourceID="OdsOffices" DataTextField="OfficeName" DataValueField="OfficeId" 
                             Width="160px"></asp:DropDownList></td></tr>
                     <tr><td align="right">Remarks:</td><td align="left">
                         <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
