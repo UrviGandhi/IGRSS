@@ -11,8 +11,9 @@
 *.sln.docstates
 
 # Build results
-[Dd]ebug/
-[Rr]elease/
+#[Dd]ebug/
+#[Rr]elease/
+IGRSSWebApp_deploy/
 *_i.c
 *_p.c
 *.ilk
