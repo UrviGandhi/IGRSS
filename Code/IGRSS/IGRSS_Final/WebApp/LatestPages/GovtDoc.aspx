@@ -25,7 +25,7 @@
                             AllowPaging="True" EnableModelValidation="True">
                             <Columns>
                                 <asp:BoundField DataField="SrNo" HeaderText="SrNo" SortExpression="SrNo"  
-                                    ReadOnly="True" />
+                                    ReadOnly="True" Visible="False" />
                                 <asp:BoundField DataField="InwardNo" HeaderText="InwardNo" 
                                     SortExpression="InwardNo" />
                                 <asp:BoundField DataField="Details" HeaderText="Details" 
@@ -107,9 +107,9 @@
                            <asp:Parameter Name="Original_TypesOfRecord" Type="String" />
                        </UpdateParameters>
                    </asp:ObjectDataSource>
-                   <asp:FormView ID="FvGovtDoc" runat="server" DataKeyNames="SrNo" 
+                   <center><asp:FormView ID="FvGovtDoc" runat="server" DataKeyNames="SrNo" 
                        DataSourceID="ObjectDataSource_govtdoc" EnableModelValidation="True" 
-                       DefaultMode="Insert">
+                       DefaultMode="Insert" Width="50%">
                        <EditItemTemplate>
                            <table>
  <tr>
@@ -160,10 +160,10 @@
 </td></tr><tr><td>
                            Remarks:
 </td><td>                           <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' />
-</td></tr><tr><td>
-                           <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+</td></tr><tr><td colspan=2 align="center">
+                           <asp:Button ID="InsertButton" runat="server" CausesValidation="True" 
                                CommandName="Insert" Text="Insert" />
-                           &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                           &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
                                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
 </td></tr></table>                      
  </EditItemTemplate>
@@ -217,10 +217,10 @@
 </td></tr><tr><td>
                            Remarks:
 </td><td>                           <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' />
-</td></tr><tr><td>
-                           <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+</td></tr><tr><td colspan=2 align="center">
+                           <asp:Button ID="InsertButton" runat="server" CausesValidation="True" 
                                CommandName="Insert" Text="Insert" />
-                           &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                           &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
                                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
 </td></tr></table>
                        </InsertItemTemplate>
@@ -270,7 +270,8 @@
                            &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" 
                                CommandName="New" Text="New" />
                        </ItemTemplate>
-                   </asp:FormView>
+                   </asp:FormView></center>
+                   
                </asp:View>
                </asp:MultiView>
                     

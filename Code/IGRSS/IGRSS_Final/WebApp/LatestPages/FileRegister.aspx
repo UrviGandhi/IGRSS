@@ -214,45 +214,10 @@
     <asp:ObjectDataSource ID="ods_fileregister" runat="server" 
         OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
         
+        
         TypeName="IGRSS.DataAccessLayer.FileRegisterTableAdapters.FileRegisterTableAdapter" 
-        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update">
-        <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_FileName" Type="String" />
-            <asp:Parameter Name="Original_FileNo" Type="Int32" />
-            <asp:Parameter Name="Original_StartingDate" Type="DateTime" />
-            <asp:Parameter Name="Original_EndingDate" Type="DateTime" />
-            <asp:Parameter Name="Original_ClassOfFile" Type="String" />
-            <asp:Parameter Name="Original_DisposalDateOfFile" Type="DateTime" />
-            <asp:Parameter Name="Original_DisposalDateOn" Type="DateTime" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="SrNo" Type="Int32" />
-            <asp:Parameter Name="FileName" Type="String" />
-            <asp:Parameter Name="FileNo" Type="Int32" />
-            <asp:Parameter Name="StartingDate" Type="DateTime" />
-            <asp:Parameter Name="EndingDate" Type="DateTime" />
-            <asp:Parameter Name="ClassOfFile" Type="String" />
-            <asp:Parameter Name="DisposalDateOfFile" Type="DateTime" />
-            <asp:Parameter Name="DisposalDateOn" Type="DateTime" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="FileName" Type="String" />
-            <asp:Parameter Name="FileNo" Type="Int32" />
-            <asp:Parameter Name="StartingDate" Type="DateTime" />
-            <asp:Parameter Name="EndingDate" Type="DateTime" />
-            <asp:Parameter Name="ClassOfFile" Type="String" />
-            <asp:Parameter Name="DisposalDateOfFile" Type="DateTime" />
-            <asp:Parameter Name="DisposalDateOn" Type="DateTime" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_FileName" Type="String" />
-            <asp:Parameter Name="Original_FileNo" Type="Int32" />
-            <asp:Parameter Name="Original_StartingDate" Type="DateTime" />
-            <asp:Parameter Name="Original_EndingDate" Type="DateTime" />
-            <asp:Parameter Name="Original_ClassOfFile" Type="String" />
-            <asp:Parameter Name="Original_DisposalDateOfFile" Type="DateTime" />
-            <asp:Parameter Name="Original_DisposalDateOn" Type="DateTime" />
-        </UpdateParameters>
+        InsertMethod="Fill" 
+        DataObjectTypeName="IGRSS.DataAccessLayer.FileRegister+FileRegisterDataTable">
     </asp:ObjectDataSource>
 
 

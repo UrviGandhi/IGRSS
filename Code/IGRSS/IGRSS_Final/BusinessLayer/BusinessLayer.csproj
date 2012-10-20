@@ -206,6 +206,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GovtDoc.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\HighCourtReg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HighCourtReg.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\InquiryRegister.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InquiryRegister.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\InspectionDetails.cs">
       <DependentUpon>InspectionDetails.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -260,6 +270,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="DataAccessLayer\MLA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MLA.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\Outward.cs">
       <DependentUpon>Outward.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -268,6 +283,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Outward.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\PIO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PIO.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Purchase.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -288,6 +308,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RegistrationDocReq.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\RTI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RTI.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\Service.cs">
       <DependentUpon>Service.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -297,10 +322,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Service.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\SOFile.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SOFile.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\SRORates.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SRORates.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Tarankit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tarankit.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Telephone.cs">
       <DependentUpon>Telephone.xsd</DependentUpon>
@@ -333,6 +368,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VendorOffence.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\vigilance.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vigilance.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\VillageMasterAdministrator.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -665,6 +705,28 @@
     <None Include="DataAccessLayer\GovtDoc.xss">
       <DependentUpon>GovtDoc.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\HighCourtReg.xsc">
+      <DependentUpon>HighCourtReg.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\HighCourtReg.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HighCourtReg.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\HighCourtReg.xss">
+      <DependentUpon>HighCourtReg.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\InquiryRegister.xsc">
+      <DependentUpon>InquiryRegister.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\InquiryRegister.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InquiryRegister.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\InquiryRegister.xss">
+      <DependentUpon>InquiryRegister.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\Inspection.xsc">
       <DependentUpon>Inspection.xsd</DependentUpon>
     </None>
@@ -775,6 +837,17 @@
     <None Include="DataAccessLayer\LicenseReNewal.xss">
       <DependentUpon>LicenseReNewal.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\MLA.xsc">
+      <DependentUpon>MLA.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\MLA.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MLA.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\MLA.xss">
+      <DependentUpon>MLA.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\OfficesMaster.xsc">
       <DependentUpon>OfficesMaster.xsd</DependentUpon>
     </None>
@@ -796,6 +869,17 @@
     </None>
     <None Include="DataAccessLayer\Outward.xss">
       <DependentUpon>Outward.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\PIO.xsc">
+      <DependentUpon>PIO.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\PIO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PIO.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\PIO.xss">
+      <DependentUpon>PIO.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\Purchase.xsc">
       <DependentUpon>Purchase.xsd</DependentUpon>
@@ -841,6 +925,17 @@
     <None Include="DataAccessLayer\RevenueStampMaster.xss">
       <DependentUpon>RevenueStampMaster.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\RTI.xsc">
+      <DependentUpon>RTI.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\RTI.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RTI.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\RTI.xss">
+      <DependentUpon>RTI.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\Service.xsc">
       <DependentUpon>Service.xsd</DependentUpon>
     </None>
@@ -851,6 +946,28 @@
     </None>
     <None Include="DataAccessLayer\Service.xss">
       <DependentUpon>Service.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\SOFile.xsc">
+      <DependentUpon>SOFile.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\SOFile.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SOFile.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\SOFile.xss">
+      <DependentUpon>SOFile.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Tarankit.xsc">
+      <DependentUpon>Tarankit.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Tarankit.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Tarankit.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Tarankit.xss">
+      <DependentUpon>Tarankit.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\Telephone.xsc">
       <DependentUpon>Telephone.xsd</DependentUpon>
@@ -895,6 +1012,17 @@
     </None>
     <None Include="DataAccessLayer\VendorMaster.xss">
       <DependentUpon>VendorMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\vigilance.xsc">
+      <DependentUpon>vigilance.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\vigilance.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vigilance.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\vigilance.xss">
+      <DependentUpon>vigilance.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\WorkflowSupprot.xsc">
       <DependentUpon>WorkflowSupprot.xsd</DependentUpon>
