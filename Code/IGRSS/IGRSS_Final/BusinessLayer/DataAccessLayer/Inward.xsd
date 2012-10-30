@@ -290,7 +290,7 @@ FROM            dbo.InwardRegister INNER JOIN
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        dbo.InwardRegister.SrNo, dbo.InwardRegister.InwardNo, dbo.InwardRegister.InwardDate, dbo.InwardRegister.Description, dbo.InwardRegister.ApplicantName, 
-                         dbo.InwardRegister.ApplicationDate, dbo.InwardRegister.SentTo, dbo.InwardRegister.Remarks, dbo.InwardRegister.ApplicantAddress, 
+                         dbo.InwardRegister.ApplicationDate,dbo.Offices.OfficeName, dbo.InwardRegister.SentTo, dbo.InwardRegister.Remarks, dbo.InwardRegister.ApplicantAddress, 
                          dbo.Document_Upload.Document_Upload_Id, dbo.Document_Upload.Name, CAST(dbo.InwardRegister.InwardNo AS varchar(500)) 
                          + '/' + CAST(dbo.Offices.OfficeName AS varchar(500)) COLLATE DATABASE_DEFAULT AS inward_no_
 FROM            dbo.InwardRegister INNER JOIN

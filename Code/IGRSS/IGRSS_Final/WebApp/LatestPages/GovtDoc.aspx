@@ -6,10 +6,10 @@
                       <asp:View ID="viewGrid" runat="server">
                        <table width="100%">
              <tr>
-                    <td align="left" class="labelColumn">
+                    <td align="right" class="labelColumn">
                         <asp:Label ID="Label1" runat="server" Text="Enter File Number" meta:resourcekey="lblllsResource1"></asp:Label></td>
                     <td align="left" class="textColumn">
-                        <asp:TextBox ID="TextBox11" runat="server" MaxLength="15" OnTextChanged="txtFileNo_TextChanged"
+                        <asp:TextBox ID="TextBox11" runat="server"  OnTextChanged="txtFileNo_TextChanged"
                             meta:resourcekey="txtFileNoResource1"></asp:TextBox></td>
                 </tr>
                 <tr>

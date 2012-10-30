@@ -1338,13 +1338,34 @@ SELECT SrNo, InwardNo, FileNo, MLAname, Subject, LetterNo, LetterDate, Departmen
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        SrNo, InwardNo, FileNo, MLAname, Subject, LetterNo, LetterDate, Dep" +
                 "artmentName, FileNumber, DetailsofOutput, DetailsofFilePreservation, DetailsOfRe" +
                 "cord, \r\n                         Remarks\r\nFROM            dbo.MLA";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        SrNo, InwardNo, FileNo, MLAname, Subject, LetterNo, LetterDate, DepartmentName, FileNumber, DetailsofOutput, DetailsofFilePreservation, DetailsOfRecord, 
+                         Remarks
+FROM            dbo.MLA
+
+WHERE   (CAST(dbo.MLA.SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (dbo.MLA.InwardNo LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(dbo.MLA.FileNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (dbo.MLA.MLAname LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(dbo.MLA.Subject AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(dbo.MLA.Letterno AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(dbo.MLA.LetterDate AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (dbo.MLA.DepartmentName LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(dbo.MLA.FileNumber AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+						 (dbo.MLA.DetailsOfOutput LIKE '%' + @searchKeyWord + '%') OR
+						 (dbo.MLA.DetailsOfFilePreservation LIKE '%' + @searchKeyWord + '%') OR
+						 (dbo.MLA.DetailsOfRecord LIKE '%' + @searchKeyWord + '%') OR
+						 (dbo.MLA.Remarks LIKE '%' + @searchKeyWord + '%')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1366,6 +1387,42 @@ SELECT SrNo, InwardNo, FileNo, MLAname, Subject, LetterNo, LetterDate, Departmen
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual MLA.MLADataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            MLA.MLADataTable dataTable = new MLA.MLADataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(MLA.MLADataTable dataTable, string searchKeyWord) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((searchKeyWord == null)) {
+                throw new global::System.ArgumentNullException("searchKeyWord");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual MLA.MLADataTable GetDataBy(string searchKeyWord) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((searchKeyWord == null)) {
+                throw new global::System.ArgumentNullException("searchKeyWord");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
+            }
             MLA.MLADataTable dataTable = new MLA.MLADataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

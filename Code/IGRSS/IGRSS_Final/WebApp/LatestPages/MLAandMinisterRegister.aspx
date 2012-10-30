@@ -1,6 +1,51 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true" CodeFile="MLAandMinisterRegister.aspx.cs" Inherits="LatestPages_MLAandMinisterRegister" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" Runat="Server">
+<script language="javascript">
+
+    function resetTextFields() {
+        $("input").each(function (index, element) { $(element).val(""); });
+        $("textarea").each(function (index, element) { $(element).val(""); });
+    }
+
+    function generateDatePicker(id) {
+        $('input[id*="' + id + '"]').datepicker({
+            showOn: "both",
+            buttonImage: "/WebApp/Styles/css/sunny/images/calendar.gif",
+            buttonImageOnly: true
+        });
+    }
+    $(function () {
+        $('input[id*="InwardNoTextBox"]').keydown(function (event) {
+            // Allow: backspace, delete, tab, escape, and enter
+            if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
+            // Allow: Ctrl+A
+            (event.keyCode == 65 && event.ctrlKey === true) ||
+            // Allow: home, end, left, right
+            (event.keyCode >= 35 && event.keyCode <= 39)) {
+                // let it happen, don't do anything
+                return;
+            }
+            else {
+                // Ensure that it is a number and stop the keypress
+                if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
+                    event.preventDefault();
+                }
+            }
+        });
+
+        $('input[id*="InwardNoTextBox"]').blur(function () {
+            if (isNaN($('input[id*="InwardNoTextBox"]').val()) || $('input[id*="InwardNoTextBox"]').val().length == 0) { $('input[id*="InwardNoTextBox"]').val(''); return; }
+            var formattedNumber = 'IGR\/' + $('input[id*="InwardNoTextBox"]').val() + '\/' + new Date().getFullYear();
+            $('input[id*="InwardNoTextBox"]').val(formattedNumber.toString());
+        });
+
+        var datePickers = ["LetterDateTextBox"];
+        for (var index = 0; index < datePickers.length; index++) {
+            generateDatePicker(datePickers[index]);
+        }
+    });
+</script>
 <asp:MultiView ID="MultiviewMLA" runat="server" ActiveViewIndex="0">
 <asp:View ID="GridView" runat="server">
 <hr /><br />
@@ -12,7 +57,7 @@
                             meta:resourcekey="lblllsResource1"></asp:Label></td>
                     <td align="left" >
                         <asp:TextBox Width="160" ID="txtFileNo" runat="server" 
-                            meta:resourcekey="txtFileNoResource1" ontextchanged="txtFileNo_TextChanged"></asp:TextBox></td>
+                            meta:resourcekey="txtFileNoResource1"></asp:TextBox></td>
                         <td align="right">
                         <asp:Button ID="btnSearchAppNo" runat="server" OnClick="btnSearchAppNo_Click" Text="Search"
                             meta:resourcekey="btnSearchAppNoResource1" />
@@ -41,15 +86,15 @@
                               SortExpression="DepartmentName" />
                           <asp:BoundField DataField="FileNumber" HeaderText="File Number" 
                               SortExpression="FileNumber" />
-                          <asp:BoundField DataField="DetailsofOutput" HeaderText="Details of Output" 
+                          <asp:BoundField DataField="DetailsofOutput" HeaderText="DetailsofOutput" 
                               SortExpression="DetailsofOutput" Visible="False" />
                           <asp:BoundField DataField="DetailsofFilePreservation" 
-                              HeaderText="Details of File Preservation" 
+                              HeaderText="DetailsofFilePreservation" 
                               SortExpression="DetailsofFilePreservation" Visible="False" />
-                          <asp:BoundField DataField="DetailsOfRecord" HeaderText="Details Of Record" 
-                              SortExpression="DetailsOfRecord" />
+                          <asp:BoundField DataField="DetailsOfRecord" HeaderText="DetailsOfRecord" 
+                              SortExpression="DetailsOfRecord" Visible="False" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
-                              SortExpression="Remarks" />
+                              SortExpression="Remarks" Visible="False" />
                       </Columns>
                   </asp:GridView>
               </td>
@@ -63,7 +108,8 @@
 <h1>MLA and Minister's Register</h1>
 <asp:FormView ID="FormView_MLA" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_MLA" EnableModelValidation="True" DefaultMode="Insert" 
-        Width="50%">
+        Width="50%" oniteminserting="FormView_MLA_ItemInserting" 
+        onitemcommand="FormView_MLA_ItemCommand" >
         <EditItemTemplate>
                 <table>
         <tr><td>Inward No:</td>
@@ -97,8 +143,11 @@
 		</tr>	           
             
         <tr><td>Department Name:</td>
-			<td><asp:TextBox ID="DepartmentNameTextBox" runat="server" 
-                Text='<%# Bind("DepartmentName") %>' Width="160px" /></td>
+			<td>
+                <asp:DropDownList ID="Drop_departmentname" runat="server" 
+                    DataSourceID="ods_departmentname" DataTextField="Name" DataValueField="Name">
+                </asp:DropDownList>
+            </td>
 		</tr>	           
             
         <tr><td>File Number:</td>
@@ -134,7 +183,7 @@
 			&nbsp;<asp:Button ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="Reset" Text="Reset" />	
             &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                CausesValidation="False" CommandName="Back" Text="Back" />
 			</td>
 		</tr>
     </table>		
@@ -173,8 +222,11 @@
 		</tr>	           
             
         <tr><td>Department Name:</td>
-			<td><asp:TextBox ID="DepartmentNameTextBox" runat="server" 
-                Text='<%# Bind("DepartmentName") %>' Width="160px" /></td>
+			<td>
+                <asp:DropDownList ID="Drop_departmentname" runat="server" 
+                    DataSourceID="ods_departmentname" DataTextField="Name" DataValueField="Name">
+                </asp:DropDownList>
+            </td>
 		</tr>	           
             
         <tr><td>File Number:</td>
@@ -210,7 +262,7 @@
 			&nbsp;<asp:Button ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="Reset" Text="Reset" />	
             &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                CausesValidation="False" CommandName="Back" Text="Back" />
 			</td>
 		</tr>
     </table>		
@@ -274,9 +326,9 @@
     
     <asp:ObjectDataSource ID="ods_MLA" runat="server" DeleteMethod="Delete" 
         InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
-        SelectMethod="GetData" 
+        SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.MLATableAdapters.MLATableAdapter" 
-        UpdateMethod="Update">
+        UpdateMethod="Update" onselecting="ods_MLA_Selecting" >
         <DeleteParameters>
             <asp:Parameter Name="Original_SrNo" Type="Int32" />
             <asp:Parameter Name="Original_InwardNo" Type="String" />
@@ -302,6 +354,10 @@
             <asp:Parameter Name="DetailsOfRecord" Type="String" />
             <asp:Parameter Name="Remarks" Type="String" />
         </InsertParameters>
+        <SelectParameters>
+            <asp:ControlParameter ControlID="txtFileNo" Name="searchKeyWord" 
+                PropertyName="Text" Type="String" />
+        </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="InwardNo" Type="String" />
             <asp:Parameter Name="FileNo" Type="Int32" />
@@ -325,6 +381,10 @@
             <asp:Parameter Name="Original_DepartmentName" Type="String" />
             <asp:Parameter Name="Original_FileNumber" Type="Int32" />
         </UpdateParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ods_departmentname" runat="server" 
+        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+        TypeName="IGRSS.DataAccessLayer.DepartmentMasterTableAdapters.DepartmentMasterTableAdapter">
     </asp:ObjectDataSource>
 </asp:View>    
 </asp:MultiView> 

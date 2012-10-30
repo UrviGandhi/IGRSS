@@ -34,4 +34,20 @@ public partial class LatestPages_WorkSheetRegister : System.Web.UI.Page
         GridView_worksheet.DataBind();
         MultiView_worksheet.SetActiveView(viewGrid);
     }
+    protected void ods_worksheet_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+    {
+        e.InputParameters["searchKeyWord"] = txtFileNo.Text.Trim();
+        ods_worksheet.SelectMethod = "GetDataBy";
+               
+    }
+    protected void FormView_worksheet_ItemCommand(object sender, FormViewCommandEventArgs e)
+    {
+        switch (e.CommandName)
+        { 
+            case "Back":
+                MultiView_worksheet.SetActiveView(viewGrid);
+                GridView_worksheet.DataBind();
+                break;
+        }
+    }
 }

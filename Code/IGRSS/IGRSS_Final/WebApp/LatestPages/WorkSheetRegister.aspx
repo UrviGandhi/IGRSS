@@ -2,6 +2,51 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="server">
+<script language="javascript">
+
+    function resetTextFields() {
+        $("input").each(function (index, element) { $(element).val(""); });
+        $("textarea").each(function (index, element) { $(element).val(""); });
+    }
+
+    function generateDatePicker(id) {
+        $('input[id*="' + id + '"]').datepicker({
+            showOn: "both",
+            buttonImage: "/WebApp/Styles/css/sunny/images/calendar.gif",
+            buttonImageOnly: true
+        });
+    }
+    $(function () {
+        $('input[id*="Inward_NoTextBox"]').keydown(function (event) {
+            // Allow: backspace, delete, tab, escape, and enter
+            if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
+            // Allow: Ctrl+A
+            (event.keyCode == 65 && event.ctrlKey === true) ||
+            // Allow: home, end, left, right
+            (event.keyCode >= 35 && event.keyCode <= 39)) {
+                // let it happen, don't do anything
+                return;
+            }
+            else {
+                // Ensure that it is a number and stop the keypress
+                if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
+                    event.preventDefault();
+                }
+            }
+        });
+
+        $('input[id*="Inward_NoTextBox"]').blur(function () {
+            if (isNaN($('input[id*="Inward_NoTextBox"]').val()) || $('input[id*="Inward_NoTextBox"]').val().length == 0) { $('input[id*="Inward_NoTextBox"]').val(''); return; }
+            var formattedNumber = 'IGR\/' + $('input[id*="Inward_NoTextBox"]').val() + '\/' + new Date().getFullYear();
+            $('input[id*="Inward_NoTextBox"]').val(formattedNumber.toString());
+        });
+
+        var datePickers = ["Work_Disposal_DateTextBox"];
+        for (var index = 0; index < datePickers.length; index++) {
+            generateDatePicker(datePickers[index]);
+        }
+    });
+</script>
 <asp:MultiView ID="MultiView_worksheet" runat="server" ActiveViewIndex="0">
 <asp:View ID="viewGrid" runat="server">
 <h1>WORKSHEET REGISTER</h1>
@@ -28,15 +73,15 @@
                 <Columns>
                     <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" 
                         SortExpression="ID" Visible="False" InsertVisible="False" />
-                    <asp:BoundField DataField="WorkSheet_No" HeaderText="WorkSheet No" 
+                    <asp:BoundField DataField="WorkSheet_No" HeaderText="WorkSheet_No" 
                         SortExpression="WorkSheet_No" />
-                    <asp:BoundField DataField="Inward_No" HeaderText="Inward No" 
+                    <asp:BoundField DataField="Inward_No" HeaderText="Inward_No" 
                         SortExpression="Inward_No" />
-                    <asp:BoundField DataField="Name_Of_Person" HeaderText="Name Of Person" 
+                    <asp:BoundField DataField="Name_Of_Person" HeaderText="Name_Of_Person" 
                         SortExpression="Name_Of_Person" />
-                    <asp:BoundField DataField="Letter_Details" HeaderText="Letter Details" 
+                    <asp:BoundField DataField="Letter_Details" HeaderText="Letter_Details" 
                         SortExpression="Letter_Details" />
-                    <asp:BoundField DataField="Work_Disposal_Date" HeaderText="Work Disposal Date" 
+                    <asp:BoundField DataField="Work_Disposal_Date" HeaderText="Work_Disposal_Date" 
                         SortExpression="Work_Disposal_Date" />
                 </Columns>
             </asp:GridView>
@@ -55,15 +100,51 @@
 <h1>WORKSHEET REGISTER</h1>
 
     <asp:ObjectDataSource ID="ods_worksheet" runat="server" OldValuesParameterFormatString="original_{0}" 
-        SelectMethod="GetData" 
+        SelectMethod="GetDataBy" 
         
-        TypeName="IGRSS.DataAccessLayer.WorksheetregisterTableAdapters.WorkSheetRegisterTableAdapter">
+        
+        TypeName="IGRSS.DataAccessLayer.WorksheetregisterTableAdapters.WorkSheetRegisterTableAdapter" 
+        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update" 
+        onselecting="ods_worksheet_Selecting">
+        <DeleteParameters>
+            <asp:Parameter Name="Original_ID" Type="Int32" />
+            <asp:Parameter Name="Original_WorkSheet_No" Type="Int32" />
+            <asp:Parameter Name="Original_Inward_No" Type="String" />
+            <asp:Parameter Name="Original_Name_Of_Person" Type="String" />
+            <asp:Parameter Name="Original_Letter_Details" Type="String" />
+            <asp:Parameter Name="Original_Work_Disposal_Date" Type="DateTime" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="WorkSheet_No" Type="Int32" />
+            <asp:Parameter Name="Inward_No" Type="String" />
+            <asp:Parameter Name="Name_Of_Person" Type="String" />
+            <asp:Parameter Name="Letter_Details" Type="String" />
+            <asp:Parameter Name="Work_Disposal_Date" Type="DateTime" />
+        </InsertParameters>
+        <SelectParameters>
+            <asp:ControlParameter ControlID="txtFileNo" Name="searchKeyWord" 
+                PropertyName="Text" Type="String" />
+        </SelectParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="WorkSheet_No" Type="Int32" />
+            <asp:Parameter Name="Inward_No" Type="String" />
+            <asp:Parameter Name="Name_Of_Person" Type="String" />
+            <asp:Parameter Name="Letter_Details" Type="String" />
+            <asp:Parameter Name="Work_Disposal_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_ID" Type="Int32" />
+            <asp:Parameter Name="Original_WorkSheet_No" Type="Int32" />
+            <asp:Parameter Name="Original_Inward_No" Type="String" />
+            <asp:Parameter Name="Original_Name_Of_Person" Type="String" />
+            <asp:Parameter Name="Original_Letter_Details" Type="String" />
+            <asp:Parameter Name="Original_Work_Disposal_Date" Type="DateTime" />
+        </UpdateParameters>
     </asp:ObjectDataSource>
     <center>
         <asp:FormView ID="FormView_worksheet" Width="50%" runat="server" DataKeyNames="ID" 
         DataSourceID="ods_worksheet" EnableModelValidation="True" 
         DefaultMode="Insert" oniteminserted="FormView_worksheet_ItemInserted" 
-        onitemupdated="FormView_worksheet_ItemUpdated">
+        onitemupdated="FormView_worksheet_ItemUpdated" 
+            onitemcommand="FormView_worksheet_ItemCommand">
         <EditItemTemplate>
                 <table>
         <tr><td>WorkSheet No:</td>
@@ -96,12 +177,12 @@
 			</td>
 		</tr>           
             			
-        <tr><td colspan=2 align="center"><asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
+        <tr><td colspan=2 align="center"><asp:Button ID="UpdateButton" runat="server" CausesValidation="True" 
                 CommandName="Update" Text="Update" />
-			&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
+			&nbsp;<asp:Button ID="ResetButton"  runat="server" 
                 CausesValidation="False" CommandName="Reset" Text="Reset" />
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
+                CausesValidation="False" CommandName="Back" Text="Back" />
 			</td>
 		</tr>	
 	</table>			
@@ -139,12 +220,12 @@
 			</td>
 		</tr>           
             			
-        <tr><td colspan=2 align="center"><asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+        <tr><td colspan=2 align="center"><asp:Button ID="InsertButton" runat="server" CausesValidation="True" 
                 CommandName="Insert" Text="Insert" />
-			&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
+			&nbsp;<asp:Button ID="ResetButton"  runat="server" 
                 CausesValidation="False" CommandName="Reset" Text="Reset" />
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
+                CausesValidation="False" CommandName="Back" Text="Back" />
 			</td>
 		</tr>	
 	</table>			

@@ -4068,26 +4068,26 @@ FROM            dbo.InwardRegister INNER JOIN
             this._commandCollection[1].Connection = new global::System.Data.SqlClient.SqlConnection(global::IGRSS.Properties.Settings.Default.IGRSS_FINALConnectionString);
             this._commandCollection[1].CommandText = "SELECT        dbo.InwardRegister.SrNo, dbo.InwardRegister.InwardNo, dbo.InwardReg" +
                 "ister.InwardDate, dbo.InwardRegister.Description, dbo.InwardRegister.ApplicantNa" +
-                "me, \r\n                         dbo.InwardRegister.ApplicationDate, dbo.InwardReg" +
-                "ister.SentTo, dbo.InwardRegister.Remarks, dbo.InwardRegister.ApplicantAddress, \r" +
-                "\n                         dbo.Document_Upload.Document_Upload_Id, dbo.Document_U" +
-                "pload.Name, CAST(dbo.InwardRegister.InwardNo AS varchar(500)) \r\n                " +
-                "         + \'/\' + CAST(dbo.Offices.OfficeName AS varchar(500)) COLLATE DATABASE_D" +
-                "EFAULT AS inward_no_\r\nFROM            dbo.InwardRegister INNER JOIN\r\n           " +
-                "              dbo.Document_Upload ON dbo.Document_Upload.Document_Upload_Id = db" +
-                "o.InwardRegister.Document_Upload_Id INNER JOIN\r\n                         dbo.Off" +
-                "ices ON dbo.InwardRegister.SentTo = dbo.Offices.OfficeId\r\nWHERE        (CAST(dbo" +
-                ".InwardRegister.SrNo AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n          " +
-                "               (dbo.InwardRegister.InwardNo LIKE \'%\' + @searchKeyWord + \'%\') OR\r" +
-                "\n                         (CAST(dbo.InwardRegister.InwardDate AS varchar) LIKE \'" +
-                "%\' + @searchKeyWord + \'%\') OR\r\n                         (dbo.InwardRegister.Desc" +
-                "ription LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (dbo.Inwar" +
-                "dRegister.ApplicantName LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                   " +
-                "      (CAST(dbo.InwardRegister.ApplicationDate AS varchar) LIKE \'%\' + @searchKey" +
-                "Word + \'%\') OR\r\n                         (dbo.InwardRegister.SentTo LIKE \'%\' + @" +
-                "searchKeyWord + \'%\') OR\r\n                         (dbo.InwardRegister.Remarks LI" +
-                "KE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (dbo.InwardRegister." +
-                "ApplicantAddress LIKE \'%\' + @searchKeyWord + \'%\')";
+                "me, \r\n                         dbo.InwardRegister.ApplicationDate,dbo.Offices.Of" +
+                "ficeName, dbo.InwardRegister.SentTo, dbo.InwardRegister.Remarks, dbo.InwardRegis" +
+                "ter.ApplicantAddress, \r\n                         dbo.Document_Upload.Document_Up" +
+                "load_Id, dbo.Document_Upload.Name, CAST(dbo.InwardRegister.InwardNo AS varchar(5" +
+                "00)) \r\n                         + \'/\' + CAST(dbo.Offices.OfficeName AS varchar(5" +
+                "00)) COLLATE DATABASE_DEFAULT AS inward_no_\r\nFROM            dbo.InwardRegister " +
+                "INNER JOIN\r\n                         dbo.Document_Upload ON dbo.Document_Upload." +
+                "Document_Upload_Id = dbo.InwardRegister.Document_Upload_Id INNER JOIN\r\n         " +
+                "                dbo.Offices ON dbo.InwardRegister.SentTo = dbo.Offices.OfficeId\r" +
+                "\nWHERE        (CAST(dbo.InwardRegister.SrNo AS varchar) LIKE \'%\' + @searchKeyWor" +
+                "d + \'%\') OR\r\n                         (dbo.InwardRegister.InwardNo LIKE \'%\' + @s" +
+                "earchKeyWord + \'%\') OR\r\n                         (CAST(dbo.InwardRegister.Inward" +
+                "Date AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (" +
+                "dbo.InwardRegister.Description LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n            " +
+                "             (dbo.InwardRegister.ApplicantName LIKE \'%\' + @searchKeyWord + \'%\') " +
+                "OR\r\n                         (CAST(dbo.InwardRegister.ApplicationDate AS varchar" +
+                ") LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (dbo.InwardRegis" +
+                "ter.SentTo LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (dbo.In" +
+                "wardRegister.Remarks LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                      " +
+                "   (dbo.InwardRegister.ApplicantAddress LIKE \'%\' + @searchKeyWord + \'%\')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();

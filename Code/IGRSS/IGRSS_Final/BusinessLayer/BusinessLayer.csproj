@@ -154,6 +154,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Config.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\Datatable1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Datatable1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\DepartmentMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepartmentMaster.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\Document.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -660,6 +670,28 @@
     </None>
     <None Include="DataAccessLayer\Complain.xss">
       <DependentUpon>Complain.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Datatable1.xsc">
+      <DependentUpon>Datatable1.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Datatable1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Datatable1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Datatable1.xss">
+      <DependentUpon>Datatable1.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\DepartmentMaster.xsc">
+      <DependentUpon>DepartmentMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\DepartmentMaster.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DepartmentMaster.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\DepartmentMaster.xss">
+      <DependentUpon>DepartmentMaster.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\Document.xsc">
       <DependentUpon>Document.xsd</DependentUpon>

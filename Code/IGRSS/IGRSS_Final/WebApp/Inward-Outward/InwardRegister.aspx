@@ -92,8 +92,8 @@
                                     SortExpression="ApplicantName" />
                                 <asp:BoundField DataField="ApplicationDate" HeaderText="Application Date" 
                                     SortExpression="ApplicationDate" />
-                                <asp:BoundField DataField="SentTo" HeaderText="Sent To"
-                                    SortExpression="SentTo" />
+                                <asp:BoundField DataField="OfficeName" HeaderText="Sent To"
+                                    SortExpression="OfficeName" />
                                 <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
                                     SortExpression="Remarks" />
                                 <asp:BoundField DataField="ApplicantAddress" HeaderText="Applicant Address" 

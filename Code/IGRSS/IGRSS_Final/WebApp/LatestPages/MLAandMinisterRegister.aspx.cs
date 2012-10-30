@@ -12,7 +12,7 @@ public partial class LatestPages_MLAandMinisterRegister : System.Web.UI.Page
     }
     protected void btnSearchAppNo_Click(object sender, EventArgs e)
     {
-
+       
     }
     protected void txtFileNo_TextChanged(object sender, EventArgs e)
     {
@@ -22,5 +22,28 @@ public partial class LatestPages_MLAandMinisterRegister : System.Web.UI.Page
     {
         MultiviewMLA.SetActiveView(MultiviewMLA.Views[1]);
         FormView_MLA.ChangeMode(FormViewMode.Insert);
+    }
+
+
+
+    protected void FormView_MLA_ItemInserting(object sender, FormViewInsertEventArgs e)
+    {
+        DropDownList dropDownOffice = FormView_MLA.FindControl("Drop_departmentname") as DropDownList;
+        e.Values["DepartmentName"] = dropDownOffice.SelectedValue;
+    }
+    protected void ods_MLA_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+    {
+        e.InputParameters["searchKeyWord"] = txtFileNo.Text.Trim();
+        ods_MLA.SelectMethod = "GetDataBy";
+    }
+    protected void FormView_MLA_ItemCommand(object sender, FormViewCommandEventArgs e)
+    {
+        switch (e.CommandName)
+        {
+            case "Back":
+                MultiviewMLA.SetActiveView(GridView);
+                GridView_MLA.DataBind();
+                break;
+        }
     }
 }

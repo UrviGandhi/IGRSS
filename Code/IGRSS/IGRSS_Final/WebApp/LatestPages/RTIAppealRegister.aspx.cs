@@ -23,4 +23,25 @@ public partial class LatestPages_RTIAppealRegister : System.Web.UI.Page
         Multiview_RTI.SetActiveView(Multiview_RTI.Views[1]);
         FormView_RTI.ChangeMode(FormViewMode.Insert);
     }
+    protected void FormView_RTI_ItemInserting(object sender, FormViewInsertEventArgs e)
+    {
+        RadioButtonList Radio_decisiontaken = FormView_RTI.FindControl("Radio_decisiontaken") as RadioButtonList;
+        e.Values["Decision_Taken"] = Radio_decisiontaken.SelectedValue;
+    }
+    protected void FormView_RTI_ItemCommand(object sender, FormViewCommandEventArgs e)
+    {
+        switch (e.CommandName)
+        { 
+            case "Back":
+                Multiview_RTI.SetActiveView(GridView);
+                GridView_RTI.DataBind();
+                break;
+        }
+    }
+    protected void ods_RTI_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+    {
+        e.InputParameters["searchKeyWord"] = txtFileNo.Text.Trim();
+        ods_RTI.SelectMethod = "GetDataBy";
+        
+    }
 }

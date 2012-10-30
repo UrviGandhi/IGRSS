@@ -1,6 +1,51 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true" CodeFile="RTIAppealRegister.aspx.cs" Inherits="LatestPages_RTIAppealRegister" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" Runat="Server">
+<script language="javascript">
+
+    function resetTextFields() {
+        $("input").each(function (index, element) { $(element).val(""); });
+        $("textarea").each(function (index, element) { $(element).val(""); });
+    }
+
+    function generateDatePicker(id) {
+        $('input[id*="' + id + '"]').datepicker({
+            showOn: "both",
+            buttonImage: "/WebApp/Styles/css/sunny/images/calendar.gif",
+            buttonImageOnly: true
+        });
+    }
+    $(function () {
+        $('input[id*="Inward_NoTextBox"]').keydown(function (event) {
+            // Allow: backspace, delete, tab, escape, and enter
+            if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
+            // Allow: Ctrl+A
+            (event.keyCode == 65 && event.ctrlKey === true) ||
+            // Allow: home, end, left, right
+            (event.keyCode >= 35 && event.keyCode <= 39)) {
+                // let it happen, don't do anything
+                return;
+            }
+            else {
+                // Ensure that it is a number and stop the keypress
+                if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
+                    event.preventDefault();
+                }
+            }
+        });
+
+        $('input[id*="Inward_NoTextBox"]').blur(function () {
+            if (isNaN($('input[id*="Inward_NoTextBox"]').val()) || $('input[id*="Inward_NoTextBox"]').val().length == 0) { $('input[id*="Inward_NoTextBox"]').val(''); return; }
+            var formattedNumber = 'IGR\/' + $('input[id*="Inward_NoTextBox"]').val() + '\/' + new Date().getFullYear();
+            $('input[id*="Inward_NoTextBox"]').val(formattedNumber.toString());
+        });
+
+        var datePickers = ["Appl_DateTextBox","PIO_dateTextBox","Last_DateTextBox"];
+        for (var index = 0; index < datePickers.length; index++) {
+            generateDatePicker(datePickers[index]);
+        }
+    });
+</script>
 <asp:MultiView ID="Multiview_RTI" runat="server" ActiveViewIndex="0">
 <asp:View ID="GridView" runat="server">
 <hr /><br />
@@ -25,20 +70,21 @@
                       EnableModelValidation="True">
                       <Columns>
                           <asp:BoundField DataField="Sr_No" HeaderText="Sr_No" 
-                              ReadOnly="True" SortExpression="Sr_No" Visible="False" />
-                          <asp:BoundField DataField="Appl_name" HeaderText="Name Of Applicant" 
+                              ReadOnly="True" SortExpression="Sr_No" Visible="False" 
+                              InsertVisible="False" />
+                          <asp:BoundField DataField="Appl_name" HeaderText="Appl_name" 
                               SortExpression="Appl_name" />
-                          <asp:BoundField DataField="Appl_surname" HeaderText="Surname Of Applicant" 
+                          <asp:BoundField DataField="Appl_surname" HeaderText="Appl_surname" 
                               SortExpression="Appl_surname" />
-                          <asp:BoundField DataField="Appl_Date" HeaderText="Date Of Application" 
+                          <asp:BoundField DataField="Appl_Date" HeaderText="Appl_Date" 
                               SortExpression="Appl_Date" />
-                          <asp:BoundField DataField="PIO_desig" HeaderText="PIO's Designation" 
+                          <asp:BoundField DataField="PIO_desig" HeaderText="PIO_desig" 
                               SortExpression="PIO_desig" />
-                          <asp:BoundField DataField="PIO_date" HeaderText="PIO Date" 
+                          <asp:BoundField DataField="PIO_date" HeaderText="PIO_date" 
                               SortExpression="PIO_date" />
-                          <asp:BoundField DataField="Last_Date" HeaderText="Last Date According To 30 Days" 
+                          <asp:BoundField DataField="Last_Date" HeaderText="Last_Date" 
                               SortExpression="Last_Date" />
-                          <asp:BoundField DataField="Decision_Taken" HeaderText="Decision Taken By" 
+                          <asp:BoundField DataField="Decision_Taken" HeaderText="Decision_Taken" 
                               SortExpression="Decision_Taken" />
                       </Columns>
                   </asp:GridView>
@@ -53,7 +99,8 @@
 <h1>RTI Appeal Register</h1>
 <asp:FormView ID="FormView_RTI" runat="server" DataKeyNames="Sr_No" 
         DataSourceID="ods_RTI" EnableModelValidation="True" DefaultMode="Insert" 
-        Width="50%">
+        Width="50%" oniteminserting="FormView_RTI_ItemInserting" 
+        onitemcommand="FormView_RTI_ItemCommand">
         <EditItemTemplate>
             <table>
 		<%--<tr><td>Sr_No:</td>
@@ -95,8 +142,8 @@
 		    <td>
                 <asp:RadioButtonList ID="Radio_decisiontaken" runat="server" 
                     RepeatDirection="Horizontal" Width="160px">
-                    <asp:ListItem>Appellate</asp:ListItem>
-                    <asp:ListItem>Committee</asp:ListItem>
+                    <asp:ListItem Text="Appellate" Value="Appellate"></asp:ListItem>
+                    <asp:ListItem Text="Committee" Value="Committee"></asp:ListItem>
                 </asp:RadioButtonList>
             </td>
 		</tr>	          
@@ -106,7 +153,7 @@
 		 	    &nbsp;<asp:Button ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="Reset" Text="Reset" />
                 &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                CausesValidation="False" CommandName="Back" Text="Back" />
 			</td>
 		</tr>
 	</table>	
@@ -156,8 +203,8 @@
 		    <td>
                 <asp:RadioButtonList ID="Radio_decisiontaken" runat="server" 
                     RepeatDirection="Horizontal" Width="160px">
-                    <asp:ListItem>Appellate</asp:ListItem>
-                    <asp:ListItem>Committee</asp:ListItem>
+                    <asp:ListItem Text="Appellate" Value="Appellate"></asp:ListItem>
+                    <asp:ListItem Text="Committee" Value="Committee"></asp:ListItem>
                 </asp:RadioButtonList>
             </td>
 		</tr>	          
@@ -167,15 +214,10 @@
 		 	    &nbsp;<asp:Button ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="Reset" Text="Reset" />
                 &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                CausesValidation="False" CommandName="Back" Text="Back" />
 			</td>
 		</tr>
 	</table>	
-      			
-            
-											
-                
-            
         </InsertItemTemplate>
         <ItemTemplate>
             Sr_No:
@@ -220,9 +262,9 @@
     
     <asp:ObjectDataSource ID="ods_RTI" runat="server" DeleteMethod="Delete" 
         InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
-        SelectMethod="GetData" 
+        SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.RTITableAdapters.RTITableAdapter" 
-        UpdateMethod="Update">
+        UpdateMethod="Update" onselecting="ods_RTI_Selecting">
         <DeleteParameters>
             <asp:Parameter Name="Original_Sr_No" Type="Int32" />
             <asp:Parameter Name="Original_Appl_name" Type="String" />
@@ -234,7 +276,6 @@
             <asp:Parameter Name="Original_Decision_Taken" Type="String" />
         </DeleteParameters>
         <InsertParameters>
-            <asp:Parameter Name="Sr_No" Type="Int32" />
             <asp:Parameter Name="Appl_name" Type="String" />
             <asp:Parameter Name="Appl_surname" Type="String" />
             <asp:Parameter Name="Appl_Date" Type="DateTime" />
@@ -243,8 +284,11 @@
             <asp:Parameter Name="Last_Date" Type="DateTime" />
             <asp:Parameter Name="Decision_Taken" Type="String" />
         </InsertParameters>
+        <SelectParameters>
+            <asp:ControlParameter ControlID="txtFileNo" Name="searchKeyWord" 
+                PropertyName="Text" Type="String" />
+        </SelectParameters>
         <UpdateParameters>
-            <asp:Parameter Name="Sr_No" Type="Int32" />
             <asp:Parameter Name="Appl_name" Type="String" />
             <asp:Parameter Name="Appl_surname" Type="String" />
             <asp:Parameter Name="Appl_Date" Type="DateTime" />
@@ -260,6 +304,7 @@
             <asp:Parameter Name="Original_PIO_date" Type="DateTime" />
             <asp:Parameter Name="Original_Last_Date" Type="DateTime" />
             <asp:Parameter Name="Original_Decision_Taken" Type="String" />
+            <asp:Parameter Name="Sr_No" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
 </asp:View>    
