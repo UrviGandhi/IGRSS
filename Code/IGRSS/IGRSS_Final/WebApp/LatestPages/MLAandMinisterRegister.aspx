@@ -3,10 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" Runat="Server">
 <script language="javascript">
 
-    function resetTextFields() {
-        $("input").each(function (index, element) { $(element).val(""); });
-        $("textarea").each(function (index, element) { $(element).val(""); });
-    }
+   
 
     function generateDatePicker(id) {
         $('input[id*="' + id + '"]').datepicker({
@@ -47,7 +44,7 @@
     });
 </script>
 <asp:MultiView ID="MultiviewMLA" runat="server" ActiveViewIndex="0">
-<asp:View ID="GridView" runat="server">
+<asp:View ID="ViewGrid" runat="server">
 <hr /><br />
 <h1>MLA and Minister&#39;s Register</h1>
 <table>
@@ -181,7 +178,8 @@
         <tr><td colspan=2 align="center"><asp:Button ID="UpdateButton" runat="server" CausesValidation="True" 
                 CommandName="Updat" Text="Updat" />
 			&nbsp;<asp:Button ID="ResetButton" runat="server" 
-                CausesValidation="False" CommandName="Reset" Text="Reset" />	
+                CausesValidation="False" CommandName="Reset" Text="Reset" 
+                onclientclick="resetTextFields();return false;" />	
             &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
                 CausesValidation="False" CommandName="Back" Text="Back" />
 			</td>
@@ -260,7 +258,8 @@
         <tr><td colspan=2 align="center"><asp:Button ID="InsertButton" runat="server" CausesValidation="True" 
                 CommandName="Insert" Text="Insert" />
 			&nbsp;<asp:Button ID="ResetButton" runat="server" 
-                CausesValidation="False" CommandName="Reset" Text="Reset" />	
+                CausesValidation="False" CommandName="Reset" Text="Reset" 
+                onclientclick="resetTextFields();return false;" />	
             &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
                 CausesValidation="False" CommandName="Back" Text="Back" />
 			</td>

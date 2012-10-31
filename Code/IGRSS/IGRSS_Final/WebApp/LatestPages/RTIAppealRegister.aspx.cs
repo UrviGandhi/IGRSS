@@ -33,7 +33,7 @@ public partial class LatestPages_RTIAppealRegister : System.Web.UI.Page
         switch (e.CommandName)
         { 
             case "Back":
-                Multiview_RTI.SetActiveView(GridView);
+                Multiview_RTI.SetActiveView(ViewGrid);
                 GridView_RTI.DataBind();
                 break;
         }

@@ -1248,12 +1248,29 @@ SELECT SrNo, Tarankit_Atarnkit, quesno, mlaName, mlaPlace, Subject, Number, Repl
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        SrNo, Tarankit_Atarnkit, quesno, mlaName, mlaPlace, Subject, Number" +
                 ", Reply_Sent, Date, Fileno, Remarks\r\nFROM            dbo.tarankit";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        SrNo, Tarankit_Atarnkit, quesno, mlaName, mlaPlace, Subject, Number, Reply_Sent, Date, Fileno, Remarks
+FROM            dbo.tarankit
+WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (Tarankit_Atarnkit LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(quesno AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (mlaName LIKE '%' + @searchKeyWord + '%') OR
+                         (mlaPlace LIKE '%' + @searchKeyWord + '%') OR
+                         (Subject LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Number AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (Reply_Sent LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Date AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Fileno AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (Remarks LIKE '%' + @searchKeyWord + '%')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1275,6 +1292,42 @@ SELECT SrNo, Tarankit_Atarnkit, quesno, mlaName, mlaPlace, Subject, Number, Repl
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual Tarankit.tarankitDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            Tarankit.tarankitDataTable dataTable = new Tarankit.tarankitDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(Tarankit.tarankitDataTable dataTable, string searchKeyWord) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((searchKeyWord == null)) {
+                throw new global::System.ArgumentNullException("searchKeyWord");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Tarankit.tarankitDataTable GetDataBy(string searchKeyWord) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((searchKeyWord == null)) {
+                throw new global::System.ArgumentNullException("searchKeyWord");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
+            }
             Tarankit.tarankitDataTable dataTable = new Tarankit.tarankitDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

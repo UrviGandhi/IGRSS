@@ -164,6 +164,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DepartmentMaster.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\DesignationMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DesignationMaster.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\Document.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -215,6 +220,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GovtDoc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\HighCourtReg.cs">
+      <DependentUpon>HighCourtReg.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataAccessLayer\HighCourtReg.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -284,6 +293,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MLA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\officename.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>officename.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Outward.cs">
       <DependentUpon>Outward.xsd</DependentUpon>
@@ -693,6 +707,17 @@
     <None Include="DataAccessLayer\DepartmentMaster.xss">
       <DependentUpon>DepartmentMaster.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\DesignationMaster.xsc">
+      <DependentUpon>DesignationMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\DesignationMaster.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DesignationMaster.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\DesignationMaster.xss">
+      <DependentUpon>DesignationMaster.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\Document.xsc">
       <DependentUpon>Document.xsd</DependentUpon>
     </None>
@@ -879,6 +904,17 @@
     </None>
     <None Include="DataAccessLayer\MLA.xss">
       <DependentUpon>MLA.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\officename.xsc">
+      <DependentUpon>officename.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\officename.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>officename.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\officename.xss">
+      <DependentUpon>officename.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\OfficesMaster.xsc">
       <DependentUpon>OfficesMaster.xsd</DependentUpon>

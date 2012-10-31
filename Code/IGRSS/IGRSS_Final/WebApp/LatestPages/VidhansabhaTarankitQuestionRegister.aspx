@@ -1,8 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true" CodeFile="VidhansabhaTarankitQuestionRegister.aspx.cs" Inherits="LatestPages_VidhansabhaTarankitQuestionRegister" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" Runat="Server">
+<script language="javascript">
+
+    function generateDatePicker(id) {
+        $('input[id*="' + id + '"]').datepicker({
+            showOn: "both",
+            buttonImage: "/WebApp/Styles/css/sunny/images/calendar.gif",
+            buttonImageOnly: true
+        });
+    }
+
+    $(function () {
+        var datePickers = ["DateTextBox"];
+        for (var index = 0; index < datePickers.length; index++) {
+            generateDatePicker(datePickers[index]);
+        }
+    });
+ 
+    
+</script>
 <asp:MultiView ID="MultiviewTarankit" runat="server" ActiveViewIndex="0">
-<asp:View ID="GridView" runat="server">
+<asp:View ID="ViewGrid" runat="server">
 <hr /><br />
 <h1>VidhanSabha Tarankit Question Register</h1>
 <table>
@@ -36,17 +55,17 @@
                               SortExpression="mlaPlace" />
                           <asp:BoundField DataField="Subject" HeaderText="Subject" 
                               SortExpression="Subject" />
-                          <asp:BoundField DataField="Number" HeaderText="Number Given By Government" 
-                              SortExpression="Number" />
+                          <asp:BoundField DataField="Number" HeaderText="Number given By Government" 
+                              SortExpression="Number" Visible="False" />
                           <asp:BoundField DataField="Reply_Sent" HeaderText="Reply Sent" 
                               SortExpression="Reply_Sent" Visible="False" />
-                          <asp:BoundField DataField="Date" HeaderText="Date On which Information Is Sent" 
+                          <asp:BoundField DataField="Date" HeaderText="Date On Which Information Is Sent" 
                               SortExpression="Date" />
                           <asp:BoundField DataField="Fileno" HeaderText="File Number" 
                               SortExpression="Fileno" />
                           <asp:BoundField DataField="Remarks" 
                               HeaderText="Remarks" 
-                              SortExpression="Remarks" Visible="False" />
+                              SortExpression="Remarks" />
                       </Columns>
                   </asp:GridView>
               </td>
@@ -60,14 +79,15 @@
 <h1>VidhanSabha Tarankit Question Register</h1>
 <asp:FormView ID="FormView_Tarankit" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_Tarankit" EnableModelValidation="True" DefaultMode="Insert" 
-        Width="50%">
+        Width="60%" oniteminserting="FormView_Tarankit_ItemInserting" 
+        onitemcommand="FormView_Tarankit_ItemCommand">
         <EditItemTemplate>
                     <table>
         <tr><td>Tarankit/Atarnkit:</td>
 		    <td><asp:RadioButtonList ID="Radio_tarankit" runat="server" 
                 RepeatDirection="Horizontal" Width="160px">
-                <asp:ListItem>Starred</asp:ListItem>
-                <asp:ListItem>UnStarred</asp:ListItem>
+                <asp:ListItem Text="Starred" Value="Starred"></asp:ListItem>
+                <asp:ListItem Text="UnStarred" Value="UnStarred"></asp:ListItem>
                 </asp:RadioButtonList>
 			</td>
 		</tr>			
@@ -78,8 +98,11 @@
 		</tr>	             
             
 		<tr><td>Name Of MLA/MP:</td>
-		    <td><asp:TextBox ID="mlaNameTextBox" runat="server" Text='<%# Bind("mlaName") %>' 
-                    Width="160px" /></td>
+		    <td>
+                <asp:DropDownList ID="Drop_mlaname" runat="server" DataSourceID="ods_mlaname" 
+                    DataTextField="MLAname" DataValueField="MLAname">
+                </asp:DropDownList>
+            </td>
 		</tr>	            
             
         <tr><td>Place Of MLA/MP:</td>
@@ -123,9 +146,10 @@
         <tr><td colspan=2 align="center"><asp:Button ID="UpdateButton" runat="server" CausesValidation="True" 
                     CommandName="Update" Text="Update" />
 					&nbsp;<asp:Button ID="ResetButton" runat="server" CausesValidation="False" 
-                    CommandName="Reset" Text="Reset" />
+                    CommandName="Reset" Text="Reset" 
+                onclientclick="resetTextFields();return false;" />
                     &nbsp;<asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" 
-                    CommandName="Cancel" Text="Cancel" />
+                    CommandName="Back" Text="Back" />
 			</td>
 		</tr>
     </table> 		
@@ -136,8 +160,8 @@
         <tr><td>Tarankit/Atarnkit:</td>
 		    <td><asp:RadioButtonList ID="Radio_tarankit" runat="server" 
                 RepeatDirection="Horizontal" Width="160px">
-                <asp:ListItem>Starred</asp:ListItem>
-                <asp:ListItem>UnStarred</asp:ListItem>
+                <asp:ListItem Text="Starred" Value="Starred"></asp:ListItem>
+                <asp:ListItem Text="UnStarred" Value="UnStarred"></asp:ListItem>
                 </asp:RadioButtonList>
 			</td>
 		</tr>			
@@ -148,8 +172,11 @@
 		</tr>	             
             
 		<tr><td>Name Of MLA/MP:</td>
-		    <td><asp:TextBox ID="mlaNameTextBox" runat="server" Text='<%# Bind("mlaName") %>' 
-                    Width="160px" /></td>
+		    <td>
+                <asp:DropDownList ID="Drop_mlaname" runat="server" DataSourceID="ods_mlaname" 
+                    DataTextField="MLAname" DataValueField="MLAname">
+                </asp:DropDownList>
+            </td>
 		</tr>	            
             
         <tr><td>Place Of MLA/MP:</td>
@@ -193,9 +220,10 @@
         <tr><td colspan=2 align="center"><asp:Button ID="InsertButton" runat="server" CausesValidation="True" 
                     CommandName="Insert" Text="Insert" />
 					&nbsp;<asp:Button ID="ResetButton" runat="server" CausesValidation="False" 
-                    CommandName="Reset" Text="Reset" />
+                    CommandName="Reset" Text="Reset" 
+                onclientclick="resetTextFields();return false;" />
                     &nbsp;<asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" 
-                    CommandName="Cancel" Text="Cancel" />
+                    CommandName="Back" Text="Back" />
 			</td>
 		</tr>
     </table> 		
@@ -254,9 +282,9 @@
     
     <asp:ObjectDataSource ID="ods_Tarankit" runat="server" DeleteMethod="Delete" 
         InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
-        SelectMethod="GetData" 
+        SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.TarankitTableAdapters.tarankitTableAdapter" 
-        UpdateMethod="Update">
+        UpdateMethod="Update" onselecting="ods_Tarankit_Selecting">
         <DeleteParameters>
             <asp:Parameter Name="Original_SrNo" Type="Int32" />
             <asp:Parameter Name="Original_Tarankit_Atarnkit" Type="String" />
@@ -281,6 +309,10 @@
             <asp:Parameter Name="FileNo" Type="Int32" />
             <asp:Parameter Name="Remarks" Type="String" />
         </InsertParameters>
+        <SelectParameters>
+            <asp:ControlParameter ControlID="txtFileNo" Name="searchKeyWord" 
+                PropertyName="Text" Type="String" />
+        </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="Tarankit_Atarnkit" Type="String" />
             <asp:Parameter Name="quesno" Type="Int32" />
@@ -302,6 +334,60 @@
             <asp:Parameter Name="Original_Reply_Sent" Type="String" />
             <asp:Parameter Name="Original_Date" Type="DateTime" />
             <asp:Parameter Name="Original_FileNo" Type="Int32" />
+        </UpdateParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ods_mlaname" runat="server" DeleteMethod="Delete" 
+        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+        SelectMethod="GetData" 
+        TypeName="IGRSS.DataAccessLayer.MLATableAdapters.MLATableAdapter" 
+        UpdateMethod="Update">
+        <DeleteParameters>
+            <asp:Parameter Name="Original_SrNo" Type="Int32" />
+            <asp:Parameter Name="Original_InwardNo" Type="String" />
+            <asp:Parameter Name="Original_FileNo" Type="Int32" />
+            <asp:Parameter Name="Original_MLAname" Type="String" />
+            <asp:Parameter Name="Original_Subject" Type="String" />
+            <asp:Parameter Name="Original_LetterNo" Type="Int32" />
+            <asp:Parameter Name="Original_LetterDate" Type="DateTime" />
+            <asp:Parameter Name="Original_DepartmentName" Type="String" />
+            <asp:Parameter Name="Original_FileNumber" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="InwardNo" Type="String" />
+            <asp:Parameter Name="FileNo" Type="Int32" />
+            <asp:Parameter Name="MLAname" Type="String" />
+            <asp:Parameter Name="Subject" Type="String" />
+            <asp:Parameter Name="LetterNo" Type="Int32" />
+            <asp:Parameter Name="LetterDate" Type="DateTime" />
+            <asp:Parameter Name="DepartmentName" Type="String" />
+            <asp:Parameter Name="FileNumber" Type="Int32" />
+            <asp:Parameter Name="DetailsofOutput" Type="String" />
+            <asp:Parameter Name="DetailsofFilePreservation" Type="String" />
+            <asp:Parameter Name="DetailsOfRecord" Type="String" />
+            <asp:Parameter Name="Remarks" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="InwardNo" Type="String" />
+            <asp:Parameter Name="FileNo" Type="Int32" />
+            <asp:Parameter Name="MLAname" Type="String" />
+            <asp:Parameter Name="Subject" Type="String" />
+            <asp:Parameter Name="LetterNo" Type="Int32" />
+            <asp:Parameter Name="LetterDate" Type="DateTime" />
+            <asp:Parameter Name="DepartmentName" Type="String" />
+            <asp:Parameter Name="FileNumber" Type="Int32" />
+            <asp:Parameter Name="DetailsofOutput" Type="String" />
+            <asp:Parameter Name="DetailsofFilePreservation" Type="String" />
+            <asp:Parameter Name="DetailsOfRecord" Type="String" />
+            <asp:Parameter Name="Remarks" Type="String" />
+            <asp:Parameter Name="Original_SrNo" Type="Int32" />
+            <asp:Parameter Name="Original_InwardNo" Type="String" />
+            <asp:Parameter Name="Original_FileNo" Type="Int32" />
+            <asp:Parameter Name="Original_MLAname" Type="String" />
+            <asp:Parameter Name="Original_Subject" Type="String" />
+            <asp:Parameter Name="Original_LetterNo" Type="Int32" />
+            <asp:Parameter Name="Original_LetterDate" Type="DateTime" />
+            <asp:Parameter Name="Original_DepartmentName" Type="String" />
+            <asp:Parameter Name="Original_FileNumber" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
 </asp:View>    

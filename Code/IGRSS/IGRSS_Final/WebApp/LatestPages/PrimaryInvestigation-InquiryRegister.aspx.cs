@@ -23,4 +23,28 @@ public partial class LatestPages_PrimaryInvestigation_InquiryRegister : System.W
         Multiview_Inquiry.SetActiveView(Multiview_Inquiry.Views[1]);
         FormView_Inquiry.ChangeMode(FormViewMode.Insert);
     }
+    protected void FormView_Inquiry_ItemInserting(object sender, FormViewInsertEventArgs e)
+    {
+        DropDownList DropDownEmployeeName = FormView_Inquiry.FindControl("Name_Of_EmployeeDropDown") as DropDownList;
+        e.Values["Name_Of_Employee"] = DropDownEmployeeName.SelectedValue;
+
+        DropDownList DropDownDesignation = FormView_Inquiry.FindControl("Drop_employeedesignation") as DropDownList;
+        e.Values["Designation_Of_Employee"] = DropDownDesignation.SelectedValue;
+    }
+    protected void ods_Inquiry_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+    {
+        e.InputParameters["searchKeyWord"] = txtFileNo.Text.Trim();
+        ods_Inquiry.SelectMethod = "GetDataBy";
+        //ods_MLA.SelectMethod = "GetDataBy";
+    }
+    protected void FormView_Inquiry_ItemCommand(object sender, FormViewCommandEventArgs e)
+    {
+        switch (e.CommandName)
+        {
+            case "Back":
+                Multiview_Inquiry.SetActiveView(ViewGrid);
+                GridView_Inquiry.DataBind();
+               break;
+        }
+    }
 }

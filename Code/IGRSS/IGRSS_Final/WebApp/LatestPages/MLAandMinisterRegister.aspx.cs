@@ -41,7 +41,7 @@ public partial class LatestPages_MLAandMinisterRegister : System.Web.UI.Page
         switch (e.CommandName)
         {
             case "Back":
-                MultiviewMLA.SetActiveView(GridView);
+                MultiviewMLA.SetActiveView(ViewGrid);
                 GridView_MLA.DataBind();
                 break;
         }

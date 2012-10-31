@@ -7,10 +7,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="Server">
     <script>
 
-        function resetTextFields() {
-            $("input").each(function (index, element) { $(element).val(""); });
-            $("textarea").each(function (index, element) { $(element).val(""); });
-        }
+       
         $(function () {
 
             function generateDatePicker(id) {
@@ -137,7 +134,9 @@
                         <tr><td align="right">Address:</td><td align="left"><asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' TextMode="MultiLine" Width="160px" /></td></tr>
                         <tr><td align="right">CopyTo:</td><td align="left"><asp:TextBox ID="CopyToTextBox" runat="server" Text='<%# Bind("CopyTo") %>' Width="160px" /></td></tr>
                         <tr><td align="right">Remarks:</td><td align="left"><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' TextMode="MultiLine" Width="160px" /></td></tr>
-                        <tr><td colspan="2" align="center"><asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />&nbsp;<a href="#" onclick="resetTextFields();">Reset</a>&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Back" Text="Back" /></td></tr>
+                        <tr><td colspan="2" align="center"><asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />&nbsp;<asp:Button 
+                                ID="ResetButton" runat="server" CausesValidation="True" CommandName="Reset" 
+                                Text="Reset" onclientclick="resetTextFields();return false;" />&nbsp;<asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Back" Text="Back" /></td></tr>
                     </table>
                 </InsertItemTemplate>
                 <EditItemTemplate>
@@ -156,8 +155,10 @@
                         <tr><td align="right">CopyTo:</td><td align="left"><asp:TextBox ID="CopyToTextBox" runat="server" Text='<%# Bind("CopyTo") %>' Width="160px" /></td></tr>
                         <tr><td align="right">Remarks:</td><td align="left"><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' TextMode="MultiLine" Width="160px" /></td></tr>
                         <tr><td colspan="2" align="center">
-                            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                        CommandName="Update" Text="Update" />&nbsp;<a href="#" onclick="resetTextFields();">Reset</a> &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
+                            <asp:Button ID="UpdateButton" runat="server" CausesValidation="True" 
+                        CommandName="Update" Text="Update" />&nbsp; <asp:Button ID="ResetButton" 
+                                runat="server" CausesValidation="True" 
+                        CommandName="Reset" Text="Reset" onclientclick="resetTextFields();return false;" /> &nbsp;<asp:Button ID="UpdateCancelButton" runat="server" 
                         CausesValidation="False" CommandName="Back" Text="Back" /></td></tr>
                     </table>
                 </EditItemTemplate>

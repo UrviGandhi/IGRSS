@@ -9,11 +9,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="Server">
 
     <script language="javascript">
-
-    function resetTextFields() {
-        $("input").each(function (index, element) { $(element).val(""); });
-        $("textarea").each(function (index, element) { $(element).val(""); });
-    }
+    
 
     function generateDatePicker(id) {
         $('input[id*="' + id + '"]').datepicker({
@@ -159,7 +155,8 @@
                                 </td>
                             </tr>
                     <tr><td colspan="2" align="center"><asp:Button ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
-                    <%--&nbsp;<asp:Button ID="ResetButton" Text="Reset" onclick="resetTextFields();" runat="server" />--%>
+                    &nbsp;<asp:Button ID="ResetButton" Text="Reset"  runat="server" 
+                            onclientclick="resetTextFields();return false;" />
                     &nbsp;<asp:Button ID="UpdateCancelButton" runat="server" 
                             CausesValidation="False" CommandName="Back" Text="Back" /></tr>
                         <td>
@@ -210,7 +207,8 @@
                             </tr>
                     <tr><td colspan="2" align="center"><asp:Button ID="InsertButton" runat="server" 
                             CausesValidation="True" CommandName="Insert" Text="Insert" 
-                             /><%--&nbsp;<asp:Button ID="ResetButton" Text="Reset" onclick="resetTextFields();" runat="server" />&nbsp;--%>
+                             />&nbsp;<asp:Button ID="ResetButton" Text="Reset" runat="server" 
+                            onclientclick="resetTextFields();return false;" />&nbsp;
                              <asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" 
                             CommandName="Back" Text="Back" /></tr>
                     </table>
