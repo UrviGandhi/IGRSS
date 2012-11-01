@@ -2277,7 +2277,7 @@ namespace IGRSS.DataAccessLayer.PIOTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        SrNo, FileNo, ApplicantName, ApplicationDate, ApplicantAddress, Application_Received_Actual_Date, Appl_BPL, Sub_Info_Asked, [Recvd_Sata-Mandal], Recvd_Date, 
@@ -2287,6 +2287,60 @@ namespace IGRSS.DataAccessLayer.PIOTableAdapters {
                          FileClosureDateSecondAppeal
 FROM            dbo.PIO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        SrNo, FileNo, ApplicantName, ApplicationDate, ApplicantAddress, App" +
+                "lication_Received_Actual_Date, Appl_BPL, Sub_Info_Asked, [Recvd_Sata-Mandal], Re" +
+                "cvd_Date, \r\n                         Information, Recvd_Fees, Recvd_Fees_Mode, L" +
+                "ast_Date_Reply, Info_Send, Info_Pages, Page_Amt, Total_Amt, Reject_Date, Section" +
+                ", Reasons, FileClosureDate, \r\n                         Authority, AppealNoFirstA" +
+                "ppeal, AppealDateFirstAppeal, Order_Authority, FileClosureDateFirstAppeal, Lette" +
+                "er_Recvd_Date_commissioner, AppealNoSecondAppeal, \r\n                         App" +
+                "licationNameSecondAppeal, AddressSecondAppeal, AppealDateSecondAppeal, Remarks_S" +
+                "entTo_Commission, Remarks_Send_Date, \r\n                         FileClosureDateS" +
+                "econdAppeal\r\nFROM            dbo.PIO\r\nWHERE        (CAST(SrNo AS varchar) LIKE \'" +
+                "%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(FileNo AS varchar)" +
+                " LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (ApplicantName LI" +
+                "KE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(ApplicationDat" +
+                "e AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CAS" +
+                "T(ApplicantAddress AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n            " +
+                "             (CAST(Application_Received_Actual_Date AS varchar) LIKE \'%\' + @sear" +
+                "chKeyWord + \'%\') OR\r\n                         (CAST(Appl_BPL AS varchar) LIKE \'%" +
+                "\' + @searchKeyWord + \'%\') OR\r\n                         (Sub_Info_Asked LIKE \'%\' " +
+                "+ @searchKeyWord + \'%\') OR\r\n                         ([Recvd_Sata-Mandal] LIKE \'" +
+                "%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(Recvd_Date AS varc" +
+                "har) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(Informa" +
+                "tion AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (" +
+                "CAST(Recvd_Fees AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n               " +
+                "          (Recvd_Fees_Mode LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                " +
+                "         (CAST(Last_Date_Reply AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n" +
+                "                         (CAST(Info_Send AS varchar) LIKE \'%\' + @searchKeyWord +" +
+                " \'%\') OR\r\n                         (CAST(Info_Pages AS varchar) LIKE \'%\' + @sear" +
+                "chKeyWord + \'%\') OR\r\n                         (CAST(Page_Amt AS varchar) LIKE \'%" +
+                "\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(Total_Amt AS varcha" +
+                "r) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(Reject_Da" +
+                "te AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (Se" +
+                "ction LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (Reasons LIK" +
+                "E \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(FileClosureDate" +
+                " AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (Auth" +
+                "ority LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(Appeal" +
+                "NoFirstAppeal AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                 " +
+                "        (CAST(AppealDateFirstAppeal AS varchar) LIKE \'%\' + @searchKeyWord + \'%\')" +
+                " OR\r\n                         (Order_Authority LIKE \'%\' + @searchKeyWord + \'%\') " +
+                "OR\r\n                         (CAST(FileClosureDateFirstAppeal AS varchar) LIKE \'" +
+                "%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(Letteer_Recvd_Date" +
+                "_commissioner AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                 " +
+                "        (CAST(AppealNoSecondAppeal AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') " +
+                "OR\r\n                         (ApplicationNameSecondAppeal LIKE \'%\' + @searchKeyW" +
+                "ord + \'%\') OR\r\n                         (AddressSecondAppeal LIKE \'%\' + @searchK" +
+                "eyWord + \'%\') OR\r\n                         (CAST(AppealDateSecondAppeal AS varch" +
+                "ar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (Remarks_SentT" +
+                "o_Commission LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST" +
+                "(Remarks_Send_Date AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n            " +
+                "             (CAST(FileClosureDateSecondAppeal AS varchar) LIKE \'%\' + @searchKey" +
+                "Word + \'%\')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2308,6 +2362,42 @@ FROM            dbo.PIO";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual PIO.PIODataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            PIO.PIODataTable dataTable = new PIO.PIODataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(PIO.PIODataTable dataTable, string searchKeyWord) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((searchKeyWord == null)) {
+                throw new global::System.ArgumentNullException("searchKeyWord");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual PIO.PIODataTable GetDataBy(string searchKeyWord) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((searchKeyWord == null)) {
+                throw new global::System.ArgumentNullException("searchKeyWord");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
+            }
             PIO.PIODataTable dataTable = new PIO.PIODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

@@ -197,6 +197,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Faq.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\FeeMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeeMaster.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\FileAttachments.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -739,6 +744,17 @@
     </None>
     <None Include="DataAccessLayer\Employee.xss">
       <DependentUpon>Employee.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\FeeMaster.xsc">
+      <DependentUpon>FeeMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\FeeMaster.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FeeMaster.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\FeeMaster.xss">
+      <DependentUpon>FeeMaster.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\FileRegister.xsc">
       <DependentUpon>FileRegister.xsd</DependentUpon>

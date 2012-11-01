@@ -1,8 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true" CodeFile="PIO.aspx.cs" Inherits="LatestPages_PIO" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" Runat="Server">
+<script language="javascript">
+
+    function generateDatePicker(id) {
+        $('input[id*="' + id + '"]').datepicker({
+            showOn: "both",
+            buttonImage: "/WebApp/Styles/css/sunny/images/calendar.gif",
+            buttonImageOnly: true
+        });
+    }
+
+    $(function () {
+        var datePickers = ["ApplicationDateTextBox", "Last_Date_ReplyTextBox", "Application_Received_Actual_DateTextBox", "Recvd_DateTextBox", "Reject_DateTextBox", "FileClosureDateTextBox", "Letteer_Recvd_Date_commissionerTextBox", "AppealDateFirstAppealTextBox", "FileClosureDateFirstAppealTextBox", "AppealDateSecondAppealTextBox", "Remarks_Send_DateTextBox", "FileClosureDateSecondAppealTextBox"];
+        for (var index = 0; index < datePickers.length; index++) {
+            generateDatePicker(datePickers[index]);
+        }
+    });
+ 
+    
+</script>
 <asp:MultiView ID="Multiview_PIO" runat="server" ActiveViewIndex="0">
-<asp:View ID="GridView" runat="server">
+<asp:View ID="ViewGrid" runat="server">
 <hr /><br />
 <h1>PIO & APIO Register</h1>
 <table>
@@ -25,8 +44,7 @@
                       EnableModelValidation="True">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" 
-                              ReadOnly="True" SortExpression="SrNo" InsertVisible="False" 
-                              Visible="False" />
+                              ReadOnly="True" SortExpression="SrNo" InsertVisible="False" />
                           <asp:BoundField DataField="FileNo" HeaderText="FileNo" 
                               SortExpression="FileNo" />
                           <asp:BoundField DataField="ApplicantName" HeaderText="ApplicantName" 
@@ -34,20 +52,20 @@
                           <asp:BoundField DataField="ApplicationDate" HeaderText="ApplicationDate" 
                               SortExpression="ApplicationDate" />
                           <asp:BoundField DataField="ApplicantAddress" HeaderText="ApplicantAddress" 
-                              SortExpression="ApplicantAddress" Visible="False" />
+                              SortExpression="ApplicantAddress" />
                           <asp:BoundField DataField="Application_Received_Actual_Date" 
                               HeaderText="Application_Received_Actual_Date" 
-                              SortExpression="Application_Received_Actual_Date" Visible="False" />
+                              SortExpression="Application_Received_Actual_Date" />
                           <asp:CheckBoxField DataField="Appl_BPL" HeaderText="Appl_BPL" 
                               SortExpression="Appl_BPL" />
                           <asp:BoundField DataField="Sub_Info_Asked" HeaderText="Sub_Info_Asked" 
-                              SortExpression="Sub_Info_Asked" Visible="False" />
+                              SortExpression="Sub_Info_Asked" />
                           <asp:BoundField DataField="Recvd_Sata-Mandal" HeaderText="Recvd_Sata-Mandal" 
-                              SortExpression="Recvd_Sata-Mandal" Visible="False" />
+                              SortExpression="Recvd_Sata-Mandal" />
                           <asp:BoundField DataField="Recvd_Date" HeaderText="Recvd_Date" 
                               SortExpression="Recvd_Date" />
                           <asp:BoundField DataField="Information" HeaderText="Information" 
-                              SortExpression="Information" Visible="False" />
+                              SortExpression="Information" />
                           <asp:BoundField DataField="Recvd_Fees" HeaderText="Recvd_Fees" 
                               SortExpression="Recvd_Fees" />
                           <asp:BoundField DataField="Recvd_Fees_Mode" HeaderText="Recvd_Fees_Mode" 
@@ -57,9 +75,9 @@
                           <asp:CheckBoxField DataField="Info_Send" HeaderText="Info_Send" 
                               SortExpression="Info_Send" />
                           <asp:BoundField DataField="Info_Pages" HeaderText="Info_Pages" 
-                              SortExpression="Info_Pages" Visible="False" />
+                              SortExpression="Info_Pages" />
                           <asp:BoundField DataField="Page_Amt" HeaderText="Page_Amt" 
-                              SortExpression="Page_Amt" Visible="False" />
+                              SortExpression="Page_Amt" />
                           <asp:BoundField DataField="Total_Amt" HeaderText="Total_Amt" 
                               SortExpression="Total_Amt" />
                           <asp:BoundField DataField="Reject_Date" HeaderText="Reject_Date" 
@@ -67,19 +85,18 @@
                           <asp:BoundField DataField="Section" HeaderText="Section" 
                               SortExpression="Section" />
                           <asp:BoundField DataField="Reasons" HeaderText="Reasons" 
-                              SortExpression="Reasons" Visible="False" />
+                              SortExpression="Reasons" />
                           <asp:BoundField DataField="FileClosureDate" HeaderText="FileClosureDate" 
                               SortExpression="FileClosureDate" />
                           <asp:BoundField DataField="Authority" HeaderText="Authority" 
                               SortExpression="Authority" />
                           <asp:BoundField DataField="AppealNoFirstAppeal" 
-                              HeaderText="AppealNoFirstAppeal" SortExpression="AppealNoFirstAppeal" 
-                              Visible="False" />
+                              HeaderText="AppealNoFirstAppeal" SortExpression="AppealNoFirstAppeal" />
                           <asp:BoundField DataField="AppealDateFirstAppeal" 
-                              HeaderText="AppealDateFirstAppeal" SortExpression="AppealDateFirstAppeal" 
-                              Visible="False" />
+                              HeaderText="AppealDateFirstAppeal" 
+                              SortExpression="AppealDateFirstAppeal" />
                           <asp:BoundField DataField="Order_Authority" HeaderText="Order_Authority" 
-                              SortExpression="Order_Authority" Visible="False" />
+                              SortExpression="Order_Authority" />
                           <asp:BoundField DataField="FileClosureDateFirstAppeal" 
                               HeaderText="FileClosureDateFirstAppeal" 
                               SortExpression="FileClosureDateFirstAppeal" />
@@ -87,21 +104,19 @@
                               HeaderText="Letteer_Recvd_Date_commissioner" 
                               SortExpression="Letteer_Recvd_Date_commissioner" />
                           <asp:BoundField DataField="AppealNoSecondAppeal" 
-                              HeaderText="AppealNoSecondAppeal" SortExpression="AppealNoSecondAppeal" 
-                              Visible="False" />
+                              HeaderText="AppealNoSecondAppeal" SortExpression="AppealNoSecondAppeal" />
                           <asp:BoundField DataField="ApplicationNameSecondAppeal" 
                               HeaderText="ApplicationNameSecondAppeal" 
                               SortExpression="ApplicationNameSecondAppeal" />
                           <asp:BoundField DataField="AddressSecondAppeal" 
-                              HeaderText="AddressSecondAppeal" SortExpression="AddressSecondAppeal" 
-                              Visible="False" />
+                              HeaderText="AddressSecondAppeal" SortExpression="AddressSecondAppeal" />
                           <asp:BoundField DataField="AppealDateSecondAppeal" 
                               HeaderText="AppealDateSecondAppeal" SortExpression="AppealDateSecondAppeal" />
                           <asp:BoundField DataField="Remarks_SentTo_Commission" 
                               HeaderText="Remarks_SentTo_Commission" 
-                              SortExpression="Remarks_SentTo_Commission" Visible="False" />
+                              SortExpression="Remarks_SentTo_Commission" />
                           <asp:BoundField DataField="Remarks_Send_Date" HeaderText="Remarks_Send_Date" 
-                              SortExpression="Remarks_Send_Date" Visible="False" />
+                              SortExpression="Remarks_Send_Date" />
                           <asp:BoundField DataField="FileClosureDateSecondAppeal" 
                               HeaderText="FileClosureDateSecondAppeal" 
                               SortExpression="FileClosureDateSecondAppeal" />
@@ -118,7 +133,8 @@
 <h1>PIO & APIO Register</h1>
 <asp:FormView ID="FormView_PIO" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_PIO" EnableModelValidation="True" DefaultMode="Insert" 
-        Width="50%">
+        Width="50%" oniteminserting="FormView_PIO_ItemInserting" 
+        onitemcommand="FormView_PIO_ItemCommand">
         <EditItemTemplate>
                                                                                     <table>
 			    <tr><td>File No:</td>
@@ -131,8 +147,8 @@
 					<td>
                         <asp:RadioButtonList ID="Radio_information" runat="server" 
                             RepeatDirection="Horizontal" Width="160px">
-                            <asp:ListItem>Partial</asp:ListItem>
-                            <asp:ListItem>Complete</asp:ListItem>
+                            <asp:ListItem Text="Partial" Value="Partial"></asp:ListItem>
+                            <asp:ListItem Text="Complete" Value="Complete"></asp:ListItem>
                         </asp:RadioButtonList>
                     </td>
 					</tr>
@@ -157,7 +173,8 @@
 					 
 					<td>Received Fees Mode:</td>
 					<td>
-                        <asp:DropDownList ID="Drop_recvdfessmode" runat="server" Width="160px">
+                        <asp:DropDownList ID="Drop_recvdfessmode" runat="server" Width="160px" 
+                            DataSourceID="ods_FeeMaster" DataTextField="Name" DataValueField="Name">
                         </asp:DropDownList>
                      </td>
 				</tr>				
@@ -184,8 +201,8 @@
 					<td>
                         <asp:RadioButtonList ID="Radio_informationsend" runat="server" 
                             RepeatDirection="Horizontal" Width="160px">
-                            <asp:ListItem>Partial</asp:ListItem>
-                            <asp:ListItem>Complete</asp:ListItem>
+                            <asp:ListItem Text="Partial" Value="True"></asp:ListItem>
+                            <asp:ListItem Text="Complete" Value="False"></asp:ListItem>
                         </asp:RadioButtonList>
                     </td>
 				</tr>                        
@@ -194,8 +211,8 @@
 				    <td>
                         <asp:RadioButtonList ID="Radio_applbpl" runat="server" 
                             RepeatDirection="Horizontal" Width="160px">
-                            <asp:ListItem>Yes</asp:ListItem>
-                            <asp:ListItem>No</asp:ListItem>
+                            <asp:ListItem Text="Yes" Value="True"></asp:ListItem>
+                            <asp:ListItem Text="No" Value="False"></asp:ListItem>
                         </asp:RadioButtonList>
                     </td>
 					
@@ -383,9 +400,10 @@
                 <tr><td colspan=5 align="center"><asp:Button ID="UpdateButton" runat="server" CausesValidation="True" 
                             CommandName="Update" Text="Update" />
 						&nbsp;<asp:Button ID="ResetButton" runat="server" 
-                            CausesValidation="False" CommandName="Reset" Text="Reset" />
+                            CausesValidation="False" CommandName="Reset" Text="Reset" 
+                        onclientclick="resetTextFields();return false;" />
                         &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
-                            CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                            CausesValidation="False" CommandName="Back" Text="Back" />
 						</td>
 					</tr>
                 </table>														
@@ -404,8 +422,8 @@
 					<td>
                         <asp:RadioButtonList ID="Radio_information" runat="server" 
                             RepeatDirection="Horizontal" Width="160px">
-                            <asp:ListItem>Partial</asp:ListItem>
-                            <asp:ListItem>Complete</asp:ListItem>
+                            <asp:ListItem Text="Partial" Value="Partial"></asp:ListItem>
+                            <asp:ListItem Text="Complete" Value="Complete"></asp:ListItem>
                         </asp:RadioButtonList>
                     </td>
 					</tr>
@@ -430,7 +448,8 @@
 					 
 					<td>Received Fees Mode:</td>
 					<td>
-                        <asp:DropDownList ID="Drop_recvdfessmode" runat="server" Width="160px">
+                        <asp:DropDownList ID="Drop_recvdfessmode" runat="server" Width="160px" 
+                            DataSourceID="ods_FeeMaster" DataTextField="Name" DataValueField="Name">
                         </asp:DropDownList>
                      </td>
 				</tr>				
@@ -457,8 +476,8 @@
 					<td>
                         <asp:RadioButtonList ID="Radio_informationsend" runat="server" 
                             RepeatDirection="Horizontal" Width="160px">
-                            <asp:ListItem>Partial</asp:ListItem>
-                            <asp:ListItem>Complete</asp:ListItem>
+                            <asp:ListItem Text="Partial" Value="True"></asp:ListItem>
+                            <asp:ListItem Text="Complete" Value="False"></asp:ListItem>
                         </asp:RadioButtonList>
                     </td>
 				</tr>                        
@@ -467,8 +486,8 @@
 				    <td>
                         <asp:RadioButtonList ID="Radio_applbpl" runat="server" 
                             RepeatDirection="Horizontal" Width="160px">
-                            <asp:ListItem>Yes</asp:ListItem>
-                            <asp:ListItem>No</asp:ListItem>
+                            <asp:ListItem Text="Yes" Value="True"></asp:ListItem>
+                            <asp:ListItem Text="No" Value="False"></asp:ListItem>
                         </asp:RadioButtonList>
                     </td>
 					
@@ -656,9 +675,10 @@
                 <tr><td colspan=5 align="center"><asp:Button ID="InsertButton" runat="server" CausesValidation="True" 
                             CommandName="Insert" Text="Insert" />
 						&nbsp;<asp:Button ID="ResetButton" runat="server" 
-                            CausesValidation="False" CommandName="Reset" Text="Reset" />
+                            CausesValidation="False" CommandName="Reset" Text="Reset" 
+                        onclientclick="resetTextFields();return false;" />
                         &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
-                            CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                            CausesValidation="False" CommandName="Back" Text="Back" />
 						</td>
 					</tr>
                 </table>							
@@ -813,13 +833,14 @@
     
     <asp:ObjectDataSource ID="ods_PIO" runat="server" DeleteMethod="Delete" 
         InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
-        SelectMethod="GetData" 
+        SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.PIOTableAdapters.PIOTableAdapter" 
-        UpdateMethod="Update">
+        UpdateMethod="Update" onselecting="ods_PIO_Selecting">
         <DeleteParameters>
             <asp:Parameter Name="Original_SrNo" Type="Int32" />
             <asp:Parameter Name="Original_FileNo" Type="Int32" />
             <asp:Parameter Name="Original_ApplicantName" Type="String" />
+            <asp:Parameter Name="Original_ApplicationDate" Type="DateTime" />
             <asp:Parameter Name="Original_Application_Received_Actual_Date" 
                 Type="DateTime" />
             <asp:Parameter Name="Original_Appl_BPL" Type="Boolean" />
@@ -854,6 +875,7 @@
         <InsertParameters>
             <asp:Parameter Name="FileNo" Type="Int32" />
             <asp:Parameter Name="ApplicantName" Type="String" />
+            <asp:Parameter Name="ApplicationDate" Type="DateTime" />
             <asp:Parameter Name="ApplicantAddress" Type="String" />
             <asp:Parameter Name="Application_Received_Actual_Date" Type="DateTime" />
             <asp:Parameter Name="Appl_BPL" Type="Boolean" />
@@ -886,9 +908,14 @@
             <asp:Parameter Name="Remarks_Send_Date" Type="DateTime" />
             <asp:Parameter Name="FileClosureDateSecondAppeal" Type="DateTime" />
         </InsertParameters>
+        <SelectParameters>
+            <asp:ControlParameter ControlID="txtFileNo" Name="searchKeyWord" 
+                PropertyName="Text" Type="String" />
+        </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="FileNo" Type="Int32" />
             <asp:Parameter Name="ApplicantName" Type="String" />
+            <asp:Parameter Name="ApplicationDate" Type="DateTime" />
             <asp:Parameter Name="ApplicantAddress" Type="String" />
             <asp:Parameter Name="Application_Received_Actual_Date" Type="DateTime" />
             <asp:Parameter Name="Appl_BPL" Type="Boolean" />
@@ -923,6 +950,7 @@
             <asp:Parameter Name="Original_SrNo" Type="Int32" />
             <asp:Parameter Name="Original_FileNo" Type="Int32" />
             <asp:Parameter Name="Original_ApplicantName" Type="String" />
+            <asp:Parameter Name="Original_ApplicationDate" Type="DateTime" />
             <asp:Parameter Name="Original_Application_Received_Actual_Date" 
                 Type="DateTime" />
             <asp:Parameter Name="Original_Appl_BPL" Type="Boolean" />
@@ -953,6 +981,25 @@
             <asp:Parameter Name="Original_Remarks_SentTo_Commission" Type="String" />
             <asp:Parameter Name="Original_Remarks_Send_Date" Type="DateTime" />
             <asp:Parameter Name="Original_FileClosureDateSecondAppeal" Type="DateTime" />
+        </UpdateParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ods_FeeMaster" runat="server" DeleteMethod="Delete" 
+        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+        SelectMethod="GetData" 
+        TypeName="IGRSS.DataAccessLayer.FeeMasterTableAdapters.FeeMasterTableAdapter" 
+        UpdateMethod="Update">
+        <DeleteParameters>
+            <asp:Parameter DbType="Guid" Name="Original_FeeId" />
+            <asp:Parameter Name="Original_Name" Type="String" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter DbType="Guid" Name="FeeId" />
+            <asp:Parameter Name="Name" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="Name" Type="String" />
+            <asp:Parameter DbType="Guid" Name="Original_FeeId" />
+            <asp:Parameter Name="Original_Name" Type="String" />
         </UpdateParameters>
     </asp:ObjectDataSource>
 </asp:View>    

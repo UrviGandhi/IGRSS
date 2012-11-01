@@ -248,7 +248,58 @@ SELECT SrNo, FileNo, ApplicantName, ApplicationDate, ApplicantAddress, Applicati
               <Mapping SourceColumn="Remarks_Send_Date" DataSetColumn="Remarks_Send_Date" />
               <Mapping SourceColumn="FileClosureDateSecondAppeal" DataSetColumn="FileClosureDateSecondAppeal" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="IGRSS_FINALConnectionString (Settings)" DbObjectName="IGRSS_FINAL.dbo.PIO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SrNo, FileNo, ApplicantName, ApplicationDate, ApplicantAddress, Application_Received_Actual_Date, Appl_BPL, Sub_Info_Asked, [Recvd_Sata-Mandal], Recvd_Date, 
+                         Information, Recvd_Fees, Recvd_Fees_Mode, Last_Date_Reply, Info_Send, Info_Pages, Page_Amt, Total_Amt, Reject_Date, Section, Reasons, FileClosureDate, 
+                         Authority, AppealNoFirstAppeal, AppealDateFirstAppeal, Order_Authority, FileClosureDateFirstAppeal, Letteer_Recvd_Date_commissioner, AppealNoSecondAppeal, 
+                         ApplicationNameSecondAppeal, AddressSecondAppeal, AppealDateSecondAppeal, Remarks_SentTo_Commission, Remarks_Send_Date, 
+                         FileClosureDateSecondAppeal
+FROM            dbo.PIO
+WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(FileNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (ApplicantName LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(ApplicationDate AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(ApplicantAddress AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Application_Received_Actual_Date AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Appl_BPL AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (Sub_Info_Asked LIKE '%' + @searchKeyWord + '%') OR
+                         ([Recvd_Sata-Mandal] LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Recvd_Date AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Information AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Recvd_Fees AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (Recvd_Fees_Mode LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Last_Date_Reply AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Info_Send AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Info_Pages AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Page_Amt AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Total_Amt AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Reject_Date AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (Section LIKE '%' + @searchKeyWord + '%') OR
+                         (Reasons LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(FileClosureDate AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (Authority LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(AppealNoFirstAppeal AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(AppealDateFirstAppeal AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (Order_Authority LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(FileClosureDateFirstAppeal AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Letteer_Recvd_Date_commissioner AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(AppealNoSecondAppeal AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (ApplicationNameSecondAppeal LIKE '%' + @searchKeyWord + '%') OR
+                         (AddressSecondAppeal LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(AppealDateSecondAppeal AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (Remarks_SentTo_Commission LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Remarks_Send_Date AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(FileClosureDateSecondAppeal AS varchar) LIKE '%' + @searchKeyWord + '%')</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="searchKeyWord" ColumnName="" DataSourceName="" DataTypeServer="nvarchar(200)" DbType="AnsiString" Direction="Input" ParameterName="@searchKeyWord" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
