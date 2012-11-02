@@ -56,8 +56,8 @@
                         <asp:TextBox Width="160" ID="txtFileNo" runat="server" 
                             meta:resourcekey="txtFileNoResource1"></asp:TextBox></td>
                         <td align="right">
-                        <asp:Button ID="btnSearchAppNo" runat="server" OnClick="btnSearchAppNo_Click" Text="Search"
-                            meta:resourcekey="btnSearchAppNoResource1" />
+                        <asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search"
+                            meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" />
                     </td>
           </tr>
           <tr>
@@ -97,7 +97,8 @@
               </td>
           </tr>
  </table>
- <asp:Button ID="Button_new" runat="server" Text="New" onclick="Button_new_Click" />
+ <asp:LinkButton ID="Button_new" runat="server" Text="New" 
+        onclick="Button_new_Click" CssClass="standardButton" />
 </asp:View>
 
 <asp:View ID="Formview" runat="server">
@@ -255,13 +256,16 @@
                     Height="60px" TextMode="MultiLine" Width="160px" /></td>
 		</tr>	            
             
-        <tr><td colspan=2 align="center"><asp:Button ID="InsertButton" runat="server" CausesValidation="True" 
-                CommandName="Insert" Text="Insert" />
-			&nbsp;<asp:Button ID="ResetButton" runat="server" 
+        <tr><td colspan=2 align="center">
+            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                CommandName="Insert" Text="Insert" CssClass="standardButton" />
+			&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="Reset" Text="Reset" 
-                onclientclick="resetTextFields();return false;" />	
-            &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Back" Text="Back" />
+                onclientclick="resetTextFields();return false;" 
+                CssClass="standardButton" />	
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                CausesValidation="False" CommandName="Back" Text="Back" 
+                CssClass="standardButton" />
 			</td>
 		</tr>
     </table>		
@@ -314,11 +318,11 @@
             <asp:Label ID="RemarksLabel" runat="server" Text='<%# Bind("Remarks") %>' />
             <br />
             <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" 
-                CommandName="Edit" Text="Edit" />
+                CommandName="Edit" Text="Edit" CssClass="standardButton"/>
             &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" 
-                CommandName="Delete" Text="Delete" />
+                CommandName="Delete" Text="Delete" CssClass="standardButton"/>
             &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" 
-                CommandName="New" Text="New" />
+                CommandName="New" Text="New" CssClass="standardButton"/>
         </ItemTemplate>
     </asp:FormView>
 </center>

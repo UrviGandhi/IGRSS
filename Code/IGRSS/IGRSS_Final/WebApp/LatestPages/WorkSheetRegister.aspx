@@ -59,7 +59,9 @@
                         ontextchanged="txtFileNo_TextChanged"></asp:TextBox> 
                 </td>
                 <td>
-                    <asp:Button ID="btnSearchAppNo" runat="server" OnClick="btnSearchAppNo_Click" Text="Search" meta:resourcekey="btnSearchAppNoResource1" />           
+                    <asp:LinkButton ID="btnSearchAppNo" runat="server" 
+                        OnClick="btnSearchAppNo_Click" Text="Search" 
+                        meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" />           
                 </td>
             </tr>
     <tr>
@@ -86,8 +88,8 @@
     </tr>
     <tr>
         <td align="right" colspan="3" style="text-align: left;">
-            <asp:Button ID="Button_new" runat="server" Text="New" 
-                onclick="Button_new_Click" />
+            <asp:LinkButton ID="Button_new" runat="server" Text="New" 
+                onclick="Button_new_Click" CssClass="standardButton" />
         </td>
     </tr>
 </table>
@@ -174,13 +176,16 @@
 			</td>
 		</tr>           
             			
-        <tr><td colspan=2 align="center"><asp:Button ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" />
-			&nbsp;<asp:Button ID="ResetButton"  runat="server" 
+        <tr><td colspan=2 align="center">
+            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
+                CommandName="Update" Text="Update" CssClass="standardButton" />
+			&nbsp;<asp:LinkButton ID="ResetButton"  runat="server" 
                 CausesValidation="False" CommandName="Reset" Text="Reset" 
-                onclientclick="resetTextFields();return false;" />
-            &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Back" Text="Back" />
+                onclientclick="resetTextFields();return false;" 
+                CssClass="standardButton" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                CausesValidation="False" CommandName="Back" Text="Back" 
+                CssClass="standardButton" />
 			</td>
 		</tr>	
 	</table>			
@@ -218,13 +223,16 @@
 			</td>
 		</tr>           
             			
-        <tr><td colspan=2 align="center"><asp:Button ID="InsertButton" runat="server" CausesValidation="True" 
-                CommandName="Insert" Text="Insert" />
-			&nbsp;<asp:Button ID="ResetButton"  runat="server" 
+        <tr><td colspan=2 align="center">
+            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                CommandName="Insert" Text="Insert" CssClass="standardButton" />
+			&nbsp;<asp:LinkButton ID="ResetButton"  runat="server" 
                 CausesValidation="False" CommandName="Reset" Text="Reset" 
-                onclientclick="resetTextFields();return false;" />
-            &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Back" Text="Back" />
+                onclientclick="resetTextFields();return false;" 
+                CssClass="standardButton" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                CausesValidation="False" CommandName="Back" Text="Back" 
+                CssClass="standardButton" />
 			</td>
 		</tr>	
 	</table>			

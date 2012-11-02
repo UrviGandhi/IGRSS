@@ -10,10 +10,7 @@ public partial class LatestPages_HighCourtRegister : System.Web.UI.Page
     {
 
     }
-    protected void btnSearchAppNo_Click(object sender, EventArgs e)
-    {
-
-    }
+   
     protected void txtFileNo_TextChanged(object sender, EventArgs e)
     {
 

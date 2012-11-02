@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true" CodeFile="PIO.aspx.cs" Inherits="LatestPages_PIO" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" Runat="Server">
-<script language="javascript">
+    <script language="javascript">
 
     function generateDatePicker(id) {
         $('input[id*="' + id + '"]').datepicker({
@@ -26,15 +26,15 @@
 <h1>PIO & APIO Register</h1>
 <table>
           <tr>
-                    <td align="right" style="width:641px;" >
+                    <td align="right" style="width:641px; height: 30px;" >
                         <asp:Label ID="lbllls" runat="server" Text="Enter File Number :" 
                             meta:resourcekey="lblllsResource1"></asp:Label></td>
-                    <td align="left" >
+                    <td align="left" style="height: 30px" >
                         <asp:TextBox Width="160" ID="txtFileNo" runat="server" 
                             meta:resourcekey="txtFileNoResource1" ontextchanged="txtFileNo_TextChanged"></asp:TextBox></td>
-                        <td align="right">
-                        <asp:Button ID="btnSearchAppNo" runat="server" OnClick="btnSearchAppNo_Click" Text="Search"
-                            meta:resourcekey="btnSearchAppNoResource1" />
+                        <td align="right" style="height: 30px">
+                        <asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search"
+                            meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" />
                     </td>
           </tr>
           <tr>
@@ -120,298 +120,31 @@
                           <asp:BoundField DataField="FileClosureDateSecondAppeal" 
                               HeaderText="FileClosureDateSecondAppeal" 
                               SortExpression="FileClosureDateSecondAppeal" />
+                          <asp:BoundField DataField="Recvd_Fees1" HeaderText="Recvd_Fees1" 
+                              SortExpression="Recvd_Fees1" />
+                          <asp:BoundField DataField="Page_Amt1" HeaderText="Page_Amt1" 
+                              SortExpression="Page_Amt1" />
+                          <asp:BoundField DataField="Total_Amt1" HeaderText="Total_Amt1" 
+                              SortExpression="Total_Amt1" />
+                          <asp:BoundField DataField="Order_Authority1" HeaderText="Order_Authority1" 
+                              SortExpression="Order_Authority1" />
                       </Columns>
                   </asp:GridView>
               </td>
           </tr>
  </table>
- <asp:Button ID="Button_new" runat="server" Text="New" onclick="Button_new_Click" />
+ <asp:LinkButton ID="Button_new" runat="server" Text="New" 
+        onclick="Button_new_Click" CssClass="standardButton" />
 </asp:View>
 
 <asp:View ID="Formview" runat="server">
 <center>
 <h1>PIO & APIO Register</h1>
-<asp:FormView ID="FormView_PIO" runat="server" DataKeyNames="SrNo" 
-        DataSourceID="ods_PIO" EnableModelValidation="True" DefaultMode="Insert" 
-        Width="50%" oniteminserting="FormView_PIO_ItemInserting" 
-        onitemcommand="FormView_PIO_ItemCommand">
+
+    <asp:FormView ID="FormView_PIO" runat="server" DataKeyNames="SrNo" 
+        DataSourceID="ods_PIO" EnableModelValidation="True" DefaultMode="Insert">
         <EditItemTemplate>
-                                                                                    <table>
-			    <tr><td>File No:</td>
-				    <td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
-                            Width="160px" /></td>
-							
-					<td></td>
-					
-					<td>Information:</td>
-					<td>
-                        <asp:RadioButtonList ID="Radio_information" runat="server" 
-                            RepeatDirection="Horizontal" Width="160px">
-                            <asp:ListItem Text="Partial" Value="Partial"></asp:ListItem>
-                            <asp:ListItem Text="Complete" Value="Complete"></asp:ListItem>
-                        </asp:RadioButtonList>
-                    </td>
-					</tr>
-                        
-                        
-                <tr><td>Name Of Applicant:</td>
-				    <td><asp:TextBox ID="ApplicantNameTextBox" runat="server" 
-                            Text='<%# Bind("ApplicantName") %>' Width="160px" /></td>
-							
-					<td></td>
-					
-					<td>Received Fees:</td>
-					<td><asp:TextBox ID="Recvd_FeesTextBox" runat="server" 
-                            Text='<%# Bind("Recvd_Fees") %>' Width="160px" /></td>
-				</tr>
-                
-                 <tr><td>Date Of Application:</td>
-				     <td><asp:TextBox ID="ApplicationDateTextBox" runat="server" 
-                            Text='<%# Bind("ApplicationDate") %>' Width="160px" /></td>
-							
-					 <td></td>
-					 
-					<td>Received Fees Mode:</td>
-					<td>
-                        <asp:DropDownList ID="Drop_recvdfessmode" runat="server" Width="160px" 
-                            DataSourceID="ods_FeeMaster" DataTextField="Name" DataValueField="Name">
-                        </asp:DropDownList>
-                     </td>
-				</tr>				
-                        
-                <tr><td>Address Of Applicant:</td>
-				    <td><asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
-                            Text='<%# Bind("ApplicantAddress") %>' Height="60px" TextMode="MultiLine" 
-                            Width="160px" /></td>
-					
-					<td></td>
-					
-					<td>Last Date Of Reply/Rejection:</td>
-					<td><asp:TextBox ID="Last_Date_ReplyTextBox" runat="server" 
-                            Text='<%# Bind("Last_Date_Reply") %>' Width="160px" /></td>
-				</tr>                       
-                        
-                <tr><td>Actual Received Date Of Application:</td>
-				    <td><asp:TextBox ID="Application_Received_Actual_DateTextBox" runat="server" 
-                            Text='<%# Bind("Application_Received_Actual_Date") %>' Width="160px" /></td>
-					
-					<td></td>
-					
-					<td>Information Send:</td>
-					<td>
-                        <asp:RadioButtonList ID="Radio_informationsend" runat="server" 
-                            RepeatDirection="Horizontal" Width="160px">
-                            <asp:ListItem Text="Partial" Value="True"></asp:ListItem>
-                            <asp:ListItem Text="Complete" Value="False"></asp:ListItem>
-                        </asp:RadioButtonList>
-                    </td>
-				</tr>                        
-                        
-                <tr><td>Application Is BPL:</td>
-				    <td>
-                        <asp:RadioButtonList ID="Radio_applbpl" runat="server" 
-                            RepeatDirection="Horizontal" Width="160px">
-                            <asp:ListItem Text="Yes" Value="True"></asp:ListItem>
-                            <asp:ListItem Text="No" Value="False"></asp:ListItem>
-                        </asp:RadioButtonList>
-                    </td>
-					
-					<td></td>
-					
-					<td>Information Pages:</td>
-					<td><asp:TextBox ID="Info_PagesTextBox" runat="server" 
-                            Text='<%# Bind("Info_Pages") %>' Width="160px" /></td>
-				</tr>                     
-                        
-                <tr><td>Subject Of Information Asked:</td>
-				    <td><asp:TextBox ID="Sub_Info_AskedTextBox" runat="server" 
-                            Text='<%# Bind("Sub_Info_Asked") %>' Width="160px" /></td>
-					
-					<td></td>	
-					
-					<td>Amount Per Page:</td>
-					<td><asp:TextBox ID="Page_AmtTextBox" runat="server" 
-                            Text='<%# Bind("Page_Amt") %>' Width="160px" /></td>
-				</tr>                     
-                    
-                <tr><td>Received From Other Sata-Mandal:</td>
-				    <td><asp:TextBox ID="Recvd_Sata_MandalTextBox" runat="server" 
-                            Text='<%# Bind("[Recvd_Sata-Mandal]") %>' Width="160px" /></td>
-					
-					<td></td>	
-					
-					<td>Total Amount:</td>
-					<td><asp:TextBox ID="Total_AmtTextBox" runat="server" 
-                            Text='<%# Bind("Total_Amt") %>' Width="160px" /></td>
-				</tr>                       
-                        
-                <tr><td>Received Date:</td>
-				    <td><asp:TextBox ID="Recvd_DateTextBox" runat="server" 
-                            Text='<%# Bind("Recvd_Date") %>' Width="160px" /></td>
-							
-					<td></td>		
-					
-					<td>Rejection Date:</td>
-					<td><asp:TextBox ID="Reject_DateTextBox" runat="server" 
-                            Text='<%# Bind("Reject_Date") %>' Width="160px" /></td>
-				</tr>
-                        
-                    
-                <tr><td></td>
-				    <td></td>
-					
-					<td></td>
-					
-					<td>Under Which Section:</td>
-					<td><asp:TextBox ID="SectionTextBox" runat="server" Text='<%# Bind("Section") %>' 
-                            Width="160px" /></td>
-				</tr>
-                       
-                <tr><td></td>
-				    <td></td>
-					
-					<td></td>
-					
-					<td>Reasons:</td>
-					<td><asp:TextBox ID="ReasonsTextBox" runat="server" Text='<%# Bind("Reasons") %>' 
-                            Height="60px" TextMode="MultiLine" Width="160px" /></td>
-				</tr>
-                        
-                <tr><td></td>
-				    <td></td>
-					
-					<td></td>
-					
-					<td>File Closure Date:</td>
-					<td><asp:TextBox ID="FileClosureDateTextBox" runat="server" 
-                            Text='<%# Bind("FileClosureDate") %>' Width="160px" /></td>
-				</tr>
-                      
-                                 <tr>
-                                     <td>
-                                         &nbsp;</td>
-                                     <td>
-                                         &nbsp;</td>
-										
-									 <td></td>
-									
-                                     <td>
-                                         &nbsp;</td>
-                                     <td>
-                                         &nbsp;</td>
-                                 </tr>
-                      
-                                 <tr>
-                                     <td colspan="2"><h1>FIRST APPEAL</h1><&nbsp;</td>
-                                     <td>
-                                         &nbsp;</td>
-                                     <td colspan="2"><h1>SECOND APPEAL</h1>
-                                         &nbsp;</td>
-                                 </tr>
-                      
-                <tr><td>Whether Appealed To Appellate/Authority:</td>
-				    <td><asp:TextBox ID="AuthorityTextBox" runat="server" 
-                            Text='<%# Bind("Authority") %>' Width="160px" /></td>
-							
-					<td></td>		
-					
-					<td>Letter Received Date From Commissioner:</td>
-					<td><asp:TextBox ID="Letteer_Recvd_Date_commissionerTextBox" runat="server" 
-                            Text='<%# Bind("Letteer_Recvd_Date_commissioner") %>' Width="160px" /></td>
-				</tr>
-                       
-                <tr><td>Appeal No:</td>
-				    <td><asp:TextBox ID="AppealNoFirstAppealTextBox" runat="server" 
-                            Text='<%# Bind("AppealNoFirstAppeal") %>' Width="160px" /></td>
-							
-					<td></td>		
-					
-					<td>Appeal No:</td>
-					<td><asp:TextBox ID="AppealNoSecondAppealTextBox" runat="server" 
-                            Text='<%# Bind("AppealNoSecondAppeal") %>' Width="160px" /></td>
-				</tr>
-                       
-                <tr><td>Appeal Date:</td>
-				    <td><asp:TextBox ID="AppealDateFirstAppealTextBox" runat="server" 
-                            Text='<%# Bind("AppealDateFirstAppeal") %>' Width="160px" /></td>
-					
-					<td></td>
-					
-					<td>Application Name:</td>
-					<td><asp:TextBox ID="ApplicationNameSecondAppealTextBox" runat="server" 
-                            Text='<%# Bind("ApplicationNameSecondAppeal") %>' Width="160px" /></td>
-				</tr>
-                        
-                <tr><td>Order Number Passed By Appellate/Authority:</td>
-				    <td><asp:TextBox ID="Order_AuthorityTextBox" runat="server" 
-                            Text='<%# Bind("Order_Authority") %>' Width="160px" /></td>
-							
-					<td></td>		
-					
-					<td>Address:</td>
-					<td><asp:TextBox ID="AddressSecondAppealTextBox" runat="server" 
-                            Text='<%# Bind("AddressSecondAppeal") %>' Width="160px" /></td>
-				</tr>
-                       
-                <tr><td>File Closure Date:</td>
-				    <td><asp:TextBox ID="FileClosureDateFirstAppealTextBox" runat="server" 
-                            Text='<%# Bind("FileClosureDateFirstAppeal") %>' Width="160px" /></td>
-					
-					<td></td>
-					
-					<td>Appeal Date:</td>
-					<td><asp:TextBox ID="AppealDateSecondAppealTextBox" runat="server" 
-                            Text='<%# Bind("AppealDateSecondAppeal") %>' Width="160px" /></td>
-				</tr>
-                       
-                <tr><td></td>
-				    <td></td>
-					
-					<td></td>
-					
-					<td>Remarks Sent To Commission:</td>
-					<td><asp:TextBox ID="Remarks_SentTo_CommissionTextBox" runat="server" 
-                            Text='<%# Bind("Remarks_SentTo_Commission") %>' Width="160px" 
-                            Height="60px" TextMode="MultiLine" /></td>
-				</tr>
-                        
-                <tr><td></td>
-				    <td></td>
-					
-					<td></td>
-					
-					<td>Remarks Send Date:</td>
-					<td><asp:TextBox ID="Remarks_Send_DateTextBox" runat="server" 
-                            Text='<%# Bind("Remarks_Send_Date") %>' Width="160px" /></td>
-				</tr>
-                       
-                <tr><td></td>
-				    <td></td>
-					
-					<td></td>
-					
-					<td>File Closure Date:</td>
-					<td><asp:TextBox ID="FileClosureDateSecondAppealTextBox" runat="server" 
-                            Text='<%# Bind("FileClosureDateSecondAppeal") %>' Width="160px" /></td>
-				</tr>
-                        
-     
-                       
-                <tr><td colspan=5 align="center"><asp:Button ID="UpdateButton" runat="server" CausesValidation="True" 
-                            CommandName="Update" Text="Update" />
-						&nbsp;<asp:Button ID="ResetButton" runat="server" 
-                            CausesValidation="False" CommandName="Reset" Text="Reset" 
-                        onclientclick="resetTextFields();return false;" />
-                        &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
-                            CausesValidation="False" CommandName="Back" Text="Back" />
-						</td>
-					</tr>
-                </table>														
-											
-                            
-        </EditItemTemplate>
-<InsertItemTemplate>
-                             <table>
+            <table>
 			    <tr><td>File No:</td>
 				    <td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
                             Width="160px" /></td>
@@ -672,27 +405,302 @@
                         
      
                        
-                <tr><td colspan=5 align="center"><asp:Button ID="InsertButton" runat="server" CausesValidation="True" 
-                            CommandName="Insert" Text="Insert" />
-						&nbsp;<asp:Button ID="ResetButton" runat="server" 
+                <tr><td colspan=5 align="center">
+                    <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
+                            CommandName="Update" Text="Update" CssClass="standardButton" />
+						&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                             CausesValidation="False" CommandName="Reset" Text="Reset" 
-                        onclientclick="resetTextFields();return false;" />
-                        &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
-                            CausesValidation="False" CommandName="Back" Text="Back" />
+                        onclientclick="resetTextFields();return false;" 
+                        CssClass="standardButton" />
+                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                            CausesValidation="False" CommandName="Back" Text="Back" 
+                        CssClass="standardButton" />
 						</td>
 					</tr>
-                </table>							
-											
+                </table>
+        </EditItemTemplate>
+        <InsertItemTemplate>
+         <table>
+			    <tr><td>File No:</td>
+				    <td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
+                            Width="160px" /></td>
+							
+					<td></td>
+					
+					<td>Information:</td>
+					<td>
+                        <asp:RadioButtonList ID="Radio_information" runat="server" 
+                            RepeatDirection="Horizontal" Width="160px">
+                            <asp:ListItem Text="Partial" Value="Partial"></asp:ListItem>
+                            <asp:ListItem Text="Complete" Value="Complete"></asp:ListItem>
+                        </asp:RadioButtonList>
+                    </td>
+					</tr>
+                        
+                        
+                <tr><td>Name Of Applicant:</td>
+				    <td><asp:TextBox ID="ApplicantNameTextBox" runat="server" 
+                            Text='<%# Bind("ApplicantName") %>' Width="160px" /></td>
+							
+					<td></td>
+					
+					<td>Received Fees:</td>
+					<td><asp:TextBox ID="Recvd_FeesTextBox" runat="server" 
+                            Text='<%# Bind("Recvd_Fees") %>' Width="160px" /></td>
+				</tr>
                 
-            
+                 <tr><td>Date Of Application:</td>
+				     <td><asp:TextBox ID="ApplicationDateTextBox" runat="server" 
+                            Text='<%# Bind("ApplicationDate") %>' Width="160px" /></td>
+							
+					 <td></td>
+					 
+					<td>Received Fees Mode:</td>
+					<td>
+                        <asp:DropDownList ID="Drop_recvdfessmode" runat="server" Width="160px" 
+                            DataSourceID="ods_FeeMaster" DataTextField="Name" DataValueField="Name">
+                        </asp:DropDownList>
+                     </td>
+				</tr>				
+                        
+                <tr><td>Address Of Applicant:</td>
+				    <td><asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
+                            Text='<%# Bind("ApplicantAddress") %>' Height="60px" TextMode="MultiLine" 
+                            Width="160px" /></td>
+					
+					<td></td>
+					
+					<td>Last Date Of Reply/Rejection:</td>
+					<td><asp:TextBox ID="Last_Date_ReplyTextBox" runat="server" 
+                            Text='<%# Bind("Last_Date_Reply") %>' Width="160px" /></td>
+				</tr>                       
+                        
+                <tr><td>Actual Received Date Of Application:</td>
+				    <td><asp:TextBox ID="Application_Received_Actual_DateTextBox" runat="server" 
+                            Text='<%# Bind("Application_Received_Actual_Date") %>' Width="160px" /></td>
+					
+					<td></td>
+					
+					<td>Information Send:</td>
+					<td>
+                        <asp:RadioButtonList ID="Radio_informationsend" runat="server" 
+                            RepeatDirection="Horizontal" Width="160px">
+                            <asp:ListItem Text="Partial" Value="True"></asp:ListItem>
+                            <asp:ListItem Text="Complete" Value="False"></asp:ListItem>
+                        </asp:RadioButtonList>
+                    </td>
+				</tr>                        
+                        
+                <tr><td>Application Is BPL:</td>
+				    <td>
+                        <asp:RadioButtonList ID="Radio_applbpl" runat="server" 
+                            RepeatDirection="Horizontal" Width="160px">
+                            <asp:ListItem Text="Yes" Value="True"></asp:ListItem>
+                            <asp:ListItem Text="No" Value="False"></asp:ListItem>
+                        </asp:RadioButtonList>
+                    </td>
+					
+					<td></td>
+					
+					<td>Information Pages:</td>
+					<td><asp:TextBox ID="Info_PagesTextBox" runat="server" 
+                            Text='<%# Bind("Info_Pages") %>' Width="160px" /></td>
+				</tr>                     
+                        
+                <tr><td>Subject Of Information Asked:</td>
+				    <td><asp:TextBox ID="Sub_Info_AskedTextBox" runat="server" 
+                            Text='<%# Bind("Sub_Info_Asked") %>' Width="160px" /></td>
+					
+					<td></td>	
+					
+					<td>Amount Per Page:</td>
+					<td><asp:TextBox ID="Page_AmtTextBox" runat="server" 
+                            Text='<%# Bind("Page_Amt") %>' Width="160px" /></td>
+				</tr>                     
+                    
+                <tr><td>Received From Other Sata-Mandal:</td>
+				    <td><asp:TextBox ID="Recvd_Sata_MandalTextBox" runat="server" 
+                            Text='<%# Bind("[Recvd_Sata-Mandal]") %>' Width="160px" /></td>
+					
+					<td></td>	
+					
+					<td>Total Amount:</td>
+					<td><asp:TextBox ID="Total_AmtTextBox" runat="server" 
+                            Text='<%# Bind("Total_Amt") %>' Width="160px" /></td>
+				</tr>                       
+                        
+                <tr><td>Received Date:</td>
+				    <td><asp:TextBox ID="Recvd_DateTextBox" runat="server" 
+                            Text='<%# Bind("Recvd_Date") %>' Width="160px" /></td>
+							
+					<td></td>		
+					
+					<td>Rejection Date:</td>
+					<td><asp:TextBox ID="Reject_DateTextBox" runat="server" 
+                            Text='<%# Bind("Reject_Date") %>' Width="160px" /></td>
+				</tr>
+                        
+                    
+                <tr><td></td>
+				    <td></td>
+					
+					<td></td>
+					
+					<td>Under Which Section:</td>
+					<td><asp:TextBox ID="SectionTextBox" runat="server" Text='<%# Bind("Section") %>' 
+                            Width="160px" /></td>
+				</tr>
+                       
+                <tr><td></td>
+				    <td></td>
+					
+					<td></td>
+					
+					<td>Reasons:</td>
+					<td><asp:TextBox ID="ReasonsTextBox" runat="server" Text='<%# Bind("Reasons") %>' 
+                            Height="60px" TextMode="MultiLine" Width="160px" /></td>
+				</tr>
+                        
+                <tr><td></td>
+				    <td></td>
+					
+					<td></td>
+					
+					<td>File Closure Date:</td>
+					<td><asp:TextBox ID="FileClosureDateTextBox" runat="server" 
+                            Text='<%# Bind("FileClosureDate") %>' Width="160px" /></td>
+				</tr>
+                      
+                                 <tr>
+                                     <td>
+                                         &nbsp;</td>
+                                     <td>
+                                         &nbsp;</td>
+										
+									 <td></td>
+									
+                                     <td>
+                                         &nbsp;</td>
+                                     <td>
+                                         &nbsp;</td>
+                                 </tr>
+                      
+                                 <tr>
+                                     <td colspan="2"><h1>FIRST APPEAL</h1>&nbsp;</td>
+                                     <td>
+                                         &nbsp;</td>
+                                     <td colspan="2"><h1>SECOND APPEAL</h1>
+                                         &nbsp;</td>
+                                 </tr>
+                      
+                <tr><td>Whether Appealed To Appellate/Authority:</td>
+				    <td><asp:TextBox ID="AuthorityTextBox" runat="server" 
+                            Text='<%# Bind("Authority") %>' Width="160px" /></td>
+							
+					<td></td>		
+					
+					<td>Letter Received Date From Commissioner:</td>
+					<td><asp:TextBox ID="Letteer_Recvd_Date_commissionerTextBox" runat="server" 
+                            Text='<%# Bind("Letteer_Recvd_Date_commissioner") %>' Width="160px" /></td>
+				</tr>
+                       
+                <tr><td>Appeal No:</td>
+				    <td><asp:TextBox ID="AppealNoFirstAppealTextBox" runat="server" 
+                            Text='<%# Bind("AppealNoFirstAppeal") %>' Width="160px" /></td>
+							
+					<td></td>		
+					
+					<td>Appeal No:</td>
+					<td><asp:TextBox ID="AppealNoSecondAppealTextBox" runat="server" 
+                            Text='<%# Bind("AppealNoSecondAppeal") %>' Width="160px" /></td>
+				</tr>
+                       
+                <tr><td>Appeal Date:</td>
+				    <td><asp:TextBox ID="AppealDateFirstAppealTextBox" runat="server" 
+                            Text='<%# Bind("AppealDateFirstAppeal") %>' Width="160px" /></td>
+					
+					<td></td>
+					
+					<td>Application Name:</td>
+					<td><asp:TextBox ID="ApplicationNameSecondAppealTextBox" runat="server" 
+                            Text='<%# Bind("ApplicationNameSecondAppeal") %>' Width="160px" /></td>
+				</tr>
+                        
+                <tr><td>Order Number Passed By Appellate/Authority:</td>
+				    <td><asp:TextBox ID="Order_AuthorityTextBox" runat="server" 
+                            Text='<%# Bind("Order_Authority") %>' Width="160px" /></td>
+							
+					<td></td>		
+					
+					<td>Address:</td>
+					<td><asp:TextBox ID="AddressSecondAppealTextBox" runat="server" 
+                            Text='<%# Bind("AddressSecondAppeal") %>' Width="160px" /></td>
+				</tr>
+                       
+                <tr><td>File Closure Date:</td>
+				    <td><asp:TextBox ID="FileClosureDateFirstAppealTextBox" runat="server" 
+                            Text='<%# Bind("FileClosureDateFirstAppeal") %>' Width="160px" /></td>
+					
+					<td></td>
+					
+					<td>Appeal Date:</td>
+					<td><asp:TextBox ID="AppealDateSecondAppealTextBox" runat="server" 
+                            Text='<%# Bind("AppealDateSecondAppeal") %>' Width="160px" /></td>
+				</tr>
+                       
+                <tr><td></td>
+				    <td></td>
+					
+					<td></td>
+					
+					<td>Remarks Sent To Commission:</td>
+					<td><asp:TextBox ID="Remarks_SentTo_CommissionTextBox" runat="server" 
+                            Text='<%# Bind("Remarks_SentTo_Commission") %>' Width="160px" 
+                            Height="60px" TextMode="MultiLine" /></td>
+				</tr>
+                        
+                <tr><td></td>
+				    <td></td>
+					
+					<td></td>
+					
+					<td>Remarks Send Date:</td>
+					<td><asp:TextBox ID="Remarks_Send_DateTextBox" runat="server" 
+                            Text='<%# Bind("Remarks_Send_Date") %>' Width="160px" /></td>
+				</tr>
+                       
+                <tr><td></td>
+				    <td></td>
+					
+					<td></td>
+					
+					<td>File Closure Date:</td>
+					<td><asp:TextBox ID="FileClosureDateSecondAppealTextBox" runat="server" 
+                            Text='<%# Bind("FileClosureDateSecondAppeal") %>' Width="160px" /></td>
+				</tr>
+                        
+     
+                       
+                <tr><td colspan=5 align="center">
+                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                            CommandName="Insert" Text="Insert" CssClass="standardButton" />
+						&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
+                            CausesValidation="False" CommandName="Reset" Text="Reset" 
+                        onclientclick="resetTextFields();return false;" 
+                        CssClass="standardButton" />
+                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                            CausesValidation="False" CommandName="Back" Text="Back" 
+                        CssClass="standardButton" />
+						</td>
+					</tr>
+                </table>
         </InsertItemTemplate>
         <ItemTemplate>
             SrNo:
             <asp:Label ID="SrNoLabel" runat="server" Text='<%# Eval("SrNo") %>' />
             <br />
             FileNo:
-            <asp:Label ID="FileNoLabel" runat="server" 
-                Text='<%# Bind("FileNo") %>' />
+            <asp:Label ID="FileNoLabel" runat="server" Text='<%# Bind("FileNo") %>' />
             <br />
             ApplicantName:
             <asp:Label ID="ApplicantNameLabel" runat="server" 
@@ -821,14 +829,30 @@
             <asp:Label ID="FileClosureDateSecondAppealLabel" runat="server" 
                 Text='<%# Bind("FileClosureDateSecondAppeal") %>' />
             <br />
+            Recvd_Fees1:
+            <asp:Label ID="Recvd_Fees1Label" runat="server" 
+                Text='<%# Bind("Recvd_Fees1") %>' />
+            <br />
+            Page_Amt1:
+            <asp:Label ID="Page_Amt1Label" runat="server" Text='<%# Bind("Page_Amt1") %>' />
+            <br />
+            Total_Amt1:
+            <asp:Label ID="Total_Amt1Label" runat="server" 
+                Text='<%# Bind("Total_Amt1") %>' />
+            <br />
+            Order_Authority1:
+            <asp:Label ID="Order_Authority1Label" runat="server" 
+                Text='<%# Bind("Order_Authority1") %>' />
+            <br />
             <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" 
                 CommandName="Edit" Text="Edit" />
-&nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" 
+            &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" 
                 CommandName="Delete" Text="Delete" />
-&nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" 
+            &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" 
                 CommandName="New" Text="New" />
         </ItemTemplate>
     </asp:FormView>
+
 </center>
     
     <asp:ObjectDataSource ID="ods_PIO" runat="server" DeleteMethod="Delete" 
