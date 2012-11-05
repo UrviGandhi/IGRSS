@@ -144,6 +144,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Adjudication.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\AppealRegister.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppealRegister.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\Citizen.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -360,6 +365,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SRORates.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\SunavniRegister.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SunavniRegister.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Tarankit.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -667,6 +677,17 @@
     </None>
     <None Include="DataAccessLayer\Appeal.xss">
       <DependentUpon>Appeal.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\AppealRegister.xsc">
+      <DependentUpon>AppealRegister.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\AppealRegister.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AppealRegister.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\AppealRegister.xss">
+      <DependentUpon>AppealRegister.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\AppealTypeMaster.xsc">
       <DependentUpon>AppealTypeMaster.xsd</DependentUpon>
@@ -1041,6 +1062,17 @@
     </None>
     <None Include="DataAccessLayer\SOFile.xss">
       <DependentUpon>SOFile.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\SunavniRegister.xsc">
+      <DependentUpon>SunavniRegister.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\SunavniRegister.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SunavniRegister.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\SunavniRegister.xss">
+      <DependentUpon>SunavniRegister.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\Tarankit.xsc">
       <DependentUpon>Tarankit.xsd</DependentUpon>
