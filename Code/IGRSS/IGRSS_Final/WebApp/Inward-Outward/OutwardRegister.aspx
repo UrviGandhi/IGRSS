@@ -62,7 +62,9 @@
                     <asp:TextBox ID="txtFileNo" runat="server" MaxLength="15" meta:resourcekey="txtFileNoResource1" Width="160px"></asp:TextBox> 
                 </td>
                 <td>
-                    <asp:Button ID="btnSearchAppNo" runat="server" OnClick="btnSearchAppNo_Click" Text="Search" meta:resourcekey="btnSearchAppNoResource1" />           
+                    <asp:Button ID="btnSearchAppNo" runat="server" OnClick="btnSearchAppNo_Click" 
+                        Text="Search" meta:resourcekey="btnSearchAppNoResource1" 
+                        CssClass="standardButton" />           
                 </td>
             </tr>
             <tr>
@@ -102,7 +104,8 @@
                     Record Not Available
                 </EmptyDataTemplate>
             </asp:GridView>
-            <asp:Button ID="Button_new" runat="server" onclick="Button_new_Click" Text="New" />
+            <asp:Button ID="Button_new" runat="server" onclick="Button_new_Click" Text="New" 
+                        CssClass="standardButton" />
                 </td>
             </tr>
         </table>
@@ -134,9 +137,14 @@
                         <tr><td align="right">Address:</td><td align="left"><asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' TextMode="MultiLine" Width="160px" /></td></tr>
                         <tr><td align="right">CopyTo:</td><td align="left"><asp:TextBox ID="CopyToTextBox" runat="server" Text='<%# Bind("CopyTo") %>' Width="160px" /></td></tr>
                         <tr><td align="right">Remarks:</td><td align="left"><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' TextMode="MultiLine" Width="160px" /></td></tr>
-                        <tr><td colspan="2" align="center"><asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />&nbsp;<asp:Button 
+                        <tr><td colspan="2" align="center"><asp:Button ID="InsertButton" runat="server" 
+                                CausesValidation="True" CommandName="Insert" Text="Insert" 
+                                CssClass="standardButton" />&nbsp;<asp:Button 
                                 ID="ResetButton" runat="server" CausesValidation="True" CommandName="Reset" 
-                                Text="Reset" onclientclick="resetTextFields();return false;" />&nbsp;<asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Back" Text="Back" /></td></tr>
+                                Text="Reset" onclientclick="resetTextFields();return false;" 
+                                CssClass="standardButton" />&nbsp;<asp:Button ID="InsertCancelButton" 
+                                runat="server" CausesValidation="False" CommandName="Back" Text="Back" 
+                                CssClass="standardButton" /></td></tr>
                     </table>
                 </InsertItemTemplate>
                 <EditItemTemplate>
@@ -156,10 +164,12 @@
                         <tr><td align="right">Remarks:</td><td align="left"><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' TextMode="MultiLine" Width="160px" /></td></tr>
                         <tr><td colspan="2" align="center">
                             <asp:Button ID="UpdateButton" runat="server" CausesValidation="True" 
-                        CommandName="Update" Text="Update" />&nbsp; <asp:Button ID="ResetButton" 
+                        CommandName="Update" Text="Update" CssClass="standardButton" />&nbsp; <asp:Button ID="ResetButton" 
                                 runat="server" CausesValidation="True" 
-                        CommandName="Reset" Text="Reset" onclientclick="resetTextFields();return false;" /> &nbsp;<asp:Button ID="UpdateCancelButton" runat="server" 
-                        CausesValidation="False" CommandName="Back" Text="Back" /></td></tr>
+                        CommandName="Reset" Text="Reset" onclientclick="resetTextFields();return false;" 
+                                CssClass="standardButton" /> &nbsp;<asp:Button ID="UpdateCancelButton" runat="server" 
+                        CausesValidation="False" CommandName="Back" Text="Back" 
+                                CssClass="standardButton" /></td></tr>
                     </table>
                 </EditItemTemplate>
                 <ItemTemplate>

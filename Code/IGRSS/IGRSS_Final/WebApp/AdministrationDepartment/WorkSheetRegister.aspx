@@ -72,15 +72,15 @@
                 <Columns>
                     <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" 
                         SortExpression="ID" Visible="False" InsertVisible="False" />
-                    <asp:BoundField DataField="WorkSheet_No" HeaderText="WorkSheet_No" 
+                    <asp:BoundField DataField="WorkSheet_No" HeaderText="WorkSheet No" 
                         SortExpression="WorkSheet_No" />
-                    <asp:BoundField DataField="Inward_No" HeaderText="Inward_No" 
+                    <asp:BoundField DataField="Inward_No" HeaderText="Inward No" 
                         SortExpression="Inward_No" />
-                    <asp:BoundField DataField="Name_Of_Person" HeaderText="Name_Of_Person" 
+                    <asp:BoundField DataField="Name_Of_Person" HeaderText="Name Of Person" 
                         SortExpression="Name_Of_Person" />
-                    <asp:BoundField DataField="Letter_Details" HeaderText="Letter_Details" 
-                        SortExpression="Letter_Details" />
-                    <asp:BoundField DataField="Work_Disposal_Date" HeaderText="Work_Disposal_Date" 
+                    <asp:BoundField DataField="Letter_Details" HeaderText="Letter Details" 
+                        SortExpression="Letter_Details" Visible="False" />
+                    <asp:BoundField DataField="Work_Disposal_Date" HeaderText="Work Disposal Date" 
                         SortExpression="Work_Disposal_Date" />
                 </Columns>
             </asp:GridView>

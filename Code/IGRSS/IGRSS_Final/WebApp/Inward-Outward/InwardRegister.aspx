@@ -62,7 +62,7 @@
                         <asp:TextBox Width="160" ID="txtFileNo" runat="server" meta:resourcekey="txtFileNoResource1"></asp:TextBox></td>
                         <td align="right">
                         <asp:Button ID="btnSearchAppNo" runat="server" OnClick="btnSearchAppNo_Click" Text="Search"
-                            meta:resourcekey="btnSearchAppNoResource1" />
+                            meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" />
                     </td>
                 </tr>
 
@@ -108,7 +108,8 @@
                             </EmptyDataTemplate>
                         </asp:GridView>
                         <br />
-                        <asp:Button ID="btnNew" runat="server" onclick="btnNew_Click" Text="New" />
+                        <asp:Button ID="btnNew" runat="server" onclick="btnNew_Click" Text="New" 
+                            CssClass="standardButton" />
                     </td>
                 </tr>
             </table>
@@ -151,14 +152,19 @@
                                     <asp:FileUpload ID="FileUploadDocument" runat="server" />
                                 </td>
                                 <td>
-                                    <asp:Button runat="server" ID="buttonUpload" Text="Upload" CommandName="UploadFile" />
+                                    <asp:Button runat="server" ID="buttonUpload" Text="Upload" 
+                                        CommandName="UploadFile" CssClass="standardButton" />
                                 </td>
                             </tr>
-                    <tr><td colspan="2" align="center"><asp:Button ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                    <tr><td colspan="2" align="center"><asp:Button ID="UpdateButton" runat="server" 
+                            CausesValidation="True" CommandName="Update" Text="Update" 
+                            CssClass="standardButton" />
                     &nbsp;<asp:Button ID="ResetButton" Text="Reset"  runat="server" 
-                            onclientclick="resetTextFields();return false;" />
+                            onclientclick="resetTextFields();return false;" 
+                            CssClass="standardButton" />
                     &nbsp;<asp:Button ID="UpdateCancelButton" runat="server" 
-                            CausesValidation="False" CommandName="Back" Text="Back" /></tr>
+                            CausesValidation="False" CommandName="Back" Text="Back" 
+                            CssClass="standardButton" /></tr>
                         <td>
                             </tr>
                         </td>
@@ -202,15 +208,18 @@
                                     <asp:FileUpload ID="FileUploadDocument" runat="server" />
                                 </td>
                                 <td>
-                                    <asp:Button runat="server" ID="buttonUpload" Text="Upload" CommandName="UploadFile" />
+                                    <asp:Button runat="server" ID="buttonUpload" Text="Upload" 
+                                        CommandName="UploadFile" CssClass="standardButton" />
                                 </td>
                             </tr>
-                    <tr><td colspan="2" align="center"><asp:Button ID="InsertButton" runat="server" 
-                            CausesValidation="True" CommandName="Insert" Text="Insert" 
+                    <tr><td colspan="2" align="center">
+                        <asp:Button ID="InsertButton" runat="server" 
+                            CausesValidation="True" CommandName="Insert" Text="Insert" CssClass="standardButton" 
                              />&nbsp;<asp:Button ID="ResetButton" Text="Reset" runat="server" 
-                            onclientclick="resetTextFields();return false;" />&nbsp;
+                            onclientclick="resetTextFields();return false;" 
+                            CssClass="standardButton" />&nbsp;
                              <asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" 
-                            CommandName="Back" Text="Back" /></tr>
+                            CommandName="Back" Text="Back" CssClass="standardButton" /></tr>
                     </table>
                 </InsertItemTemplate>
                 <ItemTemplate>
