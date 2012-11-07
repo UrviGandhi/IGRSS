@@ -953,11 +953,11 @@ namespace IGRSS.DataAccessLayer {
             
             private global::System.Data.DataColumn columnApplicantAddress;
             
-            private global::System.Data.DataColumn columninward_no;
-            
             private global::System.Data.DataColumn columnDocument_Upload_Id;
             
             private global::System.Data.DataColumn columnName;
+            
+            private global::System.Data.DataColumn columninward_no_;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1066,14 +1066,6 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn inward_noColumn {
-                get {
-                    return this.columninward_no;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn Document_Upload_IdColumn {
                 get {
                     return this.columnDocument_Upload_Id;
@@ -1085,6 +1077,14 @@ namespace IGRSS.DataAccessLayer {
             public global::System.Data.DataColumn NameColumn {
                 get {
                     return this.columnName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn inward_no_Column {
+                get {
+                    return this.columninward_no_;
                 }
             }
             
@@ -1125,7 +1125,7 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public InwardRegisterRow AddInwardRegisterRow(string InwardNo, System.DateTime InwardDate, string Description, string ApplicantName, System.DateTime ApplicationDate, System.Guid SentTo, string Remarks, string ApplicantAddress, string inward_no, string Name) {
+            public InwardRegisterRow AddInwardRegisterRow(string InwardNo, System.DateTime InwardDate, string Description, string ApplicantName, System.DateTime ApplicationDate, System.Guid SentTo, string Remarks, string ApplicantAddress, string Name, string inward_no_) {
                 InwardRegisterRow rowInwardRegisterRow = ((InwardRegisterRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1137,9 +1137,9 @@ namespace IGRSS.DataAccessLayer {
                         SentTo,
                         Remarks,
                         ApplicantAddress,
-                        inward_no,
                         null,
-                        Name};
+                        Name,
+                        inward_no_};
                 rowInwardRegisterRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInwardRegisterRow);
                 return rowInwardRegisterRow;
@@ -1184,9 +1184,9 @@ namespace IGRSS.DataAccessLayer {
                 this.columnSentTo = base.Columns["SentTo"];
                 this.columnRemarks = base.Columns["Remarks"];
                 this.columnApplicantAddress = base.Columns["ApplicantAddress"];
-                this.columninward_no = base.Columns["inward_no"];
                 this.columnDocument_Upload_Id = base.Columns["Document_Upload_Id"];
                 this.columnName = base.Columns["Name"];
+                this.columninward_no_ = base.Columns["inward_no_"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1210,12 +1210,12 @@ namespace IGRSS.DataAccessLayer {
                 base.Columns.Add(this.columnRemarks);
                 this.columnApplicantAddress = new global::System.Data.DataColumn("ApplicantAddress", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnApplicantAddress);
-                this.columninward_no = new global::System.Data.DataColumn("inward_no", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columninward_no);
                 this.columnDocument_Upload_Id = new global::System.Data.DataColumn("Document_Upload_Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDocument_Upload_Id);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
+                this.columninward_no_ = new global::System.Data.DataColumn("inward_no_", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninward_no_);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSrNo}, true));
                 this.columnSrNo.AutoIncrement = true;
@@ -1230,8 +1230,6 @@ namespace IGRSS.DataAccessLayer {
                 this.columnApplicantName.MaxLength = 100;
                 this.columnRemarks.MaxLength = 500;
                 this.columnApplicantAddress.MaxLength = 500;
-                this.columninward_no.ReadOnly = true;
-                this.columninward_no.MaxLength = 1001;
                 this.columnDocument_Upload_Id.AutoIncrement = true;
                 this.columnDocument_Upload_Id.AutoIncrementSeed = -1;
                 this.columnDocument_Upload_Id.AutoIncrementStep = -1;
@@ -1239,6 +1237,8 @@ namespace IGRSS.DataAccessLayer {
                 this.columnDocument_Upload_Id.ReadOnly = true;
                 this.columnName.AllowDBNull = false;
                 this.columnName.MaxLength = 100;
+                this.columninward_no_.ReadOnly = true;
+                this.columninward_no_.MaxLength = 1001;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2192,22 +2192,6 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string inward_no {
-                get {
-                    try {
-                        return ((string)(this[this.tableInwardRegister.inward_noColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'inward_no\' in table \'InwardRegister\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableInwardRegister.inward_noColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int Document_Upload_Id {
                 get {
                     return ((int)(this[this.tableInwardRegister.Document_Upload_IdColumn]));
@@ -2225,6 +2209,22 @@ namespace IGRSS.DataAccessLayer {
                 }
                 set {
                     this[this.tableInwardRegister.NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string inward_no_ {
+                get {
+                    try {
+                        return ((string)(this[this.tableInwardRegister.inward_no_Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'inward_no_\' in table \'InwardRegister\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInwardRegister.inward_no_Column] = value;
                 }
             }
             
@@ -2314,14 +2314,14 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isinward_noNull() {
-                return this.IsNull(this.tableInwardRegister.inward_noColumn);
+            public bool Isinward_no_Null() {
+                return this.IsNull(this.tableInwardRegister.inward_no_Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setinward_noNull() {
-                this[this.tableInwardRegister.inward_noColumn] = global::System.Convert.DBNull;
+            public void Setinward_no_Null() {
+                this[this.tableInwardRegister.inward_no_Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -4027,9 +4027,9 @@ SELECT Inward_outwardId, InwardNo, RegisterType, DocumentNo, InOutDate, DocType,
             tableMapping.ColumnMappings.Add("SentTo", "SentTo");
             tableMapping.ColumnMappings.Add("Remarks", "Remarks");
             tableMapping.ColumnMappings.Add("ApplicantAddress", "ApplicantAddress");
-            tableMapping.ColumnMappings.Add("inward_no", "inward_no");
             tableMapping.ColumnMappings.Add("Document_Upload_Id", "Document_Upload_Id");
             tableMapping.ColumnMappings.Add("Name", "Name");
+            tableMapping.ColumnMappings.Add("inward_no_", "inward_no_");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -4046,36 +4046,48 @@ SELECT Inward_outwardId, InwardNo, RegisterType, DocumentNo, InOutDate, DocType,
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        dbo.InwardRegister.SrNo, dbo.InwardRegister.InwardNo, dbo.InwardRegister.InwardDate, dbo.InwardRegister.Description, dbo.InwardRegister.ApplicantName, 
-                         dbo.InwardRegister.ApplicationDate, dbo.InwardRegister.SentTo, dbo.InwardRegister.Remarks, dbo.InwardRegister.ApplicantAddress, 
-                         CAST(dbo.InwardRegister.InwardNo AS varchar(500)) + '/' + CAST(dbo.InwardRegister.SentTo AS varchar(500)) AS inward_no, 
-                         dbo.Document_Upload.Document_Upload_Id, dbo.Document_Upload.Name
+            this._commandCollection[0].CommandText = @"
+SELECT        
+dbo.InwardRegister.SrNo, 
+dbo.InwardRegister.InwardNo, 
+dbo.InwardRegister.InwardDate, 
+dbo.InwardRegister.Description, 		
+dbo.InwardRegister.ApplicantName, 
+dbo.InwardRegister.ApplicationDate, 
+dbo.InwardRegister.SentTo, 
+dbo.InwardRegister.Remarks, 
+dbo.InwardRegister.ApplicantAddress, 
+dbo.Document_Upload.Document_Upload_Id, 
+dbo.Document_Upload.Name, 
+cast(dbo.InwardRegister.InwardNo as varchar(500))+'/'+ cast(dbo.Offices.OfficeName as varchar(500)) COLLATE DATABASE_DEFAULT as inward_no_
 FROM            dbo.InwardRegister INNER JOIN
-                         dbo.Document_Upload ON dbo.Document_Upload.Document_Upload_Id = dbo.InwardRegister.Document_Upload_Id";
+                         dbo.Document_Upload ON dbo.Document_Upload.Document_Upload_Id = dbo.InwardRegister.Document_Upload_Id INNER JOIN
+                         dbo.Offices ON dbo.InwardRegister.SentTo = dbo.Offices.OfficeId";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = new global::System.Data.SqlClient.SqlConnection(global::IGRSS.Properties.Settings.Default.IGRSS_FINALConnectionString);
             this._commandCollection[1].CommandText = "SELECT        dbo.InwardRegister.SrNo, dbo.InwardRegister.InwardNo, dbo.InwardReg" +
                 "ister.InwardDate, dbo.InwardRegister.Description, dbo.InwardRegister.ApplicantNa" +
-                "me, \r\n                         dbo.InwardRegister.ApplicationDate, dbo.InwardReg" +
-                "ister.SentTo, dbo.InwardRegister.Remarks, dbo.InwardRegister.ApplicantAddress, \r" +
-                "\n                         CAST(dbo.InwardRegister.InwardNo AS varchar(500)) + \'/" +
-                "\' + CAST(dbo.InwardRegister.SentTo AS varchar(500)) AS inward_no, \r\n            " +
-                "             dbo.Document_Upload.Document_Upload_Id, dbo.Document_Upload.Name\r\nF" +
-                "ROM            dbo.InwardRegister INNER JOIN\r\n                         dbo.Docum" +
-                "ent_Upload ON dbo.Document_Upload.Document_Upload_Id = dbo.InwardRegister.Docume" +
-                "nt_Upload_Id\r\nWHERE        (CAST(dbo.InwardRegister.SrNo AS varchar) LIKE \'%\' + " +
-                "@searchKeyWord + \'%\') OR\r\n                         (dbo.InwardRegister.InwardNo " +
-                "LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(dbo.InwardRe" +
-                "gister.InwardDate AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n             " +
-                "            (dbo.InwardRegister.Description LIKE \'%\' + @searchKeyWord + \'%\') OR\r" +
-                "\n                         (dbo.InwardRegister.ApplicantName LIKE \'%\' + @searchKe" +
-                "yWord + \'%\') OR\r\n                         (CAST(dbo.InwardRegister.ApplicationDa" +
-                "te AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (db" +
-                "o.InwardRegister.SentTo LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                   " +
-                "      (dbo.InwardRegister.Remarks LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n         " +
-                "                (dbo.InwardRegister.ApplicantAddress LIKE \'%\' + @searchKeyWord +" +
-                " \'%\')";
+                "me, \r\n                         dbo.InwardRegister.ApplicationDate,dbo.Offices.Of" +
+                "ficeName, dbo.InwardRegister.SentTo, dbo.InwardRegister.Remarks, dbo.InwardRegis" +
+                "ter.ApplicantAddress, \r\n                         dbo.Document_Upload.Document_Up" +
+                "load_Id, dbo.Document_Upload.Name, CAST(dbo.InwardRegister.InwardNo AS varchar(5" +
+                "00)) \r\n                         + \'/\' + CAST(dbo.Offices.OfficeName AS varchar(5" +
+                "00)) COLLATE DATABASE_DEFAULT AS inward_no_\r\nFROM            dbo.InwardRegister " +
+                "INNER JOIN\r\n                         dbo.Document_Upload ON dbo.Document_Upload." +
+                "Document_Upload_Id = dbo.InwardRegister.Document_Upload_Id INNER JOIN\r\n         " +
+                "                dbo.Offices ON dbo.InwardRegister.SentTo = dbo.Offices.OfficeId\r" +
+                "\nWHERE        (CAST(dbo.InwardRegister.SrNo AS varchar) LIKE \'%\' + @searchKeyWor" +
+                "d + \'%\') OR\r\n                         (dbo.InwardRegister.InwardNo LIKE \'%\' + @s" +
+                "earchKeyWord + \'%\') OR\r\n                         (CAST(dbo.InwardRegister.Inward" +
+                "Date AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (" +
+                "dbo.InwardRegister.Description LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n            " +
+                "             (dbo.InwardRegister.ApplicantName LIKE \'%\' + @searchKeyWord + \'%\') " +
+                "OR\r\n                         (CAST(dbo.InwardRegister.ApplicationDate AS varchar" +
+                ") LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (dbo.InwardRegis" +
+                "ter.SentTo LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (dbo.In" +
+                "wardRegister.Remarks LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                      " +
+                "   (dbo.InwardRegister.ApplicantAddress LIKE \'%\' + @searchKeyWord + \'%\')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();

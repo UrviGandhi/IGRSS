@@ -1,0 +1,9 @@
+<siteMapNode url="" title="Users" description="" roles="*">
+      <siteMapNode url="~/User Management/ExistingUsers.aspx" title="Existing Users" description="Existing Users"/>
+      <siteMapNode url="~/User Management/Roles.aspx" title="Roles" description="Roles"/>
+      <siteMapNode url="~/User Management/Permissions.aspx" title="Permissions" description="Permissions"/>
+      <siteMapNode url="~/User Management/MenuRights.aspx" title="Menu Rights" description="Menu Rights"/>
+      <siteMapNode url="~/User Management/PageLevelRights.aspx" title="Page Level Rights" description="Page Level Rights"/>
+      <siteMapNode url="~/User Management/ExaminationUsers.aspx" title="Examination Users" description="Examination Users"/>
+      <siteMapNode url="" title="Reports"  description="Reports" />
+    </siteMapNode>

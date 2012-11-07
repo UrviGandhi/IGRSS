@@ -1,0 +1,26 @@
+USE [IGRSS_FINAL]
+GO
+
+/****** Object:  StoredProcedure [dbo].[UploadNewDocument]    Script Date: 10/29/2012 12:57:36 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+--exec [dbo].[UploadNewDocument] @Name='MyDoc.txt',@Description='description', @path='d:\\mypath\\MyDoc.txt'
+ALTER PROCEDURE [dbo].[UploadNewDocument]
+(
+	@Name nvarchar(100),
+	@Description nvarchar(500),
+	@path nvarchar(500)
+)
+AS
+	SET NOCOUNT OFF;
+INSERT INTO [Document_Upload] ([Name], [Description], [path]) VALUES (@Name, @Description, @path)
+select scope_identity()
+
+
+GO
+
+

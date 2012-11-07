@@ -1,0 +1,16 @@
+Friday
+-Igrss/changes
+
+Satrday-Sunday
+-Reading
+ -JavaScript
+ -3 tier architecture coding(.net) 
+ -Classes/Properties/Methods
+ -lists/Generics/Events/Delegates 
+ -Grid(edit-Delete) Operations
+ -Page Events
+
+Monday
+-University(3hrs)
+   -Masters
+-IGRSS(Flow)
