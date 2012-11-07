@@ -9,8 +9,13 @@
     <script type="text/javascript" language="Javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
     <script type="text/javascript" language="javascript" src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
     <meta content="Tue, 23 Jul 1982 21:29:02 GMT" http-equiv="Expires" />
+    <link href="Styles/css/standard/StandardElements.css" rel="stylesheet" type="text/css" />
     <link href="Styles/css/sunny/jquery-ui-1.9.0.custom.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
+        function resetTextFields() {
+            $("input[type='text']").each(function (index, element) { $(element).val(""); });
+            $("textarea").each(function (index, element) { $(element).val(""); });
+        }
         function setContentHeight(menuName, logoName)
         {
             if(null!=document.getElementById('contentRow'))

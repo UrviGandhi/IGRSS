@@ -1,0 +1,29 @@
+/* Set Login button as default control for login*/
+
+Button Loginbutton = (Button)Login.Findcontrol("Loginbutton");
+
+
+GUID - GLOBALLY UNIQUE IDENTIFIER
+
+
+
+<%
+Response.Cookies("username") = "earthskater"
+Response.Cookies("username").Expires = Date + 365
+%>
+
+
+In the example above a cookie named "username" was created with a value of "earthskater". 
+Then the expiry date was set using the Expires property. The cookie was set to expire 1 year from the days date. 
+When the cookie expires it is deleted from the user's Web computer.
+
+HttpCookie cookUserInfo = new HttpCookie("UserInfo")
+CookUserInfo["Name"] = "Rob Young"
+CookUserInfo["Time"] = DateTime.Now.ToString()
+cookUserInfo.Expires = DateTime.Now.AddDays(30)
+Response.Cookies.Add(cookUserInfo)
+
+
+INSERT IN CACHE:
+
+Cache["KeyName"]=Objecttocache;

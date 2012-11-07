@@ -246,15 +246,26 @@ SELECT Inward_outwardId, InwardNo, RegisterType, DocumentNo, InOutDate, DocType,
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="InwardRegisterTableAdapter" GeneratorDataComponentClassName="InwardRegisterTableAdapter" Name="InwardRegister" UserDataComponentName="InwardRegisterTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IGRSS_DEVConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IGRSS_DEVConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        dbo.InwardRegister.SrNo, dbo.InwardRegister.InwardNo, dbo.InwardRegister.InwardDate, dbo.InwardRegister.Description, dbo.InwardRegister.ApplicantName, 
-                         dbo.InwardRegister.ApplicationDate, dbo.InwardRegister.SentTo, dbo.InwardRegister.Remarks, dbo.InwardRegister.ApplicantAddress, 
-                         CAST(dbo.InwardRegister.InwardNo AS varchar(500)) + '/' + CAST(dbo.InwardRegister.SentTo AS varchar(500)) AS inward_no, 
-                         dbo.Document_Upload.Document_Upload_Id, dbo.Document_Upload.Name
+                    <CommandText>
+SELECT        
+dbo.InwardRegister.SrNo, 
+dbo.InwardRegister.InwardNo, 
+dbo.InwardRegister.InwardDate, 
+dbo.InwardRegister.Description, 		
+dbo.InwardRegister.ApplicantName, 
+dbo.InwardRegister.ApplicationDate, 
+dbo.InwardRegister.SentTo, 
+dbo.InwardRegister.Remarks, 
+dbo.InwardRegister.ApplicantAddress, 
+dbo.Document_Upload.Document_Upload_Id, 
+dbo.Document_Upload.Name, 
+cast(dbo.InwardRegister.InwardNo as varchar(500))+'/'+ cast(dbo.Offices.OfficeName as varchar(500)) COLLATE DATABASE_DEFAULT as inward_no_
 FROM            dbo.InwardRegister INNER JOIN
-                         dbo.Document_Upload ON dbo.Document_Upload.Document_Upload_Id = dbo.InwardRegister.Document_Upload_Id</CommandText>
+                         dbo.Document_Upload ON dbo.Document_Upload.Document_Upload_Id = dbo.InwardRegister.Document_Upload_Id INNER JOIN
+                         dbo.Offices ON dbo.InwardRegister.SentTo = dbo.Offices.OfficeId</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -270,20 +281,21 @@ FROM            dbo.InwardRegister INNER JOIN
               <Mapping SourceColumn="SentTo" DataSetColumn="SentTo" />
               <Mapping SourceColumn="Remarks" DataSetColumn="Remarks" />
               <Mapping SourceColumn="ApplicantAddress" DataSetColumn="ApplicantAddress" />
-              <Mapping SourceColumn="inward_no" DataSetColumn="inward_no" />
               <Mapping SourceColumn="Document_Upload_Id" DataSetColumn="Document_Upload_Id" />
               <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="inward_no_" DataSetColumn="inward_no_" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="IGRSS_FINALConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        dbo.InwardRegister.SrNo, dbo.InwardRegister.InwardNo, dbo.InwardRegister.InwardDate, dbo.InwardRegister.Description, dbo.InwardRegister.ApplicantName, 
-                         dbo.InwardRegister.ApplicationDate, dbo.InwardRegister.SentTo, dbo.InwardRegister.Remarks, dbo.InwardRegister.ApplicantAddress, 
-                         CAST(dbo.InwardRegister.InwardNo AS varchar(500)) + '/' + CAST(dbo.InwardRegister.SentTo AS varchar(500)) AS inward_no, 
-                         dbo.Document_Upload.Document_Upload_Id, dbo.Document_Upload.Name
+                         dbo.InwardRegister.ApplicationDate,dbo.Offices.OfficeName, dbo.InwardRegister.SentTo, dbo.InwardRegister.Remarks, dbo.InwardRegister.ApplicantAddress, 
+                         dbo.Document_Upload.Document_Upload_Id, dbo.Document_Upload.Name, CAST(dbo.InwardRegister.InwardNo AS varchar(500)) 
+                         + '/' + CAST(dbo.Offices.OfficeName AS varchar(500)) COLLATE DATABASE_DEFAULT AS inward_no_
 FROM            dbo.InwardRegister INNER JOIN
-                         dbo.Document_Upload ON dbo.Document_Upload.Document_Upload_Id = dbo.InwardRegister.Document_Upload_Id
+                         dbo.Document_Upload ON dbo.Document_Upload.Document_Upload_Id = dbo.InwardRegister.Document_Upload_Id INNER JOIN
+                         dbo.Offices ON dbo.InwardRegister.SentTo = dbo.Offices.OfficeId
 WHERE        (CAST(dbo.InwardRegister.SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                          (dbo.InwardRegister.InwardNo LIKE '%' + @searchKeyWord + '%') OR
                          (CAST(dbo.InwardRegister.InwardDate AS varchar) LIKE '%' + @searchKeyWord + '%') OR
@@ -467,18 +479,18 @@ VALUES        (@InwardNo,@InwardDate,@Description,@ApplicantName,@ApplicationDat
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="inward_no" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columninward_no" msprop:Generator_ColumnPropNameInRow="inward_no" msprop:Generator_ColumnPropNameInTable="inward_noColumn" msprop:Generator_UserColumnName="inward_no" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1001" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="Document_Upload_Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnDocument_Upload_Id" msprop:Generator_ColumnPropNameInRow="Document_Upload_Id" msprop:Generator_ColumnPropNameInTable="Document_Upload_IdColumn" msprop:Generator_UserColumnName="Document_Upload_Id" type="xs:int" />
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="inward_no_" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columninward_no_" msprop:Generator_ColumnPropNameInRow="inward_no_" msprop:Generator_ColumnPropNameInTable="inward_no_Column" msprop:Generator_UserColumnName="inward_no_" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1001" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

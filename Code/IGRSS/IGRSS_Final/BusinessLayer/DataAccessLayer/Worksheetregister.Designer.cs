@@ -932,12 +932,24 @@ SELECT ID, WorkSheet_No, Inward_No, Name_Of_Person, Letter_Details, Work_Disposa
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        ID, WorkSheet_No, Inward_No, Name_Of_Person, Letter_Details, Work_D" +
                 "isposal_Date\r\nFROM            dbo.WorkSheetRegister";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        ID, WorkSheet_No, Inward_No, Name_Of_Person, Letter_Details, Work_Disposal_Date
+FROM            dbo.WorkSheetRegister
+WHERE        (CAST(ID AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(WorkSheet_No AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (Inward_No LIKE '%' + @searchKeyWord + '%') OR
+                         (Name_Of_Person LIKE '%' + @searchKeyWord + '%') OR
+                         (Letter_Details LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Work_Disposal_Date AS varchar) LIKE '%' + @searchKeyWord + '%')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -959,6 +971,42 @@ SELECT ID, WorkSheet_No, Inward_No, Name_Of_Person, Letter_Details, Work_Disposa
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual Worksheetregister.WorkSheetRegisterDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            Worksheetregister.WorkSheetRegisterDataTable dataTable = new Worksheetregister.WorkSheetRegisterDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(Worksheetregister.WorkSheetRegisterDataTable dataTable, string searchKeyWord) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((searchKeyWord == null)) {
+                throw new global::System.ArgumentNullException("searchKeyWord");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Worksheetregister.WorkSheetRegisterDataTable GetDataBy(string searchKeyWord) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((searchKeyWord == null)) {
+                throw new global::System.ArgumentNullException("searchKeyWord");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
+            }
             Worksheetregister.WorkSheetRegisterDataTable dataTable = new Worksheetregister.WorkSheetRegisterDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
